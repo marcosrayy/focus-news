@@ -1,0 +1,301 @@
+{
+  "lastSync": "2026-09-23T16:48:17.068Z",
+  "syncHistory": [
+    {
+      "timestamp": "2026-09-23T16:48:17.068Z",
+      "durationMs": 7528,
+      "importedCount": 0,
+      "updatedCount": 39,
+      "discardedCount": 61,
+      "modules": [
+        "Startups",
+        "Economia",
+        "IA",
+        "Tecnologia",
+        "Dev",
+        "Inovacao",
+        "Business"
+      ]
+    },
+    {
+      "timestamp": "2026-09-23T16:29:14.082Z",
+      "durationMs": 11743,
+      "importedCount": 6,
+      "updatedCount": 36,
+      "discardedCount": 61,
+      "modules": [
+        "Startups",
+        "Economia",
+        "IA",
+        "Tecnologia",
+        "Dev",
+        "Inovacao",
+        "Business"
+      ]
+    },
+    {
+      "timestamp": "2026-09-23T16:13:12.211Z",
+      "durationMs": 55686,
+      "importedCount": 37,
+      "updatedCount": 8,
+      "discardedCount": 55,
+      "modules": [
+        "Startups",
+        "Economia",
+        "IA",
+        "Tecnologia",
+        "Dev",
+        "Inovacao",
+        "Business"
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T22:46:27.754Z",
+      "durationMs": 15258,
+      "importedCount": 0,
+      "updatedCount": 53,
+      "discardedCount": 46,
+      "modules": [
+        "Startups",
+        "Economia",
+        "IA",
+        "Tecnologia",
+        "Dev",
+        "Inovacao",
+        "Business"
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T22:20:31.579Z",
+      "durationMs": 10964,
+      "importedCount": 79,
+      "updatedCount": 0,
+      "discardedCount": 46,
+      "modules": [
+        "Startups",
+        "Economia",
+        "IA",
+        "Tecnologia",
+        "Dev",
+        "Inovacao",
+        "Business"
+      ]
+    },
+    {
+      "timestamp": "2026-07-19T20:34:26.244Z",
+      "durationMs": 18099,
+      "importedCount": 0,
+      "updatedCount": 50,
+      "discardedCount": 49,
+      "modules": [
+        "Startups",
+        "Economia",
+        "IA",
+        "Tecnologia",
+        "Dev",
+        "Inovacao",
+        "Business"
+      ]
+    },
+    {
+      "timestamp": "2026-07-19T20:18:29.315Z",
+      "durationMs": 14985,
+      "importedCount": 37,
+      "updatedCount": 37,
+      "discardedCount": 49,
+      "modules": [
+        "Startups",
+        "Economia",
+        "IA",
+        "Tecnologia",
+        "Dev",
+        "Inovacao",
+        "Business"
+      ]
+    },
+    {
+      "timestamp": "2026-07-19T19:49:56.285Z",
+      "durationMs": 11608,
+      "importedCount": 0,
+      "updatedCount": 44,
+      "discardedCount": 54,
+      "modules": [
+        "Startups",
+        "Economia",
+        "IA",
+        "Tecnologia",
+        "Dev",
+        "Inovacao",
+        "Business"
+      ]
+    },
+    {
+      "timestamp": "2026-07-19T19:39:45.982Z",
+      "durationMs": 9195,
+      "importedCount": 0,
+      "updatedCount": 44,
+      "discardedCount": 54,
+      "modules": [
+        "Startups",
+        "Economia",
+        "IA",
+        "Tecnologia",
+        "Dev",
+        "Inovacao",
+        "Business"
+      ]
+    },
+    {
+      "timestamp": "2026-07-19T19:22:49.373Z",
+      "durationMs": 9426,
+      "importedCount": 3,
+      "updatedCount": 43,
+      "discardedCount": 52,
+      "modules": [
+        "Startups",
+        "Economia",
+        "IA",
+        "Tecnologia",
+        "Dev",
+        "Inovacao",
+        "Business"
+      ]
+    },
+    {
+      "timestamp": "2026-07-19T19:19:12.868Z",
+      "durationMs": 9706,
+      "importedCount": 15,
+      "updatedCount": 28,
+      "discardedCount": 55,
+      "modules": [
+        "Startups",
+        "Economia",
+        "IA",
+        "Tecnologia",
+        "Dev",
+        "Inovacao",
+        "Business"
+      ]
+    },
+    {
+      "timestamp": "2026-07-19T17:25:08.429Z",
+      "durationMs": 22211,
+      "importedCount": 1,
+      "updatedCount": 32,
+      "discardedCount": 65,
+      "modules": [
+        "Startups",
+        "Economia",
+        "IA",
+        "Tecnologia",
+        "Dev",
+        "Inovacao",
+        "Business"
+      ]
+    },
+    {
+      "timestamp": "2026-07-19T17:03:38.768Z",
+      "durationMs": 3456,
+      "importedCount": 0,
+      "updatedCount": 33,
+      "discardedCount": 37,
+      "modules": [
+        "Startups",
+        "Economia",
+        "IA",
+        "Tecnologia",
+        "Dev",
+        "Inovacao",
+        "Business"
+      ]
+    },
+    {
+      "timestamp": "2026-07-19T16:52:14.841Z",
+      "durationMs": 14688,
+      "importedCount": 33,
+      "updatedCount": 0,
+      "discardedCount": 37,
+      "modules": [
+        "Startups",
+        "Economia",
+        "IA",
+        "Tecnologia",
+        "Dev",
+        "Inovacao",
+        "Business"
+      ]
+    }
+  ],
+  "sourcesHealth": {
+    "Startupi": {
+      "status": "Online",
+      "lastResponseMs": 273,
+      "lastChecked": "2026-09-23T16:48:16.534Z"
+    },
+    "InfoMoney": {
+      "status": "Online",
+      "lastResponseMs": 266,
+      "lastChecked": "2026-09-23T16:48:16.802Z"
+    },
+    "Valor": {
+      "status": "Online",
+      "lastResponseMs": 258,
+      "lastChecked": "2026-09-23T16:48:12.974Z"
+    },
+    "Canaltech": {
+      "status": "Online",
+      "lastResponseMs": 275,
+      "lastChecked": "2026-09-23T16:48:13.525Z"
+    },
+    "TechMundo": {
+      "status": "Online",
+      "lastResponseMs": 253,
+      "lastChecked": "2026-09-23T16:48:14.590Z"
+    },
+    "Diolinux": {
+      "status": "Instável",
+      "lastResponseMs": 255,
+      "lastChecked": "2026-09-23T16:48:15.356Z"
+    },
+    "Gizmodo": {
+      "status": "Offline",
+      "lastResponseMs": 729,
+      "lastChecked": "2026-07-19T20:34:24.255Z"
+    },
+    "GNews": {
+      "status": "Online",
+      "lastResponseMs": 514,
+      "lastChecked": "2026-09-23T16:48:10.058Z"
+    },
+    "Tecnoblog": {
+      "status": "Online",
+      "lastResponseMs": 379,
+      "lastChecked": "2026-09-23T16:48:15.752Z"
+    },
+    "Forbes": {
+      "status": "Online",
+      "lastResponseMs": 262,
+      "lastChecked": "2026-09-23T16:48:17.065Z"
+    },
+    "Globo": {
+      "status": "Instável",
+      "lastResponseMs": 248,
+      "lastChecked": "2026-09-23T16:48:16.000Z"
+    },
+    "CNN": {
+      "status": "Online",
+      "lastResponseMs": 247,
+      "lastChecked": "2026-09-23T16:48:15.100Z"
+    },
+    "Exame": {
+      "status": "Online",
+      "lastResponseMs": 958,
+      "lastChecked": "2026-09-23T16:48:11.554Z"
+    }
+  },
+  "stats": {
+    "imported": 211,
+    "updated": 447,
+    "discarded": 721
+  }
+}

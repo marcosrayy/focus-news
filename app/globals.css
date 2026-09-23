@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 25% 97.5%;
+    --foreground: 220 20% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+    --primary: 21 90% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 28 28% 94.5%;
+    --secondary-foreground: 220 15% 18%;
+    --muted: 28 22% 93.5%;
+    --muted-foreground: 220 10% 42%;
+    --accent: 21 90% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 78% 56%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 28 18% 88%;
+    --input: 28 18% 88%;
+    --ring: 21 90% 50%;
+    --chart-1: 21 90% 50%;
+    --chart-2: 158 64% 40%;
+    --chart-3: 0 78% 56%;
+    --chart-4: 217 60% 45%;
+    --chart-5: 43 80% 58%;
+    --radius: 0.85rem;
+    --shadow-color: 220 30% 60%;
+    --sidebar-background: 30 25% 97.5%;
+    --sidebar-foreground: 220 20% 10%;
+    --sidebar-primary: 21 90% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 28 28% 94.5%;
+    --sidebar-accent-foreground: 220 15% 18%;
+    --sidebar-border: 28 18% 88%;
+    --sidebar-ring: 21 90% 50%;
+  }
+
+  .dark {
+    --background: 222 22% 6%;
+    --foreground: 30 15% 96%;
+    --card: 222 20% 9%;
+    --card-foreground: 30 15% 96%;
+    --popover: 222 22% 7.5%;
+    --popover-foreground: 30 15% 96%;
+    --primary: 22 94% 54%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 16% 14%;
+    --secondary-foreground: 30 10% 93%;
+    --muted: 222 16% 13%;
+    --muted-foreground: 220 10% 63%;
+    --accent: 22 94% 54%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 78% 58%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 15% 17%;
+    --input: 222 15% 17%;
+    --ring: 22 94% 54%;
+    --chart-1: 22 94% 54%;
+    --chart-2: 158 64% 45%;
+    --chart-3: 0 78% 58%;
+    --chart-4: 210 70% 58%;
+    --chart-5: 43 84% 63%;
+    --radius: 0.85rem;
+    --shadow-color: 222 60% 2%;
+    --sidebar-background: 222 24% 5%;
+    --sidebar-foreground: 30 15% 96%;
+    --sidebar-primary: 22 94% 54%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 16% 14%;
+    --sidebar-accent-foreground: 30 10% 93%;
+    --sidebar-border: 222 15% 17%;
+    --sidebar-ring: 22 94% 54%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image: radial-gradient(ellipse 80% 50% at 50% -10%, hsl(var(--primary) / 0.08), transparent);
+    background-attachment: fixed;
+    font-feature-settings: "cv11", "ss01";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: hsl(var(--primary) / 0.3);
+    color: hsl(var(--foreground));
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border));
+    border-radius: 999px;
+    border: 2px solid hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--primary) / 0.5);
+  }
+
+  /* Consistent focus ring across interactive elements */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ========= MOBILE OPTIMIZATIONS ========= */
+
+/* Smooth scrolling and tap highlight removal */
+html {
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* iOS safe area support */
+body {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Hide scrollbar on horizontal scroll containers */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Touch-friendly scroll for navigation and tickers */
+nav .scrollbar-hide,
+.animate-ticker {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent text selection on interactive elements for mobile */
+button, a, [role="button"] {
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+/* Better image rendering on mobile */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+/* Mobile card touch feedback */
+@media (hover: none) and (pointer: coarse) {
+  article {
+    -webkit-tap-highlight-color: transparent;
+  }
+  article:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Ensure minimum touch target size (44x44px as per Apple HIG) */
+@media (max-width: 640px) {
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  /* Exception for inline text links and very small UI badges */
+  span > a, .text-\[10px\], .text-\[8px\] {
+    min-height: auto;
+    min-width: auto;
+  }
+}
+
+/* ========= END MOBILE OPTIMIZATIONS ========= */
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes news-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker-scroll 30s linear infinite;
+}
+
+.animate-news {
+  animation: news-scroll 25s linear infinite;
+}
+
+.animate-ticker:hover,
+.animate-news:hover {
+  animation-play-state: paused;
+}
