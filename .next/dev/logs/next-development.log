@@ -1,10 +1,2 @@
-[00:00:02.409] Server  LOG     ✓ Ready in 1787ms
-[00:00:07.227] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:08.992] Server  ERROR   Error fetching BTC-BRL TypeError: Cannot read properties of null (reading '0')
-[00:00:25.678] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:00:25.938] Server  WARN    [FocusNews] GNews returned insufficient results. Using RSS Fallback for Tecnologia...
-[00:00:25.978] Server  WARN    [FocusNews] GNews returned insufficient results. Using RSS Fallback for Tecnologia...
-[00:00:26.356] Server  ERROR   Error fetching BTC-BRL TypeError: Cannot read properties of null (reading '0')
-[00:00:26.663] Server  ERROR   Error fetching BTC-BRL TypeError: Cannot read properties of null (reading '0')
-[00:00:30.633] Server  ERROR   Error fetching BTC-BRL TypeError: Cannot read properties of null (reading '0')
-[00:00:30.920] Server  ERROR   Error fetching BTC-BRL TypeError: Cannot read properties of null (reading '0')
+[00:00:03.253] Server  LOG     ✓ Ready in 2.7s
+[00:00:12.317] Server  LOG     ○ Compiling / ...

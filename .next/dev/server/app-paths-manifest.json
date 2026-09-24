@@ -1,11 +1,1 @@
-{
-  "/_not-found/page": "app/_not-found/page.js",
-  "/api/gnews/route": "app/api/gnews/route.js",
-  "/api/home-market/route": "app/api/home-market/route.js",
-  "/api/market/route": "app/api/market/route.js",
-  "/api/news/route": "app/api/news/route.js",
-  "/focus/page": "app/focus/page.js",
-  "/icon/route": "app/icon/route.js",
-  "/page": "app/page.js",
-  "/tecnologia/page": "app/tecnologia/page.js"
-}
+{}
