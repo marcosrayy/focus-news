@@ -1,3 +1,66 @@
-[00:00:03.253] Server  LOG     ✓ Ready in 2.7s
-[00:00:12.317] Server  LOG     ○ Compiling / ...
-[00:02:17.710] Server  LOG     ✓ Finished writing to filesystem cache in 10.4s
+[00:00:03.901] Server  LOG     ✓ Ready in 3s
+[00:00:12.126] Server  LOG     ○ Compiling / ...
+[00:00:19.791] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:23.232] Server  LOG     ○ Compiling /icon ...
+[00:00:29.960] Server  LOG     [API/News] Lazy triggering sync. Stale time: 58815s
+[00:00:29.963] Server  LOG     [RefreshEngine] Starting synchronization cycle...
+[00:00:29.977] Server  LOG     [RefreshEngine] Fetching fresh updates from GNews search API...
+[00:00:30.074] Server  LOG     [API/News] Lazy triggering sync. Stale time: 58815s
+[00:00:30.075] Server  WARN    [RefreshEngine] Sync is already running. Skipping overlapping run.
+[00:00:30.112] Server  LOG     [API/News] Lazy triggering sync. Stale time: 58815s
+[00:00:30.118] Server  WARN    [RefreshEngine] Sync is already running. Skipping overlapping run.
+[00:00:30.191] Server  LOG     [API/News] Lazy triggering sync. Stale time: 58815s
+[00:00:30.203] Server  WARN    [RefreshEngine] Sync is already running. Skipping overlapping run.
+[00:00:31.626] Server  LOG     [RefreshEngine] Fetching CNN Brasil technology updates from GNews search API...
+[00:00:32.217] Server  ERROR   Error fetching BTC-BRL TypeError: Cannot read properties of null (reading '0')
+[00:00:33.759] Server  LOG     [RefreshEngine] Crawling Exame Startups page directly...
+[00:00:36.249] Server  LOG     [RefreshEngine] Exame Startups crawl finished. Imported: 3
+[00:00:44.356] Server  WARN    [RefreshEngine] Feed error on Diolinux (https://diolinux.com.br/feed): Error: HTTP status 429
+[00:00:45.250] Server  WARN    [RefreshEngine] Feed error on Globo (https://g1.globo.com/rss/g1/inovacao/): Error: HTTP status 429
+[00:00:45.620] Server  WARN    [RefreshEngine] Feed error on Forbes (https://forbes.com.br/noticias-sobre/inovacao/feed/): Error: HTTP status 429
+[00:00:46.768] Server  LOG     [RefreshEngine] Sync cycle finished in 16796ms. Imported: 33, Updated: 13, Discarded: 56
+[00:01:38.900] Server  ERROR   Error fetching BTC-BRL TypeError: Cannot read properties of null (reading '0')
+[00:01:39.482] Server  ERROR   Error fetching BTC-BRL TypeError: Cannot read properties of null (reading '0')
+[00:02:27.049] Server  LOG     ✓ Finished writing to filesystem cache in 19.7s
+[00:04:18.139] Server  ERROR   Error fetching BTC-BRL TypeError: Cannot read properties of null (reading '0')
+[00:04:19.799] Server  ERROR   Error fetching BTC-BRL TypeError: Cannot read properties of null (reading '0')
+[00:05:09.656] Server  ERROR   Error fetching BTC-BRL TypeError: Cannot read properties of null (reading '0')
+[00:05:10.005] Server  ERROR   Error fetching BTC-BRL TypeError: Cannot read properties of null (reading '0')
+[00:05:43.240] Browser ERROR   ./app/globals.css
+Error evaluating Node.js code
+Error: Module [turbopack-node]/transforms/postcss.ts { CONFIG => "[project]/postcss.config.mjs [postcss] (ecmascript)" } [postcss] (ecmascript, async loader) was instantiated because it was required from module [turbopack-node]/ipc/evaluate.ts/evaluate.js { INNER => "[turbopack-node]/transforms/postcss.ts { CONFIG => \"[project]/postcss.config.mjs [postcss] (ecmascript)\" } [postcss] (ecmascript)", RUNTIME => "[turbopack-node]/ipc/evaluate.ts [postcss] (ecmascript)" } [postcss] (ecmascript), but the module factory is not available.
+    [at instantiateModule (turbopack:///[turbopack]/nodejs/runtime.ts:211:11)]
+    [at getOrInstantiateModuleFromParent (turbopack:///[turbopack]/nodejs/runtime.ts:259:10)]
+    [at Context.commonJsRequire (turbopack:///[turbopack]/shared/runtime-utils.ts:389:10)]
+    [at Context.asyncLoader (turbopack:///[turbopack]/shared/runtime-utils.ts:366:23)]
+    [at <anonymous> (turbopack:///[turbopack-node]/ipc/evaluate.ts/evaluate.js:1:36)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:75:26)]
+    [at module evaluation (turbopack:///[turbopack-node]/ipc/evaluate.ts/evaluate.js:1:35)]
+    [at instantiateModule (turbopack:///[turbopack]/nodejs/runtime.ts:226:5)]
+    [at instantiateRuntimeModule (turbopack:///[turbopack]/nodejs/runtime.ts:269:10)]
+    [at getOrInstantiateRuntimeModule (turbopack:///[turbopack]/nodejs/runtime.ts:288:10)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]
+[00:05:54.763] Server  LOG     ✓ Finished writing to filesystem cache in 10.5s
+[00:06:07.913] Server  LOG     ✓ Finished filesystem cache database compaction in 13.3s
+[00:06:09.383] Browser ERROR   ./app/globals.css
+Error evaluating Node.js code
+Error: Module [turbopack-node]/transforms/postcss.ts { CONFIG => "[project]/postcss.config.mjs [postcss] (ecmascript)" } [postcss] (ecmascript, async loader) was instantiated because it was required from module [turbopack-node]/ipc/evaluate.ts/evaluate.js { INNER => "[turbopack-node]/transforms/postcss.ts { CONFIG => \"[project]/postcss.config.mjs [postcss] (ecmascript)\" } [postcss] (ecmascript)", RUNTIME => "[turbopack-node]/ipc/evaluate.ts [postcss] (ecmascript)" } [postcss] (ecmascript), but the module factory is not available.
+    [at instantiateModule (turbopack:///[turbopack]/nodejs/runtime.ts:211:11)]
+    [at getOrInstantiateModuleFromParent (turbopack:///[turbopack]/nodejs/runtime.ts:259:10)]
+    [at Context.commonJsRequire (turbopack:///[turbopack]/shared/runtime-utils.ts:389:10)]
+    [at Context.asyncLoader (turbopack:///[turbopack]/shared/runtime-utils.ts:366:23)]
+    [at <anonymous> (turbopack:///[turbopack-node]/ipc/evaluate.ts/evaluate.js:1:36)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:75:26)]
+    [at module evaluation (turbopack:///[turbopack-node]/ipc/evaluate.ts/evaluate.js:1:35)]
+    [at instantiateModule (turbopack:///[turbopack]/nodejs/runtime.ts:226:5)]
+    [at instantiateRuntimeModule (turbopack:///[turbopack]/nodejs/runtime.ts:269:10)]
+    [at getOrInstantiateRuntimeModule (turbopack:///[turbopack]/nodejs/runtime.ts:288:10)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]

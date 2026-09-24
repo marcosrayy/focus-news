@@ -1,6 +1,22 @@
 {
-  "lastSync": "2026-09-23T23:40:07.113Z",
+  "lastSync": "2026-09-24T16:00:38.500Z",
   "syncHistory": [
+    {
+      "timestamp": "2026-09-24T16:00:38.500Z",
+      "durationMs": 16796,
+      "importedCount": 33,
+      "updatedCount": 13,
+      "discardedCount": 56,
+      "modules": [
+        "Startups",
+        "Economia",
+        "IA",
+        "Tecnologia",
+        "Dev",
+        "Inovacao",
+        "Business"
+      ]
+    },
     {
       "timestamp": "2026-09-23T23:40:07.113Z",
       "durationMs": 17813,
@@ -453,33 +469,33 @@
   "sourcesHealth": {
     "Startupi": {
       "status": "Online",
-      "lastResponseMs": 307,
-      "lastChecked": "2026-09-23T23:40:06.363Z"
+      "lastResponseMs": 393,
+      "lastChecked": "2026-09-24T16:00:37.759Z"
     },
     "InfoMoney": {
       "status": "Online",
-      "lastResponseMs": 337,
-      "lastChecked": "2026-09-23T23:40:06.705Z"
+      "lastResponseMs": 441,
+      "lastChecked": "2026-09-24T16:00:38.206Z"
     },
     "Valor": {
       "status": "Online",
-      "lastResponseMs": 455,
-      "lastChecked": "2026-09-23T23:39:59.033Z"
+      "lastResponseMs": 352,
+      "lastChecked": "2026-09-24T16:00:33.106Z"
     },
     "Canaltech": {
       "status": "Online",
-      "lastResponseMs": 550,
-      "lastChecked": "2026-09-23T23:40:00.341Z"
+      "lastResponseMs": 274,
+      "lastChecked": "2026-09-24T16:00:33.760Z"
     },
     "TechMundo": {
       "status": "Online",
-      "lastResponseMs": 365,
-      "lastChecked": "2026-09-23T23:40:03.742Z"
+      "lastResponseMs": 317,
+      "lastChecked": "2026-09-24T16:00:35.080Z"
     },
     "Diolinux": {
-      "status": "Instável",
-      "lastResponseMs": 335,
-      "lastChecked": "2026-09-23T23:40:04.775Z"
+      "status": "Offline",
+      "lastResponseMs": 367,
+      "lastChecked": "2026-09-24T16:00:36.098Z"
     },
     "Gizmodo": {
       "status": "Offline",
@@ -488,38 +504,38 @@
     },
     "GNews": {
       "status": "Online",
-      "lastResponseMs": 965,
-      "lastChecked": "2026-09-23T23:39:50.276Z"
+      "lastResponseMs": 1630,
+      "lastChecked": "2026-09-24T16:00:23.350Z"
     },
     "Tecnoblog": {
       "status": "Online",
-      "lastResponseMs": 615,
-      "lastChecked": "2026-09-23T23:40:05.395Z"
+      "lastResponseMs": 452,
+      "lastChecked": "2026-09-24T16:00:36.556Z"
     },
     "Forbes": {
       "status": "Online",
-      "lastResponseMs": 382,
-      "lastChecked": "2026-09-23T23:40:07.095Z"
+      "lastResponseMs": 275,
+      "lastChecked": "2026-09-24T16:00:38.492Z"
     },
     "Globo": {
       "status": "Instável",
-      "lastResponseMs": 317,
-      "lastChecked": "2026-09-23T23:40:05.712Z"
+      "lastResponseMs": 436,
+      "lastChecked": "2026-09-24T16:00:36.992Z"
     },
     "CNN": {
       "status": "Online",
-      "lastResponseMs": 312,
-      "lastChecked": "2026-09-23T23:40:04.436Z"
+      "lastResponseMs": 311,
+      "lastChecked": "2026-09-24T16:00:35.726Z"
     },
     "Exame": {
       "status": "Online",
-      "lastResponseMs": 1746,
-      "lastChecked": "2026-09-23T23:39:52.727Z"
+      "lastResponseMs": 2319,
+      "lastChecked": "2026-09-24T16:00:27.991Z"
     }
   },
   "stats": {
-    "imported": 279,
-    "updated": 1002,
-    "discarded": 1522
+    "imported": 312,
+    "updated": 1015,
+    "discarded": 1578
   }
 }
