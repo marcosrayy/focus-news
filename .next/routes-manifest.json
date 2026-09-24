@@ -1,0 +1,170 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/api/economia-page",
+      "regex": "^/api/economia\\-page(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/economia\\-page(?:/)?$"
+    },
+    {
+      "page": "/api/economy",
+      "regex": "^/api/economy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/economy(?:/)?$"
+    },
+    {
+      "page": "/api/gnews",
+      "regex": "^/api/gnews(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/gnews(?:/)?$"
+    },
+    {
+      "page": "/api/home-market",
+      "regex": "^/api/home\\-market(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/home\\-market(?:/)?$"
+    },
+    {
+      "page": "/api/market",
+      "regex": "^/api/market(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/market(?:/)?$"
+    },
+    {
+      "page": "/api/news",
+      "regex": "^/api/news(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/news(?:/)?$"
+    },
+    {
+      "page": "/api/news/sync",
+      "regex": "^/api/news/sync(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/news/sync(?:/)?$"
+    },
+    {
+      "page": "/apple-icon",
+      "regex": "^/apple\\-icon(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/apple\\-icon(?:/)?$"
+    },
+    {
+      "page": "/business",
+      "regex": "^/business(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/business(?:/)?$"
+    },
+    {
+      "page": "/dev",
+      "regex": "^/dev(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dev(?:/)?$"
+    },
+    {
+      "page": "/economia",
+      "regex": "^/economia(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/economia(?:/)?$"
+    },
+    {
+      "page": "/focus",
+      "regex": "^/focus(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/focus(?:/)?$"
+    },
+    {
+      "page": "/ia",
+      "regex": "^/ia(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ia(?:/)?$"
+    },
+    {
+      "page": "/icon",
+      "regex": "^/icon(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/icon(?:/)?$"
+    },
+    {
+      "page": "/inovacao",
+      "regex": "^/inovacao(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/inovacao(?:/)?$"
+    },
+    {
+      "page": "/startups",
+      "regex": "^/startups(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/startups(?:/)?$"
+    },
+    {
+      "page": "/tecnologia",
+      "regex": "^/tecnologia(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tecnologia(?:/)?$"
+    },
+    {
+      "page": "/trade",
+      "regex": "^/trade(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/trade(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

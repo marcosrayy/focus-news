@@ -38,18 +38,15 @@ export default function BusinessPage() {
         <HeroBusiness />
 
         {/* Main Content + Sidebar */}
-        <div className="mt-4 flex flex-col gap-4 lg:flex-row">
-          <div className="lg:w-[68%]">
+        <div className="mt-4">
+          <div>
             <div className="mb-4 flex items-center gap-2">
               <div className="h-5 w-1 rounded-full bg-amber-500" />
               <h2 className="font-heading text-sm font-bold tracking-wider text-foreground">
                 ESTRATEGIAS DE CRESCIMENTO
               </h2>
             </div>
-            <GrowthStrategies />
-          </div>
-          <div className="lg:w-[32%]">
-            <BusinessSidebar />
+            <GrowthStrategies sidebar={<BusinessSidebar />} />
           </div>
         </div>
       </main>

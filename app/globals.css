@@ -217,6 +217,32 @@ img {
   }
 }
 
+@keyframes market-sparkline-draw {
+  from {
+    stroke-dashoffset: 420;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes market-sparkline-pulse {
+  0%, 100% {
+    opacity: 0.82;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.market-sparkline-line {
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
+  animation:
+    market-sparkline-draw 1.6s ease-out forwards,
+    market-sparkline-pulse 4s ease-in-out 1.6s infinite;
+}
+
 .animate-ticker {
   animation: ticker-scroll 30s linear infinite;
 }

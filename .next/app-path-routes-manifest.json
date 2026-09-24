@@ -1,0 +1,23 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/economia-page/route": "/api/economia-page",
+  "/api/economy/route": "/api/economy",
+  "/api/gnews/route": "/api/gnews",
+  "/api/home-market/route": "/api/home-market",
+  "/api/market/route": "/api/market",
+  "/api/news/route": "/api/news",
+  "/api/news/sync/route": "/api/news/sync",
+  "/apple-icon/route": "/apple-icon",
+  "/business/page": "/business",
+  "/dev/page": "/dev",
+  "/economia/page": "/economia",
+  "/focus/page": "/focus",
+  "/ia/page": "/ia",
+  "/icon/route": "/icon",
+  "/inovacao/page": "/inovacao",
+  "/page": "/",
+  "/startups/page": "/startups",
+  "/tecnologia/page": "/tecnologia",
+  "/trade/page": "/trade"
+}

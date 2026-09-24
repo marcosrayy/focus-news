@@ -52,24 +52,23 @@ export default function EconomiaPage() {
           <StockScoreboards />
         </div>
 
-        {/* Summary Cards */}
-        <div className="mt-4">
+        {/* Summary Cards + Explore */}
+        <div className="mt-4 grid items-stretch gap-4 lg:grid-cols-[minmax(0,3fr)_minmax(240px,1fr)]">
           <MarketSummaryCards />
-        </div>
-
-        {/* Main Content + Sidebar */}
-        <div className="mt-4 flex flex-col gap-4 lg:flex-row">
-          {/* Left Content */}
-          <div className="flex flex-col gap-4 lg:w-[68%]">
-            <MarketCharts />
-            <SectorHeatmap />
-            <CryptoPerformance />
-          </div>
-
-          {/* Right Sidebar */}
-          <div className="lg:w-[32%]">
+          <div className="self-center">
             <EconomySidebar />
           </div>
+        </div>
+
+        {/* Main Chart */}
+        <div className="mt-4">
+          <MarketCharts />
+        </div>
+
+        {/* Full-width market sections */}
+        <div className="mt-4 flex flex-col gap-4">
+          <SectorHeatmap />
+          <CryptoPerformance />
         </div>
       </main>
     </div>

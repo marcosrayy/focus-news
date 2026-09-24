@@ -1,0 +1,79 @@
+"use client";
+
+import { useState } from "react";
+import { Bookmark } from "lucide-react";
+import { NewsArticle } from "@/types/news";
+import { Skeleton } from "@/components/ui/skeleton";
+
+export function HeroArticle({ article, isLoading }: { article?: NewsArticle, isLoading?: boolean }) {
+  const [imgError, setImgError] = useState(false);
+
+  if (isLoading) {
+    return (
+      <article className="group relative overflow-hidden rounded-2xl h-full">
+        <div className="relative aspect-[3/1] w-full bg-secondary/50 animate-pulse">
+          <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6">
+            <div className="h-4 w-16 bg-muted rounded mb-2"></div>
+            <div className="h-10 w-3/4 bg-muted rounded mb-3"></div>
+            <div className="h-4 w-1/2 bg-muted rounded"></div>
+          </div>
+        </div>
+      </article>
+    );
+  }
+
+  const displayArticle = article || {
+    title: "A Revolucao dos Semicondutores",
+    description: "Buscando as ultimas noticias para voce. Se demorar, o servico pode estar em manutencao.",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2000",
+    category: "TECNOLOGIA",
+    source: "FOCUS NEWS",
+    url: "#"
+  };
+
+  return (
+    <article 
+      className="group relative h-full overflow-hidden rounded-2xl border border-border/60 shadow-card transition-shadow duration-500 hover:shadow-card-hover cursor-pointer"
+      onClick={() => displayArticle.url !== "#" && window.open(displayArticle.url, "_blank")}
+    >
+      <div className="relative aspect-[3/1] w-full">
+        <img
+          src={imgError ? "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=2000" : displayArticle.image || "/news-focus.jpg"}
+          alt={displayArticle.title}
+          onError={() => setImgError(true)}
+          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/75 to-background/5" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-transparent to-transparent" />
+
+        <div className="absolute left-4 top-4 flex items-center gap-2 lg:left-6 lg:top-6">
+          <span className="rounded-full bg-primary px-4 py-1.5 text-xs font-bold tracking-wider text-primary-foreground uppercase shadow-glow-sm">
+            {displayArticle.category || "DESTAQUE TECH"}
+          </span>
+          <button 
+            onClick={(e) => e.stopPropagation()}
+            className="flex items-center gap-1.5 rounded-full border border-foreground/30 bg-background/30 px-3 py-1.5 text-xs font-medium text-foreground backdrop-blur-md transition-all duration-300 hover:border-primary hover:text-primary"
+          >
+            <Bookmark className="h-3.5 w-3.5" />
+            ARQUIVAR
+          </button>
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-7">
+          <span className="mb-2 inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-primary uppercase">
+            <span className="h-px w-5 bg-primary" />
+            {displayArticle.source}
+          </span>
+          <h2 className="font-heading text-2xl font-bold leading-[1.1] tracking-tight text-foreground lg:text-4xl xl:text-5xl">
+            <span className="text-balance">
+              {displayArticle.title}
+            </span>
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground lg:text-base line-clamp-2">
+            {displayArticle.description}
+          </p>
+        </div>
+      </div>
+    </article>
+  );
+}

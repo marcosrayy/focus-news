@@ -48,15 +48,26 @@ function formatVolume(vol: number): string {
 
 async function fetchQuote(symbol: string) {
   try {
-    const res = await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?interval=1d&range=1d`, {
+    const res = await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?interval=5m&range=1d`, {
       next: { revalidate: 60 },
     });
     const data = await res.json();
-    const meta = data.chart.result[0].meta;
+    const result = data.chart.result?.[0];
+    if (!result) return null;
+
+    const meta = result.meta;
     const price = meta.regularMarketPrice;
     const previousClose = meta.chartPreviousClose;
     const changePercent = ((price - previousClose) / previousClose) * 100;
-    return { price, changePercent, volume: meta.regularMarketVolume || 0 };
+    const closes = result.indicators?.quote?.[0]?.close ?? [];
+    const sparkline = closes.filter((value: number | null): value is number => value !== null);
+
+    return {
+      price,
+      changePercent,
+      volume: meta.regularMarketVolume || 0,
+      sparkline: sparkline.length > 1 ? sparkline : [previousClose, price],
+    };
   } catch (err) {
     console.error("Failed to fetch", symbol);
     return null;
@@ -87,6 +98,7 @@ export async function GET() {
             changeNum: data.changePercent,
             changeStr: `${data.changePercent >= 0 ? "+" : ""}${data.changePercent.toFixed(2)}%`,
             volumeStr: formatVolume(data.volume),
+            sparkline: data.sparkline,
           };
         })
       );

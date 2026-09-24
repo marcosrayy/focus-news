@@ -1,0 +1,23 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/economia-page/route": "app/api/economia-page/route.js",
+  "/api/economy/route": "app/api/economy/route.js",
+  "/api/gnews/route": "app/api/gnews/route.js",
+  "/api/home-market/route": "app/api/home-market/route.js",
+  "/api/market/route": "app/api/market/route.js",
+  "/api/news/route": "app/api/news/route.js",
+  "/api/news/sync/route": "app/api/news/sync/route.js",
+  "/apple-icon/route": "app/apple-icon/route.js",
+  "/business/page": "app/business/page.js",
+  "/dev/page": "app/dev/page.js",
+  "/economia/page": "app/economia/page.js",
+  "/focus/page": "app/focus/page.js",
+  "/ia/page": "app/ia/page.js",
+  "/icon/route": "app/icon/route.js",
+  "/inovacao/page": "app/inovacao/page.js",
+  "/page": "app/page.js",
+  "/startups/page": "app/startups/page.js",
+  "/tecnologia/page": "app/tecnologia/page.js",
+  "/trade/page": "app/trade/page.js"
+}
