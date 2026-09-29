@@ -1,36 +1,45 @@
 import Link from "next/link";
-import { Instagram, Linkedin, Github, MessageCircle, Twitter, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react";
+import type { SVGProps } from "react";
+import { Instagram, Linkedin, Github, MessageCircle, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react";
+
+function XSocialIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.637 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932Zm-1.29 19.493h2.039L6.486 3.24H4.298Z" />
+    </svg>
+  );
+}
 
 const serviceLinks = [
-  "Desenvolvimento de Sistemas",
-  "Softwares Personalizados",
-  "Aplicativos Mobile e Desktop",
-  "Dashboards Inteligentes",
-  "Assistentes com IA",
+  { label: "Desenvolvimento de Sistemas", href: "https://www.focustecnologias.com.br/#services" },
+  { label: "Softwares Personalizados", href: "https://www.focustecnologias.com.br/#services" },
+  { label: "Aplicativos Mobile e Desktop", href: "https://www.focustecnologias.com.br/#services" },
+  { label: "Dashboards Inteligentes", href: "https://www.focustecnologias.com.br/#services" },
+  { label: "Assistentes com IA", href: "https://www.focustecnologias.com.br/#services" },
 ];
 
 const companyLinks = [
-  "Sobre nós",
-  "Como trabalhamos",
-  "Cases",
-  "Carreiras",
-  "Contato",
+  { label: "Sobre nós", href: "https://www.focustecnologias.com.br/#about" },
+  { label: "Como trabalhamos", href: "https://www.focustecnologias.com.br/#process" },
+  { label: "Cases", href: "https://www.focustecnologias.com.br/#testimonials" },
+  { label: "Carreiras", href: "https://www.focustecnologias.com.br/#careers" },
+  { label: "Contato", href: "https://api.whatsapp.com/send/?phone=558586674561&text&type=phone_number&app_absent=0" },
 ];
 
 const resourceLinks = [
-  "Blog",
-  "Materiais gratuitos",
-  "Documentação",
-  "FAQ",
-  "Suporte",
+  { label: "Blog", href: "https://focus-techblog.vercel.app/" },
+  { label: "Materiais gratuitos", href: "https://www.focustecnologias.com.br/#services" },
+  { label: "Documentação", href: "https://www.focustecnologias.com.br/#process" },
+  { label: "FAQ", href: "https://www.focustecnologias.com.br/#testimonials" },
+  { label: "Suporte", href: "https://api.whatsapp.com/send/?phone=558586674561&text&type=phone_number&app_absent=0" },
 ];
 
 const socialLinks = [
-  { icon: Instagram, label: "Instagram", href: "#" },
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: MessageCircle, label: "Chat", href: "#" },
-  { icon: Twitter, label: "X", href: "#" },
-  { icon: Github, label: "GitHub", href: "#" },
+  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/focustech.co/" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/focustech/" },
+  { icon: MessageCircle, label: "E-mail", href: "mailto:contato@focustecnologia.com" },
+  { icon: XSocialIcon, label: "X", href: "https://twitter.com/focustech" },
+  { icon: Github, label: "GitHub", href: "https://github.com/focustech" },
 ];
 
 export function Footer() {
@@ -41,23 +50,7 @@ export function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-1 text-xl font-extrabold tracking-tight text-foreground">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="28"
-                height="28"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#FF5A00"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-                className="h-7 w-7"
-              >
-                <rect x="8" y="2" width="8" height="13" rx="4" />
-                <path d="M4 10v2a8 8 0 0 0 8 8v3" />
-                <path d="M20 10v2a8 8 0 0 1-5.5 7.6" />
-              </svg>
+              <img src="/icon" alt="" className="h-8 w-8 shrink-0" />
               FOCUS<sup className="ml-0.5 text-[10px] font-semibold text-muted-foreground">®</sup>
             </div>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
@@ -72,6 +65,8 @@ export function Footer() {
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary hover:text-primary"
                 >
@@ -84,10 +79,12 @@ export function Footer() {
           {/* Serviços */}
           <div className="flex flex-col gap-3">
             <h3 className="font-heading text-sm font-bold text-foreground">Serviços</h3>
-            {serviceLinks.map((label) => (
+            {serviceLinks.map(({ label, href }) => (
               <a
                 key={label}
-                href="#servicos"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm text-muted-foreground transition-colors duration-300 hover:text-primary"
               >
                 {label}
@@ -98,10 +95,12 @@ export function Footer() {
           {/* Empresa */}
           <div className="flex flex-col gap-3">
             <h3 className="font-heading text-sm font-bold text-foreground">Empresa</h3>
-            {companyLinks.map((label) => (
+            {companyLinks.map(({ label, href }) => (
               <a
                 key={label}
-                href="#empresa"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm text-muted-foreground transition-colors duration-300 hover:text-primary"
               >
                 {label}
@@ -112,10 +111,12 @@ export function Footer() {
           {/* Recursos */}
           <div className="flex flex-col gap-3">
             <h3 className="font-heading text-sm font-bold text-foreground">Recursos</h3>
-            {resourceLinks.map((label) => (
+            {resourceLinks.map(({ label, href }) => (
               <a
                 key={label}
-                href="#recursos"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm text-muted-foreground transition-colors duration-300 hover:text-primary"
               >
                 {label}
@@ -141,7 +142,9 @@ export function Footer() {
               <span className="text-muted-foreground">Seg a Sex, 9h às 18h</span>
             </p>
             <a
-              href="#contato"
+              href="https://api.whatsapp.com/send/?phone=558586674561&text&type=phone_number&app_absent=0"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-2 flex w-fit items-center gap-1.5 rounded-full bg-primary px-4 py-2.5 text-xs font-bold text-primary-foreground shadow-glow-sm transition-transform duration-300 hover:-translate-y-0.5"
             >
               Falar com especialista
