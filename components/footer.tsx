@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Instagram, Linkedin, Github, MessageCircle, Twitter, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react";
 
 const serviceLinks = [
@@ -42,7 +41,23 @@ export function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-1 text-xl font-extrabold tracking-tight text-foreground">
-              <Image src="/focus-microphone.svg" alt="" aria-hidden="true" width={28} height={28} className="h-7 w-7 object-contain" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#FF5A00"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+                className="h-7 w-7"
+              >
+                <rect x="8" y="2" width="8" height="13" rx="4" />
+                <path d="M4 10v2a8 8 0 0 0 8 8v3" />
+                <path d="M20 10v2a8 8 0 0 1-5.5 7.6" />
+              </svg>
               FOCUS<sup className="ml-0.5 text-[10px] font-semibold text-muted-foreground">®</sup>
             </div>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">

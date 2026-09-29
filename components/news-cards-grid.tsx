@@ -4,7 +4,7 @@ import { Bookmark, Clock, MessageSquare } from "lucide-react";
 import { NewsArticle } from "@/types/news";
 import { formatRelativeTime } from "@/lib/news-service"; // Reusing existing helper or I can inline it
 import { useNewsRotation } from "@/hooks/use-news-rotation";
-import { NewsSectionLayout } from "@/components/news-section-layout";
+import { FeaturedNewsCarousel, NewsSectionLayout } from "@/components/news-section-layout";
 import type { ReactNode } from "react";
 
 // Helper to assign a random or fixed color per category
@@ -32,30 +32,28 @@ export function NewsCardsGrid({
       <NewsSectionLayout
         sidebar={sidebar}
         featured={
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {featuredArticles.map((article) => (
-            <FeaturedCard
-              key={article.id}
-              article={article}
-              onClick={() => window.open(article.url, "_blank")}
-            />
-          ))}
-          </div>
+          <FeaturedNewsCarousel label="Últimas notícias em destaque">
+            {featuredArticles.map((article) => (
+                <FeaturedCard
+                  key={article.id}
+                  article={article}
+                  onClick={() => window.open(article.url, "_blank")}
+                />
+            ))}
+          </FeaturedNewsCarousel>
         }
         list={
-          <div className="flex flex-col gap-3">
-          <h2 className="flex items-center gap-2.5 font-heading text-sm font-bold tracking-wider text-foreground">
-            <span className="h-5 w-1 rounded-full bg-primary shadow-glow-sm" />
-            MAIS NOTÍCIAS
-          </h2>
-          {remainingArticles.map((article) => (
-            <CompactCard
-              key={article.id}
-              article={article}
-              onClick={() => window.open(article.url, "_blank")}
-            />
-          ))}
-          </div>
+          remainingArticles.length > 0 ? (
+            <div className="flex flex-col gap-3">
+              {remainingArticles.map((article) => (
+                <CompactCard
+                  key={article.id}
+                  article={article}
+                  onClick={() => window.open(article.url, "_blank")}
+                />
+              ))}
+            </div>
+          ) : null
         }
       />
     );
@@ -65,26 +63,28 @@ export function NewsCardsGrid({
     <NewsSectionLayout
       sidebar={sidebar}
       featured={
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        {featuredArticles.map((article) => (
-          <FeaturedCard 
-            key={article.id} 
-            article={article} 
-            onClick={() => window.open(article.url, "_blank")} 
-          />
-        ))}
-        </div>
+        <FeaturedNewsCarousel>
+          {featuredArticles.map((article) => (
+            <FeaturedCard
+              key={article.id}
+              article={article}
+              onClick={() => window.open(article.url, "_blank")}
+            />
+          ))}
+        </FeaturedNewsCarousel>
       }
       list={
-        <div className="flex flex-col gap-3">
-        {remainingArticles.map((article) => (
-          <CompactCard 
-            key={article.id} 
-            article={article} 
-            onClick={() => window.open(article.url, "_blank")} 
-          />
-        ))}
-        </div>
+        remainingArticles.length > 0 ? (
+          <div className="flex flex-col gap-3">
+            {remainingArticles.map((article) => (
+              <CompactCard
+                key={article.id}
+                article={article}
+                onClick={() => window.open(article.url, "_blank")}
+              />
+            ))}
+          </div>
+        ) : null
       }
     />
   );

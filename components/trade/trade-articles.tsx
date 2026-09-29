@@ -4,7 +4,7 @@ import { Clock, MessageSquare, TrendingUp, TrendingDown } from "lucide-react";
 import { useNews } from "@/hooks/useNews";
 import { formatRelativeTime } from "@/lib/news-service";
 import { useNewsRotation } from "@/hooks/use-news-rotation";
-import { NewsSectionLayout } from "@/components/news-section-layout";
+import { FeaturedNewsCarousel, NewsSectionLayout } from "@/components/news-section-layout";
 import type { ReactNode } from "react";
 
 export function TradeArticles({ sidebar }: { sidebar?: ReactNode }) {
@@ -28,19 +28,19 @@ export function TradeArticles({ sidebar }: { sidebar?: ReactNode }) {
       <NewsSectionLayout
         sidebar={sidebar}
         featured={
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {featuredArticles.map((article) => (
-            <FeaturedTradeCard key={article.id} article={article} onClick={() => window.open(article.url, "_blank")} />
-          ))}
-          </div>
+          <FeaturedNewsCarousel label="Notícias de mercado em destaque">
+            {featuredArticles.map((article) => (
+              <FeaturedTradeCard key={article.id} article={article} onClick={() => window.open(article.url, "_blank")} />
+            ))}
+          </FeaturedNewsCarousel>
         }
-        list={
+        list={remainingArticles.length > 0 ? (
           <div className="flex flex-col gap-3">
           {remainingArticles.slice(0, 9).map((article) => (
             <CompactTradeCard key={article.id} article={article} onClick={() => window.open(article.url, "_blank")} />
           ))}
           </div>
-        }
+        ) : null}
       />
     </>
   );

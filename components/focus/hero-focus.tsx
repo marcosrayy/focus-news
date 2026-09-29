@@ -11,7 +11,7 @@ const heroSlides = [
     title: "Focus presente no TEDx Fortaleza 2026",
     description:
       "A Focus marcou presenca no TEDx Fortaleza com uma palestra sobre o futuro da automacao inteligente e o impacto da IA no ecossistema de startups brasileiro.",
-    cta: "Ver Cobertura Completa",
+    cta: "Saiba Mais",
   },
   {
     image: "/focus-event-1.jpg",
@@ -29,7 +29,7 @@ const heroSlides = [
     title: "Focus Academy forma 500 profissionais em IA Generativa",
     description:
       "O programa intensivo de 12 semanas capacitou profissionais de 120 empresas em ferramentas de IA generativa aplicadas ao mercado corporativo brasileiro.",
-    cta: "Conhecer o Programa",
+    cta: "Saiba Mais",
   },
   {
     image: "/focus-gallery-3.jpg",
@@ -38,7 +38,7 @@ const heroSlides = [
     title: "Focus fecha parceria estrategica com Microsoft para Startups",
     description:
       "Acordo garante acesso a creditos Azure, mentoria tecnica e go-to-market para as startups aceleradas pelo programa Focus Ventures.",
-    cta: "Detalhes da Parceria",
+    cta: "Saiba Mais",
   },
 ];
 
@@ -95,7 +95,7 @@ export function HeroFocus() {
         <div className="absolute left-4 top-4 flex items-center gap-2 lg:left-8 lg:top-8">
           <span
             key={current}
-            className="animate-in fade-in slide-in-from-left-2 rounded-lg bg-primary px-4 py-1.5 text-xs font-bold tracking-wider text-primary-foreground shadow-lg shadow-primary/30 duration-500"
+            className="animate-in fade-in slide-in-from-left-2 rounded-md bg-primary px-2.5 py-1 text-[9px] font-bold tracking-[0.1em] text-primary-foreground shadow-lg shadow-primary/30 duration-500 sm:rounded-lg sm:px-4 sm:py-1.5 sm:text-xs sm:tracking-wider"
           >
             {slide.badge}
           </span>
@@ -107,8 +107,8 @@ export function HeroFocus() {
           aria-label="Noticia anterior"
           className="group/nav absolute left-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-foreground opacity-100 transition-all duration-300 sm:opacity-0 sm:group-hover:opacity-100 lg:left-4"
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-full border border-border/40 bg-background/70 backdrop-blur-sm transition-colors group-hover/nav:bg-primary group-hover/nav:text-primary-foreground">
-            <ChevronLeft className="h-4 w-4" />
+          <span className="flex h-7 w-7 items-center justify-center rounded-full border border-border/40 bg-background/70 backdrop-blur-sm transition-colors group-hover/nav:bg-primary group-hover/nav:text-primary-foreground">
+            <ChevronLeft className="h-3.5 w-3.5" />
           </span>
         </button>
         <button
@@ -116,8 +116,8 @@ export function HeroFocus() {
           aria-label="Proxima noticia"
           className="group/nav absolute right-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-foreground opacity-100 transition-all duration-300 sm:opacity-0 sm:group-hover:opacity-100 lg:right-4"
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-full border border-border/40 bg-background/70 backdrop-blur-sm transition-colors group-hover/nav:bg-primary group-hover/nav:text-primary-foreground">
-            <ChevronRight className="h-4 w-4" />
+          <span className="flex h-7 w-7 items-center justify-center rounded-full border border-border/40 bg-background/70 backdrop-blur-sm transition-colors group-hover/nav:bg-primary group-hover/nav:text-primary-foreground">
+            <ChevronRight className="h-3.5 w-3.5" />
           </span>
         </button>
 
@@ -142,10 +142,10 @@ export function HeroFocus() {
             {slide.description}
           </p>
           <div className="mt-3 flex flex-wrap items-center gap-2 sm:mt-4 sm:gap-4">
-            <button className="flex min-h-11 items-center rounded-lg px-0 py-0 text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:rounded-xl sm:bg-primary sm:px-6 sm:py-3 sm:text-sm sm:hover:shadow-lg sm:hover:shadow-primary/30">
-              <span className="pointer-events-none inline-flex h-9 items-center gap-1.5 rounded-lg bg-primary px-3 text-[11px] font-semibold transition-colors hover:bg-primary/90 sm:h-auto sm:gap-2 sm:rounded-none sm:px-0 sm:text-sm sm:font-bold sm:hover:bg-transparent">
+            <button className="flex min-h-11 w-24 items-center justify-center rounded-lg px-0 py-0 text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:w-auto sm:rounded-xl sm:bg-primary sm:px-6 sm:py-3 sm:text-sm sm:hover:shadow-lg sm:hover:shadow-primary/30">
+              <span className="pointer-events-none inline-flex h-8 w-24 items-center justify-center gap-1 rounded-lg bg-primary px-2.5 text-[10px] font-semibold transition-colors hover:bg-primary/90 sm:h-auto sm:w-auto sm:gap-2 sm:rounded-none sm:px-0 sm:text-sm sm:font-bold sm:hover:bg-transparent">
                 {slide.cta}
-                <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
               </span>
             </button>
 

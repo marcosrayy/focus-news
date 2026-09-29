@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { ExternalLink, Clock, RefreshCw, AlertCircle } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { FeaturedNewsCarousel } from "@/components/news-section-layout";
 
 interface Article {
   title: string;
@@ -72,9 +73,7 @@ function NewsCard({
       href={article.url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group relative overflow-hidden rounded-xl border border-border/50 bg-card transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 ${
-        featured ? "col-span-full lg:col-span-2 lg:row-span-2" : ""
-      }`}
+      className="group relative overflow-hidden rounded-xl border border-border/50 bg-card transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
     >
       {/* Image */}
       <div
@@ -243,7 +242,11 @@ export function FocusNews() {
 
       {/* News Grid */}
       {!loading && articles.length > 0 && (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <FeaturedNewsCarousel
+          label="Focus News"
+          gridClassName="sm:grid-cols-2 lg:grid-cols-3"
+          slideClassName={(index) => index === 0 ? "sm:col-span-full lg:col-span-2 lg:row-span-2" : ""}
+        >
           {articles.map((article, index) => (
             <NewsCard
               key={article.url || index}
@@ -251,7 +254,7 @@ export function FocusNews() {
               featured={index === 0}
             />
           ))}
-        </div>
+        </FeaturedNewsCarousel>
       )}
     </section>
   );

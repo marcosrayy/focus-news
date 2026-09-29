@@ -156,6 +156,10 @@ body {
     font-size: 15px;
   }
 
+  main > * + * {
+    margin-top: 3rem !important;
+  }
+
   h1,
   h2,
   h3,
