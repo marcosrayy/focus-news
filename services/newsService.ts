@@ -354,6 +354,11 @@ const PROHIBITED_TERMS = [
 ];
 
 const DEV_PROHIBITED_TERMS = ["gta", "rockstar", "videogame", "videogames", "gameplay"];
+const ENTERTAINMENT_TERMS = [
+  "filme", "filmes", "cinema", "game of thrones", "aegon", "targaryen", "hbo",
+  "ator", "atores", "atriz", "atrizes", "elenco", "trailer", "longa-metragem"
+];
+const ENTERTAINMENT_URL_SECTIONS = ["/pop/", "/cinema/", "/entretenimento/", "/celebridades/", "/filmes/", "/series/"];
 
 // Helper para normalizar strings (remove acentos e caixa alta)
 function normalizeText(text: string): string {
@@ -385,9 +390,16 @@ function countMatches(text: string, keywords: string[]): number {
   return count;
 }
 
-export function hasCategoryEvidence(title: string, description: string, category: string): boolean {
+export function isEntertainmentArticle(title: string, description: string, url = ""): boolean {
+  if (countMatches(`${title} ${description}`, ENTERTAINMENT_TERMS) > 0) return true;
+  const normalizedUrl = normalizeText(url).toLowerCase();
+  return ENTERTAINMENT_URL_SECTIONS.some(section => normalizedUrl.includes(section));
+}
+
+export function hasCategoryEvidence(title: string, description: string, category: string, url = ""): boolean {
   const keywords = MODULE_KEYWORDS[category as keyof typeof MODULE_KEYWORDS];
   if (!keywords) return false;
+  if (isEntertainmentArticle(title, description, url)) return false;
   const text = `${title} ${description}`;
   if (category === "Dev" && countMatches(text, DEV_PROHIBITED_TERMS) > 0) return false;
   return countMatches(text, keywords) > 0;
@@ -529,11 +541,12 @@ function classifyArticleBySourceAndKeywords(title: string, description: string, 
   return { category: "Rejeitado", score: 0 };
 }
 
-export function classifyArticle(title: string, description: string, source: string): { category: string; score: number } {
+export function classifyArticle(title: string, description: string, source: string, url = ""): { category: string; score: number } {
+  if (isEntertainmentArticle(title, description, url)) return { category: "Rejeitado", score: 0 };
   const classification = classifyArticleBySourceAndKeywords(title, description, source);
   if (classification.category === "Rejeitado") return classification;
 
-  if (!hasCategoryEvidence(title, description, classification.category)) {
+  if (!hasCategoryEvidence(title, description, classification.category, url)) {
     return { category: "Rejeitado", score: 0 };
   }
 
@@ -615,7 +628,7 @@ export async function fetchNewsBackend({
             if (!isSourceAllowed(sourceName, targetCategory)) continue;
 
             // Validação 2: Classificação e Score Semântico
-            const classification = classifyArticle(title, description, sourceName);
+            const classification = classifyArticle(title, description, sourceName, item.url);
             let articleCategory = classification.category;
             if (targetCategory === "Startups" && sourceName.toLowerCase().includes("startupi") && (articleCategory === "Startups" || articleCategory === "Business")) {
               articleCategory = "Startups";
@@ -720,7 +733,7 @@ export async function fetchNewsBackend({
           feedSource = "TabNews";
         }
 
-        const classification = classifyArticle(title, cleanDesc, feedSource);
+            const classification = classifyArticle(title, cleanDesc, feedSource, item.link);
 
         // Validação 2 no Fallback RSS
         let articleCategory = classification.category;

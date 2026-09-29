@@ -104,7 +104,7 @@ export async function GET(request: Request) {
     }
 
     filtered = filtered.filter(art =>
-      hasCategoryEvidence(art.title, art.description, targetCategory === "Home" ? art.category : targetCategory)
+      hasCategoryEvidence(art.title, art.description, targetCategory === "Home" ? art.category : targetCategory, art.url)
     );
 
     if (shouldMatchQuery) filtered = filtered.filter(matchesQuery);

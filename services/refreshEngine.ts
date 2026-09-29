@@ -172,7 +172,7 @@ export const RefreshEngine = {
               const title = repairMojibake(item.title || "");
               const cleanDesc = repairMojibake(item.description || "");
               const sourceLabel = item.source?.name || "GNews";
-              const classification = classifyArticle(title, cleanDesc, sourceLabel);
+              const classification = classifyArticle(title, cleanDesc, sourceLabel, articleUrl);
               const articleCategory = classification.category;
               
               if (articleCategory === "Rejeitado") continue;
@@ -264,7 +264,7 @@ export const RefreshEngine = {
               const title = repairMojibake(item.title || "");
               const cleanDesc = repairMojibake(item.description || "");
               const sourceLabel = "CNN";
-              const classification = classifyArticle(title, cleanDesc, sourceLabel);
+              const classification = classifyArticle(title, cleanDesc, sourceLabel, articleUrl);
               const articleCategory = classification.category;
               
               if (articleCategory === "Rejeitado") continue;
@@ -477,7 +477,7 @@ export const RefreshEngine = {
             cleanDesc = cleanDesc.trim().slice(0, 150) + '...';
 
             // Run classification
-            const classification = classifyArticle(title, cleanDesc, sourceName);
+            const classification = classifyArticle(title, cleanDesc, sourceName, articleUrl);
             let articleCategory = classification.category;
 
             // Apply Startups / Business mapping override as per request
