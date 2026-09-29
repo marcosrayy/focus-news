@@ -1,6 +1,5 @@
 "use client";
 
-import { ChevronDown } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -9,8 +8,8 @@ const navItems = [
   { label: "FOCUS", href: "/focus", special: true },
   { label: "TECNOLOGIA", href: "/tecnologia" },
   { label: "DEV", href: "/dev" },
-  { label: "STARTUPS", href: "/startups", hasDropdown: true },
-  { label: "ECONOMIA", href: "/economia", hasDropdown: true },
+  { label: "STARTUPS", href: "/startups" },
+  { label: "ECONOMIA", href: "/economia" },
   { label: "IA", href: "/ia" },
   { label: "BUSINESS", href: "/business" },
 ];
@@ -40,7 +39,9 @@ export function Navigation() {
                     : "text-muted-foreground hover:text-primary"
               }`}
             >
-              <span className={`rounded-full px-2.5 py-1 transition-colors duration-300 ${isActive ? "bg-primary/10" : "group-hover:bg-secondary/70"}`}>
+              <span
+                className={`rounded-full px-2.5 py-1 transition-colors duration-300 ${isActive ? "bg-primary/10" : "group-hover:bg-secondary/70"}`}
+              >
                 {item.label}
               </span>
               {item.special && (
@@ -49,14 +50,9 @@ export function Navigation() {
                   <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
                 </span>
               )}
-              {item.hasDropdown && (
-                <ChevronDown className="h-3 w-3" />
-              )}
               <span
                 className={`absolute bottom-0 left-1/2 h-0.5 -translate-x-1/2 bg-primary transition-all duration-300 ${
-                  isActive
-                    ? "w-6"
-                    : "w-0 group-hover:w-6"
+                  isActive ? "w-6" : "w-0 group-hover:w-6"
                 }`}
               />
             </Link>
