@@ -5,7 +5,7 @@ import { useNews } from "@/hooks/useNews";
 import { Clock, MessageSquare } from "lucide-react";
 import { ArticleModal, type ArticleModalData } from "@/components/article-modal";
 import { useNewsRotation } from "@/hooks/use-news-rotation";
-import { NewsSectionLayout } from "@/components/news-section-layout";
+import { FeaturedNewsCarousel, NewsSectionLayout } from "@/components/news-section-layout";
 import type { ReactNode } from "react";
 
 interface BusinessArticle {
@@ -56,19 +56,19 @@ export function GrowthStrategies({ sidebar }: { sidebar?: ReactNode }) {
       <NewsSectionLayout
         sidebar={sidebar}
         featured={
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {featuredArticles.map((article) => (
-            <FeaturedBusinessCard key={article.id} article={article} onClick={() => article.url ? window.open(article.url, "_blank") : setSelected(article)} />
-          ))}
-          </div>
+          <FeaturedNewsCarousel label="Notícias de negócios em destaque">
+            {featuredArticles.map((article) => (
+              <FeaturedBusinessCard key={article.id} article={article} onClick={() => article.url ? window.open(article.url, "_blank") : setSelected(article)} />
+            ))}
+          </FeaturedNewsCarousel>
         }
-        list={
+        list={remainingArticles.length > 0 ? (
           <div className="flex flex-col gap-3">
           {remainingArticles.map((article) => (
             <CompactBusinessCard key={article.id} article={article} onClick={() => article.url ? window.open(article.url, "_blank") : setSelected(article)} />
           ))}
           </div>
-        }
+        ) : null}
       />
       <ArticleModal article={selected} open={!!selected} onOpenChange={(o) => !o && setSelected(null)} />
     </>

@@ -3561,6 +3561,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/startup-mira-r-35-milhoes-ao-transformar-a-carga-mental-das-mulheres-em-produto/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Aline-Santiago-Liv-for-Her.jpeg",
+<<<<<<< HEAD
     "publishedAt": "2026-09-29T16:36:30.793Z",
     "source": "Exame",
     "category": "Startups",
@@ -3568,6 +3569,15 @@
     "importedAt": "2026-09-29T16:36:30.793Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T16:36:30.793Z"
+=======
+    "publishedAt": "2026-09-29T16:21:29.533Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-09-29T16:21:29.534Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T16:21:29.533Z"
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
   },
   {
     "id": "https://exame.com/negocios/com-ia-marca-que-fazia-r-25-mi-com-carteiras-de-papel-renasce-como-laboratorio-de-tecnologia/",
@@ -3575,6 +3585,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/com-ia-marca-que-fazia-r-25-mi-com-carteiras-de-papel-renasce-como-laboratorio-de-tecnologia/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Nova-imagem-23.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-09-29T16:36:30.794Z",
     "source": "Exame",
     "category": "Startups",
@@ -3582,6 +3593,15 @@
     "importedAt": "2026-09-29T16:36:30.794Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T16:36:30.794Z"
+=======
+    "publishedAt": "2026-09-29T16:21:29.534Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-09-29T16:21:29.534Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T16:21:29.534Z"
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
   },
   {
     "id": "https://exame.com/inteligencia-artificial/a-startup-brasileira-que-quer-pagar-voce-quando-uma-ia-usar-o-seu-conhecimento/",
@@ -3589,6 +3609,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/inteligencia-artificial/a-startup-brasileira-que-quer-pagar-voce-quando-uma-ia-usar-o-seu-conhecimento/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/07/cerebro.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-09-29T16:36:30.795Z",
     "source": "Exame",
     "category": "Startups",
@@ -3596,6 +3617,15 @@
     "importedAt": "2026-09-29T16:36:30.795Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T16:36:30.795Z"
+=======
+    "publishedAt": "2026-09-29T16:21:29.535Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-09-29T16:21:29.535Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T16:21:29.535Z"
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
   },
   {
     "id": "https://startupi.com.br/estudo-inventta-gestao-inovacao-dificuldade-comprovar-resultados/",
@@ -3607,7 +3637,11 @@
     "source": "Startupi",
     "category": "Startups",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:31.253Z",
+=======
+    "importedAt": "2026-09-29T16:21:30.038Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-01T10:00:00.000Z"
   },
@@ -3621,7 +3655,11 @@
     "source": "Startupi",
     "category": "Startups",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:31.255Z",
+=======
+    "importedAt": "2026-09-29T16:21:30.038Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-06T10:00:00.000Z"
   },
@@ -3635,7 +3673,11 @@
     "source": "Startupi",
     "category": "Startups",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:31.265Z",
+=======
+    "importedAt": "2026-09-29T16:21:30.041Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-09-30T09:59:00.000Z"
   },
@@ -3649,7 +3691,11 @@
     "source": "Startupi",
     "category": "Startups",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:31.267Z",
+=======
+    "importedAt": "2026-09-29T16:21:30.041Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-06T09:58:00.000Z"
   },
@@ -3663,7 +3709,11 @@
     "source": "Forbes",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:31.548Z",
+=======
+    "importedAt": "2026-09-29T16:21:30.353Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-09-30T11:03:00.000Z"
   },
@@ -3677,7 +3727,11 @@
     "source": "InfoMoney",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:31.860Z",
+=======
+    "importedAt": "2026-09-29T16:21:30.653Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-06T18:56:22.000Z"
   },
@@ -3691,7 +3745,11 @@
     "source": "InfoMoney",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:31.862Z",
+=======
+    "importedAt": "2026-09-29T16:21:30.654Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-01T18:54:05.000Z"
   },
@@ -3705,7 +3763,11 @@
     "source": "InfoMoney",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:31.864Z",
+=======
+    "importedAt": "2026-09-29T16:21:30.654Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-06T18:52:10.000Z"
   },
@@ -3719,7 +3781,11 @@
     "source": "InfoMoney",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:31.866Z",
+=======
+    "importedAt": "2026-09-29T16:21:30.654Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-01T18:51:40.000Z"
   },
@@ -3733,7 +3799,11 @@
     "source": "InfoMoney",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:31.868Z",
+=======
+    "importedAt": "2026-09-29T16:21:30.655Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-06T18:49:48.000Z"
   },
@@ -3747,7 +3817,11 @@
     "source": "InfoMoney",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:31.870Z",
+=======
+    "importedAt": "2026-09-29T16:21:30.655Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-09-30T18:46:01.000Z"
   },
@@ -3761,7 +3835,11 @@
     "source": "InfoMoney",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:31.872Z",
+=======
+    "importedAt": "2026-09-29T16:21:30.655Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-06T18:45:40.000Z"
   },
@@ -3775,7 +3853,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:32.408Z",
+=======
+    "importedAt": "2026-09-29T16:21:31.265Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-06T18:55:17.000Z"
   },
@@ -3789,7 +3871,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:32.410Z",
+=======
+    "importedAt": "2026-09-29T16:21:31.266Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-06T18:53:05.000Z"
   },
@@ -3803,7 +3889,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:32.412Z",
+=======
+    "importedAt": "2026-09-29T16:21:31.267Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-06T18:47:21.000Z"
   },
@@ -3817,7 +3907,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:32.414Z",
+=======
+    "importedAt": "2026-09-29T16:21:31.268Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-09-30T18:42:43.000Z"
   },
@@ -3831,7 +3925,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:32.417Z",
+=======
+    "importedAt": "2026-09-29T16:21:31.269Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-01T18:31:50.000Z"
   },
@@ -3845,11 +3943,16 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:32.419Z",
+=======
+    "importedAt": "2026-09-29T16:21:31.270Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-06T18:31:44.000Z"
   },
   {
+<<<<<<< HEAD
     "id": "https://g1.globo.com/economia/noticia/2026/09/29/nvidia-anuncia-aumento-recorde-em-programa-de-recompra-de-acoes-e-total-chega-a-us-235-bilhoes.ghtml",
     "title": "Nvidia anuncia aumento recorde em programa de recompra de ações, e total chega a US$ 235 bilhões",
     "description": "Ilustração mostra o logotipo da NVIDIA.\nREUTERS/Dado Ruvic/Ilustração\nA Nvidia ampliou em US$ 150 bilhões o valor autorizado para comprar de volta sua...",
@@ -3904,6 +4007,62 @@
     "importedAt": "2026-09-29T16:36:32.698Z",
     "importanceScore": 100,
     "expiresAt": "2026-09-30T14:40:42.000Z"
+=======
+    "id": "https://g1.globo.com/tecnologia/noticia/2026/09/29/da-para-desligar-uma-ia-entenda-por-que-um-botao-de-emergencia-pode-nao-ser-tao-simples.ghtml",
+    "title": "Dá para desligar uma IA? Entenda por que um 'botão de emergência' pode não ser tão simples",
+    "description": "ChatGPT, DeepSeek, Claude, Mistral AI, Gemini, Copilot e Poe\nSolen Feyissa/Unsplash\nÉ possível parar uma inteligência artificial? Tecnicamente, uma IA...",
+    "url": "https://g1.globo.com/tecnologia/noticia/2026/09/29/da-para-desligar-uma-ia-entenda-por-que-um-botao-de-emergencia-pode-nao-ser-tao-simples.ghtml",
+    "image": "https://s2-g1.glbimg.com/ApbSiLXQqg2xa841pQ3xo4rJirA=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/7/E/GHhrgsQ6uUvrVkoz3cmA/assistentes-ia.jpg",
+    "publishedAt": "2026-09-29 07:00:01",
+    "source": "Globo",
+    "category": "IA",
+    "score": 100,
+    "importedAt": "2026-09-29T16:21:31.579Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T10:00:01.000Z"
+  },
+  {
+    "id": "https://g1.globo.com/g1-explica/noticia/2026/09/29/por-que-a-corrupcao-custa-tanto-entenda-os-efeitos-alem-do-dinheiro-desviado.ghtml",
+    "title": "Por que a corrupção custa tanto? Entenda os efeitos além do dinheiro desviado",
+    "description": "Quanto custa a corrupção para a economia?\nNão há um cálculo preciso de quanto custa a corrupção. O prejuízo vai além do dinheiro desviado e inclui rec...",
+    "url": "https://g1.globo.com/g1-explica/noticia/2026/09/29/por-que-a-corrupcao-custa-tanto-entenda-os-efeitos-alem-do-dinheiro-desviado.ghtml",
+    "image": "https://s2-g1.glbimg.com/Y-KPu-RyihT0vWqL2u1niAvGqpE=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/T/p/kxnQUCR2CvU6cVUXl2Qw/thumb-horizontal-quanto-custa-a-corrupcao-para-a-economia.jpg",
+    "publishedAt": "2026-09-29 05:00:00",
+    "source": "Globo",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-09-29T16:21:31.581Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T08:00:00.000Z"
+  },
+  {
+    "id": "https://g1.globo.com/trabalho-e-carreira/noticia/2026/09/29/greve-na-caixa-tribunal-do-trabalho-julga-paralisacao-nesta-terca.ghtml",
+    "title": "Greve na Caixa: Tribunal do Trabalho julga paralisação nesta terça; o que pode acontecer?",
+    "description": "Greve da Caixa: veja como ficam pagamentos do Bolsa Família\nO Tribunal Superior do Trabalho (TST) analisa nesta terça-feira (29), às 14h30, o julgamen...",
+    "url": "https://g1.globo.com/trabalho-e-carreira/noticia/2026/09/29/greve-na-caixa-tribunal-do-trabalho-julga-paralisacao-nesta-terca.ghtml",
+    "image": "https://s2-g1.glbimg.com/CyurT0r9cZlIZmVXTsurKBivQqg=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/d/4/8Oax2aTYSc6aChDPPvhQ/greve.jpg",
+    "publishedAt": "2026-09-29 03:00:00",
+    "source": "Globo",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-09-29T16:21:31.583Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-09-30T06:00:00.000Z"
+  },
+  {
+    "id": "https://g1.globo.com/loterias/mega-sena/noticia/2026/09/29/mega-sena-pode-pagar-r-52-milhoes-nesta-terca-feira-g1-transmite-ao-vivo.ghtml",
+    "title": "Mega-Sena pode pagar R$ 52 milhões nesta terça-feira; g1 transmite ao vivo",
+    "description": "Como funciona a Mega-Sena?\nO concurso 3.064 da Mega-Sena pode pagar um prêmio de R$ 52 milhões para os apostadores que acertarem as seis dezenas. O so...",
+    "url": "https://g1.globo.com/loterias/mega-sena/noticia/2026/09/29/mega-sena-pode-pagar-r-52-milhoes-nesta-terca-feira-g1-transmite-ao-vivo.ghtml",
+    "image": "https://s2-g1.glbimg.com/qy4fKjxagQL_B-wFUYEdO2hUGeg=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2022/j/P/SWmVpCSYe2ZiGlHFWwmQ/mega.jpeg",
+    "publishedAt": "2026-09-29 03:00:00",
+    "source": "Globo",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-09-29T16:21:31.585Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T06:00:00.000Z"
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
   },
   {
     "id": "https://canaltech.com.br/smartphone/burro-e-barato-vaza-celular-de-apenas-r-50-com-bateria-removivel/",
@@ -3915,7 +4074,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:32.964Z",
+=======
+    "importedAt": "2026-09-29T16:21:31.847Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-06T12:57:10.000Z"
   },
@@ -3929,7 +4092,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:32.965Z",
+=======
+    "importedAt": "2026-09-29T16:21:31.847Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-06T03:21:00.000Z"
   },
@@ -3943,7 +4110,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:33.782Z",
+=======
+    "importedAt": "2026-09-29T16:21:32.761Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-06T18:59:39.000Z"
   },
@@ -3957,7 +4128,11 @@
     "source": "Tecnoblog",
     "category": "Dev",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:33.783Z",
+=======
+    "importedAt": "2026-09-29T16:21:32.763Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-09-30T18:41:15.000Z"
   },
@@ -3971,7 +4146,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:33.783Z",
+=======
+    "importedAt": "2026-09-29T16:21:32.763Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:43:03.000Z"
   },
@@ -3985,7 +4164,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:33.784Z",
+=======
+    "importedAt": "2026-09-29T16:21:32.764Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-09-30T17:23:33.000Z"
   },
@@ -3999,7 +4182,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:33.785Z",
+=======
+    "importedAt": "2026-09-29T16:21:32.765Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-09-30T17:11:38.000Z"
   },
@@ -4013,7 +4200,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:33.787Z",
+=======
+    "importedAt": "2026-09-29T16:21:32.766Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-09-30T16:54:34.000Z"
   },
@@ -4027,7 +4218,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:33.788Z",
+=======
+    "importedAt": "2026-09-29T16:21:32.766Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-06T16:41:22.000Z"
   },
@@ -4041,7 +4236,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:33.789Z",
+=======
+    "importedAt": "2026-09-29T16:21:32.766Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-09-30T16:30:04.000Z"
   },
@@ -4055,11 +4254,16 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:33.790Z",
+=======
+    "importedAt": "2026-09-29T16:21:32.767Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-09-30T16:13:38.000Z"
   },
   {
+<<<<<<< HEAD
     "id": "https://g1.globo.com/tecnologia/noticia/2026/09/29/da-para-desligar-uma-ia-entenda-por-que-um-botao-de-emergencia-pode-nao-ser-tao-simples.ghtml",
     "title": "Dá para desligar uma IA? Entenda por que um 'botão de emergência' pode não ser tão simples",
     "description": "ChatGPT, DeepSeek, Claude, Mistral AI, Gemini, Copilot e Poe\nSolen Feyissa/Unsplash\nÉ possível parar uma inteligência artificial? Tecnicamente, uma IA...",
@@ -4072,6 +4276,20 @@
     "importedAt": "2026-09-29T16:36:34.350Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T10:00:01.000Z"
+=======
+    "id": "https://g1.globo.com/economia/noticia/2026/09/29/nvidia-anuncia-aumento-recorde-em-programa-de-recompra-de-acoes-e-total-chega-a-us-235-bilhoes.ghtml",
+    "title": "Nvidia anuncia aumento recorde em programa de recompra de ações, e total chega a US$ 235 bilhões",
+    "description": "Ilustração mostra o logotipo da NVIDIA.\nREUTERS/Dado Ruvic/Ilustração\nA Nvidia ampliou em US$ 150 bilhões o valor autorizado para comprar de volta sua...",
+    "url": "https://g1.globo.com/economia/noticia/2026/09/29/nvidia-anuncia-aumento-recorde-em-programa-de-recompra-de-acoes-e-total-chega-a-us-235-bilhoes.ghtml",
+    "image": "https://s2-g1.glbimg.com/SMOv33MstEnRldvyfKM3uOp5fF0=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2025/y/x/VyAUmvQ0m8PJO7AmtOsQ/2025-09-22t162256z-1969760364-rc2kegai8jsf-rtrmadp-3-nvidia-openai.jpg",
+    "publishedAt": "2026-09-29 12:01:30",
+    "source": "Globo",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-09-29T16:21:33.308Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-09-30T15:01:30.000Z"
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
   },
   {
     "id": "https://www.cnnbrasil.com.br/internacional/numero-de-mortos-em-enchentes-na-tailandia-sobe-para-23/",
@@ -4083,7 +4301,11 @@
     "source": "CNN",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:36:34.627Z",
+=======
+    "importedAt": "2026-09-29T16:21:33.577Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-06T18:40:15.000Z"
   },
@@ -4095,13 +4317,64 @@
     "image": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/10/adriana-lima-2.jpg?w=200",
     "publishedAt": "2026-09-29 15:32:19",
     "source": "CNN",
+<<<<<<< HEAD
     "category": "Rejeitado",
     "score": 0,
     "importedAt": "2026-09-29T16:36:34.629Z",
+=======
+    "category": "Dev",
+    "score": 100,
+    "importedAt": "2026-09-29T16:21:33.578Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-06T18:32:19.000Z"
   },
   {
+<<<<<<< HEAD
+=======
+    "id": "https://g1.globo.com/economia/noticia/2026/09/29/desemprego-pnad-agosto.ghtml",
+    "title": "Desemprego fica em 5,3% em agosto e Brasil bate recorde de 103,5 milhões de ocupados",
+    "description": "Desemprego fica em 5,3% no trimestre até agosto\nA taxa de desemprego ficou em 5,3% no trimestre encerrado em agosto deste ano. Os dados são da Pesquis...",
+    "url": "https://g1.globo.com/economia/noticia/2026/09/29/desemprego-pnad-agosto.ghtml",
+    "image": "https://s2-g1.glbimg.com/DplCEzRSDhbzOEWiqdBXeovG060=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2025/g/q/SsGRCZS1uhKwwMJbUezQ/20231030172318654002a6abd0c.jpg",
+    "publishedAt": "2026-09-29 12:00:33",
+    "source": "Globo",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-09-29T16:37:02.686Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T15:00:33.000Z"
+  },
+  {
+    "id": "https://g1.globo.com/economia/noticia/2026/09/29/dolar-ibovespa.ghtml",
+    "title": "Dólar passa a subir, com dados de emprego e exterior no radar; Ibovespa cai",
+    "description": "Entenda o que faz o preço do dólar subir ou cair\nO dólar inverteu o sinal negativo visto no início do pregão e passou a operar em alta nesta terça-fei...",
+    "url": "https://g1.globo.com/economia/noticia/2026/09/29/dolar-ibovespa.ghtml",
+    "image": "https://s2-g1.glbimg.com/9Nox_bbbmGyxR3BOJXDd71OGVmk=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/d/z/vFoW5MRSmwxWJBILyNcQ/muitas-notas-de-dolares-dos-eua.jpg",
+    "publishedAt": "2026-09-29 12:00:00",
+    "source": "Globo",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-09-29T16:37:02.689Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-09-30T15:00:00.000Z"
+  },
+  {
+    "id": "https://g1.globo.com/economia/noticia/2026/09/29/em-meio-a-corrida-eleitoral-inadimplencia-volta-a-subir-e-bate-novo-recorde-em-agosto.ghtml",
+    "title": "Em meio à corrida eleitoral, inadimplência volta a subir e bate novo recorde em agosto",
+    "description": "A taxa de inadimplência média total registrada pelos bancos nas operações de crédito subiu de 4,9% para 5% de julho para agosto, informou nesta terça-...",
+    "url": "https://g1.globo.com/economia/noticia/2026/09/29/em-meio-a-corrida-eleitoral-inadimplencia-volta-a-subir-e-bate-novo-recorde-em-agosto.ghtml",
+    "image": "",
+    "publishedAt": "2026-09-29 11:40:42",
+    "source": "Globo",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-09-29T16:37:02.691Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-09-30T14:40:42.000Z"
+  },
+  {
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "id": "https://canaltech.com.br/inteligencia-artificial/e-a-privacidade-gemini-agora-analisa-seus-extratos-na-carteira-do-google/",
     "title": "E a privacidade? Gemini agora analisa seus extratos na Carteira do Google",
     "description": "O Gemini ganhou uma integração com a Carteira do Google para analisar dados e encontrar documentos específicos no app, como cartões de embarque e ingr...",
@@ -4111,7 +4384,11 @@
     "source": "Canaltech",
     "category": "IA",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:52:38.044Z",
+=======
+    "importedAt": "2026-09-29T16:52:17.472Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-09-30T01:15:02.000Z"
   },
@@ -4125,7 +4402,11 @@
     "source": "Canaltech",
     "category": "IA",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-09-29T16:52:38.046Z",
+=======
+    "importedAt": "2026-09-29T16:52:17.477Z",
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     "importanceScore": 100,
     "expiresAt": "2026-10-06T18:03:00.000Z"
   },
@@ -4138,6 +4419,7 @@
     "publishedAt": "2026-09-29 14:49:27",
     "source": "Canaltech",
     "category": "IA",
+<<<<<<< HEAD
     "score": 80,
     "importedAt": "2026-09-29T16:52:38.047Z",
     "importanceScore": 80,
@@ -4156,5 +4438,11 @@
     "importedAt": "2026-09-29T17:11:50.240Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:32:50.000Z"
+=======
+    "score": 100,
+    "importedAt": "2026-09-29T16:52:17.479Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-09-30T17:49:27.000Z"
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
   }
 ]

@@ -4,7 +4,7 @@ import { Clock, MessageSquare, Bookmark, Brain, Cloud, Shield, Blocks } from "lu
 import { useNews } from "@/hooks/useNews";
 import { formatRelativeTime } from "@/lib/news-service";
 import { useNewsRotation } from "@/hooks/use-news-rotation";
-import { NewsSectionLayout } from "@/components/news-section-layout";
+import { FeaturedNewsCarousel, NewsSectionLayout } from "@/components/news-section-layout";
 import type { ReactNode } from "react";
 
 function getTechIcon(category: string) {
@@ -44,19 +44,19 @@ export function TrendingTech({ sidebar }: { sidebar?: ReactNode }) {
       <NewsSectionLayout
         sidebar={sidebar}
         featured={
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {featuredArticles.map((article) => (
-            <FeaturedTechCard key={article.id} article={article} onClick={() => window.open(article.url, "_blank")} />
-          ))}
-          </div>
+          <FeaturedNewsCarousel label="Notícias de tecnologia em destaque">
+            {featuredArticles.map((article) => (
+              <FeaturedTechCard key={article.id} article={article} onClick={() => window.open(article.url, "_blank")} />
+            ))}
+          </FeaturedNewsCarousel>
         }
-        list={
+        list={remainingArticles.length > 0 ? (
           <div className="flex flex-col gap-3">
           {remainingArticles.map((article) => (
             <CompactTechCard key={article.id} article={article} onClick={() => window.open(article.url, "_blank")} />
           ))}
           </div>
-        }
+        ) : null}
       />
     </>
   );

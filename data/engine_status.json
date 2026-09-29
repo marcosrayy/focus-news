@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "lastSync": "2026-09-29T17:11:53.785Z",
   "syncHistory": [
     {
@@ -7,6 +8,16 @@
       "importedCount": 1,
       "updatedCount": 14,
       "discardedCount": 84,
+=======
+  "lastSync": "2026-09-29T17:07:50.061Z",
+  "syncHistory": [
+    {
+      "timestamp": "2026-09-29T17:07:50.061Z",
+      "durationMs": 8565,
+      "importedCount": 0,
+      "updatedCount": 43,
+      "discardedCount": 56,
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
       "modules": [
         "Startups",
         "Economia",
@@ -18,8 +29,13 @@
       ]
     },
     {
+<<<<<<< HEAD
       "timestamp": "2026-09-29T16:52:41.689Z",
       "durationMs": 7081,
+=======
+      "timestamp": "2026-09-29T16:52:21.883Z",
+      "durationMs": 9369,
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
       "importedCount": 3,
       "updatedCount": 40,
       "discardedCount": 56,
@@ -34,10 +50,17 @@
       ]
     },
     {
+<<<<<<< HEAD
       "timestamp": "2026-09-29T16:36:36.701Z",
       "durationMs": 9306,
       "importedCount": 39,
       "updatedCount": 6,
+=======
+      "timestamp": "2026-09-29T16:37:07.228Z",
+      "durationMs": 9155,
+      "importedCount": 3,
+      "updatedCount": 39,
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
       "discardedCount": 57,
       "modules": [
         "Startups",
@@ -50,6 +73,25 @@
       ]
     },
     {
+<<<<<<< HEAD
+=======
+      "timestamp": "2026-09-29T16:21:35.746Z",
+      "durationMs": 8558,
+      "importedCount": 39,
+      "updatedCount": 6,
+      "discardedCount": 54,
+      "modules": [
+        "Startups",
+        "Economia",
+        "IA",
+        "Tecnologia",
+        "Dev",
+        "Inovacao",
+        "Business"
+      ]
+    },
+    {
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
       "timestamp": "2026-09-28T23:54:47.797Z",
       "durationMs": 25387,
       "importedCount": 21,
@@ -645,6 +687,7 @@
   "sourcesHealth": {
     "Startupi": {
       "status": "Online",
+<<<<<<< HEAD
       "lastResponseMs": 251,
       "lastChecked": "2026-09-29T17:11:53.273Z"
     },
@@ -672,6 +715,35 @@
       "status": "Instável",
       "lastResponseMs": 255,
       "lastChecked": "2026-09-29T17:11:52.150Z"
+=======
+      "lastResponseMs": 300,
+      "lastChecked": "2026-09-29T17:07:49.330Z"
+    },
+    "InfoMoney": {
+      "status": "Online",
+      "lastResponseMs": 414,
+      "lastChecked": "2026-09-29T17:07:49.750Z"
+    },
+    "Valor": {
+      "status": "Online",
+      "lastResponseMs": 259,
+      "lastChecked": "2026-09-29T17:07:45.161Z"
+    },
+    "Canaltech": {
+      "status": "Online",
+      "lastResponseMs": 255,
+      "lastChecked": "2026-09-29T17:07:45.712Z"
+    },
+    "TechMundo": {
+      "status": "Online",
+      "lastResponseMs": 388,
+      "lastChecked": "2026-09-29T17:07:47.078Z"
+    },
+    "Diolinux": {
+      "status": "Offline",
+      "lastResponseMs": 253,
+      "lastChecked": "2026-09-29T17:07:47.899Z"
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
     },
     "Gizmodo": {
       "status": "Offline",
@@ -680,6 +752,7 @@
     },
     "GNews": {
       "status": "Online",
+<<<<<<< HEAD
       "lastResponseMs": 1308,
       "lastChecked": "2026-09-29T17:11:46.872Z"
     },
@@ -713,5 +786,40 @@
     "imported": 429,
     "updated": 1371,
     "discarded": 2313
+=======
+      "lastResponseMs": 458,
+      "lastChecked": "2026-09-29T17:07:41.960Z"
+    },
+    "Tecnoblog": {
+      "status": "Online",
+      "lastResponseMs": 509,
+      "lastChecked": "2026-09-29T17:07:48.416Z"
+    },
+    "Forbes": {
+      "status": "Online",
+      "lastResponseMs": 294,
+      "lastChecked": "2026-09-29T17:07:50.047Z"
+    },
+    "Globo": {
+      "status": "Instável",
+      "lastResponseMs": 325,
+      "lastChecked": "2026-09-29T17:07:48.741Z"
+    },
+    "CNN": {
+      "status": "Online",
+      "lastResponseMs": 250,
+      "lastChecked": "2026-09-29T17:07:47.641Z"
+    },
+    "Exame": {
+      "status": "Online",
+      "lastResponseMs": 1213,
+      "lastChecked": "2026-09-29T17:07:43.641Z"
+    }
+  },
+  "stats": {
+    "imported": 431,
+    "updated": 1439,
+    "discarded": 2339
+>>>>>>> 8426437c484a6dd79348d0583a29f7b5a072697b
   }
 }
