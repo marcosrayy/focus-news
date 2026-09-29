@@ -9,7 +9,7 @@ import { FeaturedNewsCarousel, NewsSectionLayout } from "@/components/news-secti
 import type { ReactNode } from "react";
 
 interface BusinessArticle {
-  id: number;
+  id: number | string;
   category: string;
   categoryColor: string;
   title: string;
@@ -40,7 +40,7 @@ export function GrowthStrategies({ sidebar }: { sidebar?: ReactNode }) {
   
   const displayArticles = apiNews.length > 0 ? apiNews.map((n: any, i: number) => {
     const mock = articles[i % articles.length];
-    return { ...mock, title: n.title, description: n.description, image: n.image, url: n.url, time: "agora" };
+    return { ...mock, id: `${n.id ?? n.url ?? mock.id}-${i}`, title: n.title, description: n.description, image: n.image, url: n.url, time: "agora" };
   }) : [];
   const { featuredArticles, remainingArticles } = useNewsRotation(displayArticles);
 

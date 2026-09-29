@@ -312,7 +312,7 @@ const MODULE_KEYWORDS = {
     "docker", "kubernetes", "github", "git", "sql", "nosql", "mongodb", "postgresql", "cloud computing",
     "infraestrutura de software", "cdn", "linux", "distro", "distribuicao linux", "sistema operacional",
     "sistemas operacionais", "postmarketos", "kernel", "open source", "codigo aberto", "software livre",
-    "codex", "compilador", "repositorio de codigo", "linguagem de programacao"
+    "codex", "compilador", "repositorio de codigo", "linguagem de programacao", "linux", "distro"
   ],
   Inovacao: [
     "inovacao", "pesquisa", "patente", "descoberta", "ciencia", "cientifico",
