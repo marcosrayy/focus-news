@@ -1,5 +1,6 @@
 
 import { NEWS_API_KEY } from "../config/newsConfig";
+import { XMLParser } from "fast-xml-parser";
 
 export interface NewsArticle {
   id: string;
@@ -76,6 +77,80 @@ export function repairMojibake(text: string): string {
   return repaired.normalize("NFC");
 }
 
+export interface RssFeedItem {
+  title: string;
+  link: string;
+  description: string;
+  content: string;
+  pubDate: string;
+  guid: string;
+  thumbnail: string;
+  enclosure: { link: string };
+}
+
+const rssParser = new XMLParser({
+  ignoreAttributes: false,
+  attributeNamePrefix: "@_",
+  textNodeName: "#text",
+  removeNSPrefix: true,
+  trimValues: true,
+});
+
+function rssText(value: any): string {
+  if (typeof value === "string" || typeof value === "number") return String(value);
+  if (value && typeof value === "object" && typeof value["#text"] === "string") return value["#text"];
+  return "";
+}
+
+function rssItems(value: any): any[] {
+  if (!value) return [];
+  return Array.isArray(value) ? value : [value];
+}
+
+function findRssImage(item: any, description: string, content: string): string {
+  const mediaContent = rssItems(item.content).find(entry => entry?.["@_url"]);
+  const mediaThumbnail = rssItems(item.thumbnail).find(entry => entry?.["@_url"]);
+  const enclosure = rssItems(item.enclosure).find(entry => entry?.["@_url"]);
+  const imageTag = `${description} ${content}`.match(/<img[^>]+src=["']([^"']+)["']/i);
+  return mediaContent?.["@_url"] || mediaThumbnail?.["@_url"] || enclosure?.["@_url"] || item.image?.url || imageTag?.[1] || "";
+}
+
+export async function fetchRssFeed(feedUrl: string): Promise<RssFeedItem[]> {
+  const response = await fetch(feedUrl, {
+    cache: "no-store",
+    headers: { accept: "application/rss+xml, application/atom+xml, application/xml, text/xml;q=0.9" },
+  });
+  if (!response.ok) throw new Error(`RSS returned HTTP ${response.status}`);
+
+  const xml = await response.text();
+  const parsed = rssParser.parse(xml);
+  const channel = parsed.rss?.channel || parsed.feed;
+  const rawItems = rssItems(channel?.item || channel?.entry);
+  if (rawItems.length === 0) throw new Error("Response did not contain RSS or Atom items");
+
+  return rawItems.map((item): RssFeedItem => {
+    const links = rssItems(item.link);
+    const alternateLink = links.find(entry => typeof entry === "object" && (!entry["@_rel"] || entry["@_rel"] === "alternate"));
+    const link = typeof item.link === "string"
+      ? item.link
+      : alternateLink?.["@_href"] || rssText(alternateLink) || "";
+    const description = rssText(item.description || item.summary);
+    const content = rssText(item.encoded || item.content || item["content:encoded"]);
+    const image = findRssImage(item, description, content);
+
+    return {
+      title: rssText(item.title),
+      link,
+      description,
+      content,
+      pubDate: rssText(item.pubDate || item.published || item.updated),
+      guid: rssText(item.guid || item.id) || link,
+      thumbnail: image,
+      enclosure: { link: image },
+    };
+  }).filter(item => !!item.title && !!item.link);
+}
+
 export function balanceArticlesBySource<T extends { source?: string | null }>(articles: T[]): T[] {
   const sources = new Map<string, T[]>();
 
@@ -106,7 +181,68 @@ export function balanceArticlesBySource<T extends { source?: string | null }>(ar
   return balanced;
 }
 
-const MAX_ARTICLE_AGE_MS = 3 * 24 * 60 * 60 * 1000;
+const TITLE_STOP_WORDS = new Set(["a", "ao", "as", "com", "como", "da", "das", "de", "do", "dos", "e", "em", "na", "nas", "no", "nos", "o", "os", "para", "por", "que", "um", "uma"]);
+
+function normalizeArticleUrl(value: string): string {
+  try {
+    const url = new URL(value);
+    url.hostname = url.hostname.replace(/^www\./, "").toLowerCase();
+    url.hash = "";
+    for (const key of [...url.searchParams.keys()]) {
+      if (key.startsWith("utm_") || ["fbclid", "gclid"].includes(key.toLowerCase())) {
+        url.searchParams.delete(key);
+      }
+    }
+    return url.toString().replace(/\/$/, "");
+  } catch {
+    return value.trim().toLowerCase().replace(/[?#].*$/, "").replace(/\/$/, "");
+  }
+}
+
+function getTitleTokens(title: string): Set<string> {
+  return new Set(
+    normalizeText(title)
+      .replace(/[^a-z0-9\s]/g, " ")
+      .split(/\s+/)
+      .filter(token => token.length > 2 && !TITLE_STOP_WORDS.has(token)),
+  );
+}
+
+export function deduplicateArticles<T extends { id?: string | number; url?: string; title?: string }>(articles: T[]): T[] {
+  const seenIds = new Set<string>();
+  const seenUrls = new Set<string>();
+  const seenTitleKeys = new Set<string>();
+  const seenTitles: Set<string>[] = [];
+  const unique: T[] = [];
+
+  for (const article of articles) {
+    const id = article.id === undefined ? "" : String(article.id).trim().toLowerCase();
+    const url = article.url ? normalizeArticleUrl(article.url) : "";
+    const title = normalizeText(article.title || "").replace(/[^a-z0-9\s]/g, " ").trim().replace(/\s+/g, " ");
+    const titleTokens = getTitleTokens(title);
+    const duplicateTitle = (title && seenTitleKeys.has(title)) || (titleTokens.size > 0 && seenTitles.some(existing => {
+      if (existing.size < 5 || titleTokens.size < 5) return false;
+      let shared = 0;
+      for (const token of titleTokens) {
+        if (existing.has(token)) shared++;
+      }
+      return shared / Math.max(existing.size, titleTokens.size) >= 0.85;
+    }));
+
+    if ((id && seenIds.has(id)) || (url && seenUrls.has(url)) || duplicateTitle) continue;
+
+    if (id) seenIds.add(id);
+    if (url) seenUrls.add(url);
+    if (title) seenTitleKeys.add(title);
+    if (titleTokens.size > 0) seenTitles.push(titleTokens);
+    unique.push(article);
+  }
+
+  return unique;
+}
+
+const MAX_ARTICLE_AGE_MS = 5 * 24 * 60 * 60 * 1000;
+const PREVIOUS_DEFAULT_RETENTION_MS = 3 * 24 * 60 * 60 * 1000;
 
 export function isArticleWithinRetention(
   publishedAt: string,
@@ -118,7 +254,9 @@ export function isArticleWithinRetention(
 
   const maxAgeExpiry = publishedTime + MAX_ARTICLE_AGE_MS;
   const explicitExpiry = expiresAt ? new Date(expiresAt).getTime() : maxAgeExpiry;
-  return Math.min(maxAgeExpiry, explicitExpiry) > nowTime;
+  const wasPreviousDefaultExpiry = explicitExpiry === publishedTime + PREVIOUS_DEFAULT_RETENTION_MS;
+  const effectiveExpiry = wasPreviousDefaultExpiry ? maxAgeExpiry : Math.min(maxAgeExpiry, explicitExpiry);
+  return effectiveExpiry > nowTime;
 }
 
 // 1. Definições de Fontes por Módulo
@@ -127,7 +265,7 @@ export const MODULE_SOURCES = {
   Economia: ["infomoney", "g1", "canaltech", "mercado tech", "valor", "globo", "cnn", "gnews"],
   IA: ["canaltech", "techmundo", "noticias ia", "gnews", "forbes"],
   Tecnologia: ["tecnoblog", "noticias tech", "techmundo", "globo", "cnn", "forbes", "gnews"],
-  Dev: ["tecnoblog", "noticias tech", "canaltech", "gnews", "diolinux", "forbes"],
+  Dev: ["tecnoblog", "noticias tech", "canaltech", "gnews", "diolinux", "forbes", "cnn", "exame", "tabnews"],
   Inovacao: ["globo", "forbes", "g1"],
   Business: ["startupi", "infomoney", "valor", "forbes", "gnews", "cnn"]
 };
@@ -167,14 +305,14 @@ const MODULE_KEYWORDS = {
     "linux", "distro"
   ],
   Dev: [
-    "desenvolvimento", "programacao", "cloud", "infraestrutura", "apis", "api",
-    "seguranca", "devops", "frameworks", "framework", "bancos de dados", "javascript",
-    "python", "java", "node", "react", "aws", "azure", "gcp", "docker", "kubernetes",
-    "linux", "github", "backend", "frontend", "git", "codigo", "coding", "software",
-    "programador", "desenvolvedor", "desenvolvimento de sistemas", "desenvolvimento de software", "programador web",
-    "programador mobile", "mobile", "web", "app", "aplicativo", "sistema", "php", "c#", "c++", "typescript", "html",
-    "css", "sql", "nosql", "mongodb", "postgresql", "github", "windows", "linux", "distro", "node.js", "react.js", "angular",
-    "vue", "flutter", "dart", "swift", "kotlin", "ios", "android"
+    "programacao", "programador", "programadores", "desenvolvedor", "desenvolvedores",
+    "desenvolvimento de software", "desenvolvimento web", "engenharia de software", "codigo fonte", "coding",
+    "devops", "backend", "frontend", "api", "apis", "framework", "frameworks", "biblioteca de software",
+    "javascript", "typescript", "python", "java", "node.js", "react", "angular", "vue", "php", "c++", "c#",
+    "docker", "kubernetes", "github", "git", "sql", "nosql", "mongodb", "postgresql", "cloud computing",
+    "infraestrutura de software", "cdn", "linux", "distro", "distribuicao linux", "sistema operacional",
+    "sistemas operacionais", "postmarketos", "kernel", "open source", "codigo aberto", "software livre",
+    "codex", "compilador", "repositorio de codigo", "linguagem de programacao"
   ],
   Inovacao: [
     "inovacao", "pesquisa", "patente", "descoberta", "ciencia", "cientifico",
@@ -211,8 +349,11 @@ const PROHIBITED_TERMS = [
   "terrorismo", "ira", "jordania", "israel", "gaza", "palestina", "russia", "ucrania", "morto", "mortos",
   "morreu", "morreram", "preso", "presos", "prisao", "prisoes", "custodia", "presidio",
   "policia", "policial", "homicidio", "assassinado", "assassinada", "assassinatos", "tortura", "bet",
-  "apostas", "fashion show", "desfile", "moda", "passarela", "trump", "biden", "renan santos", "augusto cury", "ciro gomes"
+  "apostas", "fashion show", "desfile", "moda", "passarela", "trump", "biden", "renan santos", "augusto cury", "ciro gomes",
+  "flavio bolsonaro", "zema", "capitao wagner", "eduardo bolsonaro",
 ];
+
+const DEV_PROHIBITED_TERMS = ["gta", "rockstar", "videogame", "videogames", "gameplay"];
 
 // Helper para normalizar strings (remove acentos e caixa alta)
 function normalizeText(text: string): string {
@@ -247,16 +388,26 @@ function countMatches(text: string, keywords: string[]): number {
 export function hasCategoryEvidence(title: string, description: string, category: string): boolean {
   const keywords = MODULE_KEYWORDS[category as keyof typeof MODULE_KEYWORDS];
   if (!keywords) return false;
-  if (countMatches(title, keywords) > 0) return true;
+  const text = `${title} ${description}`;
+  if (category === "Dev" && countMatches(text, DEV_PROHIBITED_TERMS) > 0) return false;
+  return countMatches(text, keywords) > 0;
+}
 
-  let descriptionKeywordCount = 0;
-  for (const keyword of keywords) {
-    if (countMatches(description, [keyword]) > 0) {
-      descriptionKeywordCount++;
-      if (descriptionKeywordCount >= 2) return true;
-    }
+export function isEnglishDevSource(source: string): boolean {
+  const normalizedSource = normalizeText(source).replace(/[^a-z0-9]+/g, "");
+  return ["github", "stackoverflow", "infoq", "devto"].some(name => normalizedSource.includes(name));
+}
+
+export function isCategorySpecificRssFeed(feedUrl: string, category: string): boolean {
+  const normalizedUrl = normalizeText(feedUrl).toLowerCase();
+  if (category === "IA") {
+    return normalizedUrl.includes("/noticias-sobre/inteligencia-artificial/feed") ||
+      normalizedUrl.includes("/tudo-sobre/inteligencia-artificial/feed");
   }
-
+  if (category === "Dev") {
+    return normalizedUrl.includes("/noticias-sobre/desenvolvimento-de-software/feed") ||
+      normalizedUrl.includes("tabnews.com.br/rss");
+  }
   return false;
 }
 
@@ -454,7 +605,7 @@ export async function fetchNewsBackend({
         const data = await res.json();
         if (data.articles && Array.isArray(data.articles)) {
           for (const item of data.articles) {
-            if (!item.image || seenUrls.has(item.url)) continue;
+            if (seenUrls.has(item.url)) continue;
 
             const sourceName = typeof item.source === 'object' ? item.source.name : item.source;
             const title = repairMojibake(item.title || "");
@@ -477,7 +628,7 @@ export async function fetchNewsBackend({
               title,
               description,
               url: item.url,
-              image: item.image,
+              image: item.image || "/news-focus.jpg",
               publishedAt: item.publishedAt,
               source: sourceName,
               category: targetCategory,
@@ -499,7 +650,7 @@ export async function fetchNewsBackend({
     try {
       console.warn(`[FocusNews] GNews returned insufficient results. Using RSS Fallback for ${targetCategory}...`);
       
-      let feedUrls = ['https://tecnoblog.net/feed/', 'https://g1.globo.com/tecnologia/rss2.0.xml', 'https://canaltech.com.br/feed/'];
+      let feedUrls = ['https://tecnoblog.net/feed/', 'https://g1.globo.com/rss/g1/tecnologia/', 'https://canaltech.com.br/rss/'];
       if (targetCategory === "Startups") {
         feedUrls = ['https://startupi.com.br/feed/', 'https://startups.com.br/feed/', 'https://forbes.com.br/noticias-sobre/startups/feed/'];
       } else if (targetCategory === "Economia") {
@@ -509,7 +660,7 @@ export async function fetchNewsBackend({
       } else if (targetCategory === "IA") {
         feedUrls = ['https://canaltech.com.br/rss/', 'https://startupi.com.br/feed/', 'https://www.cnnbrasil.com.br/tudo-sobre/inteligencia-artificial/feed/', 'https://forbes.com.br/noticias-sobre/inteligencia-artificial/feed/'];
       } else if (targetCategory === "Dev") {
-        feedUrls = ['https://diolinux.com.br/feed', 'https://forbes.com.br/noticias-sobre/desenvolvimento-de-software/feed/'];
+        feedUrls = ['https://diolinux.com.br/feed', 'https://forbes.com.br/noticias-sobre/desenvolvimento-de-software/feed/', 'https://tecnoblog.net/feed/', 'https://rss.tecmundo.com.br/feed', 'https://canaltech.com.br/rss/', 'https://www.tabnews.com.br/rss'];
       } else if (targetCategory === "Inovacao") {
         feedUrls = ['https://g1.globo.com/rss/g1/inovacao/', 'https://forbes.com.br/noticias-sobre/inovacao/feed/'];
       }
@@ -519,17 +670,8 @@ export async function fetchNewsBackend({
       // Busca concorrente nos feeds configurados
       await Promise.all(feedUrls.map(async (feedUrl) => {
         try {
-          const rssApiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`;
-          const rssRes = await fetch(rssApiUrl, { cache: "force-cache" });
-          if (rssRes.ok) {
-            const rssData = await rssRes.json();
-            if (rssData.items && Array.isArray(rssData.items)) {
-              allItems.push(...rssData.items.map((item: any) => ({
-                ...item,
-                originFeedUrl: feedUrl
-              })));
-            }
-          }
+          const items = await fetchRssFeed(feedUrl);
+          allItems.push(...items.map(item => ({ ...item, originFeedUrl: feedUrl })));
         } catch (err) {
           console.warn(`[FocusNews] Failed to fetch feed ${feedUrl}:`, err);
         }
@@ -574,6 +716,8 @@ export async function fetchNewsBackend({
           feedSource = "Forbes";
         } else if (item.originFeedUrl.includes("cnnbrasil")) {
           feedSource = "CNN Brasil";
+        } else if (item.originFeedUrl.includes("tabnews.com.br")) {
+          feedSource = "TabNews";
         }
 
         const classification = classifyArticle(title, cleanDesc, feedSource);
@@ -585,6 +729,9 @@ export async function fetchNewsBackend({
         }
         if (targetCategory === "Inovacao") {
           articleCategory = "Inovacao"; // Forcefully allow these specific feeds
+        }
+        if (isCategorySpecificRssFeed(item.originFeedUrl, targetCategory)) {
+          articleCategory = targetCategory;
         }
         if (articleCategory !== targetCategory || !hasCategoryEvidence(title, cleanDesc, articleCategory)) continue;
 
@@ -608,5 +755,7 @@ export async function fetchNewsBackend({
   }
 
   approvedArticles.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
-  return balanceArticlesBySource(approvedArticles).slice(offset, offset + max);
+  const recentUniqueArticles = deduplicateArticles(approvedArticles)
+    .filter(article => isArticleWithinRetention(article.publishedAt));
+  return balanceArticlesBySource(recentUniqueArticles).slice(offset, offset + max);
 }

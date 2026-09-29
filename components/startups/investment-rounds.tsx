@@ -8,7 +8,7 @@ export function InvestmentRounds({ sidebar }: { sidebar?: ReactNode }) {
   const { 
     articles: apiNews,
     lastSyncRelative
-  } = useNews('"Startup" OR "Venture Capital" OR "Fintech" OR "Rodada de investimento"', "Startups", 12);
+  } = useNews('"Startup" OR "Venture Capital" OR "Fintech" OR "Rodada de investimento"', "Startups", 12, 1);
   
   return (
     <>

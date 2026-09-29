@@ -27,7 +27,7 @@ export function TrendingTech({ sidebar }: { sidebar?: ReactNode }) {
   const { 
     articles: news,
     lastSyncRelative
-  } = useNews("Tecnologia OR Hardware OR Software OR Noticias Tech", "Tecnologia", 12);
+  } = useNews("Tecnologia OR Hardware OR Software OR Noticias Tech", "Tecnologia", 12, 1);
   
   const articlesToRender = news.length > 0 ? news : [];
   const { featuredArticles, remainingArticles } = useNewsRotation(articlesToRender);

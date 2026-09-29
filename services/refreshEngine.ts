@@ -1,5 +1,5 @@
 import { Storage, StorageArticle, EngineStatus } from '../utils/storage';
-import { classifyArticle, hasCategoryEvidence, isArticleWithinRetention, isSourceAllowed, MODULE_SOURCES, repairMojibake } from './newsService';
+import { classifyArticle, deduplicateArticles, fetchRssFeed, hasCategoryEvidence, isArticleWithinRetention, isCategorySpecificRssFeed, isEnglishDevSource, isSourceAllowed, MODULE_SOURCES, repairMojibake } from './newsService';
 import { NEWS_API_KEY } from '../config/newsConfig';
 
 // Categories mapping to RSS feeds
@@ -17,7 +17,9 @@ const FALLBACK_FEEDS: Record<string, string[]> = {
   IA: [
     'https://canaltech.com.br/rss/',
     'https://startupi.com.br/feed/',
-    'https://rss.tecmundo.com.br/feed'
+    'https://rss.tecmundo.com.br/feed',
+    'https://www.cnnbrasil.com.br/tudo-sobre/inteligencia-artificial/feed/',
+    'https://forbes.com.br/noticias-sobre/inteligencia-artificial/feed/'
   ],
   Tecnologia: [
     'https://tecnoblog.net/feed/',
@@ -27,7 +29,11 @@ const FALLBACK_FEEDS: Record<string, string[]> = {
   ],
   Dev: [
     'https://diolinux.com.br/feed',
-    'https://tecnoblog.net/feed/'
+    'https://tecnoblog.net/feed/',
+    'https://rss.tecmundo.com.br/feed',
+    'https://canaltech.com.br/rss/',
+    'https://forbes.com.br/noticias-sobre/desenvolvimento-de-software/feed/',
+    'https://www.tabnews.com.br/rss'
   ],
   Inovacao: [
     'https://g1.globo.com/rss/g1/inovacao/',
@@ -56,6 +62,7 @@ function getFeedSourceName(feedUrl: string): string {
   if (url.includes('tecmundo')) return 'TechMundo';
   if (url.includes('globo.com')) return 'Globo';
   if (url.includes('cnnbrasil')) return 'CNN';
+  if (url.includes('tabnews.com.br')) return 'TabNews';
   if (url.includes('forbes')) return 'Forbes';
   return 'GNews';
 }
@@ -94,8 +101,8 @@ function calculateExpirationDate(title: string, desc: string, publishedAt: strin
     return new Date(pubTime + 24 * 60 * 60 * 1000).toISOString();
   }
 
-  // Common and evergreen articles remain valid for at most 3 days
-  return new Date(pubTime + 3 * 24 * 60 * 60 * 1000).toISOString();
+  // Common and evergreen articles remain valid for at most 5 days
+  return new Date(pubTime + 5 * 24 * 60 * 60 * 1000).toISOString();
 }
 
 // Simple hash utility to compare article bodies/titles
@@ -433,18 +440,8 @@ export const RefreshEngine = {
         const feedStart = Date.now();
         
         try {
-          const rssApiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`;
-          const response = await fetch(rssApiUrl, { next: { revalidate: 0 } }); // bypass cache for engine run
+          const items = await fetchRssFeed(feedUrl);
           const fetchDuration = Date.now() - feedStart;
-          
-          if (!response.ok) {
-            throw new Error(`HTTP status ${response.status}`);
-          }
-          
-          const data = await response.json();
-          if (data.status !== 'ok' || !Array.isArray(data.items)) {
-            throw new Error('Invalid feed schema from rss2json');
-          }
 
           // Mark source as Online
           sourceHealth[sourceName] = {
@@ -453,7 +450,7 @@ export const RefreshEngine = {
             lastChecked: new Date().toISOString()
           };
 
-          for (const item of data.items) {
+          for (const item of items) {
             const articleUrl = item.link;
             if (processedUrls.has(articleUrl)) continue;
             processedUrls.add(articleUrl);
@@ -489,6 +486,9 @@ export const RefreshEngine = {
             }
             if (category === "Inovacao") {
               articleCategory = "Inovacao";
+            }
+            if (isCategorySpecificRssFeed(feedUrl, category)) {
+              articleCategory = category;
             }
 
             // Verify category compatibility (only reject if classified as Rejeitado)
@@ -567,9 +567,10 @@ export const RefreshEngine = {
 
     // Apply expiration (retention logic) - filter out expired news
     const nowTime = Date.now();
-    const finalArticles = Array.from(articleMap.values()).filter(art =>
-      isArticleWithinRetention(art.publishedAt, (art as any).expiresAt, nowTime)
-    );
+    const finalArticles = deduplicateArticles(Array.from(articleMap.values()).filter(art =>
+      !(art.category === "Dev" && isEnglishDevSource(art.source)) &&
+      isArticleWithinRetention(art.publishedAt, art.expiresAt, nowTime)
+    ));
 
     // Save final lists back to storage
     await Storage.saveArticles(finalArticles);

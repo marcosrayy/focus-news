@@ -35,13 +35,13 @@ export function FrameworkNews({ sidebar }: { sidebar?: ReactNode }) {
   const { 
     articles: apiNews,
     lastSyncRelative
-  } = useNews("", "Dev", 12, 1);
+  } = useNews("desenvolvimento OR programação OR software OR desenvolvedor OR código OR DevOps OR framework", "Dev", 12, 1);
   
   const displayArticles = apiNews.length > 0 ? apiNews.map((n: any, i: number) => {
     const mock = articles[i % articles.length];
     return { ...mock, id: n.url || n.id || Math.random().toString(), title: n.title, description: n.description, image: n.image, url: n.url, time: "agora" };
   }) : [];
-  const { featuredArticles, remainingArticles } = useNewsRotation(displayArticles);
+  const { featuredArticles, remainingArticles } = useNewsRotation(displayArticles, 3);
 
   return (
     <>

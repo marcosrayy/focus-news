@@ -27,29 +27,22 @@ export function useNews(query: string, category: string = "Geral", maxArticles: 
   const [hasUpdates, setHasUpdates] = useState(false);
   const [newCount, setNewCount] = useState(0);
 
-  // Sync displayed articles on initial load
+  // Keep the rendered list in sync with each refreshed API response.
   useEffect(() => {
-    if (data?.articles && displayedArticles.length === 0) {
-      setDisplayedArticles(data.articles);
-      setLatestArticles(data.articles);
-    }
-  }, [data, displayedArticles.length]);
+    if (!data?.articles) return;
 
-  // Check for updates when data changes in background
-  useEffect(() => {
-    if (!data?.articles || displayedArticles.length === 0) return;
-
-    // Check if there are new articles (by checking if their URLs/IDs are not in our displayed list)
     const displayedIds = new Set(displayedArticles.map(a => a.id));
     const newArticles = data.articles.filter(a => !displayedIds.has(a.id));
+
+    setDisplayedArticles(data.articles);
+    setLatestArticles(data.articles);
 
     if (newArticles.length > 0) {
       setHasUpdates(true);
       setNewCount(newArticles.length);
-      setLatestArticles(data.articles);
     } else {
-      // If the background sync returned same or fewer items (e.g. deletion), update silently if no brand new articles
-      setLatestArticles(data.articles);
+      setHasUpdates(false);
+      setNewCount(0);
     }
   }, [data, displayedArticles]);
 

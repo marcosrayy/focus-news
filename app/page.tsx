@@ -19,6 +19,9 @@ export default function Home() {
     lastSyncRelative 
   } = useNews("Empreendedorismo OR Startups OR Tech", "Home", 12, 0);
   const { articles: tickerArticles } = useNews("Tecnologia OR Empreendedorismo OR Inovacao", "Destaques", 10, 0);
+  const gridArticlesWithoutHero = heroArticles[0]
+    ? gridArticles.filter(article => article.id !== heroArticles[0].id)
+    : gridArticles;
 
   return (
     <div className="min-h-screen bg-background">
@@ -51,7 +54,7 @@ export default function Home() {
               )}
             </div>
             <NewsCardsGrid
-              news={gridArticles}
+              news={gridArticlesWithoutHero}
               variant="three"
               sidebar={<HomeMarketSidebar />}
             />

@@ -5,7 +5,7 @@ import { useNews } from "@/hooks/useNews";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export function HeroDev() {
-  const { articles: news, isLoading } = useNews("", "Dev", 1);
+  const { articles: news, isLoading } = useNews("desenvolvimento OR programação OR software OR desenvolvedor OR código OR DevOps OR framework", "Dev", 1);
   const article = news?.[0] || {
     title: "O Futuro do Desenvolvimento Web",
     description: "Buscando as ultimas noticias para voce. Se demorar, o servico pode estar em manutencao.",

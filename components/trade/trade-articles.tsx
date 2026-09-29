@@ -11,7 +11,7 @@ export function TradeArticles({ sidebar }: { sidebar?: ReactNode }) {
   const { 
     articles: news,
     lastSyncRelative
-  } = useNews("Bolsa de valores OR Mercado Financeiro OR Ibovespa OR B3 OR Mercado Tech OR Fintech OR Fintechs", "Trade", 15);
+  } = useNews("Bolsa de valores OR Mercado Financeiro OR Ibovespa OR B3 OR Mercado Tech OR Fintech OR Fintechs", "Trade", 15, 1);
   
   const articlesToRender = news.length > 0 ? news : [];
   const { featuredArticles, remainingArticles } = useNewsRotation(articlesToRender);

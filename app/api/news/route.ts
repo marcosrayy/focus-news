@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { balanceArticlesBySource, fetchNewsBackend, hasCategoryEvidence, isArticleWithinRetention } from "../../../services/newsService";
+import { balanceArticlesBySource, deduplicateArticles, fetchNewsBackend, hasCategoryEvidence, isArticleWithinRetention, isEnglishDevSource } from "../../../services/newsService";
 import { Storage } from "../../../utils/storage";
 import { RefreshEngine } from "../../../services/refreshEngine";
 
@@ -26,36 +26,6 @@ function getRelativeTimeServer(dateString: string): string {
       month: "short",
     });
   }
-}
-
-// Simple deterministic shuffle based on current hour
-function rotateArticles(articles: any[], category: string): any[] {
-  if (articles.length <= 1) return articles;
-
-  const currentHour = new Date().getHours();
-  const currentMinute = new Date().getMinutes();
-  const timeBucket = Math.floor(currentMinute / 10); // 10-minute buckets for variation
-
-  // Separate into Featured (first 2) and Compact (rest)
-  const featured = articles.slice(0, 2);
-  const compact = articles.slice(2);
-
-  // Rotate featured articles if the hour is odd
-  if (featured.length === 2 && (currentHour % 2 === 1)) {
-    featured.reverse();
-  }
-
-  // Rotate compact articles using a rotation index based on time bucket
-  if (compact.length > 1) {
-    const rotationIndex = (currentHour + timeBucket) % compact.length;
-    const rotatedCompact = [
-      ...compact.slice(rotationIndex),
-      ...compact.slice(0, rotationIndex)
-    ];
-    return [...featured, ...rotatedCompact];
-  }
-
-  return [...featured, ...compact];
 }
 
 export async function GET(request: Request) {
@@ -103,12 +73,22 @@ export async function GET(request: Request) {
       targetCategory = "Home";
     }
 
+    const shouldMatchQuery = !!query && (category === "Geral" || category === "Destaques");
+    const queryKeywords = shouldMatchQuery
+      ? query.toLowerCase().split(/\s+or\s+/i).map(keyword => keyword.replace(/"/g, '').trim()).filter(Boolean)
+      : [];
+    const matchesQuery = (article: { title: string; description: string }) => {
+      const title = article.title.toLowerCase();
+      const description = article.description.toLowerCase();
+      return queryKeywords.some(keyword => title.includes(keyword) || description.includes(keyword));
+    };
+
     let filtered = allArticles.filter(art => 
       art.category === targetCategory || 
       (targetCategory === "Home" && (art.category === "Startups" || art.category === "Tecnologia" || art.category === "Inovacao")) ||
       (targetCategory === "Startups" && art.source.toLowerCase().includes("exame")) ||
       (targetCategory === "Business" && art.source.toLowerCase().includes("forbes")) ||
-      (targetCategory === "Business" && art.category === "Startups" && art.source.toLowerCase().includes("startupi"))
+      (targetCategory === "Business" && art.category === "Startups" && (art.source.toLowerCase().includes("startupi") || art.source.toLowerCase().includes("exame")))
     );
 
     // Strictly enforce sources for Inovacao to filter out old cached data
@@ -119,18 +99,36 @@ export async function GET(request: Request) {
       });
     }
 
+    if (targetCategory === "Dev") {
+      filtered = filtered.filter(art => !isEnglishDevSource(art.source));
+    }
+
     filtered = filtered.filter(art =>
       hasCategoryEvidence(art.title, art.description, targetCategory === "Home" ? art.category : targetCategory)
     );
 
-    // Fallback to synchronous live fetch if cache is empty or insufficient
-    if (filtered.length < max) {
-      console.log(`[API/News] Insufficient articles for ${targetCategory} in Storage (${filtered.length}/${max}), fetching live...`);
-      const freshArticles = await fetchNewsBackend({ query, category: targetCategory, max: max * 2, offset });
+    if (shouldMatchQuery) filtered = filtered.filter(matchesQuery);
+
+    filtered = filtered.map(art => {
+      const image = art.image || "";
+      const lowerImage = image.toLowerCase();
+      const isBadImage = !image || lowerImage.includes("youtube.com") || lowerImage.includes("youtu.be") || lowerImage.includes("vimeo.com") || lowerImage.includes("/embed/");
+      return isBadImage ? { ...art, image: "/news-focus.jpg" } : art;
+    });
+    filtered = filtered.filter(art => isArticleWithinRetention(art.publishedAt, art.expiresAt));
+    filtered = deduplicateArticles(filtered);
+
+    // Include the skipped featured article when deciding whether pagination has enough results.
+    const requiredCount = max + offset;
+    if (filtered.length < requiredCount) {
+      console.log(`[API/News] Insufficient articles for ${targetCategory} in Storage (${filtered.length}/${requiredCount}), fetching live...`);
+      const freshArticles = await fetchNewsBackend({ query, category: targetCategory, max: requiredCount, offset: 0 });
       
       const existingIds = new Set(filtered.map(a => a.id));
       for (const fa of freshArticles) {
+        if (shouldMatchQuery && !matchesQuery(fa)) continue;
         if (!existingIds.has(fa.id)) {
+          existingIds.add(fa.id);
           filtered.push({
             ...fa,
             category: fa.category || targetCategory,
@@ -142,37 +140,20 @@ export async function GET(request: Request) {
       }
     }
 
-    // If query is specified, do title/desc text match (supporting "OR" separation)
-    // Only apply if querying general news (Geral / Destaques) to avoid filtering out specific module news
-    if (query && (category === "Geral" || category === "Destaques")) {
-      const keywords = query.toLowerCase().split(/\s+or\s+/i).map(k => k.replace(/"/g, '').trim()).filter(Boolean);
-      
-      if (keywords.length > 0) {
-        filtered = filtered.filter(art => {
-          const title = art.title.toLowerCase();
-          const desc = art.description.toLowerCase();
-          return keywords.some(k => title.includes(k) || desc.includes(k));
-        });
-      }
-    }
-
-    // Filter out articles without valid images
-    filtered = filtered.filter(art => {
-      const img = art.image || "";
-      const isBadImg = !img || img.includes("youtube.com") || img.includes("youtu.be") || img.includes("vimeo.com") || img.includes("/embed/");
-      return !isBadImg;
+    filtered = filtered.map(art => {
+      const image = art.image || "";
+      const lowerImage = image.toLowerCase();
+      const isBadImage = !image || lowerImage.includes("youtube.com") || lowerImage.includes("youtu.be") || lowerImage.includes("vimeo.com") || lowerImage.includes("/embed/");
+      return isBadImage ? { ...art, image: "/news-focus.jpg" } : art;
     });
-
     filtered = filtered.filter(art => isArticleWithinRetention(art.publishedAt, art.expiresAt));
+    filtered = deduplicateArticles(filtered);
 
-    // Sort by publish date and then import importance
+    // Keep ordering stable so separate hero/list requests paginate the same set.
     filtered.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
 
-    // Apply natural rotation
-    const rotated = rotateArticles(filtered, targetCategory);
-
     // Balance publishers before pagination
-    const balanced = balanceArticlesBySource(rotated);
+    const balanced = balanceArticlesBySource(filtered);
     const articles = balanced.slice(offset, offset + max);
 
     return NextResponse.json({

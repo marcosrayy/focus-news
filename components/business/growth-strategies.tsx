@@ -36,7 +36,7 @@ export function GrowthStrategies({ sidebar }: { sidebar?: ReactNode }) {
   const { 
     articles: apiNews,
     lastSyncRelative
-  } = useNews("Empreendedorismo OR Negocios OR Empresas OR Startups OR Economia OR Mercado Tech", "Business", 15);
+  } = useNews("Empreendedorismo OR Negocios OR Empresas OR Startups OR Economia OR Mercado Tech", "Business", 15, 1);
   
   const displayArticles = apiNews.length > 0 ? apiNews.map((n: any, i: number) => {
     const mock = articles[i % articles.length];

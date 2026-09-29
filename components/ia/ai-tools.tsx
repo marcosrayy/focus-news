@@ -35,7 +35,7 @@ export function AITools({ sidebar }: { sidebar?: ReactNode }) {
   const { 
     articles: apiNews, 
     lastSyncRelative 
-  } = useNews("Inteligencia Artificial OR IA OR ChatGPT OR OpenAI OR Plataformas de IA OR Tech Mundo OR Noticia de IA", "IA", 18);
+  } = useNews("Inteligencia Artificial OR IA OR ChatGPT OR OpenAI OR Plataformas de IA OR Tech Mundo OR Noticia de IA", "IA", 18, 1);
   
   const displayArticles = apiNews.length > 0 ? apiNews.map((n: any, i: number) => {
     const mock = articles[i % articles.length];
