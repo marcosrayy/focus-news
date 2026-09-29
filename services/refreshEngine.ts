@@ -1,5 +1,5 @@
 import { Storage, StorageArticle, EngineStatus } from '../utils/storage';
-import { classifyArticle, isSourceAllowed, MODULE_SOURCES, repairMojibake } from './newsService';
+import { classifyArticle, hasCategoryEvidence, isArticleWithinRetention, isSourceAllowed, MODULE_SOURCES, repairMojibake } from './newsService';
 import { NEWS_API_KEY } from '../config/newsConfig';
 
 // Categories mapping to RSS feeds
@@ -94,8 +94,8 @@ function calculateExpirationDate(title: string, desc: string, publishedAt: strin
     return new Date(pubTime + 24 * 60 * 60 * 1000).toISOString();
   }
 
-  // Evergreen / Others: 7 days
-  return new Date(pubTime + 7 * 24 * 60 * 60 * 1000).toISOString();
+  // Common and evergreen articles remain valid for at most 3 days
+  return new Date(pubTime + 3 * 24 * 60 * 60 * 1000).toISOString();
 }
 
 // Simple hash utility to compare article bodies/titles
@@ -492,7 +492,7 @@ export const RefreshEngine = {
             }
 
             // Verify category compatibility (only reject if classified as Rejeitado)
-            if (articleCategory === "Rejeitado") {
+            if (articleCategory === "Rejeitado" || !hasCategoryEvidence(title, cleanDesc, articleCategory)) {
               discardedThisRun++;
               continue;
             }
@@ -567,14 +567,9 @@ export const RefreshEngine = {
 
     // Apply expiration (retention logic) - filter out expired news
     const nowTime = Date.now();
-    const finalArticles = Array.from(articleMap.values()).filter(art => {
-      // If we saved an expiresAt date, verify it. Otherwise fallback to evergreen 7 days check
-      const expiryStr = (art as any).expiresAt;
-      if (expiryStr) {
-        return new Date(expiryStr).getTime() > nowTime;
-      }
-      return (nowTime - new Date(art.publishedAt).getTime()) < (7 * 24 * 60 * 60 * 1000);
-    });
+    const finalArticles = Array.from(articleMap.values()).filter(art =>
+      isArticleWithinRetention(art.publishedAt, (art as any).expiresAt, nowTime)
+    );
 
     // Save final lists back to storage
     await Storage.saveArticles(finalArticles);

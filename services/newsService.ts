@@ -106,15 +106,30 @@ export function balanceArticlesBySource<T extends { source?: string | null }>(ar
   return balanced;
 }
 
+const MAX_ARTICLE_AGE_MS = 3 * 24 * 60 * 60 * 1000;
+
+export function isArticleWithinRetention(
+  publishedAt: string,
+  expiresAt?: string,
+  nowTime = Date.now(),
+): boolean {
+  const publishedTime = new Date(publishedAt).getTime();
+  if (!Number.isFinite(publishedTime)) return false;
+
+  const maxAgeExpiry = publishedTime + MAX_ARTICLE_AGE_MS;
+  const explicitExpiry = expiresAt ? new Date(expiresAt).getTime() : maxAgeExpiry;
+  return Math.min(maxAgeExpiry, explicitExpiry) > nowTime;
+}
+
 // 1. Definições de Fontes por Módulo
 export const MODULE_SOURCES = {
-  Startups: ["startupi", "forbes", "gnews"],
-  Economia: ["infomoney", "canaltech", "mercado tech", "valor", "globo", "cnn", "gnews"],
-  IA: ["canaltech", "techmundo", "noticias ia", "gnews"],
+  Startups: ["startupi", "forbes", "gnews", "startups"],
+  Economia: ["infomoney", "g1", "canaltech", "mercado tech", "valor", "globo", "cnn", "gnews"],
+  IA: ["canaltech", "techmundo", "noticias ia", "gnews", "forbes"],
   Tecnologia: ["tecnoblog", "noticias tech", "techmundo", "globo", "cnn", "forbes", "gnews"],
   Dev: ["tecnoblog", "noticias tech", "canaltech", "gnews", "diolinux", "forbes"],
-  Inovacao: ["globo", "forbes"],
-  Business: ["startupi", "infomoney", "valor", "forbes", "gnews"]
+  Inovacao: ["globo", "forbes", "g1"],
+  Business: ["startupi", "infomoney", "valor", "forbes", "gnews", "cnn"]
 };
 
 // 2. Palavras-chave Permitidas por Módulo (para cálculo de Score)
@@ -137,19 +152,29 @@ const MODULE_KEYWORDS = {
     "ia", "artificial intelligence", "inteligencia artificial", "chatgpt", "openai",
     "anthropic", "google ai", "gemini", "claude", "llms", "llm", "machine learning",
     "deep learning", "ia generativa", "robotica", "automacao inteligente", "copilot",
-    "automation ai"
+    "automation ai", "ia generativia"
   ],
   Tecnologia: [
     "software", "hardware", "computacao", "smartphone", "celular", "android", "ios",
     "tecnologia", "processador", "chips", "vazamento", "lancamento", "gadgets", "console",
-    "videogame", "playstation", "xbox", "nintendo", "pc", "samsung", "apple", "motorola", "xiaomi"
+    "videogame", "playstation", "xbox", "nintendo", "pc", "samsung", "apple", "motorola", "xiaomi",
+    "nvidia", "intel", "amd", "ryzen", "gpu", "cpu", "armazenamento", "computador", "internet",
+    "internet das coisas", "iot", "rede", "wifi", "bluetooth", "5g", "6g", "tecnologia de ponta",
+    "inovacao tecnologica", "realidade virtual", "realidade aumentada", "vr", "ar", "metaverso",
+    "blockchain", "criptomoeda", "criptomoedas", "bitcoin", "ethereum", "web3", "segurança digital",
+    "cibersegurança", "privacidade", "dados", "cloud computing", "computacao em nuvem", "servidores",
+    "google", "microsoft", "amazon", "facebook", "meta", "tiktok", "twitter", "linkedin", "instagram",
+    "linux", "distro"
   ],
   Dev: [
     "desenvolvimento", "programacao", "cloud", "infraestrutura", "apis", "api",
     "seguranca", "devops", "frameworks", "framework", "bancos de dados", "javascript",
     "python", "java", "node", "react", "aws", "azure", "gcp", "docker", "kubernetes",
     "linux", "github", "backend", "frontend", "git", "codigo", "coding", "software",
-    "programador", "desenvolvedor"
+    "programador", "desenvolvedor", "desenvolvimento de sistemas", "desenvolvimento de software", "programador web",
+    "programador mobile", "mobile", "web", "app", "aplicativo", "sistema", "php", "c#", "c++", "typescript", "html",
+    "css", "sql", "nosql", "mongodb", "postgresql", "github", "windows", "linux", "distro", "node.js", "react.js", "angular",
+    "vue", "flutter", "dart", "swift", "kotlin", "ios", "android"
   ],
   Inovacao: [
     "inovacao", "pesquisa", "patente", "descoberta", "ciencia", "cientifico",
@@ -173,7 +198,7 @@ const MODULE_KEYWORDS = {
 // 3. Proibições Absolutas (Mata-mata - Score vira 0 imediatamente)
 const PROHIBITED_TERMS = [
   "politica", "eleicoes", "lula", "bolsonaro", "stf", "bbb", "reality show", "reality",
-  "futebol", "esportes", "esporte", "crimes", "crime", "acidentes", "acidente",
+  "futebol", "esportes", "esporte", "goleiro", "goleira", "goleiros", "goleiras", "crimes", "crime", "acidentes", "acidente",
   "fofocas", "fofoca", "novelas", "novela", "celebridades", "celebridade", "famosos",
   "influenciadores", "influenciador", "horoscopo", "loterias", "loteria", "adulto",
   "copa", "copa do mundo", "artilheiro", "gol", "flamengo", "palmeiras", "corinthians",
@@ -183,10 +208,10 @@ const PROHIBITED_TERMS = [
   "deputado", "partido", "ministro", "ministerio", "pf", "policia federal", "tse",
   "senado", "congresso", "camara", "parlamento", "guerra", "conflito", "militar", "ataque",
   "ataques", "morte", "mortes", "atentado", "missil", "misseis", "bombardeio", "terrorista",
-  "terrorismo", "ira", "jordania", "israel", "gaza", "palestina", "russia", "ucrania",
+  "terrorismo", "ira", "jordania", "israel", "gaza", "palestina", "russia", "ucrania", "morto", "mortos",
   "morreu", "morreram", "preso", "presos", "prisao", "prisoes", "custodia", "presidio",
   "policia", "policial", "homicidio", "assassinado", "assassinada", "assassinatos", "tortura", "bet",
-  "apostas", "trump", "biden", "renan santos", "augusto cury", "ciro gomes"
+  "apostas", "fashion show", "desfile", "moda", "passarela", "trump", "biden", "renan santos", "augusto cury", "ciro gomes"
 ];
 
 // Helper para normalizar strings (remove acentos e caixa alta)
@@ -219,8 +244,24 @@ function countMatches(text: string, keywords: string[]): number {
   return count;
 }
 
+export function hasCategoryEvidence(title: string, description: string, category: string): boolean {
+  const keywords = MODULE_KEYWORDS[category as keyof typeof MODULE_KEYWORDS];
+  if (!keywords) return false;
+  if (countMatches(title, keywords) > 0) return true;
+
+  let descriptionKeywordCount = 0;
+  for (const keyword of keywords) {
+    if (countMatches(description, [keyword]) > 0) {
+      descriptionKeywordCount++;
+      if (descriptionKeywordCount >= 2) return true;
+    }
+  }
+
+  return false;
+}
+
 // Calcula score e determina melhor categoria com base nas regras do MetaPrompt
-export function classifyArticle(title: string, description: string, source: string): { category: string; score: number } {
+function classifyArticleBySourceAndKeywords(title: string, description: string, source: string): { category: string; score: number } {
   const fullText = `${title} ${description}`;
   const normText = normalizeText(fullText);
   const normSource = normalizeText(source);
@@ -337,6 +378,17 @@ export function classifyArticle(title: string, description: string, source: stri
   return { category: "Rejeitado", score: 0 };
 }
 
+export function classifyArticle(title: string, description: string, source: string): { category: string; score: number } {
+  const classification = classifyArticleBySourceAndKeywords(title, description, source);
+  if (classification.category === "Rejeitado") return classification;
+
+  if (!hasCategoryEvidence(title, description, classification.category)) {
+    return { category: "Rejeitado", score: 0 };
+  }
+
+  return classification;
+}
+
 // Verifica se a fonte do artigo é permitida para o módulo solicitado
 export function isSourceAllowed(source: string, targetCategory: string): boolean {
   const normSource = normalizeText(source);
@@ -417,7 +469,7 @@ export async function fetchNewsBackend({
             if (targetCategory === "Startups" && sourceName.toLowerCase().includes("startupi") && (articleCategory === "Startups" || articleCategory === "Business")) {
               articleCategory = "Startups";
             }
-            if (articleCategory !== targetCategory) continue;
+            if (articleCategory !== targetCategory || !hasCategoryEvidence(title, description, articleCategory)) continue;
 
             seenUrls.add(item.url);
             approvedArticles.push({
@@ -449,13 +501,13 @@ export async function fetchNewsBackend({
       
       let feedUrls = ['https://tecnoblog.net/feed/', 'https://g1.globo.com/tecnologia/rss2.0.xml', 'https://canaltech.com.br/feed/'];
       if (targetCategory === "Startups") {
-        feedUrls = ['https://startupi.com.br/feed/'];
-      } else if (targetCategory === "Economia" || targetCategory === "Trade") {
-        feedUrls = ['https://www.infomoney.com.br/feed/', 'https://startupi.com.br/feed/', 'https://valor.globo.com/rss/valor/', 'https://g1.globo.com/economia/rss2.0.xml'];
+        feedUrls = ['https://startupi.com.br/feed/', 'https://startups.com.br/feed/', 'https://forbes.com.br/noticias-sobre/startups/feed/'];
+      } else if (targetCategory === "Economia") {
+        feedUrls = ['https://www.infomoney.com.br/feed/', 'https://startupi.com.br/feed/', 'https://valor.globo.com/rss/valor/', 'https://g1.globo.com/economia/rss2.0.xml', 'https://www1.folha.uol.com.br/mercado/rss2.0.xml'];
       } else if (targetCategory === "Business") {
         feedUrls = ['https://startupi.com.br/feed/', 'https://www.infomoney.com.br/feed/', 'https://www.cnnbrasil.com.br/ia/feed/'];
       } else if (targetCategory === "IA") {
-        feedUrls = ['https://canaltech.com.br/rss/', 'https://startupi.com.br/feed/'];
+        feedUrls = ['https://canaltech.com.br/rss/', 'https://startupi.com.br/feed/', 'https://www.cnnbrasil.com.br/tudo-sobre/inteligencia-artificial/feed/', 'https://forbes.com.br/noticias-sobre/inteligencia-artificial/feed/'];
       } else if (targetCategory === "Dev") {
         feedUrls = ['https://diolinux.com.br/feed', 'https://forbes.com.br/noticias-sobre/desenvolvimento-de-software/feed/'];
       } else if (targetCategory === "Inovacao") {
@@ -534,7 +586,7 @@ export async function fetchNewsBackend({
         if (targetCategory === "Inovacao") {
           articleCategory = "Inovacao"; // Forcefully allow these specific feeds
         }
-        if (articleCategory !== targetCategory) continue;
+        if (articleCategory !== targetCategory || !hasCategoryEvidence(title, cleanDesc, articleCategory)) continue;
 
         seenUrls.add(item.link);
         approvedArticles.push({

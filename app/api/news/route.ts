@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { balanceArticlesBySource, fetchNewsBackend } from "../../../services/newsService";
+import { balanceArticlesBySource, fetchNewsBackend, hasCategoryEvidence, isArticleWithinRetention } from "../../../services/newsService";
 import { Storage } from "../../../utils/storage";
 import { RefreshEngine } from "../../../services/refreshEngine";
 
@@ -107,7 +107,6 @@ export async function GET(request: Request) {
       art.category === targetCategory || 
       (targetCategory === "Home" && (art.category === "Startups" || art.category === "Tecnologia" || art.category === "Inovacao")) ||
       (targetCategory === "Startups" && art.source.toLowerCase().includes("exame")) ||
-      (targetCategory === "Tecnologia" && art.source.toLowerCase().includes("cnn")) ||
       (targetCategory === "Business" && art.source.toLowerCase().includes("forbes")) ||
       (targetCategory === "Business" && art.category === "Startups" && art.source.toLowerCase().includes("startupi"))
     );
@@ -119,6 +118,10 @@ export async function GET(request: Request) {
         return lowerSrc.includes("g1") || lowerSrc.includes("globo") || lowerSrc.includes("forbes");
       });
     }
+
+    filtered = filtered.filter(art =>
+      hasCategoryEvidence(art.title, art.description, targetCategory === "Home" ? art.category : targetCategory)
+    );
 
     // Fallback to synchronous live fetch if cache is empty or insufficient
     if (filtered.length < max) {
@@ -159,6 +162,8 @@ export async function GET(request: Request) {
       const isBadImg = !img || img.includes("youtube.com") || img.includes("youtu.be") || img.includes("vimeo.com") || img.includes("/embed/");
       return !isBadImg;
     });
+
+    filtered = filtered.filter(art => isArticleWithinRetention(art.publishedAt, art.expiresAt));
 
     // Sort by publish date and then import importance
     filtered.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());

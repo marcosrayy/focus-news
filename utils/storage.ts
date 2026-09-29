@@ -86,6 +86,7 @@ export interface StorageArticle {
   score: number;
   importedAt: string;
   importanceScore: number; // calculated importance for priorities
+  expiresAt?: string;
   isPinned?: boolean;
 }
 

@@ -9,7 +9,7 @@ import { NewsSectionLayout } from "@/components/news-section-layout";
 import type { ReactNode } from "react";
 
 interface AIArticle {
-  id: number;
+  id: number | string;
   category: string;
   categoryColor: string;
   icon: React.ReactNode;
@@ -39,7 +39,7 @@ export function AITools({ sidebar }: { sidebar?: ReactNode }) {
   
   const displayArticles = apiNews.length > 0 ? apiNews.map((n: any, i: number) => {
     const mock = articles[i % articles.length];
-    return { ...mock, title: n.title, description: n.description, image: n.image, url: n.url, time: "agora" };
+    return { ...mock, id: `${n.id ?? n.url ?? mock.id}-${i}`, title: n.title, description: n.description, image: n.image, url: n.url, time: "agora" };
   }) : [];
   const { featuredArticles, remainingArticles } = useNewsRotation(displayArticles);
 
