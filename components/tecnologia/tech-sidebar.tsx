@@ -23,10 +23,9 @@ const deepAnalysis = [
   { title: "Edge Computing: a proxima revolucao apos a nuvem", author: "Carolina Matos", readTime: "10 min" },
 ];
 
-export function TechSidebar() {
+export function TechSidebarContent() {
   return (
-    <SidebarCardsModal title="TECNOLOGIA" items={["Categorias", "Comparativos", "Análises profundas"]}>
-      {/* Categories */}
+    <>
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-500/10">
@@ -50,7 +49,6 @@ export function TechSidebar() {
         </div>
       </div>
 
-      {/* Comparisons */}
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500/10">
@@ -69,7 +67,6 @@ export function TechSidebar() {
         </div>
       </div>
 
-      {/* Deep Analysis */}
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-500/10">
@@ -94,6 +91,14 @@ export function TechSidebar() {
       <button className="w-full rounded-xl bg-sky-500 py-3.5 text-center text-sm font-bold tracking-wider text-white transition-all duration-300 hover:bg-sky-600 hover:shadow-lg hover:shadow-sky-500/20">
         EXPLORAR TECNOLOGIA
       </button>
+    </>
+  );
+}
+
+export function TechSidebar() {
+  return (
+    <SidebarCardsModal title="TECNOLOGIA" items={["Categorias", "Comparativos", "Análises profundas"]}>
+      <TechSidebarContent />
     </SidebarCardsModal>
   );
 }

@@ -23,10 +23,9 @@ const aiApplications = [
   { area: "Financas", example: "Trading algoritmico com LLMs supera fundos tradicionais em 23%", tag: "REAL" },
 ];
 
-export function IASidebar() {
+export function IASidebarContent() {
   return (
-    <SidebarCardsModal title="INTELIGÊNCIA ARTIFICIAL" items={["Ética e regulação", "Tendências globais", "IA na prática"]}>
-      {/* Ethics & Regulation */}
+    <>
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-violet-500/10">
@@ -48,7 +47,6 @@ export function IASidebar() {
         </div>
       </div>
 
-      {/* Global Trends */}
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10">
@@ -69,7 +67,6 @@ export function IASidebar() {
         </div>
       </div>
 
-      {/* Real Applications */}
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-violet-500/10">
@@ -93,6 +90,14 @@ export function IASidebar() {
       <button className="w-full rounded-xl bg-violet-500 py-3.5 text-center text-sm font-bold tracking-wider text-white transition-all duration-300 hover:bg-violet-600 hover:shadow-lg hover:shadow-violet-500/20">
         EXPLORAR IA
       </button>
+    </>
+  );
+}
+
+export function IASidebar() {
+  return (
+    <SidebarCardsModal title="INTELIGÊNCIA ARTIFICIAL" items={["Ética e regulação", "Tendências globais", "IA na prática"]}>
+      <IASidebarContent />
     </SidebarCardsModal>
   );
 }

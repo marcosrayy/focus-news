@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="orange" x1="112" y1="24" x2="406" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff7300"/>
+      <stop offset="0.55" stop-color="#ff4b00"/>
+      <stop offset="1" stop-color="#ff6900"/>
+    </linearGradient>
+    <mask id="grille">
+      <rect width="512" height="512" fill="white"/>
+      <path d="M128 174h108a15 15 0 0 1 0 30H128a15 15 0 0 1 0-30Zm148 0h108a15 15 0 0 1 0 30H276a15 15 0 0 1 0-30ZM128 250h108a15 15 0 0 1 0 30H128a15 15 0 0 1 0-30Zm148 0h108a15 15 0 0 1 0 30H276a15 15 0 0 1 0-30Z" fill="black"/>
+    </mask>
+  </defs>
+  <g transform="translate(0 -12)">
+    <path d="M112 294v48a144 144 0 0 0 288 0v-48" stroke="url(#orange)" stroke-width="46" stroke-linecap="round"/>
+    <path d="M256 447v35" stroke="url(#orange)" stroke-width="46"/>
+    <rect x="124" y="464" width="264" height="36" rx="18" fill="url(#orange)"/>
+    <rect x="136" y="20" width="240" height="386" rx="120" fill="url(#orange)" mask="url(#grille)"/>
+  </g>
+</svg>

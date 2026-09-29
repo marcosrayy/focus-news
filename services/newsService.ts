@@ -1,3 +1,4 @@
+
 import { NEWS_API_KEY } from "../config/newsConfig";
 
 export interface NewsArticle {
@@ -12,13 +13,106 @@ export interface NewsArticle {
   score?: number;
 }
 
+const WINDOWS_1252_BYTES = new Map<number, number>([
+  [0x20ac, 0x80], [0x201a, 0x82], [0x0192, 0x83], [0x201e, 0x84],
+  [0x2026, 0x85], [0x2020, 0x86], [0x2021, 0x87], [0x02c6, 0x88],
+  [0x2030, 0x89], [0x0160, 0x8a], [0x2039, 0x8b], [0x0152, 0x8c],
+  [0x017d, 0x8e], [0x2018, 0x91], [0x2019, 0x92], [0x201c, 0x93],
+  [0x201d, 0x94], [0x2022, 0x95], [0x2013, 0x96], [0x2014, 0x97],
+  [0x02dc, 0x98], [0x2122, 0x99], [0x0161, 0x9a], [0x203a, 0x9b],
+  [0x0153, 0x9c], [0x017e, 0x9e], [0x0178, 0x9f],
+]);
+
+export function repairMojibake(text: string): string {
+  let repaired = text;
+
+  for (let pass = 0; pass < 3; pass++) {
+    const characters = Array.from(repaired);
+    let next = "";
+    let changed = false;
+
+    for (let index = 0; index < characters.length; index++) {
+      const firstCodePoint = characters[index].codePointAt(0)!;
+      const firstByte = firstCodePoint <= 0xff ? firstCodePoint : WINDOWS_1252_BYTES.get(firstCodePoint);
+      const sequenceLength = firstByte !== undefined && firstByte >= 0xc2 && firstByte <= 0xdf
+        ? 2
+        : firstByte !== undefined && firstByte >= 0xe0 && firstByte <= 0xef
+          ? 3
+          : firstByte !== undefined && firstByte >= 0xf0 && firstByte <= 0xf4
+            ? 4
+            : 0;
+
+      if (!sequenceLength || index + sequenceLength > characters.length) {
+        next += characters[index];
+        continue;
+      }
+
+      const bytes = [firstByte!];
+      for (let offset = 1; offset < sequenceLength; offset++) {
+        const codePoint = characters[index + offset].codePointAt(0)!;
+        const byte = codePoint <= 0xff ? codePoint : WINDOWS_1252_BYTES.get(codePoint);
+        if (byte === undefined || byte < 0x80 || byte > 0xbf) break;
+        bytes.push(byte);
+      }
+
+      if (bytes.length !== sequenceLength) {
+        next += characters[index];
+        continue;
+      }
+
+      try {
+        next += new TextDecoder("utf-8", { fatal: true }).decode(new Uint8Array(bytes));
+        index += sequenceLength - 1;
+        changed = true;
+      } catch {
+        next += characters[index];
+      }
+    }
+
+    if (!changed) break;
+    repaired = next;
+  }
+
+  return repaired.normalize("NFC");
+}
+
+export function balanceArticlesBySource<T extends { source?: string | null }>(articles: T[]): T[] {
+  const sources = new Map<string, T[]>();
+
+  for (const article of articles) {
+    const source = article.source?.trim().toLowerCase() || "unknown";
+    const sourceArticles = sources.get(source) || [];
+    sourceArticles.push(article);
+    sources.set(source, sourceArticles);
+  }
+
+  const positions = new Map<string, number>();
+  const balanced: T[] = [];
+  let hasMoreArticles = true;
+
+  while (hasMoreArticles) {
+    hasMoreArticles = false;
+
+    for (const [source, sourceArticles] of sources) {
+      const position = positions.get(source) || 0;
+      if (position >= sourceArticles.length) continue;
+
+      balanced.push(sourceArticles[position]);
+      positions.set(source, position + 1);
+      hasMoreArticles = true;
+    }
+  }
+
+  return balanced;
+}
+
 // 1. Definições de Fontes por Módulo
 export const MODULE_SOURCES = {
   Startups: ["startupi", "forbes", "gnews"],
-  Economia: ["infomoney", "mercado tech", "valor", "globo", "cnn", "gnews"],
+  Economia: ["infomoney", "canaltech", "mercado tech", "valor", "globo", "cnn", "gnews"],
   IA: ["canaltech", "techmundo", "noticias ia", "gnews"],
   Tecnologia: ["tecnoblog", "noticias tech", "techmundo", "globo", "cnn", "forbes", "gnews"],
-  Dev: ["tecnoblog", "noticias tech", "canaltech", "gnews"],
+  Dev: ["tecnoblog", "noticias tech", "canaltech", "gnews", "diolinux", "forbes"],
   Inovacao: ["globo", "forbes"],
   Business: ["startupi", "infomoney", "valor", "forbes", "gnews"]
 };
@@ -32,8 +126,8 @@ const MODULE_KEYWORDS = {
     "rodada de investimento", "rodadas de investimento", "aporte", "innovation hub"
   ],
   Economia: [
-    "economia", "mercado financeiro", "empresas", "investimentos", "bolsa",
-    "negocios", "macroeconomia", "fintechs", "empresas brasileiras", "resultados financeiros",
+    "economia", "mercado financeiro", "empresas", "investimentos", "bolsa de valores", "mercado de capitais", "financas pessoais", "gestao financeira",
+    "negocios", "macroeconomia", "fintechs", "empresas brasileiras", "resultados financeiros", "bolsa",
     "inflacao", "juros", "acoes", "financas", "pib", "receita", "lucro", "selic", "cambio", "dolar",
     "acordo", "compra", "venda", "fusao", "aquisicao", "banco", "bancos", "financeiro", "financeira",
     "empresa", "bilhoes", "milhoes", "bilhao", "milhao", "reais", "dolares", "euro", "mercado",
@@ -61,7 +155,7 @@ const MODULE_KEYWORDS = {
     "inovacao", "pesquisa", "patente", "descoberta", "ciencia", "cientifico",
     "cientistas", "vacina", "espacial", "nasa", "astronomia", "planeta", "energia limpa",
     "energia sustentavel", "biotecnologia", "medicina", "cura", "saude", "avanco",
-    "futuro", "fusao nuclear", "genetica", "quantum", "computacao quantica", "invenção",
+    "futuro","genetica", "quantum", "computacao quantica", "invenção",
     "descobertas", "tecnologica", "transformacao digital"
   ],
   Business: [
@@ -91,7 +185,8 @@ const PROHIBITED_TERMS = [
   "ataques", "morte", "mortes", "atentado", "missil", "misseis", "bombardeio", "terrorista",
   "terrorismo", "ira", "jordania", "israel", "gaza", "palestina", "russia", "ucrania",
   "morreu", "morreram", "preso", "presos", "prisao", "prisoes", "custodia", "presidio",
-  "policia", "policial", "homicidio", "assassinado", "assassinada", "assassinatos", "tortura"
+  "policia", "policial", "homicidio", "assassinado", "assassinada", "assassinatos", "tortura", "bet",
+  "apostas", "trump", "biden", "renan santos", "augusto cury", "ciro gomes"
 ];
 
 // Helper para normalizar strings (remove acentos e caixa alta)
@@ -302,7 +397,7 @@ export async function fetchNewsBackend({
       const searchQuery = query || "tecnologia OR startups OR economia OR inteligência artificial";
       const apiUrl = `https://gnews.io/api/v4/search?q=${encodeURIComponent(searchQuery)}&lang=pt&max=${(max + offset) * 2}&apikey=${NEWS_API_KEY}`;
       
-      const res = await fetch(apiUrl, { next: { revalidate: 300 } }); 
+      const res = await fetch(apiUrl, { cache: "force-cache" });
       if (res.ok) {
         const data = await res.json();
         if (data.articles && Array.isArray(data.articles)) {
@@ -310,12 +405,14 @@ export async function fetchNewsBackend({
             if (!item.image || seenUrls.has(item.url)) continue;
 
             const sourceName = typeof item.source === 'object' ? item.source.name : item.source;
+            const title = repairMojibake(item.title || "");
+            const description = repairMojibake(item.description || "");
             
             // Validação 1: Origem Válida
             if (!isSourceAllowed(sourceName, targetCategory)) continue;
 
             // Validação 2: Classificação e Score Semântico
-            const classification = classifyArticle(item.title, item.description || "", sourceName);
+            const classification = classifyArticle(title, description, sourceName);
             let articleCategory = classification.category;
             if (targetCategory === "Startups" && sourceName.toLowerCase().includes("startupi") && (articleCategory === "Startups" || articleCategory === "Business")) {
               articleCategory = "Startups";
@@ -325,8 +422,8 @@ export async function fetchNewsBackend({
             seenUrls.add(item.url);
             approvedArticles.push({
               id: item.url,
-              title: item.title,
-              description: item.description,
+              title,
+              description,
               url: item.url,
               image: item.image,
               publishedAt: item.publishedAt,
@@ -335,7 +432,6 @@ export async function fetchNewsBackend({
               score: classification.score
             });
 
-            if (approvedArticles.length >= max + offset) break;
           }
         }
       }
@@ -345,21 +441,23 @@ export async function fetchNewsBackend({
   }
 
   // Se não obteve artigos suficientes do GNews, recorre ao Fallback RSS
-  if (approvedArticles.length < max + offset) {
+  const minimumSourceCount = Math.min(3, max + offset);
+  const gnewsSourceCount = new Set(approvedArticles.map(article => article.source.trim().toLowerCase())).size;
+  if (approvedArticles.length < max + offset || gnewsSourceCount < minimumSourceCount) {
     try {
       console.warn(`[FocusNews] GNews returned insufficient results. Using RSS Fallback for ${targetCategory}...`);
       
-      let feedUrls = ['https://tecnoblog.net/feed/'];
+      let feedUrls = ['https://tecnoblog.net/feed/', 'https://g1.globo.com/tecnologia/rss2.0.xml', 'https://canaltech.com.br/feed/'];
       if (targetCategory === "Startups") {
         feedUrls = ['https://startupi.com.br/feed/'];
       } else if (targetCategory === "Economia" || targetCategory === "Trade") {
-        feedUrls = ['https://www.infomoney.com.br/feed/', 'https://startupi.com.br/feed/', 'https://valor.globo.com/rss/valor/'];
+        feedUrls = ['https://www.infomoney.com.br/feed/', 'https://startupi.com.br/feed/', 'https://valor.globo.com/rss/valor/', 'https://g1.globo.com/economia/rss2.0.xml'];
       } else if (targetCategory === "Business") {
-        feedUrls = ['https://startupi.com.br/feed/', 'https://www.infomoney.com.br/feed/'];
+        feedUrls = ['https://startupi.com.br/feed/', 'https://www.infomoney.com.br/feed/', 'https://www.cnnbrasil.com.br/ia/feed/'];
       } else if (targetCategory === "IA") {
         feedUrls = ['https://canaltech.com.br/rss/', 'https://startupi.com.br/feed/'];
       } else if (targetCategory === "Dev") {
-        feedUrls = ['https://diolinux.com.br/feed'];
+        feedUrls = ['https://diolinux.com.br/feed', 'https://forbes.com.br/noticias-sobre/desenvolvimento-de-software/feed/'];
       } else if (targetCategory === "Inovacao") {
         feedUrls = ['https://g1.globo.com/rss/g1/inovacao/', 'https://forbes.com.br/noticias-sobre/inovacao/feed/'];
       }
@@ -370,7 +468,7 @@ export async function fetchNewsBackend({
       await Promise.all(feedUrls.map(async (feedUrl) => {
         try {
           const rssApiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`;
-          const rssRes = await fetch(rssApiUrl, { next: { revalidate: 300 } });
+          const rssRes = await fetch(rssApiUrl, { cache: "force-cache" });
           if (rssRes.ok) {
             const rssData = await rssRes.json();
             if (rssData.items && Array.isArray(rssData.items)) {
@@ -401,7 +499,8 @@ export async function fetchNewsBackend({
           if (match) imageUrl = match[1];
         }
 
-        const cleanDesc = (item.description || "").replace(/<[^>]+>/g, '').slice(0, 150) + '...';
+        const title = repairMojibake(item.title || "");
+        const cleanDesc = repairMojibake((item.description || "").replace(/<[^>]+>/g, '')).slice(0, 150) + '...';
         
         // Mapeia origem correta para classificação
         let feedSource = "Tecnoblog";
@@ -421,9 +520,11 @@ export async function fetchNewsBackend({
           feedSource = "G1";
         } else if (item.originFeedUrl.includes("forbes")) {
           feedSource = "Forbes";
+        } else if (item.originFeedUrl.includes("cnnbrasil")) {
+          feedSource = "CNN Brasil";
         }
 
-        const classification = classifyArticle(item.title, cleanDesc, feedSource);
+        const classification = classifyArticle(title, cleanDesc, feedSource);
 
         // Validação 2 no Fallback RSS
         let articleCategory = classification.category;
@@ -438,7 +539,7 @@ export async function fetchNewsBackend({
         seenUrls.add(item.link);
         approvedArticles.push({
           id: item.guid || item.link,
-          title: item.title,
+          title,
           description: cleanDesc,
           url: item.link,
           image: imageUrl || "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=2000",
@@ -448,12 +549,12 @@ export async function fetchNewsBackend({
           score: classification.score
         });
 
-        if (approvedArticles.length >= max + offset) break;
       }
     } catch (e) {
       console.error("[FocusNews] RSS Fallback failed:", e);
     }
   }
 
-  return approvedArticles.slice(offset);
+  approvedArticles.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+  return balanceArticlesBySource(approvedArticles).slice(offset, offset + max);
 }

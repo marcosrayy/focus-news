@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+
+import { balanceArticlesBySource, fetchNewsBackend } from "../../../services/newsService";
 import { Storage } from "../../../utils/storage";
 import { RefreshEngine } from "../../../services/refreshEngine";
 
@@ -121,7 +123,6 @@ export async function GET(request: Request) {
     // Fallback to synchronous live fetch if cache is empty or insufficient
     if (filtered.length < max) {
       console.log(`[API/News] Insufficient articles for ${targetCategory} in Storage (${filtered.length}/${max}), fetching live...`);
-      const { fetchNewsBackend } = await import("../../../services/newsService");
       const freshArticles = await fetchNewsBackend({ query, category: targetCategory, max: max * 2, offset });
       
       const existingIds = new Set(filtered.map(a => a.id));
@@ -165,8 +166,9 @@ export async function GET(request: Request) {
     // Apply natural rotation
     const rotated = rotateArticles(filtered, targetCategory);
 
-    // Paginate/slice
-    const articles = rotated.slice(offset, offset + max);
+    // Balance publishers before pagination
+    const balanced = balanceArticlesBySource(rotated);
+    const articles = balanced.slice(offset, offset + max);
 
     return NextResponse.json({
       articles,

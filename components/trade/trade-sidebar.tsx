@@ -26,10 +26,9 @@ const signals = [
   { asset: "VIIA3", type: "Venda", strength: "Forte", indicator: "Suporte perdido" },
 ];
 
-export function TradeSidebar() {
+export function TradeSidebarContent() {
   return (
-    <SidebarCardsModal title="TRADE" items={["Cotações ao vivo", "Maiores movimentações", "Sinais"]}>
-      {/* Live Quotes */}
+    <>
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10">
@@ -56,7 +55,6 @@ export function TradeSidebar() {
         </div>
       </div>
 
-      {/* Top Movers */}
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500/10">
@@ -77,7 +75,6 @@ export function TradeSidebar() {
         </div>
       </div>
 
-      {/* Trade Signals */}
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10">
@@ -104,6 +101,14 @@ export function TradeSidebar() {
       <button className="w-full rounded-xl bg-emerald-600 py-3.5 text-center text-sm font-bold tracking-wider text-white transition-all duration-300 hover:bg-emerald-700 hover:shadow-lg hover:shadow-emerald-500/20">
         ABRIR TERMINAL DE TRADE
       </button>
+    </>
+  );
+}
+
+export function TradeSidebar() {
+  return (
+    <SidebarCardsModal title="TRADE" items={["Cotações ao vivo", "Maiores movimentações", "Sinais"]}>
+      <TradeSidebarContent />
     </SidebarCardsModal>
   );
 }

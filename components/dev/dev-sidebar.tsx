@@ -26,10 +26,9 @@ const codeOfWeek = {
   snippet: `function TodoForm() {\n  const [optimistic, addOptimistic]\n    = useOptimistic(todos);\n  // ...\n}`,
 };
 
-export function DevSidebar() {
+export function DevSidebarContent() {
   return (
-    <SidebarCardsModal title="DESENVOLVIMENTO" items={["Código da semana", "Tags populares", "Tutoriais"]}>
-      {/* Code of the Week */}
+    <>
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10">
@@ -52,7 +51,6 @@ export function DevSidebar() {
         </div>
       </div>
 
-      {/* Tags */}
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10">
@@ -71,7 +69,6 @@ export function DevSidebar() {
         </div>
       </div>
 
-      {/* Tutorials */}
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10">
@@ -101,6 +98,14 @@ export function DevSidebar() {
       <button className="w-full rounded-xl bg-emerald-500 py-3.5 text-center text-sm font-bold tracking-wider text-white transition-all duration-300 hover:bg-emerald-600 hover:shadow-lg hover:shadow-emerald-500/20">
         VER TODOS OS TUTORIAIS
       </button>
+    </>
+  );
+}
+
+export function DevSidebar() {
+  return (
+    <SidebarCardsModal title="DESENVOLVIMENTO" items={["Código da semana", "Tags populares", "Tutoriais"]}>
+      <DevSidebarContent />
     </SidebarCardsModal>
   );
 }

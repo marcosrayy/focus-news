@@ -13,9 +13,19 @@ const initialTickers: TickerItem[] = [
   { symbol: "ITUB4", price: "R$45,50", change: "-1.41%", isPositive: false },
   { symbol: "ABEV3", price: "R$14,85", change: "+0.61%", isPositive: true },
   { symbol: "GGBR4", price: "R$22,42", change: "-1.41%", isPositive: false },
-  { symbol: "IBOVESPA", price: "181.363pts", change: "-0.97%", isPositive: false },
+  {
+    symbol: "IBOVESPA",
+    price: "181.363pts",
+    change: "-0.97%",
+    isPositive: false,
+  },
   { symbol: "DOLAR", price: "R$5,22", change: "+0.66%", isPositive: true },
-  { symbol: "BITCOIN", price: "R$410.438,00", change: "-7.01%", isPositive: false },
+  {
+    symbol: "BITCOIN",
+    price: "R$410.438,00",
+    change: "-7.01%",
+    isPositive: false,
+  },
   { symbol: "IFIX", price: "3.860pts", change: "+0.47%", isPositive: true },
   { symbol: "MGLU3", price: "R$9,78", change: "+0.72%", isPositive: true },
   { symbol: "PETR4", price: "R$38,12", change: "-3.54%", isPositive: false },
@@ -37,7 +47,7 @@ export function MarketTicker() {
 
   const fetchTickers = useCallback(async () => {
     try {
-      const res = await fetch('/api/market');
+      const res = await fetch("/api/market");
       const data = await res.json();
       if (data.tickers && data.tickers.length > 0) {
         setTickers(data.tickers);
@@ -66,8 +76,8 @@ export function MarketTicker() {
   }, [fetchTickers]);
 
   return (
-    <div className="overflow-hidden border-b border-border bg-background/80">
-      <div className="flex animate-ticker whitespace-nowrap">
+    <div className="w-full overflow-hidden border-b border-border bg-background/80">
+      <div className="flex w-full animate-ticker whitespace-nowrap">
         {[...tickers, ...tickers].map((item, i) => (
           <div
             key={`${item.symbol}-${i}`}
@@ -104,10 +114,10 @@ export function SyncBar() {
   }, []);
 
   return (
-    <div className="flex items-center gap-3">
-      <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+    <div className="flex flex-wrap items-center justify-between gap-2 sm:justify-start">
+      <div className="flex min-w-0 items-center gap-1.5 text-[10px] text-muted-foreground sm:text-xs">
         <svg
-          className="h-3.5 w-3.5"
+          className="h-3.5 w-3.5 shrink-0"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -117,9 +127,9 @@ export function SyncBar() {
           <circle cx="12" cy="12" r="10" />
           <polyline points="12 6 12 12 16 14" />
         </svg>
-        <span>Sincronizando: {countdown}s</span>
+        <span className="truncate">Sincronizando: {countdown}s</span>
       </div>
-      <button className="flex items-center gap-1.5 rounded-lg border border-border px-3 py-1.5 text-xs text-muted-foreground transition-colors duration-300 hover:border-primary hover:text-primary">
+      <button className="flex items-center gap-1.5 rounded-lg border border-border px-2.5 py-1.5 text-[10px] text-muted-foreground transition-colors duration-300 hover:border-primary hover:text-primary sm:px-3 sm:text-xs">
         <svg
           className="h-3.5 w-3.5"
           viewBox="0 0 24 24"

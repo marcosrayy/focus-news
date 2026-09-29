@@ -19,10 +19,15 @@ export function Navigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="border-b border-border bg-background" role="navigation" aria-label="Navegacao principal">
-      <div className="scrollbar-hide flex items-center gap-0.5 overflow-x-auto px-2 snap-x snap-mandatory sm:gap-1 lg:justify-center lg:gap-2 lg:px-6">
+    <nav
+      className="border-b border-border bg-background"
+      role="navigation"
+      aria-label="Navegacao principal"
+    >
+      <div className="scrollbar-hide flex items-center gap-0.5 overflow-x-auto px-2 snap-x snap-mandatory whitespace-nowrap sm:gap-1 lg:justify-center lg:gap-2 lg:px-6">
         {navItems.map((item) => {
-          const isActive = pathname === item.href || (item.href === "/" && pathname === "/");
+          const isActive =
+            pathname === item.href || (item.href === "/" && pathname === "/");
           return (
             <Link
               key={item.label}

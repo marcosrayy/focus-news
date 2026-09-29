@@ -1,5 +1,5 @@
 import { Storage, StorageArticle, EngineStatus } from '../utils/storage';
-import { classifyArticle, isSourceAllowed, MODULE_SOURCES } from './newsService';
+import { classifyArticle, isSourceAllowed, MODULE_SOURCES, repairMojibake } from './newsService';
 import { NEWS_API_KEY } from '../config/newsConfig';
 
 // Categories mapping to RSS feeds
@@ -162,15 +162,16 @@ export const RefreshEngine = {
               if (processedUrls.has(articleUrl)) continue;
               processedUrls.add(articleUrl);
               
-              const cleanDesc = item.description || "";
+              const title = repairMojibake(item.title || "");
+              const cleanDesc = repairMojibake(item.description || "");
               const sourceLabel = item.source?.name || "GNews";
-              const classification = classifyArticle(item.title, cleanDesc, sourceLabel);
+              const classification = classifyArticle(title, cleanDesc, sourceLabel);
               const articleCategory = classification.category;
               
               if (articleCategory === "Rejeitado") continue;
               
               const publishedAt = item.publishedAt || new Date().toISOString();
-              const expDate = calculateExpirationDate(item.title, cleanDesc, publishedAt);
+              const expDate = calculateExpirationDate(title, cleanDesc, publishedAt);
               
               if (new Date(expDate).getTime() < Date.now()) {
                 discardedThisRun++;
@@ -179,7 +180,7 @@ export const RefreshEngine = {
               
               const articleEntry: StorageArticle & { expiresAt: string } = {
                 id: articleUrl,
-                title: item.title,
+                title,
                 description: cleanDesc,
                 url: articleUrl,
                 image: item.image || "",
@@ -188,7 +189,7 @@ export const RefreshEngine = {
                 category: articleCategory,
                 score: classification.score,
                 importedAt: new Date().toISOString(),
-                importanceScore: classification.score + (item.title.toLowerCase().includes('urgente') ? 30 : 0),
+                importanceScore: classification.score + (title.toLowerCase().includes('urgente') ? 30 : 0),
                 expiresAt: expDate
               };
               
@@ -253,15 +254,16 @@ export const RefreshEngine = {
               if (processedUrls.has(articleUrl)) continue;
               processedUrls.add(articleUrl);
               
-              const cleanDesc = item.description || "";
+              const title = repairMojibake(item.title || "");
+              const cleanDesc = repairMojibake(item.description || "");
               const sourceLabel = "CNN";
-              const classification = classifyArticle(item.title, cleanDesc, sourceLabel);
+              const classification = classifyArticle(title, cleanDesc, sourceLabel);
               const articleCategory = classification.category;
               
               if (articleCategory === "Rejeitado") continue;
               
               const publishedAt = item.publishedAt || new Date().toISOString();
-              const expDate = calculateExpirationDate(item.title, cleanDesc, publishedAt);
+              const expDate = calculateExpirationDate(title, cleanDesc, publishedAt);
               
               if (new Date(expDate).getTime() < Date.now()) {
                 discardedThisRun++;
@@ -270,7 +272,7 @@ export const RefreshEngine = {
               
               const articleEntry: StorageArticle & { expiresAt: string } = {
                 id: articleUrl,
-                title: item.title,
+                title,
                 description: cleanDesc,
                 url: articleUrl,
                 image: item.image || "",
@@ -279,7 +281,7 @@ export const RefreshEngine = {
                 category: articleCategory,
                 score: classification.score,
                 importedAt: new Date().toISOString(),
-                importanceScore: classification.score + (item.title.toLowerCase().includes('urgente') ? 30 : 0),
+                importanceScore: classification.score + (title.toLowerCase().includes('urgente') ? 30 : 0),
                 expiresAt: expDate
               };
               
@@ -354,12 +356,12 @@ export const RefreshEngine = {
         while ((match = regex.exec(html)) !== null) {
           const articleUrl = match[1];
           const rawTitle = match[2].trim();
-          const articleTitle = rawTitle
+          const articleTitle = repairMojibake(rawTitle
             .replace(/&#x27;/g, "'")
             .replace(/&quot;/g, '"')
             .replace(/&amp;/g, '&')
             .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>');
+            .replace(/&gt;/g, '>'));
             
           if (processedUrls.has(articleUrl)) continue;
           processedUrls.add(articleUrl);
@@ -470,14 +472,15 @@ export const RefreshEngine = {
               imageUrl = "";
             }
 
-            let cleanDesc = (item.description || "").replace(/<[^>]+>/g, '');
+            const title = repairMojibake(item.title || "");
+            let cleanDesc = repairMojibake((item.description || "").replace(/<[^>]+>/g, ''));
             // Strip Forbes boilerplates
             cleanDesc = cleanDesc.replace(/Forbes, a mais conceituada revista de negócios e economia do mundo\./gi, '');
             cleanDesc = cleanDesc.replace(/O post .* apareceu primeiro em .*$/gi, '');
             cleanDesc = cleanDesc.trim().slice(0, 150) + '...';
 
             // Run classification
-            const classification = classifyArticle(item.title, cleanDesc, sourceName);
+            const classification = classifyArticle(title, cleanDesc, sourceName);
             let articleCategory = classification.category;
 
             // Apply Startups / Business mapping override as per request
@@ -495,7 +498,7 @@ export const RefreshEngine = {
             }
 
             const publishedAt = item.pubDate || new Date().toISOString();
-            const expDate = calculateExpirationDate(item.title, cleanDesc, publishedAt);
+            const expDate = calculateExpirationDate(title, cleanDesc, publishedAt);
 
             // Skip expired articles
             if (new Date(expDate).getTime() < Date.now()) {
@@ -506,7 +509,7 @@ export const RefreshEngine = {
             // Create article entry
             const articleEntry: StorageArticle & { expiresAt: string } = {
               id: articleUrl,
-              title: item.title,
+              title,
               description: cleanDesc,
               url: articleUrl,
               image: imageUrl,
@@ -515,7 +518,7 @@ export const RefreshEngine = {
               category: articleCategory,
               score: classification.score,
               importedAt: new Date().toISOString(),
-              importanceScore: classification.score + (item.title.toLowerCase().includes('urgente') ? 30 : 0),
+              importanceScore: classification.score + (title.toLowerCase().includes('urgente') ? 30 : 0),
               expiresAt: expDate
             };
 

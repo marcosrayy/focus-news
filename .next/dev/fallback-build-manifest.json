@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "pages": {
     "/_app": []
   },
@@ -9,4 +10,30 @@
     "static/development/_buildManifest.js"
   ],
   "rootMainFiles": []
+=======
+  "polyfillFiles": [
+    "static/chunks/polyfills.js"
+  ],
+  "devFiles": [
+    "static/chunks/fallback/react-refresh.js"
+  ],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [
+    "static/chunks/fallback/webpack.js",
+    "static/chunks/fallback/main-app.js"
+  ],
+  "rootMainFilesTree": {},
+  "pages": {
+    "/_app": [
+      "static/chunks/fallback/webpack.js",
+      "static/chunks/fallback/main.js",
+      "static/chunks/fallback/pages/_app.js"
+    ],
+    "/_error": [
+      "static/chunks/fallback/webpack.js",
+      "static/chunks/fallback/main.js",
+      "static/chunks/fallback/pages/_error.js"
+    ]
+  }
+>>>>>>> 52205730f20397ef71bf2e8a0ba1e2bae2e260d5
 }

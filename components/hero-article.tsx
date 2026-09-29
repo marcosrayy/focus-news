@@ -11,7 +11,7 @@ export function HeroArticle({ article, isLoading }: { article?: NewsArticle, isL
   if (isLoading) {
     return (
       <article className="group relative overflow-hidden rounded-2xl h-full">
-        <div className="relative aspect-[3/1] w-full bg-secondary/50 animate-pulse">
+        <div className="relative aspect-[16/10] w-full bg-secondary/50 animate-pulse sm:aspect-[3/1]">
           <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6">
             <div className="h-4 w-16 bg-muted rounded mb-2"></div>
             <div className="h-10 w-3/4 bg-muted rounded mb-3"></div>
@@ -36,7 +36,7 @@ export function HeroArticle({ article, isLoading }: { article?: NewsArticle, isL
       className="group relative h-full overflow-hidden rounded-2xl border border-border/60 shadow-card transition-shadow duration-500 hover:shadow-card-hover cursor-pointer"
       onClick={() => displayArticle.url !== "#" && window.open(displayArticle.url, "_blank")}
     >
-      <div className="relative aspect-[3/1] w-full">
+      <div className="relative aspect-[16/10] w-full sm:aspect-[3/1]">
         <img
           src={imgError ? "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=2000" : displayArticle.image || "/news-focus.jpg"}
           alt={displayArticle.title}
@@ -52,7 +52,7 @@ export function HeroArticle({ article, isLoading }: { article?: NewsArticle, isL
           </span>
           <button 
             onClick={(e) => e.stopPropagation()}
-            className="flex items-center gap-1.5 rounded-full border border-foreground/30 bg-background/30 px-3 py-1.5 text-xs font-medium text-foreground backdrop-blur-md transition-all duration-300 hover:border-primary hover:text-primary"
+            className="hidden items-center gap-1.5 rounded-full border border-foreground/30 bg-background/30 px-3 py-1.5 text-xs font-medium text-foreground backdrop-blur-md transition-all duration-300 hover:border-primary hover:text-primary sm:flex"
           >
             <Bookmark className="h-3.5 w-3.5" />
             ARQUIVAR
@@ -60,16 +60,16 @@ export function HeroArticle({ article, isLoading }: { article?: NewsArticle, isL
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-7">
-          <span className="mb-2 inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-primary uppercase">
+          <span className="mb-2 hidden items-center gap-2 text-xs font-bold tracking-[0.2em] text-primary uppercase sm:inline-flex">
             <span className="h-px w-5 bg-primary" />
             {displayArticle.source}
           </span>
-          <h2 className="font-heading text-2xl font-bold leading-[1.1] tracking-tight text-foreground lg:text-4xl xl:text-5xl">
+          <h2 className="line-clamp-3 font-heading text-lg font-bold leading-tight tracking-tight text-foreground sm:line-clamp-none sm:text-2xl sm:leading-[1.1] lg:text-4xl xl:text-5xl">
             <span className="text-balance">
               {displayArticle.title}
             </span>
           </h2>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground lg:text-base line-clamp-2">
+          <p className="mt-3 hidden max-w-2xl text-sm leading-relaxed text-muted-foreground line-clamp-2 sm:block lg:text-base">
             {displayArticle.description}
           </p>
         </div>

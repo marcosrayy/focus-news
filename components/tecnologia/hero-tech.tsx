@@ -6,24 +6,34 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 import { NewsArticle } from "@/types/news";
 
-export function HeroTech({ article: propArticle, isLoading: propIsLoading }: { article?: NewsArticle, isLoading?: boolean } = {}) {
-  const { articles: news, isLoading: hookIsLoading } = useNews("Hardware OR Processador OR Inovacao OR Noticias Tech", "Tecnologia", 1);
+export function HeroTech({
+  article: propArticle,
+  isLoading: propIsLoading,
+}: { article?: NewsArticle; isLoading?: boolean } = {}) {
+  const { articles: news, isLoading: hookIsLoading } = useNews(
+    "Hardware OR Processador OR Inovacao OR Noticias Tech",
+    "Tecnologia",
+    1,
+  );
   const isLoading = propIsLoading !== undefined ? propIsLoading : hookIsLoading;
-  
-  const article = propArticle || news?.[0] || {
-    title: "Novos Chips Prometem Dobrar a Velocidade",
-    description: "Buscando as ultimas noticias para voce. Se demorar, o servico pode estar em manutencao.",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2000",
-    category: "HARDWARE",
-    source: "FOCUS NEWS",
-    url: "#",
-    publishedAt: new Date().toISOString()
-  };
+
+  const article = propArticle ||
+    news?.[0] || {
+      title: "Novos Chips Prometem Dobrar a Velocidade",
+      description:
+        "Buscando as ultimas noticias para voce. Se demorar, o servico pode estar em manutencao.",
+      image:
+        "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2000",
+      category: "HARDWARE",
+      source: "FOCUS NEWS",
+      url: "#",
+      publishedAt: new Date().toISOString(),
+    };
 
   if (isLoading && !propArticle && (!news || news.length === 0)) {
     return (
       <article className="group relative overflow-hidden rounded-2xl h-full">
-        <div className="relative aspect-[3/1] w-full bg-secondary/50 animate-pulse">
+        <div className="relative aspect-[16/10] w-full bg-secondary/50 animate-pulse sm:aspect-[3/1]">
           <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6">
             <div className="h-4 w-16 bg-muted rounded mb-2"></div>
             <div className="h-10 w-3/4 bg-muted rounded mb-3"></div>
@@ -39,7 +49,7 @@ export function HeroTech({ article: propArticle, isLoading: propIsLoading }: { a
       className="group relative h-full overflow-hidden rounded-2xl border border-border/60 shadow-card transition-shadow duration-500 hover:shadow-card-hover cursor-pointer"
       onClick={() => window.open(article.url, "_blank")}
     >
-      <div className="relative aspect-[3/1] w-full">
+      <div className="relative aspect-[16/10] w-full sm:aspect-[3/1]">
         <img
           src={article.image || "/news-focus.jpg"}
           alt={article.title}
@@ -53,9 +63,9 @@ export function HeroTech({ article: propArticle, isLoading: propIsLoading }: { a
             <Cpu className="h-3.5 w-3.5" />
             {article.category || "LANCAMENTO"}
           </span>
-          <button 
+          <button
             onClick={(e) => e.stopPropagation()}
-            className="flex items-center gap-1.5 rounded-full border border-foreground/30 bg-background/30 px-3 py-1.5 text-xs font-medium text-foreground backdrop-blur-md transition-all duration-300 hover:border-sky-400 hover:text-sky-400"
+            className="hidden items-center gap-1.5 rounded-full border border-foreground/30 bg-background/30 px-3 py-1.5 text-xs font-medium text-foreground backdrop-blur-md transition-all duration-300 hover:border-sky-400 hover:text-sky-400 sm:flex"
           >
             <Bookmark className="h-3.5 w-3.5" />
             ARQUIVAR
@@ -63,16 +73,16 @@ export function HeroTech({ article: propArticle, isLoading: propIsLoading }: { a
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-7">
-          <span className="mb-2 inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-sky-400 uppercase">
+          <span className="mb-2 hidden items-center gap-2 text-xs font-bold tracking-[0.2em] text-sky-400 uppercase sm:inline-flex">
             <span className="h-px w-5 bg-sky-400" />
             {article.source}
           </span>
-          <h2 className="font-heading text-2xl font-bold leading-[1.1] tracking-tight text-foreground lg:text-4xl xl:text-5xl">
+          <h2 className="line-clamp-3 font-heading text-lg font-bold leading-tight tracking-tight text-foreground sm:line-clamp-none sm:text-2xl sm:leading-[1.1] lg:text-4xl xl:text-5xl">
             <span className="text-balance">
               {article.title}
             </span>
           </h2>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground lg:text-base line-clamp-2">
+          <p className="mt-3 hidden max-w-2xl text-sm leading-relaxed text-muted-foreground line-clamp-2 sm:block lg:text-base">
             {article.description}
           </p>
         </div>

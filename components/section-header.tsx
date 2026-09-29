@@ -11,7 +11,9 @@ export function SectionHeader() {
           EXPLORAR TECH
         </h2>
       </div>
-      <SyncBar />
+      <div className="w-full sm:w-auto">
+        <SyncBar />
+      </div>
     </div>
   );
 }

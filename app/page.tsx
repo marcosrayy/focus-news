@@ -27,10 +27,10 @@ export default function Home() {
       <MarketTicker />
       <NewsTicker news={tickerArticles} />
 
-      <main className="mx-auto max-w-7xl px-3 py-3 sm:px-4 sm:py-4 lg:px-6">
+      <main className="mx-auto max-w-7xl px-2 py-3 sm:px-4 sm:py-4 lg:px-6">
         <SectionHeader />
 
-        <div className="mt-2 aspect-[3/1] w-full">
+        <div className="mt-2 aspect-[16/10] w-full sm:aspect-[3/1]">
           <HeroTech article={heroArticles[0]} isLoading={heroLoading} />
         </div>
 

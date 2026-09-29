@@ -19,7 +19,7 @@ export function HeroTrade() {
   if (isLoading && (!news || news.length === 0)) {
     return (
       <article className="group relative overflow-hidden rounded-2xl">
-        <div className="relative aspect-[3/1] w-full bg-secondary/50 animate-pulse">
+        <div className="relative aspect-[16/10] w-full bg-secondary/50 animate-pulse sm:aspect-[3/1]">
           <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6">
             <div className="h-4 w-16 bg-muted rounded mb-2"></div>
             <div className="h-10 w-3/4 bg-muted rounded mb-3"></div>
@@ -35,7 +35,7 @@ export function HeroTrade() {
       className="group relative overflow-hidden rounded-2xl cursor-pointer"
       onClick={() => window.open(article.url, "_blank")}
     >
-      <div className="relative aspect-[3/1] w-full">
+      <div className="relative aspect-[16/10] w-full sm:aspect-[3/1]">
         <img
           src={article.image || "/news-focus.jpg"}
           alt={article.title}
@@ -50,7 +50,7 @@ export function HeroTrade() {
           </span>
           <button 
             onClick={(e) => e.stopPropagation()}
-            className="flex items-center gap-1.5 rounded-lg border border-foreground/30 bg-background/30 px-3 py-1.5 text-xs font-medium text-foreground backdrop-blur-sm transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400"
+            className="hidden items-center gap-1.5 rounded-lg border border-foreground/30 bg-background/30 px-3 py-1.5 text-xs font-medium text-foreground backdrop-blur-sm transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400 sm:flex"
           >
             <Bookmark className="h-3.5 w-3.5" />
             ARQUIVAR
@@ -58,15 +58,15 @@ export function HeroTrade() {
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6">
-          <span className="mb-2 inline-block text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase">
+          <span className="mb-2 hidden text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase sm:inline-block">
             {article.source}
           </span>
-          <h2 className="font-heading text-2xl font-bold leading-tight text-foreground lg:text-4xl xl:text-5xl">
+          <h2 className="line-clamp-3 font-heading text-lg font-bold leading-tight text-foreground sm:line-clamp-none sm:text-2xl lg:text-4xl xl:text-5xl">
             <span className="text-balance">
               {article.title}
             </span>
           </h2>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground lg:text-base line-clamp-2">
+          <p className="mt-3 hidden max-w-2xl text-sm leading-relaxed text-muted-foreground line-clamp-2 sm:block lg:text-base">
             {article.description}
           </p>
         </div>

@@ -1,1 +1,19 @@
-{}
+{
+<<<<<<< HEAD
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/gnews/route": "app/api/gnews/route.js",
+  "/api/home-market/route": "app/api/home-market/route.js",
+  "/api/market/route": "app/api/market/route.js",
+  "/api/news/route": "app/api/news/route.js",
+  "/focus/page": "app/focus/page.js",
+  "/icon/route": "app/icon/route.js",
+  "/page": "app/page.js"
+=======
+  "/api/news/route": "app/api/news/route.js",
+  "/page": "app/page.js",
+  "/startups/page": "app/startups/page.js",
+  "/economia/page": "app/economia/page.js",
+  "/business/page": "app/business/page.js",
+  "/tecnologia/page": "app/tecnologia/page.js"
+>>>>>>> 52205730f20397ef71bf2e8a0ba1e2bae2e260d5
+}

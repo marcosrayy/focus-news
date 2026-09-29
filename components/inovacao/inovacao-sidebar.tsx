@@ -22,10 +22,9 @@ const futureBuilding = [
   { title: "Educacao 5.0: como a IA personaliza o ensino publico", category: "EDUCACAO", readTime: "8 min" },
 ];
 
-export function InovacaoSidebar() {
+export function InovacaoSidebarContent() {
   return (
-    <SidebarCardsModal title="INOVAÇÃO" items={["Entrevistas", "Modelos inovadores", "Futuro em construção"]}>
-      {/* Founder Interviews */}
+    <>
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-500/10">
@@ -48,7 +47,6 @@ export function InovacaoSidebar() {
         </div>
       </div>
 
-      {/* Innovative Models */}
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500/10">
@@ -69,7 +67,6 @@ export function InovacaoSidebar() {
         </div>
       </div>
 
-      {/* Futuro em Construcao */}
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-500/10">
@@ -91,6 +88,14 @@ export function InovacaoSidebar() {
       <button className="w-full rounded-xl bg-cyan-500 py-3.5 text-center text-sm font-bold tracking-wider text-white transition-all duration-300 hover:bg-cyan-600 hover:shadow-lg hover:shadow-cyan-500/20">
         EXPLORAR INOVACOES
       </button>
+    </>
+  );
+}
+
+export function InovacaoSidebar() {
+  return (
+    <SidebarCardsModal title="INOVAÇÃO" items={["Entrevistas", "Modelos inovadores", "Futuro em construção"]}>
+      <InovacaoSidebarContent />
     </SidebarCardsModal>
   );
 }

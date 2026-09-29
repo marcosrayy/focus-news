@@ -73,7 +73,7 @@ export function HeroFocus() {
 
   return (
     <section className="group relative overflow-hidden rounded-2xl">
-      <div className="relative aspect-[3/1] w-full">
+      <div className="relative aspect-[16/10] w-full sm:aspect-[3/1]">
         {/* Slides */}
         {heroSlides.map((s, i) => (
           <img
@@ -105,20 +105,24 @@ export function HeroFocus() {
         <button
           onClick={prev}
           aria-label="Noticia anterior"
-          className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border/40 bg-background/60 p-2 text-foreground opacity-0 backdrop-blur-sm transition-all duration-300 hover:bg-primary hover:text-primary-foreground group-hover:opacity-100 lg:left-4"
+          className="group/nav absolute left-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-foreground opacity-100 transition-all duration-300 sm:opacity-0 sm:group-hover:opacity-100 lg:left-4"
         >
-          <ChevronLeft className="h-5 w-5" />
+          <span className="flex h-8 w-8 items-center justify-center rounded-full border border-border/40 bg-background/70 backdrop-blur-sm transition-colors group-hover/nav:bg-primary group-hover/nav:text-primary-foreground">
+            <ChevronLeft className="h-4 w-4" />
+          </span>
         </button>
         <button
           onClick={next}
           aria-label="Proxima noticia"
-          className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border/40 bg-background/60 p-2 text-foreground opacity-0 backdrop-blur-sm transition-all duration-300 hover:bg-primary hover:text-primary-foreground group-hover:opacity-100 lg:right-4"
+          className="group/nav absolute right-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-foreground opacity-100 transition-all duration-300 sm:opacity-0 sm:group-hover:opacity-100 lg:right-4"
         >
-          <ChevronRight className="h-5 w-5" />
+          <span className="flex h-8 w-8 items-center justify-center rounded-full border border-border/40 bg-background/70 backdrop-blur-sm transition-colors group-hover/nav:bg-primary group-hover/nav:text-primary-foreground">
+            <ChevronRight className="h-4 w-4" />
+          </span>
         </button>
 
         {/* Content */}
-        <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-8">
+        <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 lg:p-8">
           <span
             key={`cat-${current}`}
             className="animate-in fade-in slide-in-from-bottom-1 mb-2 inline-block text-xs font-bold tracking-[0.2em] text-primary duration-500"
@@ -127,33 +131,35 @@ export function HeroFocus() {
           </span>
           <h2
             key={`title-${current}`}
-            className="animate-in fade-in slide-in-from-bottom-2 font-heading text-2xl font-bold leading-tight text-foreground duration-500 lg:text-4xl xl:text-5xl"
+            className="animate-in fade-in slide-in-from-bottom-2 line-clamp-3 font-heading text-lg font-bold leading-tight text-foreground duration-500 sm:line-clamp-none sm:text-2xl lg:text-4xl xl:text-5xl"
           >
             <span className="text-balance">{slide.title}</span>
           </h2>
           <p
             key={`desc-${current}`}
-            className="animate-in fade-in slide-in-from-bottom-3 mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground duration-700 lg:text-base"
+            className="animate-in fade-in slide-in-from-bottom-3 mt-3 hidden max-w-2xl text-sm leading-relaxed text-muted-foreground duration-700 sm:block lg:text-base"
           >
             {slide.description}
           </p>
-          <div className="mt-4 flex items-center gap-4">
-            <button className="flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-primary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-primary/30">
-              {slide.cta}
-              <ArrowRight className="h-4 w-4" />
+          <div className="mt-3 flex flex-wrap items-center gap-2 sm:mt-4 sm:gap-4">
+            <button className="flex min-h-11 items-center rounded-lg px-0 py-0 text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:rounded-xl sm:bg-primary sm:px-6 sm:py-3 sm:text-sm sm:hover:shadow-lg sm:hover:shadow-primary/30">
+              <span className="pointer-events-none inline-flex h-9 items-center gap-1.5 rounded-lg bg-primary px-3 text-[11px] font-semibold transition-colors hover:bg-primary/90 sm:h-auto sm:gap-2 sm:rounded-none sm:px-0 sm:text-sm sm:font-bold sm:hover:bg-transparent">
+                {slide.cta}
+                <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+              </span>
             </button>
 
             {/* Dot indicators */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-0 sm:gap-2">
               {heroSlides.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => goTo(i)}
                   aria-label={`Ir para noticia ${i + 1}`}
-                  className="group/dot relative h-2.5 w-2.5 rounded-full transition-all duration-300"
+                  className="group/dot relative flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 sm:h-11 sm:w-11"
                 >
                   <span
-                    className={`absolute inset-0 rounded-full transition-all duration-300 ${
+                    className={`h-1.5 w-1.5 rounded-full transition-all duration-300 sm:h-2 sm:w-2 ${
                       i === current
                         ? "scale-100 bg-primary shadow-md shadow-primary/40"
                         : "scale-75 bg-muted-foreground/40 hover:scale-100 hover:bg-muted-foreground"
@@ -161,7 +167,7 @@ export function HeroFocus() {
                   />
                   {/* Progress ring on active */}
                   {i === current && (
-                    <span className="absolute -inset-1 animate-spin rounded-full border border-transparent border-t-primary/60 [animation-duration:6s]" />
+                    <span className="absolute inset-[14px] animate-spin rounded-full border border-transparent border-t-primary/60 [animation-duration:6s] sm:inset-[15px]" />
                   )}
                 </button>
               ))}

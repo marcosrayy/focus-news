@@ -27,10 +27,9 @@ const topStartups = [
   { name: "Alice", valuation: "US$ 800M", sector: "HealthTech", logo: "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://alice.com.br&size=128" },
 ];
 
-export function StartupSidebar() {
+export function StartupSidebarContent() {
   return (
-    <SidebarCardsModal title="STARTUPS" items={["Maiores startups", "Investidores ativos", "Setores em alta"]}>
-      {/* Maiores Startups */}
+    <>
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500/10">
@@ -56,7 +55,6 @@ export function StartupSidebar() {
         </div>
       </div>
 
-      {/* Active Investors */}
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500/10">
@@ -82,7 +80,6 @@ export function StartupSidebar() {
         </div>
       </div>
 
-      {/* Hot Sectors */}
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10">
@@ -106,6 +103,14 @@ export function StartupSidebar() {
       <button className="w-full rounded-xl bg-blue-600 py-3.5 text-center text-sm font-bold tracking-wider text-white transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/20">
         VER TODAS AS RODADAS
       </button>
+    </>
+  );
+}
+
+export function StartupSidebar() {
+  return (
+    <SidebarCardsModal title="STARTUPS" items={["Maiores startups", "Investidores ativos", "Setores em alta"]}>
+      <StartupSidebarContent />
     </SidebarCardsModal>
   );
 }

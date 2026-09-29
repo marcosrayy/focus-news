@@ -55,7 +55,7 @@ export default function EconomiaPage() {
         {/* Summary Cards + Explore */}
         <div className="mt-4 grid items-stretch gap-4 lg:grid-cols-[minmax(0,3fr)_minmax(240px,1fr)]">
           <MarketSummaryCards />
-          <div className="self-center">
+          <div className="hidden self-center lg:block">
             <EconomySidebar />
           </div>
         </div>

@@ -24,10 +24,9 @@ const upcomingEvents = [
   { name: "Brazil at Silicon Valley", date: "Mai 22", type: "Roadshow" },
 ];
 
-export function BusinessSidebar() {
+export function BusinessSidebarContent() {
   return (
-    <SidebarCardsModal title="BUSINESS" items={["Líderes de mercado", "Agenda do CEO", "Eventos"]}>
-      {/* Market Leaders */}
+    <>
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500/10">
@@ -56,7 +55,6 @@ export function BusinessSidebar() {
         </div>
       </div>
 
-      {/* CEO Agenda */}
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500/10">
@@ -77,7 +75,6 @@ export function BusinessSidebar() {
         </div>
       </div>
 
-      {/* Upcoming Events */}
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10">
@@ -101,6 +98,14 @@ export function BusinessSidebar() {
       <button className="w-full rounded-xl bg-amber-600 py-3.5 text-center text-sm font-bold tracking-wider text-white transition-all duration-300 hover:bg-amber-700 hover:shadow-lg hover:shadow-amber-500/20">
         VER MAIS BUSINESS
       </button>
+    </>
+  );
+}
+
+export function BusinessSidebar() {
+  return (
+    <SidebarCardsModal title="BUSINESS" items={["Líderes de mercado", "Agenda do CEO", "Eventos"]}>
+      <BusinessSidebarContent />
     </SidebarCardsModal>
   );
 }
