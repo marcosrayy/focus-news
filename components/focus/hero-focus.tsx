@@ -13,12 +13,14 @@ const heroSlides = [
     title: "Focus anuncia expansao para 5 novas capitais em 2026",
   },
   {
-    image: "/focus-workshop.jpg",
-    title: "Focus Academy forma 500 profissionais em IA Generativa",
+    image: "/focus-blog.jpg",
+    title: "Focus Tech Blog: conteúdo sobre tecnologia e inovação",
+    contain: true,
   },
   {
-    image: "/focus-gallery-3.jpg",
-    title: "Focus fecha parceria estrategica com Microsoft para Startups",
+    image: "/comunidade-focus.jpg",
+    title: "Comunidade Focus Tech",
+    contain: true,
   },
 ];
 
@@ -68,7 +70,7 @@ export function HeroFocus() {
             alt={s.title}
             className={`absolute inset-0 z-10 h-full w-full transition-all duration-700 ease-in-out ${
               i === current ? "scale-100 opacity-100" : "scale-105 opacity-0"
-            } ${i === 0 ? "object-contain" : "object-cover"}`}
+            } ${i === 0 || s.contain ? "object-contain" : "object-cover"}`}
           />
         ))}
 
