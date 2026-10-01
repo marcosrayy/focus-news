@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { useNews } from "@/hooks/useNews";
 import { Clock, MessageSquare } from "lucide-react";
 import { ArticleModal, type ArticleModalData } from "@/components/article-modal";
@@ -23,20 +24,40 @@ interface BusinessArticle {
 }
 
 const articles: BusinessArticle[] = [
-  { id: 1, category: "CRESCIMENTO", categoryColor: "bg-amber-600", title: "Product-Led Growth: como empresas SaaS brasileiras estao crescendo 3x mais rapido", description: "Estudo revela que startups com estrategia PLG tem CAC 60% menor e retencao 40% maior.", image: "/news-focus.jpg", time: "30 min", comments: 234, author: "Marina Santos", metric: "+300%", metricLabel: "ARR medio" },
-  { id: 2, category: "LIDERANCA", categoryColor: "bg-violet-600", title: "O novo perfil do C-Level: por que 67% dos CEOs tech tem background em engenharia", description: "Pesquisa com 500 empresas mostra mudanca no perfil de lideranca executiva no setor de tecnologia.", image: "/news-ai-chip.jpg", time: "1h", comments: 187, author: "Ricardo Alves", metric: "67%", metricLabel: "CEOs tech" },
-  { id: 3, category: "CASES", categoryColor: "bg-emerald-600", title: "iFood atinge breakeven e reveals estrategia de diversificacao com entregas de saude", description: "Empresa brasileira lucra pela primeira vez e anuncia expansao para entregas de medicamentos e exames.", image: "/news-focus.jpg", time: "2h", comments: 345, author: "Julia Ferreira", metric: "R$ 45B", metricLabel: "GMV anual" },
-  { id: 4, category: "MERCADO", categoryColor: "bg-sky-600", title: "IPOs tech voltam ao radar: 12 empresas brasileiras preparam abertura de capital", description: "Janela de oportunidade se abre com queda da Selic e valorizacao de ativos de tecnologia.", image: "/news-focus.jpg", time: "3h", comments: 198, author: "Paulo Mendes", metric: "12", metricLabel: "IPOs previstos" },
-  { id: 5, category: "CULTURA", categoryColor: "bg-amber-600", title: "Trabalho remoto vs hibrido: pesquisa revela modelo ideal para produtividade em tech", description: "Dados de 10 mil funcionarios mostram que modelo hibrido 3-2 gera melhor resultado.", image: "/news-focus.jpg", time: "4h", comments: 567, author: "Camila Dias", metric: "+23%", metricLabel: "Produtividade" },
-  { id: 6, category: "EXPANSAO", categoryColor: "bg-emerald-600", title: "VTEX conquista mercado europeu e se torna lider em comercio composable na regiao", description: "Empresa brasileira de e-commerce enterprise fecha contratos com 5 grandes varejistas europeus.", image: "/news-focus.jpg", time: "5h", comments: 143, author: "Andre Costa", metric: "5", metricLabel: "Novos mercados" },
+  { id: 1, category: "CRESCIMENTO", categoryColor: "bg-amber-600", title: "Product-Led Growth: como empresas SaaS brasileiras estao crescendo 3x mais rapido", description: "Estudo revela que startups com estrategia PLG tem CAC 60% menor e retencao 40% maior.", image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200", time: "30 min", comments: 234, author: "Marina Santos", metric: "+300%", metricLabel: "ARR medio" },
+  { id: 2, category: "LIDERANCA", categoryColor: "bg-violet-600", title: "O novo perfil do C-Level: por que 67% dos CEOs tech tem background em engenharia", description: "Pesquisa com 500 empresas mostra mudanca no perfil de lideranca executiva no setor de tecnologia.", image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200", time: "1h", comments: 187, author: "Ricardo Alves", metric: "67%", metricLabel: "CEOs tech" },
+  { id: 3, category: "CASES", categoryColor: "bg-emerald-600", title: "iFood atinge breakeven e reveals estrategia de diversificacao com entregas de saude", description: "Empresa brasileira lucra pela primeira vez e anuncia expansao para entregas de medicamentos e exames.", image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=1200", time: "2h", comments: 345, author: "Julia Ferreira", metric: "R$ 45B", metricLabel: "GMV anual" },
+  { id: 4, category: "MERCADO", categoryColor: "bg-sky-600", title: "IPOs tech voltam ao radar: 12 empresas brasileiras preparam abertura de capital", description: "Janela de oportunidade se abre com queda da Selic e valorizacao de ativos de tecnologia.", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200", time: "3h", comments: 198, author: "Paulo Mendes", metric: "12", metricLabel: "IPOs previstos" },
+  { id: 5, category: "CULTURA", categoryColor: "bg-amber-600", title: "Trabalho remoto vs hibrido: pesquisa revela modelo ideal para produtividade em tech", description: "Dados de 10 mil funcionarios mostram que modelo hibrido 3-2 gera melhor resultado.", image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200", time: "4h", comments: 567, author: "Camila Dias", metric: "+23%", metricLabel: "Produtividade" },
+  { id: 6, category: "EXPANSAO", categoryColor: "bg-emerald-600", title: "VTEX conquista mercado europeu e se torna lider em comercio composable na regiao", description: "Empresa brasileira de e-commerce enterprise fecha contratos com 5 grandes varejistas europeus.", image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200", time: "5h", comments: 143, author: "Andre Costa", metric: "5", metricLabel: "Novos mercados" },
 ];
 
 export function GrowthStrategies({ sidebar }: { sidebar?: ReactNode }) {
   const [selected, setSelected] = useState<any | null>(null);
+  const searchParams = useSearchParams();
+  const topic = searchParams.get("topic") || "all";
+
+  const topicQueries: Record<string, string> = {
+    fintech: "Fintech OR pagamentos OR banco digital OR mercado financeiro",
+    foodtech: "FoodTech OR delivery OR restaurantes OR consumo",
+    commerce: "E-commerce OR varejo digital OR marketplace OR comercio online",
+    wellbeing: "Wellbeing OR fitness OR saúde digital OR cultura empresarial",
+    payments: "pagamentos OR fintech OR processamento de pagamentos",
+    ai: "IA OR inteligencia artificial OR automatizacao OR produtividade",
+    expansion: "expansao internacional OR expansao de mercado OR internacionalizacao",
+    mna: "fusao OR aquisicao OR M&A OR consolidacao de mercado",
+    esg: "ESG OR sustentabilidade OR impacto social OR clima",
+    events: "startup OR evento OR conferencias OR founders",
+    networking: "networking OR startup OR investidores OR founders",
+    roadshow: "roadshow OR startup OR investidores OR market",
+  };
+
+  const activeQuery = topicQueries[topic] || "Empreendedorismo OR Negocios OR Empresas OR Startups OR Economia OR Mercado Tech";
+
   const { 
     articles: apiNews,
     lastSyncRelative
-  } = useNews("Empreendedorismo OR Negocios OR Empresas OR Startups OR Economia OR Mercado Tech", "Business", 15, 1);
+  } = useNews(activeQuery, "Business", 15, 1);
   
   const displayArticles = apiNews.length > 0 ? apiNews.map((n: any, i: number) => {
     const mock = articles[i % articles.length];

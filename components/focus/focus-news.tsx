@@ -82,7 +82,7 @@ function NewsCard({
         }`}
       >
         <img
-          src={imgError ? "/placeholder.jpg" : article.image}
+          src={imgError ? "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200" : article.image}
           alt={article.title}
           loading="lazy"
           onError={() => setImgError(true)}

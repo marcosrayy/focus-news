@@ -1,33 +1,50 @@
 "use client";
 
 import { Rocket, TrendingUp, Users, ArrowUpRight, Target, Lightbulb } from "lucide-react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { SidebarCardsModal } from "@/components/sidebar-cards-modal";
 
 const activeInvestors = [
-  { name: "Sequoia Capital", deals: 12, focus: "FinTech, SaaS" },
-  { name: "Andreessen Horowitz", deals: 9, focus: "IA, DeepTech" },
-  { name: "SoftBank Latin America", deals: 7, focus: "Marketplace, Logistica" },
-  { name: "Kaszek Ventures", deals: 15, focus: "FinTech, EdTech" },
-  { name: "Valor Capital", deals: 8, focus: "SaaS, HealthTech" },
+  { key: "fintech", name: "Sequoia Capital", deals: 12, focus: "FinTech, SaaS" },
+  { key: "ai", name: "Andreessen Horowitz", deals: 9, focus: "IA, DeepTech" },
+  { key: "logistics", name: "SoftBank Latin America", deals: 7, focus: "Marketplace, Logistica" },
+  { key: "edtech", name: "Kaszek Ventures", deals: 15, focus: "FinTech, EdTech" },
+  { key: "healthtech", name: "Valor Capital", deals: 8, focus: "SaaS, HealthTech" },
 ];
 
 const hotSectors = [
-  { name: "FinTech", growth: "+42%", deals: 87 },
-  { name: "HealthTech", growth: "+38%", deals: 53 },
-  { name: "AgTech", growth: "+31%", deals: 41 },
-  { name: "EdTech", growth: "+28%", deals: 35 },
-  { name: "CleanTech", growth: "+25%", deals: 29 },
+  { key: "fintech", name: "FinTech", growth: "+42%", deals: 87 },
+  { key: "healthtech", name: "HealthTech", growth: "+38%", deals: 53 },
+  { key: "agtech", name: "AgTech", growth: "+31%", deals: 41 },
+  { key: "edtech", name: "EdTech", growth: "+28%", deals: 35 },
+  { key: "cleantech", name: "CleanTech", growth: "+25%", deals: 29 },
 ];
 
 const topStartups = [
-  { name: "QuintoAndar", valuation: "US$ 5.1B", sector: "PropTech", logo: "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://quintoandar.com.br&size=128" },
-  { name: "Creditas", valuation: "US$ 4.8B", sector: "FinTech", logo: "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://creditas.com&size=128" },
-  { name: "Loggi", valuation: "US$ 2.0B", sector: "LogTech", logo: "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://loggi.com&size=128" },
-  { name: "Wellhub", valuation: "US$ 2.4B", sector: "HealthTech", logo: "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://gympass.com&size=128" },
-  { name: "Alice", valuation: "US$ 800M", sector: "HealthTech", logo: "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://alice.com.br&size=128" },
+  { key: "proptech", name: "QuintoAndar", valuation: "US$ 5.1B", sector: "PropTech", logo: "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://quintoandar.com.br&size=128" },
+  { key: "fintech", name: "Creditas", valuation: "US$ 4.8B", sector: "FinTech", logo: "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://creditas.com&size=128" },
+  { key: "logtech", name: "Loggi", valuation: "US$ 2.0B", sector: "LogTech", logo: "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://loggi.com&size=128" },
+  { key: "healthtech", name: "Wellhub", valuation: "US$ 2.4B", sector: "HealthTech", logo: "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://gympass.com&size=128" },
+  { key: "healthtech", name: "Alice", valuation: "US$ 800M", sector: "HealthTech", logo: "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://alice.com.br&size=128" },
 ];
 
 export function StartupSidebarContent() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const applyFilter = (filterKey: string | null) => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (!filterKey || filterKey === "all") {
+      params.delete("topic");
+    } else {
+      params.set("topic", filterKey);
+    }
+    const queryString = params.toString();
+    router.push(queryString ? `/startups?${queryString}` : "/startups");
+  };
+
+  const currentTopic = searchParams.get("topic");
+
   return (
     <>
       <div className="rounded-2xl border border-border bg-card p-4 lg:p-5">
@@ -39,7 +56,14 @@ export function StartupSidebarContent() {
         </div>
         <div className="flex flex-col gap-2">
           {topStartups.map((startup) => (
-            <div key={startup.name} className="flex items-center justify-between rounded-xl border border-border bg-secondary/40 px-3 py-2.5 transition-all duration-300 hover:border-amber-500/30">
+            <button
+              key={startup.name}
+              type="button"
+              onClick={() => applyFilter(startup.key)}
+              className={`flex w-full items-center justify-between rounded-xl border px-3 py-2.5 text-left transition-all duration-300 ${
+                currentTopic === startup.key ? "border-amber-500/50 bg-amber-500/5" : "border-border bg-secondary/40 hover:border-amber-500/30"
+              }`}
+            >
               <div className="flex items-center gap-2.5">
                 <div className="flex h-6 w-6 items-center justify-center overflow-hidden rounded bg-white p-0.5">
                   <img src={startup.logo} alt={startup.name} className="h-full w-full object-contain" />
@@ -50,7 +74,7 @@ export function StartupSidebarContent() {
                 </div>
               </div>
               <span className="text-[10px] font-semibold text-amber-500">{startup.valuation}</span>
-            </div>
+            </button>
           ))}
         </div>
       </div>
@@ -64,7 +88,12 @@ export function StartupSidebarContent() {
         </div>
         <div className="flex flex-col gap-2">
           {activeInvestors.map((investor, i) => (
-            <div key={investor.name} className="flex items-center justify-between rounded-xl border border-border bg-secondary/40 px-3 py-2.5 transition-all duration-300 hover:border-blue-500/30">
+            <button
+              key={investor.name}
+              type="button"
+              onClick={() => applyFilter(investor.key)}
+              className="flex w-full items-center justify-between rounded-xl border border-border bg-secondary/40 px-3 py-2.5 text-left transition-all duration-300 hover:border-blue-500/30"
+            >
               <div className="flex items-center gap-2.5">
                 <span className="flex h-5 w-5 items-center justify-center rounded bg-blue-500/10 text-[9px] font-bold text-blue-500">
                   {i + 1}
@@ -75,7 +104,7 @@ export function StartupSidebarContent() {
                 </div>
               </div>
               <span className="text-[10px] font-semibold text-blue-500">{investor.deals} deals</span>
-            </div>
+            </button>
           ))}
         </div>
       </div>
@@ -89,18 +118,27 @@ export function StartupSidebarContent() {
         </div>
         <div className="flex flex-col gap-2">
           {hotSectors.map((sector) => (
-            <div key={sector.name} className="flex items-center justify-between rounded-xl border border-border bg-secondary/40 px-3 py-2.5 transition-all duration-300 hover:border-emerald-500/30">
+            <button
+              key={sector.name}
+              type="button"
+              onClick={() => applyFilter(sector.key)}
+              className="flex w-full items-center justify-between rounded-xl border border-border bg-secondary/40 px-3 py-2.5 text-left transition-all duration-300 hover:border-emerald-500/30"
+            >
               <div>
                 <p className="text-xs font-bold text-foreground">{sector.name}</p>
                 <p className="text-[10px] text-muted-foreground">{sector.deals} deals no trimestre</p>
               </div>
               <span className="text-xs font-semibold text-emerald-500">{sector.growth}</span>
-            </div>
+            </button>
           ))}
         </div>
       </div>
 
-      <button className="w-full rounded-xl bg-blue-600 py-3.5 text-center text-sm font-bold tracking-wider text-white transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/20">
+      <button
+        type="button"
+        onClick={() => applyFilter("all")}
+        className="w-full rounded-xl bg-blue-600 py-3.5 text-center text-sm font-bold tracking-wider text-white transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/20"
+      >
         VER TODAS AS RODADAS
       </button>
     </>

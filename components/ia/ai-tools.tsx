@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { useNews } from "@/hooks/useNews";
 import { Clock, MessageSquare, Bookmark, Brain, Bot, Wand2, Eye, Mic, FileCode } from "lucide-react";
 import { ArticleModal, type ArticleModalData } from "@/components/article-modal";
@@ -22,20 +23,38 @@ interface AIArticle {
 }
 
 const articles: AIArticle[] = [
-  { id: 1, category: "LLMs", categoryColor: "bg-violet-600", icon: <Brain className="h-3 w-3" />, title: "Claude 4 Opus introduz raciocinio em cadeia e memoria de longo prazo para conversas", description: "A Anthropic lanca modelo que mantem contexto de ate 1 milhao de tokens com fidelidade de 98%.", image: "/news-ai-chip.jpg", time: "20 min", comments: 456, author: "Marcos Vieira" },
-  { id: 2, category: "AGENTES", categoryColor: "bg-emerald-600", icon: <Bot className="h-3 w-3" />, title: "Agentes de IA autonomos conseguem executar tarefas complexas de DevOps sem supervisao", description: "Estudo mostra que agentes ja solucionam 73% dos incidentes em producao de forma autonoma.", image: "/news-focus.jpg", time: "1h", comments: 321, author: "Fernanda Lopes" },
-  { id: 3, category: "GERACAO", categoryColor: "bg-amber-600", icon: <Wand2 className="h-3 w-3" />, title: "Sora 2.0 gera videos cinematograficos de 10 minutos com consistencia temporal perfeita", description: "O modelo de video da OpenAI agora aceita scripts complexos e mantem personagens consistentes.", image: "/news-focus.jpg", time: "2h", comments: 789, author: "Gabriel Santos" },
-  { id: 4, category: "VISAO", categoryColor: "bg-sky-600", icon: <Eye className="h-3 w-3" />, title: "Novo modelo de visao computacional detecta microplasticos em oceanos via satelite", description: "Tecnologia de IA identifica concentracoes de poluicao com resolucao de 50cm a partir do espaco.", image: "/news-focus.jpg", time: "3h", comments: 198, author: "Dra. Lucia Campos" },
-  { id: 5, category: "VOZ", categoryColor: "bg-rose-600", icon: <Mic className="h-3 w-3" />, title: "ElevenLabs lanca clonagem de voz em tempo real com latencia de 50ms para traducao", description: "Sistema permite videoconferencias em 40 idiomas mantendo a voz original do falante.", image: "/news-focus.jpg", time: "4h", comments: 267, author: "Ana Paula Mota" },
-  { id: 6, category: "CODIGO", categoryColor: "bg-violet-600", icon: <FileCode className="h-3 w-3" />, title: "Devin 2.0 completa projetos de software inteiros com 89% de aceitacao em code review", description: "O engenheiro de software IA da Cognition alcanca novo patamar em benchmarks SWE-Bench.", image: "/news-focus.jpg", time: "5h", comments: 543, author: "Pedro Nogueira" },
+  { id: 1, category: "LLMs", categoryColor: "bg-violet-600", icon: <Brain className="h-3 w-3" />, title: "Claude 4 Opus introduz raciocinio em cadeia e memoria de longo prazo para conversas", description: "A Anthropic lanca modelo que mantem contexto de ate 1 milhao de tokens com fidelidade de 98%.", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200", time: "20 min", comments: 456, author: "Marcos Vieira" },
+  { id: 2, category: "AGENTES", categoryColor: "bg-emerald-600", icon: <Bot className="h-3 w-3" />, title: "Agentes de IA autonomos conseguem executar tarefas complexas de DevOps sem supervisao", description: "Estudo mostra que agentes ja solucionam 73% dos incidentes em producao de forma autonoma.", image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200", time: "1h", comments: 321, author: "Fernanda Lopes" },
+  { id: 3, category: "GERACAO", categoryColor: "bg-amber-600", icon: <Wand2 className="h-3 w-3" />, title: "Sora 2.0 gera videos cinematograficos de 10 minutos com consistencia temporal perfeita", description: "O modelo de video da OpenAI agora aceita scripts complexos e mantem personagens consistentes.", image: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&q=80&w=1200", time: "2h", comments: 789, author: "Gabriel Santos" },
+  { id: 4, category: "VISAO", categoryColor: "bg-sky-600", icon: <Eye className="h-3 w-3" />, title: "Novo modelo de visao computacional detecta microplasticos em oceanos via satelite", description: "Tecnologia de IA identifica concentracoes de poluicao com resolucao de 50cm a partir do espaco.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200", time: "3h", comments: 198, author: "Dra. Lucia Campos" },
+  { id: 5, category: "VOZ", categoryColor: "bg-rose-600", icon: <Mic className="h-3 w-3" />, title: "ElevenLabs lanca clonagem de voz em tempo real com latencia de 50ms para traducao", description: "Sistema permite videoconferencias em 40 idiomas mantendo a voz original do falante.", image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200", time: "4h", comments: 267, author: "Ana Paula Mota" },
+  { id: 6, category: "CODIGO", categoryColor: "bg-violet-600", icon: <FileCode className="h-3 w-3" />, title: "Devin 2.0 completa projetos de software inteiros com 89% de aceitacao em code review", description: "O engenheiro de software IA da Cognition alcanca novo patamar em benchmarks SWE-Bench.", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200", time: "5h", comments: 543, author: "Pedro Nogueira" },
 ];
 
 export function AITools({ sidebar }: { sidebar?: ReactNode }) {
   const [selected, setSelected] = useState<any | null>(null);
+  const searchParams = useSearchParams();
+  const topic = searchParams.get("topic") || "all";
+
+  const topicQueries: Record<string, string> = {
+    regulacao: "ética de IA OR regulamentação de IA OR AI Act OR governo IA",
+    brasil: "Brasil OR IA OR marco legal OR inteligência artificial brasileira",
+    seguranca: "segurança de IA OR model safety OR guardrails OR AI safety",
+    juridico: "IA e direito OR juridico OR legal tech OR IA e Justiça",
+    eua: "IA nos EUA OR OpenAI OR Anthropic OR Microsoft AI",
+    china: "DeepSeek OR IA na China OR LLMs chineses",
+    europa: "IA na Europa OR Mistral OR AI Act OR regulamentação",
+    "brasil-ia": "IA no Brasil OR startups de IA OR inteligência artificial brasileira",
+    saude: "IA em saúde OR diagnóstico por IA OR medicina IA",
+    financas: "IA em finanças OR trading algorítmico OR IA e bancos",
+  };
+
+  const activeQuery = topicQueries[topic] || "Inteligencia Artificial OR IA OR ChatGPT OR OpenAI OR Plataformas de IA OR Tech Mundo OR Noticia de IA";
+
   const { 
     articles: apiNews, 
     lastSyncRelative 
-  } = useNews("Inteligencia Artificial OR IA OR ChatGPT OR OpenAI OR Plataformas de IA OR Tech Mundo OR Noticia de IA", "IA", 18, 1);
+  } = useNews(activeQuery, "IA", 18, 1);
   
   const displayArticles = apiNews.length > 0 ? apiNews.map((n: any, i: number) => {
     const mock = articles[i % articles.length];

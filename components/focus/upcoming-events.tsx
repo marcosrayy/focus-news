@@ -21,7 +21,7 @@ const events: EventData[] = [
     targetDate: new Date("2026-05-28T09:00:00"),
     type: "Feira",
     typeColor: "bg-primary",
-    image: "/focus-event-1.jpg",
+    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=1200",
   },
   {
     name: "Workshop: IA Aplicada ao Marketing",
@@ -30,7 +30,7 @@ const events: EventData[] = [
     targetDate: new Date("2026-03-15T09:00:00"),
     type: "Workshop",
     typeColor: "bg-emerald-600",
-    image: "/focus-workshop.jpg",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200",
   },
   {
     name: "Startup Summit Florianopolis",
@@ -39,7 +39,7 @@ const events: EventData[] = [
     targetDate: new Date("2026-06-10T09:00:00"),
     type: "Palestra",
     typeColor: "bg-blue-600",
-    image: "/focus-gallery-3.jpg",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200",
   },
   {
     name: "Treinamento: Automacao com N8N",
@@ -48,7 +48,7 @@ const events: EventData[] = [
     targetDate: new Date("2026-03-22T14:00:00"),
     type: "Treinamento",
     typeColor: "bg-amber-600",
-    image: "/news-ai-chip.jpg",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200",
   },
 ];
 

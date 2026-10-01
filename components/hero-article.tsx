@@ -38,7 +38,7 @@ export function HeroArticle({ article, isLoading }: { article?: NewsArticle, isL
     >
       <div className="relative aspect-[16/10] w-full sm:aspect-[3/1]">
         <img
-          src={imgError ? "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=2000" : displayArticle.image || "/news-focus.jpg"}
+          src={imgError ? "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=2000" : displayArticle.image || "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200"}
           alt={displayArticle.title}
           onError={() => setImgError(true)}
           className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
