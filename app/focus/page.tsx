@@ -29,16 +29,13 @@ export default function FocusPage() {
 
       <main className="mx-auto max-w-7xl px-3 py-3 sm:px-4 sm:py-4 lg:px-6">
         {/* Page Title */}
-        <div className="mb-4 flex items-center justify-between">
+        <div className="mb-4 flex items-center">
           <div className="flex items-center gap-2">
             <div className="h-6 w-1.5 rounded-full bg-primary" />
             <h1 className="font-heading text-xl font-bold tracking-wider text-foreground lg:text-2xl">
               FOCUS
             </h1>
           </div>
-          <span className="rounded-full border border-primary/30 px-3 py-1 text-xs font-semibold text-primary">
-            HUB INSTITUCIONAL
-          </span>
         </div>
 
         {/* Novidades da Focus - Hero Carousel */}
