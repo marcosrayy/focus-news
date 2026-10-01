@@ -6,7 +6,6 @@ import { HeroFocus } from "@/components/focus/hero-focus";
 import { ImpactFocus } from "@/components/focus/impact-focus";
 import { UpcomingEvents } from "@/components/focus/upcoming-events";
 import { WorkshopsTrainings } from "@/components/focus/workshops-trainings";
-import { CompanyNews } from "@/components/focus/company-news";
 import { FocusTimeline } from "@/components/focus/focus-timeline";
 import { FocusGallery } from "@/components/focus/focus-gallery";
 import { FocusNews } from "@/components/focus/focus-news";
@@ -43,8 +42,8 @@ export default function FocusPage() {
 
         {/* Novidades da Focus - Hero Carousel */}
         <div className="mb-1 flex items-center gap-2">
-          <div className="h-5 w-1 rounded-full bg-primary" />
-          <h2 className="font-heading text-sm font-bold uppercase tracking-[0.15em] text-primary">
+          <div className="h-4 w-1 rounded-full bg-primary" />
+          <h2 className="font-heading text-xs font-bold uppercase tracking-[0.12em] text-primary sm:text-sm">
             Novidades da Focus
           </h2>
         </div>
@@ -58,11 +57,6 @@ export default function FocusPage() {
         {/* Workshops & Treinamentos */}
         <div className="mt-8">
           <WorkshopsTrainings />
-        </div>
-
-        {/* Noticias da Empresa */}
-        <div className="mt-8">
-          <CompanyNews />
         </div>
 
         {/* Impacto Focus - Dashboard */}
