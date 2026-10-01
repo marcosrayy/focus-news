@@ -1,9 +1,11 @@
 import { Header } from "@/components/header";
 import { Navigation } from "@/components/navigation";
 import { MarketTicker } from "@/components/market-ticker";
+import { NewsTicker } from "@/components/news-ticker";
 import { HeroBusiness } from "@/components/business/hero-business";
 import { GrowthStrategies } from "@/components/business/growth-strategies";
 import { BusinessSidebar } from "@/components/business/business-sidebar";
+import type { NewsArticle } from "@/types/news";
 
 import type { Metadata } from "next";
 
@@ -14,11 +16,18 @@ export const metadata: Metadata = {
 };
 
 export default function BusinessPage() {
+  const tickerNews: NewsArticle[] = [
+    { id: "business-1", title: "Grandes empresas aceleram investimentos em IA para produtividade.", description: "", content: "", image: "/news-focus.jpg", source: "Focus News", author: "Focus", publishedAt: new Date().toISOString(), url: "#", category: "Business" },
+    { id: "business-2", title: "Fundadores ajustam modelos de negócio para crescer sem perder eficiência.", description: "", content: "", image: "/news-focus.jpg", source: "Focus News", author: "Focus", publishedAt: new Date().toISOString(), url: "#", category: "Business" },
+    { id: "business-3", title: "Mercado de software B2B segue com demanda forte em automação.", description: "", content: "", image: "/news-focus.jpg", source: "Focus News", author: "Focus", publishedAt: new Date().toISOString(), url: "#", category: "Business" },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <Navigation />
       <MarketTicker />
+      <NewsTicker news={tickerNews} />
 
       <main className="mx-auto max-w-7xl px-3 py-3 sm:px-4 sm:py-4 lg:px-6">
         {/* Page Title */}

@@ -1,9 +1,11 @@
 import { Header } from "@/components/header";
 import { Navigation } from "@/components/navigation";
 import { MarketTicker } from "@/components/market-ticker";
+import { NewsTicker } from "@/components/news-ticker";
 import { HeroTech } from "@/components/tecnologia/hero-tech";
 import { TrendingTech } from "@/components/tecnologia/trending-tech";
 import { TechSidebar } from "@/components/tecnologia/tech-sidebar";
+import type { NewsArticle } from "@/types/news";
 
 import type { Metadata } from "next";
 
@@ -14,11 +16,18 @@ export const metadata: Metadata = {
 };
 
 export default function TecnologiaPage() {
+  const tickerNews: NewsArticle[] = [
+    { id: "tech-1", title: "Smartwatches premium fazem a diferença em bateria e software.", description: "", content: "", image: "/news-focus.jpg", source: "Focus News", author: "Focus", publishedAt: new Date().toISOString(), url: "#", category: "Tecnologia" },
+    { id: "tech-2", title: "Big Tech intensifica aposta em IA e infraestrutura local.", description: "", content: "", image: "/news-focus.jpg", source: "Focus News", author: "Focus", publishedAt: new Date().toISOString(), url: "#", category: "Tecnologia" },
+    { id: "tech-3", title: "Novos chips e dispositivos renovam a disputa por desempenho.", description: "", content: "", image: "/news-focus.jpg", source: "Focus News", author: "Focus", publishedAt: new Date().toISOString(), url: "#", category: "Tecnologia" },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <Navigation />
       <MarketTicker />
+      <NewsTicker news={tickerNews} />
 
       <main className="mx-auto max-w-7xl px-3 py-3 sm:px-4 sm:py-4 lg:px-6">
         {/* Page Title */}

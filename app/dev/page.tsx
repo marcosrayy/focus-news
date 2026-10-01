@@ -1,9 +1,11 @@
 import { Header } from "@/components/header";
 import { Navigation } from "@/components/navigation";
 import { MarketTicker } from "@/components/market-ticker";
+import { NewsTicker } from "@/components/news-ticker";
 import { HeroDev } from "@/components/dev/hero-dev";
 import { FrameworkNews } from "@/components/dev/framework-news";
 import { DevSidebar } from "@/components/dev/dev-sidebar";
+import type { NewsArticle } from "@/types/news";
 
 import type { Metadata } from "next";
 
@@ -14,11 +16,18 @@ export const metadata: Metadata = {
 };
 
 export default function DevPage() {
+  const tickerNews: NewsArticle[] = [
+    { id: "dev-1", title: "Ferramentas de IA para dev ganham espaço em fluxos de produção.", description: "", content: "", image: "/news-focus.jpg", source: "Focus News", author: "Focus", publishedAt: new Date().toISOString(), url: "#", category: "Dev" },
+    { id: "dev-2", title: "Frameworks modernos priorizam performance e DX em equipes de software.", description: "", content: "", image: "/news-focus.jpg", source: "Focus News", author: "Focus", publishedAt: new Date().toISOString(), url: "#", category: "Dev" },
+    { id: "dev-3", title: "Arquiteturas serverless e edge continuam crescendo na prática.", description: "", content: "", image: "/news-focus.jpg", source: "Focus News", author: "Focus", publishedAt: new Date().toISOString(), url: "#", category: "Dev" },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <Navigation />
       <MarketTicker />
+      <NewsTicker news={tickerNews} />
 
       <main className="mx-auto max-w-7xl px-3 py-3 sm:px-4 sm:py-4 lg:px-6">
         {/* Page Title */}
