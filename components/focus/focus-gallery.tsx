@@ -1,49 +1,49 @@
 "use client";
 
 import { useState } from "react";
-import { Camera, Play, X } from "lucide-react";
+import { Camera, X } from "lucide-react";
 
 const galleryItems = [
   {
-    src: "/focus-tedx.jpg",
-    alt: "Palestra no TEDx Fortaleza",
-    label: "TEDx Fortaleza 2026",
-    type: "foto" as const,
+    src: "/Adriano%20comprando%20a%20microsoft.jpg",
+    alt: "Integrante da Focus trabalhando em frente a uma tela de projetos",
+    label: "Projetos de tecnologia",
     span: "col-span-2 row-span-2",
   },
   {
-    src: "/focus-event-1.jpg",
-    alt: "Stand na Web Summit",
-    label: "Web Summit Rio 2025",
-    type: "foto" as const,
+    src: "/Mestres%20super%20lendarios.jpg",
+    alt: "Integrantes da Focus conversando no estande",
+    label: "Encontro no estande Focus",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/focus-workshop.jpg",
-    alt: "Workshop de IA",
-    label: "Workshop Focus Labs",
-    type: "foto" as const,
+    src: "/chefes.jpg",
+    alt: "Dois integrantes da Focus no espaço da empresa",
+    label: "Time Focus",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/focus-gallery-1.jpg",
-    alt: "Bastidores do evento",
-    label: "Bastidores - Startup Summit",
-    type: "video" as const,
+    src: "/equipe%20maneira.jpeg",
+    alt: "Dois integrantes da Focus no estande da empresa",
+    label: "Equipe Focus no estande",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/focus-gallery-2.jpg",
-    alt: "Networking cocktail",
-    label: "Networking Night Focus",
-    type: "foto" as const,
+    src: "/Davi.jpg",
+    alt: "Integrante da Focus em uma reunião",
+    label: "Encontro da equipe",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/focus-gallery-3.jpg",
-    alt: "Panel discussion",
-    label: "Painel: Futuro da IA",
-    type: "foto" as const,
+    src: "/gissele.jpg",
+    alt: "Integrante da Focus no estande da empresa",
+    label: "Equipe Focus no evento",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: "/mestre%20lendario.jpg",
+    alt: "Integrante da Focus em uma conversa de trabalho",
+    label: "Bastidores da equipe",
     span: "col-span-2 row-span-1",
   },
 ];
@@ -74,13 +74,6 @@ export function FocusGallery() {
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-            {item.type === "video" && (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/90 text-primary-foreground shadow-lg shadow-primary/30">
-                  <Play className="h-4 w-4 fill-current" />
-                </div>
-              </div>
-            )}
             <div className="absolute bottom-0 left-0 right-0 translate-y-2 p-3 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
               <p className="text-xs font-bold text-foreground">{item.label}</p>
             </div>
