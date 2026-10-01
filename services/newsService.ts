@@ -386,23 +386,23 @@ const MODULE_KEYWORDS = {
 
 // 3. Proibições Absolutas (Mata-mata - Score vira 0 imediatamente)
 const PROHIBITED_TERMS = [
-  "politica", "eleicoes", "lula", "bolsonaro", "stf", "bbb", "reality show", "reality",
+  "politica", "eleicoes", "lula", "bolsonaro", "stf", "bbb", "reality show", "reality", "show",
   "futebol", "esportes", "esporte", "goleiro", "goleira", "goleiros", "goleiras", "crimes", "crime", "acidentes", "acidente",
   "fofocas", "fofoca", "novelas", "novela", "celebridades", "celebridade", "famosos",
   "influenciadores", "influenciador", "horoscopo", "loterias", "loteria", "adulto",
   "copa", "copa do mundo", "artilheiro", "gol", "flamengo", "palmeiras", "corinthians",
   "neymar", "mbappe", "messi", "cristiano ronaldo", "atleta", "olimpiadas", "campeonato",
-  "torneio", "jogo", "jogos", "nba", "ufc", "boxe", "tenis", "formula 1", "f1",
+  "torneio", "jogo", "jogos", "nba", "ufc", "boxe", "tenis", "formula 1", "f1", "conflito", "militar", "ataque",
   "zagueiro", "justica", "judicial", "tribunal", "audiencia", "depoimento", "processo",
   "governo", "candidato", "eleitor", "prefeito", "governador", "presidente", "senador",
-  "deputado", "partido", "ministro", "ministerio", "pf", "policia federal", "tse",
-  "senado", "congresso", "camara", "parlamento", "guerra", "conflito", "militar", "ataque",
+  "deputado", "partido", "ministro", "ministerio", "pf", "policia federal", "tse", "stf", "supremo tribunal federal", 
+  "congresso nacional", "cpi", "senado federal", "camara dos deputados", "senado", "congresso", "camara", "parlamento", "guerra",
   "ataques", "morte", "mortes", "atentado", "missil", "misseis", "bombardeio", "terrorista",
   "terrorismo", "ira", "jordania", "israel", "gaza", "palestina", "russia", "ucrania", "morto", "mortos",
   "morreu", "morreram", "preso", "presos", "prisao", "prisoes", "custodia", "presidio",
   "policia", "policial", "homicidio", "assassinado", "assassinada", "assassinatos", "tortura", "bet",
   "apostas", "fashion show", "desfile", "moda", "passarela", "trump", "biden", "renan santos", "augusto cury", "ciro gomes",
-  "flavio bolsonaro", "zema", "capitao wagner", "eduardo bolsonaro", "eleição", "eleições", "haddad", "qaest", "tarot",
+  "flavio bolsonaro", "zema", "capitao wagner", "eduardo bolsonaro", "eleição", "eleições", "haddad", "quaest", "tarot",
   "alexandre de moraes", "xandao", "moraes"
 ];
 
