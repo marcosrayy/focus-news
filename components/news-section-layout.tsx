@@ -50,7 +50,7 @@ export function FeaturedNewsCarousel({
         <div
           key={isValidElement(child) && child.key !== null ? child.key : index}
           aria-label={`Notícia ${index + 1} de ${slideCount}`}
-          className={`min-w-full snap-center sm:min-w-0 ${slideClassName?.(index) ?? ""}`}
+          className={`min-w-full snap-center sm:min-w-0 sm:flex ${slideClassName?.(index) ?? ""}`}
           role="group"
         >
           {child}
