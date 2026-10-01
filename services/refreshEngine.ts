@@ -1,5 +1,5 @@
 import { Storage, StorageArticle, EngineStatus } from '../utils/storage';
-import { classifyArticle, deduplicateArticles, fetchRssFeed, hasCategoryEvidence, isArticleWithinRetention, isCategorySpecificRssFeed, isEnglishDevSource, isSourceAllowed, MODULE_SOURCES, repairMojibake } from './newsService';
+import { classifyArticle, deduplicateArticles, fetchRssFeed, hasCategoryEvidence, isCategorySpecificRssFeed, isEnglishDevSource, isSourceAllowed, MODULE_SOURCES, repairMojibake } from './newsService';
 import { NEWS_API_KEY } from '../config/newsConfig';
 
 // Categories mapping to RSS feeds
@@ -567,9 +567,10 @@ export const RefreshEngine = {
 
     // Apply expiration (retention logic) - filter out expired news
     const nowTime = Date.now();
+    const searchArchiveStart = nowTime - 90 * 24 * 60 * 60 * 1000;
     const finalArticles = deduplicateArticles(Array.from(articleMap.values()).filter(art =>
       !(art.category === "Dev" && isEnglishDevSource(art.source)) &&
-      isArticleWithinRetention(art.publishedAt, art.expiresAt, nowTime)
+      new Date(art.publishedAt).getTime() >= searchArchiveStart
     ));
 
     // Save final lists back to storage

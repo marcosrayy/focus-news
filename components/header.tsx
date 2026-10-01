@@ -2,7 +2,7 @@
 
 import { Search, Sun, Moon } from "lucide-react";
 import { useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import { SidebarCardsModal } from "@/components/sidebar-cards-modal";
 import { TechSidebarContent } from "@/components/tecnologia/tech-sidebar";
@@ -17,8 +17,18 @@ import { HomeMarketSidebarContent } from "@/components/home-market-sidebar";
 
 export function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
   const pathname = usePathname();
+  const router = useRouter();
   const { theme, setTheme } = useTheme();
+
+  const handleSearch = (event?: React.FormEvent) => {
+    event?.preventDefault();
+    const value = searchValue.trim();
+    if (!value) return;
+    router.push(`/search?q=${encodeURIComponent(value)}`);
+    setSearchOpen(false);
+  };
 
   const mobileExplore = (() => {
     switch (pathname) {
@@ -84,14 +94,16 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between border-b border-border/60 bg-background/85 px-3 py-2.5 backdrop-blur-md sm:px-4 sm:py-3 lg:px-6">
       <div className="flex items-center gap-3">
-        <div className="hidden items-center gap-2 rounded-full border border-border bg-secondary/70 px-4 py-2 transition-colors duration-300 focus-within:border-primary/50 sm:flex">
+        <form onSubmit={handleSearch} className="hidden items-center gap-2 rounded-full border border-border bg-secondary/70 px-4 py-2 transition-colors duration-300 focus-within:border-primary/50 sm:flex">
           <Search className="h-4 w-4 text-muted-foreground" />
           <input
             type="text"
+            value={searchValue}
+            onChange={(event) => setSearchValue(event.target.value)}
             placeholder="Pesquisar Terminal..."
             className="w-40 bg-transparent text-sm text-foreground placeholder:text-muted-foreground focus:outline-none lg:w-56"
           />
-        </div>
+        </form>
         <button
           className="rounded-full p-2 text-foreground transition-colors duration-300 hover:bg-secondary sm:hidden"
           aria-label="Buscar"
@@ -131,15 +143,17 @@ export function Header() {
 
       {searchOpen && (
         <div className="absolute left-0 top-full w-full border-b border-border/60 bg-background px-4 py-3 sm:hidden">
-          <div className="flex items-center gap-2 rounded-full border border-border bg-secondary/70 px-4 py-2">
+          <form onSubmit={handleSearch} className="flex items-center gap-2 rounded-full border border-border bg-secondary/70 px-4 py-2">
             <Search className="h-4 w-4 text-muted-foreground" />
             <input
               type="text"
+              value={searchValue}
+              onChange={(event) => setSearchValue(event.target.value)}
               placeholder="Pesquisar Terminal..."
               className="w-full bg-transparent text-sm text-foreground placeholder:text-muted-foreground focus:outline-none"
               autoFocus
             />
-          </div>
+          </form>
         </div>
       )}
     </header>
