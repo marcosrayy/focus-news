@@ -98,9 +98,9 @@ function FeaturedCard({ article, onClick }: { article: NewsArticle; onClick: () 
   return (
     <article
       onClick={onClick}
-      className="group cursor-pointer overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-card-hover"
+      className="group flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-card-hover"
     >
-      <div className="relative aspect-[16/10] sm:aspect-[16/10] overflow-hidden">
+      <div className="relative aspect-[16/10] overflow-hidden">
         <img
           src={article.image}
           alt={article.title}
@@ -121,14 +121,14 @@ function FeaturedCard({ article, onClick }: { article: NewsArticle; onClick: () 
           <Bookmark className="h-3.5 w-3.5" />
         </button>
       </div>
-      <div className="p-4">
-        <h3 className="font-heading text-sm font-bold leading-snug tracking-tight text-foreground transition-colors duration-300 group-hover:text-primary lg:text-base">
+      <div className="flex flex-1 flex-col p-4">
+        <h3 className="line-clamp-3 min-h-[3.6em] font-heading text-sm font-bold leading-snug tracking-tight text-foreground transition-colors duration-300 group-hover:text-primary lg:text-base">
           <span className="text-balance">{article.title}</span>
         </h3>
         <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
           {article.description}
         </p>
-        <div className="mt-3 flex items-center justify-between border-t border-border/70 pt-3">
+        <div className="mt-auto flex items-center justify-between border-t border-border/70 pt-3">
           <span className="truncate text-xs font-medium text-muted-foreground">{article.author}</span>
           <div className="flex shrink-0 items-center gap-3">
             <div className="flex items-center gap-1 text-muted-foreground">
