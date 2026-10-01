@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { balanceArticlesBySource, deduplicateArticles, fetchNewsBackend, hasCategoryEvidence, isArticleWithinRetention, isEnglishDevSource } from "../../../services/newsService";
+import { balanceArticlesBySource, decodeHtmlEntities, deduplicateArticles, fetchNewsBackend, hasCategoryEvidence, isArticleWithinRetention, isEnglishDevSource } from "../../../services/newsService";
 import { Storage } from "../../../utils/storage";
 import { RefreshEngine } from "../../../services/refreshEngine";
 
@@ -114,7 +114,11 @@ export async function GET(request: Request) {
       const lowerImage = image.toLowerCase();
       const isBadImage = !image || lowerImage.includes("youtube.com") || lowerImage.includes("youtu.be") || lowerImage.includes("vimeo.com") || lowerImage.includes("/embed/");
       return isBadImage ? { ...art, image: "/news-focus.jpg" } : art;
-    });
+    }).map(art => ({
+      ...art,
+      title: art.title ? decodeHtmlEntities(art.title) : art.title,
+      description: art.description ? decodeHtmlEntities(art.description) : art.description,
+    }));
     filtered = filtered.filter(art => isArticleWithinRetention(art.publishedAt, art.expiresAt));
     filtered = deduplicateArticles(filtered);
 

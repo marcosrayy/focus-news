@@ -36,10 +36,10 @@ const resourceLinks = [
 
 const socialLinks = [
   { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/focustech.co/" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/focustech/" },
-  { icon: MessageCircle, label: "E-mail", href: "mailto:contato@focustecnologia.com" },
-  { icon: XSocialIcon, label: "X", href: "https://twitter.com/focustech" },
-  { icon: Github, label: "GitHub", href: "https://github.com/focustech" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/focus-tecnologia-co/posts/?feedView=all&viewAsMember=true" },
+  { icon: MessageCircle, label: "E-mail", href: "https://api.whatsapp.com/send/?phone=558586674561&text&type=phone_number&app_absent=0" },
+  { icon: XSocialIcon, label: "X", href: "https://x.com/Focustechco" },
+  { icon: Github, label: "GitHub", href: "https://github.com/Focustechco?tab=overview&from=2026-03-01&to=2026-03-19" },
 ];
 
 export function Footer() {

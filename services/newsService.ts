@@ -24,8 +24,34 @@ const WINDOWS_1252_BYTES = new Map<number, number>([
   [0x0153, 0x9c], [0x017e, 0x9e], [0x0178, 0x9f],
 ]);
 
+export function decodeHtmlEntities(text: string): string {
+  return text
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#039;/gi, "'")
+    .replace(/&apos;/gi, "'")
+    .replace(/&#x27;/gi, "'")
+    .replace(/&#x2F;/gi, "/")
+    .replace(/&#8217;/gi, "'")
+    .replace(/&#8216;/gi, "'")
+    .replace(/&#8220;/gi, '"')
+    .replace(/&#8221;/gi, '"')
+    .replace(/&#039;/gi, "'")
+    .replace(/&#(?:x?)([0-9a-fA-F]+);/g, (_, hex) => {
+      const code = Number.parseInt(hex, 16);
+      return Number.isFinite(code) ? String.fromCodePoint(code) : `&#${hex};`;
+    })
+    .replace(/&#(\d+);/g, (_, dec) => {
+      const code = Number.parseInt(dec, 10);
+      return Number.isFinite(code) ? String.fromCodePoint(code) : `&#${dec};`;
+    });
+}
+
 export function repairMojibake(text: string): string {
-  let repaired = text;
+  let repaired = decodeHtmlEntities(text);
 
   for (let pass = 0; pass < 3; pass++) {
     const characters = Array.from(repaired);
@@ -342,6 +368,7 @@ const PROHIBITED_TERMS = [
   "copa", "copa do mundo", "artilheiro", "gol", "flamengo", "palmeiras", "corinthians",
   "neymar", "mbappe", "messi", "cristiano ronaldo", "atleta", "olimpiadas", "campeonato",
   "torneio", "jogo", "jogos", "nba", "ufc", "boxe", "tenis", "formula 1", "f1",
+  "zagueiro", "justica", "judicial", "tribunal", "audiencia", "depoimento", "processo",
   "governo", "candidato", "eleitor", "prefeito", "governador", "presidente", "senador",
   "deputado", "partido", "ministro", "ministerio", "pf", "policia federal", "tse",
   "senado", "congresso", "camara", "parlamento", "guerra", "conflito", "militar", "ataque",
@@ -350,15 +377,51 @@ const PROHIBITED_TERMS = [
   "morreu", "morreram", "preso", "presos", "prisao", "prisoes", "custodia", "presidio",
   "policia", "policial", "homicidio", "assassinado", "assassinada", "assassinatos", "tortura", "bet",
   "apostas", "fashion show", "desfile", "moda", "passarela", "trump", "biden", "renan santos", "augusto cury", "ciro gomes",
-  "flavio bolsonaro", "zema", "capitao wagner", "eduardo bolsonaro",
+  "flavio bolsonaro", "zema", "capitao wagner", "eduardo bolsonaro", "eleição", "eleições", "haddad", "qaest", "tarot",
+  "alexandre de moraes", "xandao", "moraes"
 ];
 
 const DEV_PROHIBITED_TERMS = ["gta", "rockstar", "videogame", "videogames", "gameplay"];
 const ENTERTAINMENT_TERMS = [
   "filme", "filmes", "cinema", "game of thrones", "aegon", "targaryen", "hbo",
-  "ator", "atores", "atriz", "atrizes", "elenco", "trailer", "longa-metragem"
+  "ator", "atores", "atriz", "atrizes", "elenco", "trailer", "longa-metragem",
+  "futebol", "esporte", "esportes", "zagueiro", "time", "campeonato", "torneio",
+  "justica", "judicial", "tribunal", "audiencia", "depoimento", "processo"
 ];
-const ENTERTAINMENT_URL_SECTIONS = ["/pop/", "/cinema/", "/entretenimento/", "/celebridades/", "/filmes/", "/series/"];
+const ENTERTAINMENT_URL_SECTIONS = ["/pop/", "/cinema/", "/entretenimento/", "/celebridades/", "/filmes/", "/series/", "/esportes/", "/futebol/", "/esporte/"];
+const TECH_CONTEXT_TERMS = [
+  "software", "hardware", "computacao", "smartphone", "celular", "android", "ios",
+  "processador", "chip", "gpu", "cpu", "algoritmo", "api", "app", "aplicativo",
+  "cloud", "data center", "servidor", "servidores", "ia", "inteligencia artificial",
+  "machine learning", "computador", "rede", "wifi", "bluetooth", "iot", "sensor",
+  "seguranca digital", "cyberseguranca", "programacao", "codigo",
+  "sistema operacional", "software livre", "framework"
+];
+const NON_TECH_DOMAIN_TERMS = [
+  "boi", "bois", "gado", "galinha", "galinhas", "pecuaria", "agro", "agricultura",
+  "eleicao", "eleições", "politica", "governo", "partido", "senador", "prefeito",
+  "saude", "medicina", "hospital", "educacao", "escola", "futebol", "esporte",
+  "cinema", "filme", "celebridade", "moda", "jogo", "jogos", "estupro", "estupros",
+  "violencia", "crime", "crimes", "homicidio", "assassinato", "seguranca publica",
+  "segurança pública", "ocorrencia", "ocorrências", "ssp", "policia", "batalhao", "detento",
+  "hospitalar", "vítima", "vitima", "justica", "audiencia", "depoimento",
+  "idoso", "idosos", "envelhecer", "qualidade de vida", "aposentadoria", "aposentado"
+];
+const PUBLIC_SAFETY_REJECTION_TERMS = [
+  "estupro", "estupros", "violencia", "crime", "crimes", "homicidio", "assassinato",
+  "seguranca publica", "segurança pública", "ocorrencia", "ocorrencias", "policia", "ssp",
+  "vítima", "vitima", "justica", "tribunal", "audiencia", "depoimento"
+];
+const LEGAL_AND_POLITICAL_REJECTION_TERMS = [
+  "moraes", "advogado", "reu", "réu", "peticao", "petição", "stf", "suprema corte",
+  "tribunal", "justica", "processo", "acao judicial", "ação judicial", "pedido judicial",
+  "ministerio", "governo", "política", "politica", "candidato", "eleicao", "eleições"
+];
+const INNOVATION_CONTEXT_TERMS = [
+  "pesquisa", "cientifico", "científica", "tecnologia", "software", "hardware", "ia",
+  "inteligencia artificial", "algoritmo", "computacao", "dados", "ciencia", "inovacao",
+  "biotecnologia", "engenharia", "sistema", "inteligente", "sensor", "automacao"
+];
 
 // Helper para normalizar strings (remove acentos e caixa alta)
 function normalizeText(text: string): string {
@@ -402,6 +465,26 @@ export function hasCategoryEvidence(title: string, description: string, category
   if (isEntertainmentArticle(title, description, url)) return false;
   const text = `${title} ${description}`;
   if (category === "Dev" && countMatches(text, DEV_PROHIBITED_TERMS) > 0) return false;
+  if (category === "Tecnologia") {
+    const hasNonTechContext = countMatches(text, NON_TECH_DOMAIN_TERMS) > 0;
+    const hasTechContext = countMatches(text, TECH_CONTEXT_TERMS) > 0;
+    const hasPublicSafetySignal = countMatches(text, PUBLIC_SAFETY_REJECTION_TERMS) > 0;
+    if (hasPublicSafetySignal && !hasTechContext) return false;
+    if (hasNonTechContext && !hasTechContext) return false;
+  }
+
+  if (category === "Inovacao") {
+    const hasNonTechContext = countMatches(text, NON_TECH_DOMAIN_TERMS) > 0;
+    const hasInnovationContext = countMatches(text, INNOVATION_CONTEXT_TERMS) > 0;
+    if (hasNonTechContext && !hasInnovationContext) return false;
+  }
+
+  if (category === "IA") {
+    const hasLegalOrPoliticalSignal = countMatches(text, LEGAL_AND_POLITICAL_REJECTION_TERMS) > 0;
+    const hasTechContext = countMatches(text, TECH_CONTEXT_TERMS) > 0;
+    if (hasLegalOrPoliticalSignal && !hasTechContext) return false;
+  }
+
   return countMatches(text, keywords) > 0;
 }
 
