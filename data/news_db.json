@@ -29,10 +29,10 @@
   },
   {
     "id": "https://exame.com/inteligencia-artificial/a-startup-brasileira-que-quer-pagar-voce-quando-uma-ia-usar-o-seu-conhecimento/",
-    "title": "Startup brasileira quer te pagar sempre que uma IA 'consultar' suas ideias",
+    "title": "A startup brasileira que quer pagar você quando uma IA usar o seu conhecimento",
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/inteligencia-artificial/a-startup-brasileira-que-quer-pagar-voce-quando-uma-ia-usar-o-seu-conhecimento/",
-    "image": "https://classic.exame.com/wp-content/uploads/2026/09/Marcos-Nader.png",
+    "image": "https://classic.exame.com/wp-content/uploads/2026/07/cerebro.jpg",
     "publishedAt": "2026-09-29T17:31:17.122Z",
     "source": "Exame",
     "category": "Startups",
@@ -600,6 +600,7 @@
     "importedAt": "2026-09-29T17:48:17.936Z",
     "importanceScore": 100,
     "expiresAt": "2026-09-30T20:04:00.000Z"
+<<<<<<< HEAD
   },
   {
     "id": "https://forbes.com.br/forbes-tech/2026/09/claude-passa-por-instabilidade-e-afeta-usuarios-no-brasil/",
@@ -670,5 +671,7 @@
     "importedAt": "2026-09-29T20:17:53.481Z",
     "importanceScore": 100,
     "expiresAt": "2026-09-30T19:20:26.000Z"
+=======
+>>>>>>> parent of d3b75bd (atualização)
   }
 ]
