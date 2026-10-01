@@ -54,7 +54,12 @@ const events: EventData[] = [
 ];
 
 function Countdown({ targetDate }: { targetDate: Date }) {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
   useEffect(() => {
     const calc = () => {
@@ -84,7 +89,9 @@ function Countdown({ targetDate }: { targetDate: Date }) {
           key={unit.label}
           className="flex items-center gap-0.5 rounded-md bg-primary/10 px-1.5 py-0.5"
         >
-          <span className="text-xs font-bold tabular-nums text-primary">{String(unit.val).padStart(2, "0")}</span>
+          <span className="text-xs font-bold tabular-nums text-primary">
+            {String(unit.val).padStart(2, "0")}
+          </span>
           <span className="text-[9px] text-primary/70">{unit.label}</span>
         </div>
       ))}
@@ -98,7 +105,7 @@ export function UpcomingEvents() {
       <div className="mb-4 flex items-center gap-2">
         <div className="h-5 w-1 rounded-full bg-primary" />
         <h2 className="font-heading text-sm font-bold tracking-wider text-foreground">
-          PROXIMOS EVENTOS
+          PRÓXIMOS EVENTOS
         </h2>
         <Calendar className="ml-1 h-4 w-4 text-primary" />
       </div>
@@ -114,10 +121,12 @@ export function UpcomingEvents() {
                 src={event.image}
                 alt={event.name}
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
               <div className="absolute left-3 top-3">
-                <span className={`${event.typeColor} rounded-md px-2.5 py-1 text-[10px] font-bold tracking-wider text-white`}>
+                <span
+                  className={`${event.typeColor} rounded-md px-2.5 py-1 text-[10px] font-bold tracking-wider text-white`}
+                >
                   {event.type}
                 </span>
               </div>
