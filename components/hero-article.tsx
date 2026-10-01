@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Bookmark } from "lucide-react";
 import { NewsArticle } from "@/types/news";
 import { Skeleton } from "@/components/ui/skeleton";
+import { getDistinctCover } from "@/lib/utils";
 
 export function HeroArticle({ article, isLoading }: { article?: NewsArticle, isLoading?: boolean }) {
   const [imgError, setImgError] = useState(false);
@@ -25,7 +26,7 @@ export function HeroArticle({ article, isLoading }: { article?: NewsArticle, isL
   const displayArticle = article || {
     title: "A Revolucao dos Semicondutores",
     description: "Buscando as ultimas noticias para voce. Se demorar, o servico pode estar em manutencao.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2000",
+    image: getDistinctCover("hero-article-default"),
     category: "TECNOLOGIA",
     source: "FOCUS NEWS",
     url: "#"
@@ -38,7 +39,7 @@ export function HeroArticle({ article, isLoading }: { article?: NewsArticle, isL
     >
       <div className="relative aspect-[16/10] w-full sm:aspect-[3/1]">
         <img
-          src={imgError ? "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=2000" : displayArticle.image || "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200"}
+          src={imgError ? getDistinctCover("hero-article-fallback") : (displayArticle.image || getDistinctCover("hero-article-default"))}
           alt={displayArticle.title}
           onError={() => setImgError(true)}
           className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"

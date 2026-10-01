@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { MapPin, Calendar, ArrowRight, Clock } from "lucide-react";
+import { getDistinctCover } from "@/lib/utils";
 
 interface EventData {
   name: string;
@@ -21,7 +22,7 @@ const events: EventData[] = [
     targetDate: new Date("2026-05-28T09:00:00"),
     type: "Feira",
     typeColor: "bg-primary",
-    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=1200",
+    image: getDistinctCover("event-web-summit"),
   },
   {
     name: "Workshop: IA Aplicada ao Marketing",
@@ -30,7 +31,7 @@ const events: EventData[] = [
     targetDate: new Date("2026-03-15T09:00:00"),
     type: "Workshop",
     typeColor: "bg-emerald-600",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200",
+    image: getDistinctCover("event-workshop-ai"),
   },
   {
     name: "Startup Summit Florianopolis",
@@ -39,7 +40,7 @@ const events: EventData[] = [
     targetDate: new Date("2026-06-10T09:00:00"),
     type: "Palestra",
     typeColor: "bg-blue-600",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200",
+    image: getDistinctCover("event-summit-floripa"),
   },
   {
     name: "Treinamento: Automacao com N8N",
@@ -48,7 +49,7 @@ const events: EventData[] = [
     targetDate: new Date("2026-03-22T14:00:00"),
     type: "Treinamento",
     typeColor: "bg-amber-600",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200",
+    image: getDistinctCover("event-automation-n8n"),
   },
 ];
 

@@ -365,9 +365,10 @@ const MODULE_KEYWORDS = {
   Inovacao: [
     "inovacao", "pesquisa", "patente", "descoberta", "ciencia", "cientifico",
     "cientistas", "vacina", "espacial", "nasa", "astronomia", "planeta", "energia limpa",
-    "energia sustentavel", "biotecnologia", "medicina", "cura", "saude", "avanco",
-    "futuro","genetica", "quantum", "computacao quantica", "invenção",
-    "descobertas", "tecnologica", "transformacao digital"
+    "energia sustentavel", "biotecnologia", "genetica", "quantum", "computacao quantica",
+    "invenção", "descobertas", "tecnologica", "transformacao digital", "ia",
+    "inteligencia artificial", "software", "hardware", "automacao", "algoritmo",
+    "sensor", "engenharia", "robotica", "dados", "sistema inteligente", "tecnologia"
   ],
   Business: [
     "empreendedorismo", "empreendedor", "empreendedora", "negocios", "negocio",
@@ -442,7 +443,9 @@ const LEGAL_AND_POLITICAL_REJECTION_TERMS = [
 const INNOVATION_CONTEXT_TERMS = [
   "pesquisa", "cientifico", "científica", "tecnologia", "software", "hardware", "ia",
   "inteligencia artificial", "algoritmo", "computacao", "dados", "ciencia", "inovacao",
-  "biotecnologia", "engenharia", "sistema", "inteligente", "sensor", "automacao"
+  "biotecnologia", "engenharia", "sistema", "inteligente", "sensor", "automacao",
+  "energia limpa", "energia sustentavel", "astronomia", "nasa", "robotica", "computacao quantica",
+  "genetica", "patente", "vacina", "espacial"
 ];
 
 // Helper para normalizar strings (remove acentos e caixa alta)
@@ -498,7 +501,9 @@ export function hasCategoryEvidence(title: string, description: string, category
   if (category === "Inovacao") {
     const hasNonTechContext = countMatches(text, NON_TECH_DOMAIN_TERMS) > 0;
     const hasInnovationContext = countMatches(text, INNOVATION_CONTEXT_TERMS) > 0;
+    const hasExplicitInnovationSignal = countMatches(text, MODULE_KEYWORDS.Inovacao) > 0;
     if (hasNonTechContext && !hasInnovationContext) return false;
+    if ((hasNonTechContext || hasInnovationContext) && !hasExplicitInnovationSignal) return false;
   }
 
   if (category === "IA") {
