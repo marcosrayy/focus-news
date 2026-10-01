@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { balanceArticlesBySource, decodeHtmlEntities, deduplicateArticles, fetchNewsBackend, getFallbackNewsImage, hasCategoryEvidence, isArticleWithinRetention, isEnglishDevSource } from "../../../services/newsService";
+import { balanceArticlesBySource, decodeHtmlEntities, deduplicateArticles, fetchNewsApiArticles, fetchNewsBackend, getFallbackNewsImage, hasCategoryEvidence, isArticleWithinRetention, isEnglishDevSource } from "../../../services/newsService";
 import { Storage } from "../../../utils/storage";
 import { RefreshEngine } from "../../../services/refreshEngine";
 
@@ -34,6 +34,8 @@ export async function GET(request: Request) {
   const category = searchParams.get("category") || "Geral";
   const max = parseInt(searchParams.get("max") || "6", 10);
   const offset = parseInt(searchParams.get("offset") || "0", 10);
+  const retentionDaysParam = parseInt(searchParams.get("retentionDays") || "", 10);
+  const retentionDays = Number.isFinite(retentionDaysParam) && retentionDaysParam > 0 ? Math.min(retentionDaysParam, 90) : 3;
 
   try {
     // 1. Fetch current status to check for lazy sync trigger
@@ -77,13 +79,16 @@ export async function GET(request: Request) {
     const queryKeywords = shouldMatchQuery
       ? query.toLowerCase().split(/\s+or\s+/i).map(keyword => keyword.replace(/"/g, '').trim()).filter(Boolean)
       : [];
-    const matchesQuery = (article: { title: string; description: string }) => {
-      const title = article.title.toLowerCase();
-      const description = article.description.toLowerCase();
-      return queryKeywords.some(keyword => title.includes(keyword) || description.includes(keyword));
+    const matchesQuery = (article: { title: string; description: string; content?: string; category?: string; source?: string }) => {
+      const searchableText = [article.title, article.description, article.content, article.category, article.source]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+      return queryKeywords.some(keyword => searchableText.includes(keyword));
     };
 
     let filtered = allArticles.filter(art => 
+      shouldMatchQuery ||
       art.category === targetCategory || 
       (targetCategory === "Home" && (art.category === "Startups" || art.category === "Tecnologia" || art.category === "Inovacao")) ||
       (targetCategory === "Startups" && art.source.toLowerCase().includes("exame")) ||
@@ -103,9 +108,11 @@ export async function GET(request: Request) {
       filtered = filtered.filter(art => !isEnglishDevSource(art.source));
     }
 
-    filtered = filtered.filter(art =>
-      hasCategoryEvidence(art.title, art.description, targetCategory === "Home" ? art.category : targetCategory, art.url)
-    );
+    if (!shouldMatchQuery) {
+      filtered = filtered.filter(art =>
+        hasCategoryEvidence(art.title, art.description, targetCategory === "Home" ? art.category : targetCategory, art.url)
+      );
+    }
 
     if (shouldMatchQuery) filtered = filtered.filter(matchesQuery);
 
@@ -119,14 +126,31 @@ export async function GET(request: Request) {
       title: art.title ? decodeHtmlEntities(art.title) : art.title,
       description: art.description ? decodeHtmlEntities(art.description) : art.description,
     }));
-    filtered = filtered.filter(art => isArticleWithinRetention(art.publishedAt, art.expiresAt));
+    filtered = filtered.filter(art => {
+      if (retentionDays > 3) {
+        const publishedTime = new Date(art.publishedAt).getTime();
+        if (!Number.isFinite(publishedTime)) return false;
+        return Date.now() - publishedTime <= retentionDays * 24 * 60 * 60 * 1000;
+      }
+      return isArticleWithinRetention(art.publishedAt, art.expiresAt);
+    });
     filtered = deduplicateArticles(filtered);
 
     // Include the skipped featured article when deciding whether pagination has enough results.
     const requiredCount = max + offset;
-    if (filtered.length < requiredCount) {
+    const shouldFetchSearchHistory = shouldMatchQuery && retentionDays > 3;
+    if (filtered.length < requiredCount || shouldFetchSearchHistory) {
       console.log(`[API/News] Insufficient articles for ${targetCategory} in Storage (${filtered.length}/${requiredCount}), fetching live...`);
-      const freshArticles = await fetchNewsBackend({ query, category: targetCategory, max: requiredCount, offset: 0 });
+      const freshArticles = shouldMatchQuery
+        ? (await Promise.all(
+            [
+              fetchNewsApiArticles({ query, max: requiredCount, retentionWindowDays: retentionDays }),
+              ...["Tecnologia", "Economia", "Business", "Inovacao", "Dev", "IA", "Startups"].map(searchCategory =>
+                fetchNewsBackend({ query, category: searchCategory, max: requiredCount, offset: 0, retentionWindowDays: retentionDays })
+              ),
+            ]
+          )).flat()
+        : await fetchNewsBackend({ query, category: targetCategory, max: requiredCount, offset: 0 });
       
       const existingIds = new Set(filtered.map(a => a.id));
       for (const fa of freshArticles) {
@@ -150,7 +174,14 @@ export async function GET(request: Request) {
       const isBadImage = !image || lowerImage.includes("youtube.com") || lowerImage.includes("youtu.be") || lowerImage.includes("vimeo.com") || lowerImage.includes("/embed/");
       return isBadImage ? { ...art, image: getFallbackNewsImage(art.url || art.title || art.source || art.category || "news", targetCategory) } : art;
     });
-    filtered = filtered.filter(art => isArticleWithinRetention(art.publishedAt, art.expiresAt));
+    filtered = filtered.filter(art => {
+      if (retentionDays > 3) {
+        const publishedTime = new Date(art.publishedAt).getTime();
+        if (!Number.isFinite(publishedTime)) return false;
+        return Date.now() - publishedTime <= retentionDays * 24 * 60 * 60 * 1000;
+      }
+      return isArticleWithinRetention(art.publishedAt, art.expiresAt);
+    });
     filtered = deduplicateArticles(filtered);
 
     // Keep ordering stable so separate hero/list requests paginate the same set.

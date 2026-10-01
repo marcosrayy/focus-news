@@ -10,9 +10,15 @@ const fetcher = async (url: string): Promise<NewsResponse> => {
   return res.json();
 };
 
-export function useNews(query: string, category: string = "Geral", maxArticles: number = 6, offset: number = 0) {
+export function useNews(
+  query: string,
+  category: string = "Geral",
+  maxArticles: number = 6,
+  offset: number = 0,
+  retentionWindowDays?: number,
+) {
   const { data, error, isLoading, mutate } = useSWR<NewsResponse>(
-    `/api/news?query=${encodeURIComponent(query)}&category=${encodeURIComponent(category)}&max=${maxArticles}&offset=${offset}`,
+    `/api/news?query=${encodeURIComponent(query)}&category=${encodeURIComponent(category)}&max=${maxArticles}&offset=${offset}${retentionWindowDays ? `&retentionDays=${retentionWindowDays}` : ""}`,
     fetcher,
     {
       revalidateOnFocus: false,

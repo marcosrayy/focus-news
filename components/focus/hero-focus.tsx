@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 
 const heroSlides = [
@@ -92,19 +92,6 @@ export function HeroFocus() {
           </span>
         </button>
 
-        {current === 0 && (
-          <a
-            href="https://beevent.com.br/cart/?event=15057a07-7970-4b24-b656-d4d2e599b950&ticket=65786a55-b195-4a5f-a284-96f374fdf9e9&embed=1"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Inscreva-se no Siará Tech Summit"
-            title="Inscreva-se no Siará Tech Summit"
-            className="absolute bottom-3 right-3 z-20 flex h-9 w-9 items-center justify-center rounded-md bg-orange-500/90 text-white transition-colors hover:bg-orange-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black sm:bottom-4 sm:right-4"
-          >
-            <ArrowRight className="h-4 w-4" />
-          </a>
-        )}
-
         <div className="absolute bottom-0 left-1/2 z-20 flex -translate-x-1/2 items-center gap-0 sm:gap-2">
           {heroSlides.map((_, i) => (
             <button
@@ -126,6 +113,25 @@ export function HeroFocus() {
             </button>
           ))}
         </div>
+      </div>
+      <div className="flex min-h-12 items-center justify-start bg-background px-3 sm:min-h-14 sm:px-4">
+        {current === 0 ? (
+          <a
+            href="https://beevent.com.br/cart/?event=15057a07-7970-4b24-b656-d4d2e599b950&ticket=65786a55-b195-4a5f-a284-96f374fdf9e9&embed=1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-9 items-center justify-center rounded-md bg-orange-500 px-4 text-xs font-semibold text-white transition-colors hover:bg-orange-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            Saiba Mais
+          </a>
+        ) : (
+          <button
+            type="button"
+            className="inline-flex min-h-9 items-center justify-center rounded-md bg-orange-500 px-4 text-xs font-semibold text-white transition-colors hover:bg-orange-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            Saiba Mais
+          </button>
+        )}
       </div>
     </section>
   );

@@ -2,6 +2,7 @@ export type NewsProvider = "GNews" | "FreeNewsAPI" | "NewsAPI";
 
 export const NEWS_PROVIDER: NewsProvider = (process.env.NEWS_PROVIDER as NewsProvider) || "GNews";
 export const NEWS_API_KEY: string = process.env.NEWS_API_KEY || "2094ecfb05e8d4f4b5817fa2fb1a5179";
+export const NEWSAPI_API_KEY: string = process.env.NEWSAPI_API_KEY || "";
 
 export const providerEndpoints = {
   GNews: "https://gnews.io/api/v4",

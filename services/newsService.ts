@@ -1,5 +1,5 @@
 
-import { NEWS_API_KEY } from "../config/newsConfig";
+import { NEWS_API_KEY, NEWSAPI_API_KEY } from "../config/newsConfig";
 import { XMLParser } from "fast-xml-parser";
 
 export interface NewsArticle {
@@ -10,6 +10,8 @@ export interface NewsArticle {
   image: string;
   publishedAt: string;
   source: string;
+  content?: string;
+  author?: string;
   category?: string;
   score?: number;
 }
@@ -687,16 +689,119 @@ export function isSourceAllowed(source: string, targetCategory: string): boolean
   return allAllowed.some(src => normSource.includes(src));
 }
 
+const NEWSAPI_SEARCH_DOMAINS = [
+  "canaltech.com.br", "tecnoblog.net", "g1.globo.com", "tecmundo.com.br",
+  "startupi.com.br", "startups.com.br", "forbes.com.br", "infomoney.com.br",
+  "valor.globo.com", "folha.uol.com.br", "cnnbrasil.com.br", "diolinux.com.br",
+  "tabnews.com.br",
+];
+
+export async function fetchNewsApiArticles({
+  query,
+  max = 18,
+  offset = 0,
+  retentionWindowDays = 90,
+}: {
+  query: string;
+  max?: number;
+  offset?: number;
+  retentionWindowDays?: number;
+}): Promise<NewsArticle[]> {
+  if (!NEWSAPI_API_KEY || !query.trim()) return [];
+
+  const retentionDays = Math.min(90, Math.max(1, retentionWindowDays));
+  const to = new Date().toISOString().slice(0, 10);
+  const pageSize = 100;
+  const pagesNeeded = Math.min(10, Math.ceil((max + offset) / pageSize));
+  const fetchPages = (windowDays: number) => {
+    const from = new Date(Date.now() - windowDays * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+    return Promise.all(Array.from({ length: pagesNeeded }, (_, index) => {
+      const params = new URLSearchParams({
+        q: query,
+        language: "pt",
+        from,
+        to,
+        sortBy: "publishedAt",
+        domains: NEWSAPI_SEARCH_DOMAINS.join(","),
+        pageSize: String(pageSize),
+        page: String(index + 1),
+      });
+      return fetch(`https://newsapi.org/v2/everything?${params.toString()}`, {
+        headers: { "X-Api-Key": NEWSAPI_API_KEY },
+        cache: "force-cache",
+      });
+    }));
+  };
+
+  try {
+    let responses = await fetchPages(retentionDays);
+    if (retentionDays > 30 && responses.some(response => response.status === 426)) {
+      console.warn("[NewsAPI] Requested history is unavailable for this key; retrying the recent window.");
+      responses = await fetchPages(29);
+    }
+    const articles: NewsArticle[] = [];
+    const seenUrls = new Set<string>();
+
+    for (const response of responses) {
+      if (!response.ok) {
+        console.warn(`[NewsAPI] Search request failed with status ${response.status}.`);
+        continue;
+      }
+
+      const data = await response.json();
+      for (const item of data.articles ?? []) {
+        const sourceName = item.source?.name || "";
+        const url = item.url || "";
+        if (!url || seenUrls.has(url) || !isSourceAllowed(sourceName, "Geral")) continue;
+
+        const title = repairMojibake(item.title || "");
+        const description = repairMojibake(item.description || "");
+        const content = repairMojibake(item.content || "");
+        const classification = classifyArticle(title, `${description} ${content}`, sourceName, url);
+        if (classification.category === "Rejeitado") continue;
+
+        seenUrls.add(url);
+        articles.push({
+          id: url,
+          title,
+          description,
+          content,
+          author: item.author || "",
+          url,
+          image: item.urlToImage || getFallbackNewsImage(url || title, classification.category),
+          publishedAt: item.publishedAt,
+          source: sourceName,
+          category: classification.category,
+          score: classification.score,
+        });
+      }
+    }
+
+    return articles
+      .filter(article => {
+        const publishedTime = new Date(article.publishedAt).getTime();
+        return Number.isFinite(publishedTime) && Date.now() - publishedTime <= retentionDays * 24 * 60 * 60 * 1000;
+      })
+      .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+      .slice(offset, offset + max);
+  } catch (error) {
+    console.warn("[NewsAPI] Search request failed.", error);
+    return [];
+  }
+}
+
 export async function fetchNewsBackend({
   query,
   category = "Geral",
   max = 6,
   offset = 0,
+  retentionWindowDays,
 }: {
   query?: string;
   category?: string;
   max?: number;
   offset?: number;
+  retentionWindowDays?: number;
 }): Promise<NewsArticle[]> {
   let approvedArticles: NewsArticle[] = [];
   
@@ -719,12 +824,35 @@ export async function fetchNewsBackend({
 
   try {
     // API GNEWS como Fonte Primária
-    if (targetCategory !== "Inovacao") {
+    if (targetCategory !== "Inovacao" || (retentionWindowDays && retentionWindowDays > 3)) {
       const searchQuery = query || "tecnologia OR startups OR economia OR inteligência artificial";
-      const apiUrl = `https://gnews.io/api/v4/search?q=${encodeURIComponent(searchQuery)}&lang=pt&max=${(max + offset) * 2}&apikey=${NEWS_API_KEY}`;
-      
-      const res = await fetch(apiUrl, { cache: "force-cache" });
-      if (res.ok) {
+      const isHistoricalSearch = !!retentionWindowDays && retentionWindowDays > 3;
+      const requestMax = isHistoricalSearch ? 10 : Math.min(100, Math.max(1, (max + offset) * 2));
+      const targetResultCount = Math.min(50, Math.max(10, (max + offset) * 2));
+      const pageCount = isHistoricalSearch ? Math.ceil(targetResultCount / requestMax) : 1;
+      const params = new URLSearchParams({
+        q: searchQuery,
+        lang: "pt",
+        max: String(requestMax),
+        apikey: NEWS_API_KEY,
+      });
+      if (isHistoricalSearch) {
+        const windowStart = new Date(Date.now() - Math.min(retentionWindowDays, 90) * 24 * 60 * 60 * 1000);
+        params.set("from", windowStart.toISOString());
+        params.set("to", new Date().toISOString());
+        params.set("in", "title,description,content");
+      }
+      const responses = await Promise.all(Array.from({ length: pageCount }, (_, pageIndex) => {
+        const pageParams = new URLSearchParams(params);
+        if (isHistoricalSearch) pageParams.set("page", String(pageIndex + 1));
+        return fetch(`https://gnews.io/api/v4/search?${pageParams.toString()}`, { cache: "force-cache" });
+      }));
+
+      for (const res of responses) {
+        if (!res.ok) {
+          console.warn(`[GNews API] Search request failed with status ${res.status}.`);
+          continue;
+        }
         const data = await res.json();
         if (data.articles && Array.isArray(data.articles)) {
           for (const item of data.articles) {
@@ -769,7 +897,8 @@ export async function fetchNewsBackend({
   // Se não obteve artigos suficientes do GNews, recorre ao Fallback RSS
   const minimumSourceCount = Math.min(3, max + offset);
   const gnewsSourceCount = new Set(approvedArticles.map(article => article.source.trim().toLowerCase())).size;
-  if (approvedArticles.length < max + offset || gnewsSourceCount < minimumSourceCount) {
+  const shouldUseRssFallback = !(retentionWindowDays && retentionWindowDays > 3);
+  if (shouldUseRssFallback && (approvedArticles.length < max + offset || gnewsSourceCount < minimumSourceCount)) {
     try {
       console.warn(`[FocusNews] GNews returned insufficient results. Using RSS Fallback for ${targetCategory}...`);
       
@@ -878,7 +1007,14 @@ export async function fetchNewsBackend({
   }
 
   approvedArticles.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+  const now = Date.now();
   const recentUniqueArticles = deduplicateArticles(approvedArticles)
-    .filter(article => isArticleWithinRetention(article.publishedAt));
+    .filter(article => {
+      if (retentionWindowDays && retentionWindowDays > 3) {
+        const publishedTime = new Date(article.publishedAt).getTime();
+        return Number.isFinite(publishedTime) && now - publishedTime <= Math.min(retentionWindowDays, 90) * 24 * 60 * 60 * 1000;
+      }
+      return isArticleWithinRetention(article.publishedAt);
+    });
   return balanceArticlesBySource(recentUniqueArticles).slice(offset, offset + max);
 }
