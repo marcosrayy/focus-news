@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback } from "react";
 import { ExternalLink, Clock, RefreshCw, AlertCircle } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { FeaturedNewsCarousel } from "@/components/news-section-layout";
+import { getDistinctCover } from "@/lib/utils";
 
 interface Article {
   title: string;
@@ -82,7 +83,7 @@ function NewsCard({
         }`}
       >
         <img
-          src={imgError ? "/placeholder.jpg" : article.image}
+          src={imgError ? getDistinctCover(`focus-news-fallback-${article.title}`) : article.image || getDistinctCover(`focus-news-${article.title}`)}
           alt={article.title}
           loading="lazy"
           onError={() => setImgError(true)}

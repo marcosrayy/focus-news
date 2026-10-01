@@ -5,6 +5,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/esta-empresa-dobra-de-tamanho-todos-os-anos-ajudando-restaurantes-a-ouvir-seus-clientes/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Nova-imagem-26.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.061Z",
     "source": "Exame",
     "category": "Startups",
@@ -12,6 +13,15 @@
     "importedAt": "2026-10-01T17:37:24.061Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.061Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.108Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.109Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.108Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/inteligencia-artificial/com-us-185-mi-startup-brasileira-quer-ensinar-bom-gosto-a-ias-e-matar-lixo-digital/",
@@ -19,6 +29,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/inteligencia-artificial/com-us-185-mi-startup-brasileira-quer-ensinar-bom-gosto-a-ias-e-matar-lixo-digital/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/marcelo_afonseca.png",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.061Z",
     "source": "Exame",
     "category": "Startups",
@@ -26,6 +37,15 @@
     "importedAt": "2026-10-01T17:37:24.061Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.061Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.109Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.109Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.109Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/negocios/startup-mira-r-35-milhoes-ao-transformar-a-carga-mental-das-mulheres-em-produto/",
@@ -33,6 +53,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/startup-mira-r-35-milhoes-ao-transformar-a-carga-mental-das-mulheres-em-produto/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Aline-Santiago-Liv-for-Her.jpeg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.062Z",
     "source": "Exame",
     "category": "Startups",
@@ -40,6 +61,15 @@
     "importedAt": "2026-10-01T17:37:24.062Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.062Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.110Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.110Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.110Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/negocios/com-ia-marca-que-fazia-r-25-mi-com-carteiras-de-papel-renasce-como-laboratorio-de-tecnologia/",
@@ -47,6 +77,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/com-ia-marca-que-fazia-r-25-mi-com-carteiras-de-papel-renasce-como-laboratorio-de-tecnologia/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Nova-imagem-23.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.062Z",
     "source": "Exame",
     "category": "Startups",
@@ -54,6 +85,15 @@
     "importedAt": "2026-10-01T17:37:24.062Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.062Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.110Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.111Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.110Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/inteligencia-artificial/a-startup-brasileira-que-quer-pagar-voce-quando-uma-ia-usar-o-seu-conhecimento/",
@@ -61,6 +101,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/inteligencia-artificial/a-startup-brasileira-que-quer-pagar-voce-quando-uma-ia-usar-o-seu-conhecimento/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Marcos-Nader.png",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.062Z",
     "source": "Exame",
     "category": "Startups",
@@ -68,6 +109,15 @@
     "importedAt": "2026-10-01T17:37:24.062Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.062Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.111Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.111Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.111Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/inteligencia-artificial/startup-de-ia-que-escreve-codigo-dobra-receita-em-4-meses-e-mira-us-1-bilhao/",
@@ -75,6 +125,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/inteligencia-artificial/startup-de-ia-que-escreve-codigo-dobra-receita-em-4-meses-e-mira-us-1-bilhao/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/05/imgi_27_2000x1332.jpeg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.062Z",
     "source": "Exame",
     "category": "Startups",
@@ -82,6 +133,15 @@
     "importedAt": "2026-10-01T17:37:24.062Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.062Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.112Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.112Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.112Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/negocios/ele-fara-r-60-milhoes-com-um-mercado-livre-para-compras-publicas-de-governos/",
@@ -89,6 +149,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/ele-fara-r-60-milhoes-com-um-mercado-livre-para-compras-publicas-de-governos/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Leonardo-Ladeira-CEO-e-cofundador-do-Portal-de-Compras-Publicas.-Credito_Divulgacao-3.jpg.jpeg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.062Z",
     "source": "Exame",
     "category": "Startups",
@@ -96,6 +157,15 @@
     "importedAt": "2026-10-01T17:37:24.062Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-02T17:37:24.062Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.113Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.113Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-02T17:27:49.113Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/negocios/empresa-traz-ao-brasil-software-que-substitui-maquinas-de-r-300-mil-no-diagnostico-do-glaucoma/",
@@ -103,6 +173,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/empresa-traz-ao-brasil-software-que-substitui-maquinas-de-r-300-mil-no-diagnostico-do-glaucoma/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-23-at-14.53.38.jpeg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.062Z",
     "source": "Exame",
     "category": "Startups",
@@ -110,6 +181,15 @@
     "importedAt": "2026-10-01T17:37:24.062Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.062Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.113Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.114Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.113Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/negocios/o-americano-ex-uber-que-se-impressionou-com-o-pix-no-brasil-e-criou-uma-fintech-de-r-1-bilhao/",
@@ -117,6 +197,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/o-americano-ex-uber-que-se-impressionou-com-o-pix-no-brasil-e-criou-uma-fintech-de-r-1-bilhao/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/rovu.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.062Z",
     "source": "Exame",
     "category": "Startups",
@@ -124,6 +205,15 @@
     "importedAt": "2026-10-01T17:37:24.063Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.062Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.114Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.114Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.114Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/negocios/programa-que-conecta-startups-a-investidores-ajuda-empresas-a-crescer-mais-de-400-em-faturamento/",
@@ -131,6 +221,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/programa-que-conecta-startups-a-investidores-ajuda-empresas-a-crescer-mais-de-400-em-faturamento/",
     "image": "https://classic.exame.com/wp-content/uploads/2024/07/IMG_7134.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.063Z",
     "source": "Exame",
     "category": "Startups",
@@ -138,6 +229,15 @@
     "importedAt": "2026-10-01T17:37:24.063Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.063Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.114Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.114Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.114Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/negocios/de-startup-a-grupo-global-empresa-recebe-r-200-milhoes-e-vende-passagem-de-onibus-ate-pelo-chatgpt/",
@@ -145,6 +245,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/de-startup-a-grupo-global-empresa-recebe-r-200-milhoes-e-vende-passagem-de-onibus-ate-pelo-chatgpt/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/buson_feito.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.063Z",
     "source": "Exame",
     "category": "Startups",
@@ -152,6 +253,15 @@
     "importedAt": "2026-10-01T17:37:24.063Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.063Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.114Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.114Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.114Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/tecnologia/drones-feitos-em-portugal-startup-vira-unicornio-de-us-64-bilhoes-e-quer-comprar-rivais/",
@@ -159,6 +269,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/tecnologia/drones-feitos-em-portugal-startup-vira-unicornio-de-us-64-bilhoes-e-quer-comprar-rivais/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/imgi_3_Channel-Mission_website-scaled-1.jpeg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.063Z",
     "source": "Exame",
     "category": "Startups",
@@ -166,6 +277,15 @@
     "importedAt": "2026-10-01T17:37:24.063Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.063Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.114Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.114Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.114Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/inteligencia-artificial/startup-colombiana-de-ia-quer-decifrar-a-america-do-sul-para-multinacionais/",
@@ -173,6 +293,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/inteligencia-artificial/startup-colombiana-de-ia-quer-decifrar-a-america-do-sul-para-multinacionais/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/materia-hacker-4.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.063Z",
     "source": "Exame",
     "category": "Startups",
@@ -180,6 +301,15 @@
     "importedAt": "2026-10-01T17:37:24.063Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.063Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.114Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.115Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.114Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/negocios/do-sul-a-sao-paulo-parceria-entre-hubs-de-inovacao-conecta-empresas-e-abre-caminho-para-a-china/",
@@ -187,6 +317,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/do-sul-a-sao-paulo-parceria-entre-hubs-de-inovacao-conecta-empresas-e-abre-caminho-para-a-china/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Nova-imagem-2-3.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.063Z",
     "source": "Exame",
     "category": "Startups",
@@ -194,6 +325,15 @@
     "importedAt": "2026-10-01T17:37:24.063Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.063Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.115Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.115Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.115Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/negocios/startup-de-ia-cresce-750-no-brasil-ao-transformar-sites-em-dados-para-empresas/",
@@ -201,6 +341,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/startup-de-ia-cresce-750-no-brasil-ao-transformar-sites-em-dados-para-empresas/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Nova-imagem-4-4.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.063Z",
     "source": "Exame",
     "category": "Startups",
@@ -208,6 +349,15 @@
     "importedAt": "2026-10-01T17:37:24.063Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.063Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.115Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.115Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.115Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/negocios/com-15-palcos-e-300-palestrantes-evento-transforma-porto-alegre-em-centro-de-conexoes-nesta-semana/",
@@ -215,6 +365,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/com-15-palcos-e-300-palestrantes-evento-transforma-porto-alegre-em-centro-de-conexoes-nesta-semana/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Nova-imagem-1-6.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.063Z",
     "source": "Exame",
     "category": "Startups",
@@ -222,6 +373,15 @@
     "importedAt": "2026-10-01T17:37:24.063Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.063Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.115Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.115Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.115Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/negocios/startup-mexicana-clara-aposta-em-mercado-de-r-400-bilhoes-para-crescer-no-brasil/",
@@ -229,6 +389,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/startup-mexicana-clara-aposta-em-mercado-de-r-400-bilhoes-para-crescer-no-brasil/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/clara.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.063Z",
     "source": "Exame",
     "category": "Startups",
@@ -236,6 +397,15 @@
     "importedAt": "2026-10-01T17:37:24.063Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-02T17:37:24.063Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.116Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.116Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-02T17:27:49.116Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/exame-in/a-tese-que-trouxe-tres-fundos-estrangeiros-ao-brasil-e-r-10-milhoes-para-a-nuvia/",
@@ -243,6 +413,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/exame-in/a-tese-que-trouxe-tres-fundos-estrangeiros-ao-brasil-e-r-10-milhoes-para-a-nuvia/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Arthur-John-Antero.jpg.jpeg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.063Z",
     "source": "Exame",
     "category": "Startups",
@@ -250,6 +421,15 @@
     "importedAt": "2026-10-01T17:37:24.063Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.063Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.116Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.116Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.116Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/bussola/mineiros-criam-plataforma-all-in-one-para-clinicas-e-miram-1000-clientes/",
@@ -257,6 +437,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/bussola/mineiros-criam-plataforma-all-in-one-para-clinicas-e-miram-1000-clientes/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Captura-de-Tela-1.png",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.064Z",
     "source": "Exame",
     "category": "Startups",
@@ -264,6 +445,15 @@
     "importedAt": "2026-10-01T17:37:24.064Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.064Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.116Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.116Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.116Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/inteligencia-artificial/essa-startup-nasceu-ha-um-mes-e-ja-vale-quase-us-4-bilhoes-conheca-a-emulate/",
@@ -271,6 +461,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/inteligencia-artificial/essa-startup-nasceu-ha-um-mes-e-ja-vale-quase-us-4-bilhoes-conheca-a-emulate/",
     "image": "https://classic.exame.com/wp-content/uploads/2024/06/GettyImages-2151467843.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.064Z",
     "source": "Exame",
     "category": "Startups",
@@ -278,6 +469,15 @@
     "importedAt": "2026-10-01T17:37:24.064Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.064Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.117Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.117Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.117Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/negocios/em-dois-anos-e-meio-startup-de-agentes-de-ia-chega-a-valuation-de-us-45-bilhoes-e-mira-o-brasil/",
@@ -285,6 +485,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/em-dois-anos-e-meio-startup-de-agentes-de-ia-chega-a-valuation-de-us-45-bilhoes-e-mira-o-brasil/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-15-at-16.30.00.jpeg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.064Z",
     "source": "Exame",
     "category": "Startups",
@@ -292,6 +493,15 @@
     "importedAt": "2026-10-01T17:37:24.064Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.064Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.117Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.117Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.117Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/exame-in/fundador-da-clickbus-volta-ao-cargo-de-ceo-e-mira-r-25-bi-em-vendas-este-ano/",
@@ -299,6 +509,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/exame-in/fundador-da-clickbus-volta-ao-cargo-de-ceo-e-mira-r-25-bi-em-vendas-este-ano/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/fernando-prado-clickbus.jpeg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.064Z",
     "source": "Exame",
     "category": "Startups",
@@ -306,6 +517,15 @@
     "importedAt": "2026-10-01T17:37:24.064Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.064Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.117Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.117Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.117Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/negocios/a-placa-do-seu-carro-virou-uma-tag-e-ele-ja-movimentou-r-400-milhoes-com-essas-cobrancas/",
@@ -313,6 +533,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/a-placa-do-seu-carro-virou-uma-tag-e-ele-ja-movimentou-r-400-milhoes-com-essas-cobrancas/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Nova-imagem-15.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.064Z",
     "source": "Exame",
     "category": "Startups",
@@ -320,6 +541,15 @@
     "importedAt": "2026-10-01T17:37:24.064Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.064Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.117Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.118Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.117Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/negocios/fim-do-dinheiro-facil-por-que-o-venture-capital-ficou-mais-seletivo-para-startups-no-brasil/",
@@ -327,6 +557,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/fim-do-dinheiro-facil-por-que-o-venture-capital-ficou-mais-seletivo-para-startups-no-brasil/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/407-File469.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.065Z",
     "source": "Exame",
     "category": "Startups",
@@ -334,6 +565,15 @@
     "importedAt": "2026-10-01T17:37:24.065Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.065Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.118Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.118Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.118Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://exame.com/inteligencia-artificial/na-era-da-ia-crescer-pode-significar-ser-comprado-ou-desaparecer/",
@@ -341,6 +581,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/inteligencia-artificial/na-era-da-ia-crescer-pode-significar-ser-comprado-ou-desaparecer/",
     "image": "https://classic.exame.com/wp-content/uploads/2023/10/CEO45_CoachDoIA_2.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-01T17:37:24.065Z",
     "source": "Exame",
     "category": "Startups",
@@ -348,6 +589,15 @@
     "importedAt": "2026-10-01T17:37:24.065Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:37:24.065Z"
+=======
+    "publishedAt": "2026-10-01T17:27:49.118Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:49.118Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:27:49.118Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://startupi.com.br/sua-startup-esta-construindo-marca-ou-so-gerando-conteudo-com-ia/",
@@ -359,7 +609,11 @@
     "source": "Startupi",
     "category": "IA",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:24.297Z",
+=======
+    "importedAt": "2026-10-01T17:27:49.595Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T05:42:20.000Z"
   },
@@ -373,7 +627,11 @@
     "source": "Startupi",
     "category": "Startups",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:24.300Z",
+=======
+    "importedAt": "2026-10-01T17:27:49.598Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-05T07:02:00.000Z"
   },
@@ -386,6 +644,7 @@
     "publishedAt": "Tue, 29 Sep 2026 16:44:12 +0000",
     "source": "Forbes",
     "category": "IA",
+<<<<<<< HEAD
     "score": 100,
     "importedAt": "2026-10-01T17:37:26.061Z",
     "importanceScore": 100,
@@ -418,6 +677,12 @@
     "importedAt": "2026-10-01T17:37:26.396Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-02T17:30:00.000Z"
+=======
+    "score": 80,
+    "importedAt": "2026-10-01T17:27:52.266Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-04T16:44:12.000Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://www.infomoney.com.br/business/brasil-pode-chegar-a-3-milhoes-de-veiculos-vendidos-ate-2030-avalia-diretor-da-abve/",
@@ -429,7 +694,11 @@
     "source": "InfoMoney",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:26.398Z",
+=======
+    "importedAt": "2026-10-01T17:27:52.583Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:18:54.000Z"
   },
@@ -443,7 +712,11 @@
     "source": "InfoMoney",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:26.399Z",
+=======
+    "importedAt": "2026-10-01T17:27:52.584Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:16:47.000Z"
   },
@@ -457,7 +730,11 @@
     "source": "InfoMoney",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:26.401Z",
+=======
+    "importedAt": "2026-10-01T17:27:52.585Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:10:41.000Z"
   },
@@ -471,7 +748,11 @@
     "source": "InfoMoney",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:26.403Z",
+=======
+    "importedAt": "2026-10-01T17:27:52.586Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T16:56:43.000Z"
   },
@@ -481,6 +762,7 @@
     "description": "Dólar tem forte alta e juros futuros avançam com exterior; Ibovespa volta a subir Moeda americana, rendimentos dos Treasuries e petróleo se valorizam;...",
     "url": "https://valor.globo.com/financas/ao-vivo/2023/06/16/dolar-avanca-e-ibovespa-recua-em-dia-de-correcao-siga-os-mercados.ghtml",
     "image": "https://s2-valor.glbimg.com/CGN912AbiSYMH5s1La0nGBWS_r4=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/i/p/zczFd0QWef9UQSAAIGKw/2026-02-06t214547z-868257743-rc2kgjahynwf-rtrmadp-3-usa-stocks.jpg",
+<<<<<<< HEAD
     "publishedAt": "Thu, 01 Oct 2026 17:29:29 -0000",
     "source": "Valor",
     "category": "Economia",
@@ -488,6 +770,15 @@
     "importedAt": "2026-10-01T17:37:27.026Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-02T17:29:29.000Z"
+=======
+    "publishedAt": "Thu, 01 Oct 2026 16:45:54 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:53.272Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-02T16:45:54.000Z"
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
   },
   {
     "id": "https://valor.globo.com/empresas/noticia/2026/10/01/gm-registra-queda-de-55-pontos-percentuais-nas-vendas-de-veculos-no-3-trimestre.ghtml",
@@ -499,7 +790,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.034Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.278Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T16:38:06.000Z"
   },
@@ -513,7 +808,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.035Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.285Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T16:34:43.000Z"
   },
@@ -527,7 +826,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.038Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.290Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T16:24:53.000Z"
   },
@@ -541,7 +844,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.040Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.294Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T16:20:56.000Z"
   },
@@ -555,7 +862,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.043Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.301Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T16:04:02.000Z"
   },
@@ -569,7 +880,11 @@
     "source": "Valor",
     "category": "Business",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.049Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.317Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T15:40:19.000Z"
   },
@@ -583,7 +898,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.051Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.320Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T15:39:53.000Z"
   },
@@ -597,7 +916,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.052Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.322Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T15:36:45.000Z"
   },
@@ -611,7 +934,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.055Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.326Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-01T21:16:16.000Z"
   },
@@ -625,7 +952,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.059Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.334Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T14:52:37.000Z"
   },
@@ -639,7 +970,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.060Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.337Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T14:49:53.000Z"
   },
@@ -653,7 +988,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.061Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.340Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T14:36:02.000Z"
   },
@@ -667,7 +1006,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.065Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.347Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T14:08:38.000Z"
   },
@@ -681,7 +1024,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.068Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.352Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T14:00:59.000Z"
   },
@@ -695,7 +1042,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.077Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.380Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T12:34:41.000Z"
   },
@@ -709,7 +1060,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.078Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.382Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T12:29:06.000Z"
   },
@@ -723,7 +1078,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.079Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.383Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T12:24:11.000Z"
   },
@@ -737,7 +1096,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.080Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.385Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T12:23:12.000Z"
   },
@@ -751,7 +1114,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.082Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.390Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T12:17:25.000Z"
   },
@@ -765,7 +1132,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.083Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.392Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T12:11:20.000Z"
   },
@@ -779,7 +1150,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.084Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.394Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T12:09:07.000Z"
   },
@@ -793,7 +1168,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.085Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.398Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T12:07:40.000Z"
   },
@@ -807,7 +1186,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.087Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.402Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T11:54:05.000Z"
   },
@@ -821,7 +1204,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.088Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.403Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T11:48:57.000Z"
   },
@@ -835,7 +1222,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.090Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.408Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T11:46:27.000Z"
   },
@@ -849,7 +1240,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.091Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.409Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T11:43:41.000Z"
   },
@@ -863,7 +1258,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.091Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.412Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T11:37:49.000Z"
   },
@@ -877,7 +1276,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.095Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.420Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T11:09:03.000Z"
   },
@@ -891,7 +1294,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.097Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.424Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T10:43:02.000Z"
   },
@@ -905,7 +1312,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.098Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.428Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T09:16:44.000Z"
   },
@@ -919,11 +1330,32 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.100Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.435Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T09:00:00.000Z"
   },
   {
+<<<<<<< HEAD
+=======
+    "id": "https://valor.globo.com/mundo/noticia/2026/10/01/pmi-industrial-da-franca-recua-para-506-em-setembro-mas-setor-segue-em-expansao.ghtml",
+    "title": "PMI industrial da França recua para 50,6 em setembro, mas setor segue em expansão",
+    "description": "A indústria da França manteve trajetória de crescimento em setembro, embora em ritmo mais moderado. O PMI industrial da S&P Global recuou de 51,1 em a...",
+    "url": "https://valor.globo.com/mundo/noticia/2026/10/01/pmi-industrial-da-franca-recua-para-506-em-setembro-mas-setor-segue-em-expansao.ghtml",
+    "image": "",
+    "publishedAt": "Thu, 01 Oct 2026 08:48:38 -0000",
+    "source": "Valor",
+    "category": "Business",
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:53.444Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T08:48:38.000Z"
+  },
+  {
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "id": "https://g1.globo.com/economia/noticia/2026/10/01/59percent-dos-brasileiros-querem-parar-de-trabalhar-ate-os-60-anos-mas-so-28percent-acham-que-vao-conseguir-diz-pesquisa.ghtml",
     "title": "59% dos brasileiros querem parar de trabalhar até os 60 anos, mas só 28% acham que vão conseguir, diz pesquisa",
     "description": "Dia do Idoso: atividade física ajuda a envelhecer com mais qualidade de vida\nAos 60 anos, uma pessoa já é considerada idosa pela legislação brasileira...",
@@ -933,7 +1365,11 @@
     "source": "Globo",
     "category": "Inovacao",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.539Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.868Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-03T16:37:19.000Z"
   },
@@ -947,7 +1383,11 @@
     "source": "Globo",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.542Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.871Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T14:13:35.000Z"
   },
@@ -960,9 +1400,15 @@
     "publishedAt": "Thu, 01 Oct 2026 12:00:12 -0000",
     "source": "Globo",
     "category": "Economia",
+<<<<<<< HEAD
     "score": 75,
     "importedAt": "2026-10-01T17:37:27.545Z",
     "importanceScore": 75,
+=======
+    "score": 100,
+    "importedAt": "2026-10-01T17:27:53.875Z",
+    "importanceScore": 100,
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "expiresAt": "2026-10-02T12:00:12.000Z"
   },
   {
@@ -975,7 +1421,11 @@
     "source": "Globo",
     "category": "Economia",
     "score": 80,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.549Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.880Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 80,
     "expiresAt": "2026-10-06T10:50:30.000Z"
   },
@@ -989,7 +1439,11 @@
     "source": "Globo",
     "category": "IA",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.556Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.888Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T06:00:00.000Z"
   },
@@ -1003,7 +1457,11 @@
     "source": "Globo",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.565Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.904Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T03:00:00.000Z"
   },
@@ -1017,7 +1475,11 @@
     "source": "Globo",
     "category": "Business",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.571Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.913Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-05T17:00:00.000Z"
   },
@@ -1031,7 +1493,11 @@
     "source": "Globo",
     "category": "Economia",
     "score": 80,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.579Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.928Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 80,
     "expiresAt": "2026-10-05T12:04:16.000Z"
   },
@@ -1045,7 +1511,11 @@
     "source": "Globo",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.583Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.937Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-05T11:35:31.000Z"
   },
@@ -1059,7 +1529,11 @@
     "source": "Globo",
     "category": "IA",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.585Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.940Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-05T07:00:01.000Z"
   },
@@ -1073,7 +1547,11 @@
     "source": "Globo",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.590Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.947Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-05T00:02:46.000Z"
   },
@@ -1086,9 +1564,15 @@
     "publishedAt": "Tue, 29 Sep 2026 18:16:11 -0000",
     "source": "Globo",
     "category": "IA",
+<<<<<<< HEAD
     "score": 100,
     "importedAt": "2026-10-01T17:37:27.593Z",
     "importanceScore": 100,
+=======
+    "score": 80,
+    "importedAt": "2026-10-01T17:27:53.951Z",
+    "importanceScore": 80,
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "expiresAt": "2026-10-04T18:16:11.000Z"
   },
   {
@@ -1101,7 +1585,11 @@
     "source": "Globo",
     "category": "IA",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.616Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.991Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-04T07:00:01.000Z"
   },
@@ -1115,7 +1603,11 @@
     "source": "Globo",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.619Z",
+=======
+    "importedAt": "2026-10-01T17:27:53.996Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-04T05:00:00.000Z"
   },
@@ -1129,7 +1621,11 @@
     "source": "Globo",
     "category": "Tecnologia",
     "score": 80,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.639Z",
+=======
+    "importedAt": "2026-10-01T17:27:54.040Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 80,
     "expiresAt": "2026-10-03T11:22:35.000Z"
   },
@@ -1143,7 +1639,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.949Z",
+=======
+    "importedAt": "2026-10-01T17:27:54.412Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T16:46:39.000Z"
   },
@@ -1157,7 +1657,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.955Z",
+=======
+    "importedAt": "2026-10-01T17:27:54.416Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T16:01:00.000Z"
   },
@@ -1171,7 +1675,11 @@
     "source": "Canaltech",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.957Z",
+=======
+    "importedAt": "2026-10-01T17:27:54.418Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T16:00:04.000Z"
   },
@@ -1185,7 +1693,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.961Z",
+=======
+    "importedAt": "2026-10-01T17:27:54.421Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T14:23:51.000Z"
   },
@@ -1199,7 +1711,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.964Z",
+=======
+    "importedAt": "2026-10-01T17:27:54.423Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T14:17:30.000Z"
   },
@@ -1213,7 +1729,11 @@
     "source": "Canaltech",
     "category": "IA",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.968Z",
+=======
+    "importedAt": "2026-10-01T17:27:54.427Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T14:01:01.000Z"
   },
@@ -1227,7 +1747,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.972Z",
+=======
+    "importedAt": "2026-10-01T17:27:54.430Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T13:52:56.000Z"
   },
@@ -1241,7 +1765,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.974Z",
+=======
+    "importedAt": "2026-10-01T17:27:54.433Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T13:36:46.000Z"
   },
@@ -1255,7 +1783,11 @@
     "source": "Canaltech",
     "category": "Business",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.976Z",
+=======
+    "importedAt": "2026-10-01T17:27:54.434Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T13:36:00.000Z"
   },
@@ -1269,7 +1801,11 @@
     "source": "Canaltech",
     "category": "IA",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.985Z",
+=======
+    "importedAt": "2026-10-01T17:27:54.446Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T10:30:05.000Z"
   },
@@ -1283,7 +1819,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 75,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.987Z",
+=======
+    "importedAt": "2026-10-01T17:27:54.449Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 75,
     "expiresAt": "2026-10-02T09:43:07.000Z"
   },
@@ -1297,7 +1837,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.991Z",
+=======
+    "importedAt": "2026-10-01T17:27:54.453Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-05T22:04:00.000Z"
   },
@@ -1311,7 +1855,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:27.999Z",
+=======
+    "importedAt": "2026-10-01T17:27:54.471Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-05T20:15:56.000Z"
   },
@@ -1325,7 +1873,11 @@
     "source": "Canaltech",
     "category": "Business",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:28.002Z",
+=======
+    "importedAt": "2026-10-01T17:27:54.474Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-05T20:03:00.000Z"
   },
@@ -1339,7 +1891,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:28.004Z",
+=======
+    "importedAt": "2026-10-01T17:27:54.478Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-01T19:22:19.000Z"
   },
@@ -1353,7 +1909,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:28.006Z",
+=======
+    "importedAt": "2026-10-01T17:27:54.483Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-05T19:04:01.000Z"
   },
@@ -1367,7 +1927,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:28.010Z",
+=======
+    "importedAt": "2026-10-01T17:27:54.491Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-05T18:32:55.000Z"
   },
@@ -1381,7 +1945,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:28.013Z",
+=======
+    "importedAt": "2026-10-01T17:27:54.498Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-05T17:52:22.000Z"
   },
@@ -1395,7 +1963,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:28.017Z",
+=======
+    "importedAt": "2026-10-01T17:27:54.503Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-05T17:19:40.000Z"
   },
@@ -1409,7 +1981,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:28.021Z",
+=======
+    "importedAt": "2026-10-01T17:27:54.509Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-05T16:36:41.000Z"
   },
@@ -1423,7 +1999,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:29.995Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.446Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:24:45.000Z"
   },
@@ -1437,7 +2017,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.002Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.450Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T15:32:43.000Z"
   },
@@ -1451,7 +2035,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.004Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.451Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T14:42:14.000Z"
   },
@@ -1465,7 +2053,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.007Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.454Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T14:34:14.000Z"
   },
@@ -1479,7 +2071,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.010Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.456Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T14:18:14.000Z"
   },
@@ -1493,7 +2089,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.012Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.457Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T14:03:57.000Z"
   },
@@ -1507,7 +2107,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.014Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.459Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T13:59:54.000Z"
   },
@@ -1521,7 +2125,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.016Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.461Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T13:14:48.000Z"
   },
@@ -1535,7 +2143,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.018Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.464Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T13:13:53.000Z"
   },
@@ -1549,7 +2161,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.020Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.467Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-05T22:21:17.000Z"
   },
@@ -1563,7 +2179,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.022Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.468Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-01T22:14:10.000Z"
   },
@@ -1577,7 +2197,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.024Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.471Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-05T20:39:19.000Z"
   },
@@ -1591,7 +2215,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.029Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.476Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-01T18:57:44.000Z"
   },
@@ -1605,7 +2233,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.032Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.478Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-01T18:27:29.000Z"
   },
@@ -1619,7 +2251,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.036Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.482Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-05T17:10:12.000Z"
   },
@@ -1633,7 +2269,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.037Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.484Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-05T15:38:55.000Z"
   },
@@ -1647,7 +2287,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.041Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.488Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-05T14:20:38.000Z"
   },
@@ -1661,7 +2305,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.046Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.494Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-05T13:19:01.000Z"
   },
@@ -1675,7 +2323,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.049Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.498Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-05T12:30:00.000Z"
   },
@@ -1689,7 +2341,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.054Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.504Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-04T21:43:33.000Z"
   },
@@ -1703,7 +2359,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.056Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.506Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-01T21:43:14.000Z"
   },
@@ -1717,7 +2377,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.058Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.509Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-04T20:13:29.000Z"
   },
@@ -1731,7 +2395,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.061Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.513Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-04T19:52:40.000Z"
   },
@@ -1745,7 +2413,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.063Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.518Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-04T19:04:45.000Z"
   },
@@ -1759,7 +2431,11 @@
     "source": "Tecnoblog",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:30.067Z",
+=======
+    "importedAt": "2026-10-01T17:27:56.528Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-01T18:20:16.000Z"
   },
@@ -1773,7 +2449,11 @@
     "source": "Globo",
     "category": "IA",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:31.128Z",
+=======
+    "importedAt": "2026-10-01T17:27:57.463Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-02T13:17:42.000Z"
   },
@@ -1801,7 +2481,11 @@
     "source": "CNN",
     "category": "Inovacao",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:31.709Z",
+=======
+    "importedAt": "2026-10-01T17:27:57.982Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-03T16:08:21.000Z"
   },
@@ -1815,7 +2499,11 @@
     "source": "CNN",
     "category": "Inovacao",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:31.713Z",
+=======
+    "importedAt": "2026-10-01T17:27:57.986Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T16:03:24.000Z"
   },
@@ -1829,7 +2517,11 @@
     "source": "CNN",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:31.727Z",
+=======
+    "importedAt": "2026-10-01T17:27:57.997Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T15:10:50.000Z"
   },
@@ -1843,7 +2535,11 @@
     "source": "TabNews",
     "category": "Dev",
     "score": 0,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:36.370Z",
+=======
+    "importedAt": "2026-10-01T17:28:03.373Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 0,
     "expiresAt": "2026-10-06T15:00:07.000Z"
   },
@@ -1857,7 +2553,11 @@
     "source": "TabNews",
     "category": "Dev",
     "score": 0,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:36.372Z",
+=======
+    "importedAt": "2026-10-01T17:28:03.379Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 0,
     "expiresAt": "2026-10-06T14:45:06.000Z"
   },
@@ -1871,7 +2571,11 @@
     "source": "TabNews",
     "category": "Dev",
     "score": 0,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:36.373Z",
+=======
+    "importedAt": "2026-10-01T17:28:03.382Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 0,
     "expiresAt": "2026-10-06T14:35:04.000Z"
   },
@@ -1885,7 +2589,11 @@
     "source": "TabNews",
     "category": "Dev",
     "score": 0,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:36.374Z",
+=======
+    "importedAt": "2026-10-01T17:28:03.384Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 0,
     "expiresAt": "2026-10-06T14:30:04.000Z"
   },
@@ -1899,7 +2607,11 @@
     "source": "TabNews",
     "category": "Dev",
     "score": 0,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:36.375Z",
+=======
+    "importedAt": "2026-10-01T17:28:03.385Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 0,
     "expiresAt": "2026-10-06T13:04:41.000Z"
   },
@@ -1913,7 +2625,11 @@
     "source": "TabNews",
     "category": "Dev",
     "score": 0,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:36.377Z",
+=======
+    "importedAt": "2026-10-01T17:28:03.390Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 0,
     "expiresAt": "2026-10-06T03:30:39.000Z"
   },
@@ -1927,7 +2643,11 @@
     "source": "TabNews",
     "category": "Dev",
     "score": 0,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:36.378Z",
+=======
+    "importedAt": "2026-10-01T17:28:03.391Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 0,
     "expiresAt": "2026-10-06T02:20:57.000Z"
   },
@@ -1941,11 +2661,16 @@
     "source": "TabNews",
     "category": "Dev",
     "score": 0,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:37:36.382Z",
+=======
+    "importedAt": "2026-10-01T17:28:03.398Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 0,
     "expiresAt": "2026-10-05T16:23:09.000Z"
   },
   {
+<<<<<<< HEAD
     "id": "https://exame.com/inteligencia-artificial/anthropic-planeja-ipo-para-novembro-e-mira-avaliacao-de-ate-us-2-trilhoes/",
     "title": "Anthropic planeja IPO para novembro e mira avaliação de até US$ 2 trilhões",
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
@@ -1960,6 +2685,8 @@
     "expiresAt": "2026-10-06T17:55:36.800Z"
   },
   {
+=======
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "id": "https://www.infomoney.com.br/onde-investir/fii-recebe-oferta-de-r-760-mi-por-edificio-que-abriga-sede-da-caixa-economica-no-rj/",
     "title": "FII recebe oferta de R$ 760 mi por edifício que abriga sede da Caixa Econômica no RJ",
     "description": "BROF11 tem oferta de R$ 760 milhões  pela aquisição integral do Edifício Passeio Corporate\nThe post FII recebe oferta de R$ 760 mi por edifício que ab...",
@@ -1969,11 +2696,74 @@
     "source": "InfoMoney",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:55:40.294Z",
+=======
+    "importedAt": "2026-10-01T17:43:18.926Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:41:23.000Z"
   },
   {
+<<<<<<< HEAD
+=======
+    "id": "https://www.infomoney.com.br/mercados/reino-unido-atinge-juros-de-6-em-titulos-e-revive-temor-da-crise-do-euro/",
+    "title": "Reino Unido atinge juros de 6% em títulos e revive temor da crise do euro",
+    "description": "Disparada do petróleo e receios de uma nova onda inflacionária elevam os custos de financiamento do país ao maior nível desde 1998, pressionando as co...",
+    "url": "https://www.infomoney.com.br/mercados/reino-unido-atinge-juros-de-6-em-titulos-e-revive-temor-da-crise-do-euro/",
+    "image": "https://www.infomoney.com.br/wp-content/uploads/2026/10/469681315-2.jpg?fit=300%2C200&amp;quality=70&amp;strip=all",
+    "publishedAt": "Thu, 01 Oct 2026 17:30:43 +0000",
+    "source": "InfoMoney",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-01T17:43:18.927Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:30:43.000Z"
+  },
+  {
+    "id": "https://www.infomoney.com.br/mercados/cogna-retoma-captacao-em-enfermagem-e-mira-recuperacao-da-vertical-em-2027/",
+    "title": "Cogna retoma captação em Enfermagem e mira recuperação da vertical em 2027",
+    "description": "Com a migração do curso para o formato presencial, as instituições começam a reposicionar suas operações e disputar alunos em um mercado que deve ganh...",
+    "url": "https://www.infomoney.com.br/mercados/cogna-retoma-captacao-em-enfermagem-e-mira-recuperacao-da-vertical-em-2027/",
+    "image": "https://www.infomoney.com.br/wp-content/uploads/2025/11/Cogna.webp?fit=300%2C200&amp;quality=70&amp;strip=all",
+    "publishedAt": "Thu, 01 Oct 2026 17:30:00 +0000",
+    "source": "InfoMoney",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-01T17:43:18.928Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-02T17:30:00.000Z"
+  },
+  {
+    "id": "https://www.cnnbrasil.com.br/economia/money/mercado/bolsas-da-europa-caem-pressionadas-por-bancos-e-juros-de-titulos-soberanos/",
+    "title": "Bolsas da Europa caem pressionadas por bancos e juros de títulos soberanos",
+    "description": "FTSE 100 fechou em queda de 1,68%, DAX caiu 0,87%, CAC 40 perdeu 1,62%, FTSE MIB recuou 2,21%, Ibex 35 caiu 2,28% e o PSI 20 cedeu 1,97%...",
+    "url": "https://www.cnnbrasil.com.br/economia/money/mercado/bolsas-da-europa-caem-pressionadas-por-bancos-e-juros-de-titulos-soberanos/",
+    "image": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/09/pexels-rolledalloys-metal-supply-8973132.jpg?w=200",
+    "publishedAt": "Thu, 01 Oct 2026 17:12:19 +0000",
+    "source": "CNN",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-01T17:43:32.912Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-02T17:12:19.000Z"
+  },
+  {
+    "id": "https://exame.com/inteligencia-artificial/anthropic-planeja-ipo-para-novembro-e-mira-avaliacao-de-ate-us-2-trilhoes/",
+    "title": "Anthropic planeja IPO para novembro e mira avaliação de até US$ 2 trilhões",
+    "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
+    "url": "https://exame.com/inteligencia-artificial/anthropic-planeja-ipo-para-novembro-e-mira-avaliacao-de-ate-us-2-trilhoes/",
+    "image": "https://classic.exame.com/wp-content/uploads/2026/09/anthropic.jpg",
+    "publishedAt": "2026-10-01T17:58:52.610Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-01T17:58:52.611Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T17:58:52.610Z"
+  },
+  {
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "id": "https://valor.globo.com/empresas/marketing/noticia/2026/10/01/ia-da-velocidade-mas-fica-devendo-em-conexao-com-o-consumidor-diz-pesquisa.ghtml",
     "title": "IA dá velocidade, mas fica devendo em conexão com o consumidor, diz pesquisa",
     "description": "Embora a inteligência artificial (IA) tenha acelerado processos na área de marketing, transformar o investimento nessa tecnologia em marcas mais forte...",
@@ -1983,7 +2773,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:55:41.329Z",
+=======
+    "importedAt": "2026-10-01T17:58:53.908Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-03T17:41:11.000Z"
   },
@@ -1997,11 +2791,16 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:55:41.330Z",
+=======
+    "importedAt": "2026-10-01T17:58:53.909Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 100,
     "expiresAt": "2026-10-06T17:35:33.000Z"
   },
   {
+<<<<<<< HEAD
     "id": "https://tecnoblog.net/noticias/sucessora-da-oi-retorna-a-telefonia-movel/",
     "title": "Sucessora da Oi retorna à telefonia móvel",
     "description": "Nio promete fibra de 700 Mb/s e franquia de 10 GB na internet móvel por R$ 140/mês.\nSucessora da Oi retorna à telefonia móvel...",
@@ -2013,6 +2812,47 @@
     "score": 100,
     "importedAt": "2026-10-01T17:55:44.378Z",
     "importanceScore": 100,
+=======
+    "id": "https://g1.globo.com/trabalho-e-carreira/noticia/2026/09/30/nunca-e-suficiente-como-a-falta-de-reconhecimento-no-trabalho-pode-afetar-a-saude.ghtml",
+    "title": "'Nunca é suficiente': como a falta de reconhecimento no trabalho pode afetar a saúde",
+    "description": "Imagem ilustrativa mostra trabalhador diante de um computador. Estresse crônico, assédio e sobrecarga de tarefas estão entre os riscos psicossociais r...",
+    "url": "https://g1.globo.com/trabalho-e-carreira/noticia/2026/09/30/nunca-e-suficiente-como-a-falta-de-reconhecimento-no-trabalho-pode-afetar-a-saude.ghtml",
+    "image": "https://s2-g1.glbimg.com/Vrp7PUTPcq6PQd9_F3Qnke8KtM4=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/O/C/cHJsS9QFe9qIYl2Ake0g/istock-1191636898.jpg",
+    "publishedAt": "Wed, 30 Sep 2026 06:00:01 -0000",
+    "source": "Globo",
+    "category": "Tecnologia",
+    "score": 100,
+    "importedAt": "2026-10-01T17:58:54.587Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-05T06:00:01.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/telecom/vivo-estreia-no-chatgpt-com-promessa-de-recarga-e-2-via-no-futuro/",
+    "title": "Vivo estreia no ChatGPT com promessa de recarga e 2ª via no futuro",
+    "description": "A Vivo passou a ocupar um novo espa&ccedil;o para atender seus clientes: o ChatGPT. A operadora lan&ccedil;ou, nesta quarta-feira (30), um plugin que ...",
+    "url": "https://canaltech.com.br/telecom/vivo-estreia-no-chatgpt-com-promessa-de-recarga-e-2-via-no-futuro/",
+    "image": "https://tl.ctcdn.com.br/I6qdWbPpv9pSJorTMwo3uxTjfXo=/0x0/filters:format(webp):quality(85)/7a0e7a51-b2fd-4488-9780-7ebb71a0d0f1.png",
+    "publishedAt": "Wed, 30 Sep 2026 20:37:02 +0000",
+    "source": "Canaltech",
+    "category": "IA",
+    "score": 100,
+    "importedAt": "2026-10-01T17:58:54.836Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-05T20:37:02.000Z"
+  },
+  {
+    "id": "https://tecnoblog.net/noticias/sucessora-da-oi-retorna-a-telefonia-movel/",
+    "title": "Sucessora da Oi retorna à telefonia móvel",
+    "description": "Nio promete fibra de 700 Mb/s e franquia de 10 GB na internet móvel por R$ 140/mês.\nSucessora da Oi retorna à telefonia móvel...",
+    "url": "https://tecnoblog.net/noticias/sucessora-da-oi-retorna-a-telefonia-movel/",
+    "image": "https://files.tecnoblog.net/wp-content/uploads/2026/06/capa-nio-fibra-1.png",
+    "publishedAt": "Thu, 01 Oct 2026 17:36:25 +0000",
+    "source": "Tecnoblog",
+    "category": "Tecnologia",
+    "score": 100,
+    "importedAt": "2026-10-01T17:58:56.394Z",
+    "importanceScore": 100,
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "expiresAt": "2026-10-06T17:36:25.000Z"
   },
   {
@@ -2025,7 +2865,11 @@
     "source": "TabNews",
     "category": "Dev",
     "score": 0,
+<<<<<<< HEAD
     "importedAt": "2026-10-01T17:55:48.012Z",
+=======
+    "importedAt": "2026-10-01T17:59:01.004Z",
+>>>>>>> 1feda85a4cd723a976973d766456766cc76d328a
     "importanceScore": 0,
     "expiresAt": "2026-10-06T17:44:57.000Z"
   }

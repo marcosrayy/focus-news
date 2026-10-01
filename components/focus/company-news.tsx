@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Clock, MessageSquare, Bookmark, Handshake, Rocket, Users, Code, TrendingUp } from "lucide-react";
 import { ArticleModal, type ArticleModalData } from "@/components/article-modal";
+import { getDistinctCover } from "@/lib/utils";
 
 const newsItems = [
   {
@@ -15,7 +16,7 @@ const newsItems = [
     time: "3h",
     comments: 42,
     author: "Comunicacao Focus",
-    image: "/news-fintech.jpg",
+    image: getDistinctCover("focus-news-1"),
   },
   {
     title: "Lancamento: Focus AI Assistant - nosso primeiro produto SaaS de IA",
@@ -27,7 +28,7 @@ const newsItems = [
     time: "1d",
     comments: 87,
     author: "Equipe de Produto",
-    image: "/news-ai-chip.jpg",
+    image: getDistinctCover("focus-news-2"),
   },
   {
     title: "Focus expande equipe e abre 25 novas vagas em tecnologia e design",
@@ -39,7 +40,7 @@ const newsItems = [
     time: "2d",
     comments: 63,
     author: "RH Focus",
-    image: "/focus-workshop.jpg",
+    image: getDistinctCover("focus-news-3"),
   },
   {
     title: "Parceria estrategica com AWS para programa de aceleracao de startups",
@@ -51,7 +52,7 @@ const newsItems = [
     time: "3d",
     comments: 35,
     author: "Parcerias Focus",
-    image: "/news-cloud.jpg",
+    image: getDistinctCover("focus-news-4"),
   },
   {
     title: "Focus OS v3.0: nova versao do sistema de gestao interna com modulo de IA",
@@ -63,7 +64,7 @@ const newsItems = [
     time: "4d",
     comments: 28,
     author: "Time de Engenharia",
-    image: "/news-cyber.jpg",
+    image: getDistinctCover("focus-news-5"),
   },
   {
     title: "Focus registra crescimento de 340% em receita recorrente no ultimo trimestre",
@@ -75,7 +76,7 @@ const newsItems = [
     time: "5d",
     comments: 51,
     author: "Financeiro Focus",
-    image: "/news-startup.jpg",
+    image: getDistinctCover("focus-news-6"),
   },
 ];
 

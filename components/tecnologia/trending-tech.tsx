@@ -1,6 +1,7 @@
 "use client";
 
 import { Clock, MessageSquare, Bookmark, Brain, Cloud, Shield, Blocks } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 import { useNews } from "@/hooks/useNews";
 import { formatRelativeTime } from "@/lib/news-service";
 import { useNewsRotation } from "@/hooks/use-news-rotation";
@@ -24,10 +25,29 @@ function getTechCategoryColor(category: string) {
 }
 
 export function TrendingTech({ sidebar }: { sidebar?: ReactNode }) {
+  const searchParams = useSearchParams();
+  const topic = searchParams.get("topic") || "all";
+
+  const topicQueries: Record<string, string> = {
+    ai: "Inteligencia Artificial OR IA OR ChatGPT OR OpenAI OR LLM",
+    cloud: "Cloud Computing OR AWS OR Azure OR GCP OR Kubernetes",
+    cyber: "Ciberseguranca OR Cybersecurity OR segurança digital OR ransomware",
+    web3: "Blockchain OR Web3 OR cripto OR Ethereum OR Bitcoin",
+    hardware: "Hardware OR chip OR processador OR GPU OR CPU OR smartphone",
+    "m4-vs-snapdragon": "M4 Ultra OR Snapdragon X Elite OR processadores",
+    "cloud-compare": "AWS OR Azure OR GCP OR Cloud Computing",
+    "ai-models": "GPT-5 OR Claude 4 OR Gemini 2 OR IA generativa",
+    quantum: "computacao quantica OR quantum computing",
+    "ai-dev": "IA generativa OR desenvolvimento de software OR copilots",
+    edge: "edge computing OR computacao em periferia",
+  };
+
+  const activeQuery = topicQueries[topic] || "Tecnologia OR Hardware OR Software OR Noticias Tech";
+
   const { 
     articles: news,
     lastSyncRelative
-  } = useNews("Tecnologia OR Hardware OR Software OR Noticias Tech", "Tecnologia", 12, 1);
+  } = useNews(activeQuery, "Tecnologia", 12, 1);
   
   const articlesToRender = news.length > 0 ? news : [];
   const { featuredArticles, remainingArticles } = useNewsRotation(articlesToRender);

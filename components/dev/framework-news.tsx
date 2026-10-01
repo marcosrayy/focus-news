@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { useNews } from "@/hooks/useNews";
 import { Clock, MessageSquare, ArrowUpRight, Bookmark } from "lucide-react";
 import { ArticleModal, type ArticleModalData } from "@/components/article-modal";
 import { useNewsRotation } from "@/hooks/use-news-rotation";
 import { FeaturedNewsCarousel, NewsSectionLayout } from "@/components/news-section-layout";
+import { getDistinctCover } from "@/lib/utils";
 import type { ReactNode } from "react";
 
 interface DevArticle {
@@ -22,20 +24,38 @@ interface DevArticle {
 }
 
 const articles: DevArticle[] = [
-  { id: 1, category: "REACT", categoryColor: "bg-sky-600", title: "React 19.2 estavel: useEffectEvent, Activity e novas APIs de formulario", description: "A versao traz melhorias significativas para gerenciamento de efeitos colaterais e estados de UI.", image: "/news-focus.jpg", time: "30 min", comments: 289, author: "Ricardo Martins", tags: ["React", "Hooks", "Forms"] },
-  { id: 2, category: "RUST", categoryColor: "bg-orange-600", title: "Rust 2026 Edition: async traits estaveis e melhorias no borrow checker", description: "Nova edicao da linguagem traz features aguardadas ha anos pela comunidade de desenvolvedores.", image: "/news-focus.jpg", time: "1h", comments: 198, author: "Daniel Costa", tags: ["Rust", "Systems", "Async"] },
-  { id: 3, category: "DEVOPS", categoryColor: "bg-violet-600", title: "Docker Desktop 5.0 integra IA para otimizacao automatica de containers", description: "Novo recurso analisa workloads e sugere configuracoes ideais de recursos.", image: "/news-focus.jpg", time: "2h", comments: 156, author: "Thiago Rocha", tags: ["Docker", "DevOps", "IA"] },
-  { id: 4, category: "MOBILE", categoryColor: "bg-emerald-600", title: "Flutter 4.0 adota Dart 4 com macros e pattern matching avancado", description: "Framework mobile do Google ganha ferramentas que aproximam Dart de linguagens como Kotlin e Swift.", image: "/news-focus.jpg", time: "3h", comments: 134, author: "Juliana Santos", tags: ["Flutter", "Dart", "Mobile"] },
-  { id: 5, category: "BACKEND", categoryColor: "bg-amber-600", title: "Bun 2.0 lanca runtime compativel com 99% dos pacotes npm e performance 2x Node", description: "O runtime JavaScript alternativo atinge maturidade para producao em grande escala.", image: "/news-focus.jpg", time: "4h", comments: 312, author: "Paulo Henrique", tags: ["Bun", "JavaScript", "Runtime"] },
-  { id: 6, category: "IA", categoryColor: "bg-violet-600", title: "Cursor vs Windsurf vs Copilot: benchmark completo de IDEs com IA em 2026", description: "Comparativo detalhado de produtividade, qualidade de sugestoes e integracao com fluxos de trabalho.", image: "/news-focus.jpg", time: "5h", comments: 567, author: "Marcos Lima", tags: ["IDE", "IA", "Produtividade"] },
+  { id: 1, category: "REACT", categoryColor: "bg-sky-600", title: "React 19.2 estavel: useEffectEvent, Activity e novas APIs de formulario", description: "A versao traz melhorias significativas para gerenciamento de efeitos colaterais e estados de UI.", image: getDistinctCover("dev-react-1"), time: "30 min", comments: 289, author: "Ricardo Martins", tags: ["React", "Hooks", "Forms"] },
+  { id: 2, category: "RUST", categoryColor: "bg-orange-600", title: "Rust 2026 Edition: async traits estaveis e melhorias no borrow checker", description: "Nova edicao da linguagem traz features aguardadas ha anos pela comunidade de desenvolvedores.", image: getDistinctCover("dev-rust-2"), time: "1h", comments: 198, author: "Daniel Costa", tags: ["Rust", "Systems", "Async"] },
+  { id: 3, category: "DEVOPS", categoryColor: "bg-violet-600", title: "Docker Desktop 5.0 integra IA para otimizacao automatica de containers", description: "Novo recurso analisa workloads e sugere configuracoes ideais de recursos.", image: getDistinctCover("dev-devops-3"), time: "2h", comments: 156, author: "Thiago Rocha", tags: ["Docker", "DevOps", "IA"] },
+  { id: 4, category: "MOBILE", categoryColor: "bg-emerald-600", title: "Flutter 4.0 adota Dart 4 com macros e pattern matching avancado", description: "Framework mobile do Google ganha ferramentas que aproximam Dart de linguagens como Kotlin e Swift.", image: getDistinctCover("dev-mobile-4"), time: "3h", comments: 134, author: "Juliana Santos", tags: ["Flutter", "Dart", "Mobile"] },
+  { id: 5, category: "BACKEND", categoryColor: "bg-amber-600", title: "Bun 2.0 lanca runtime compativel com 99% dos pacotes npm e performance 2x Node", description: "O runtime JavaScript alternativo atinge maturidade para producao em grande escala.", image: getDistinctCover("dev-backend-5"), time: "4h", comments: 312, author: "Paulo Henrique", tags: ["Bun", "JavaScript", "Runtime"] },
+  { id: 6, category: "IA", categoryColor: "bg-violet-600", title: "Cursor vs Windsurf vs Copilot: benchmark completo de IDEs com IA em 2026", description: "Comparativo detalhado de produtividade, qualidade de sugestoes e integracao com fluxos de trabalho.", image: getDistinctCover("dev-ai-6"), time: "5h", comments: 567, author: "Marcos Lima", tags: ["IDE", "IA", "Produtividade"] },
 ];
 
 export function FrameworkNews({ sidebar }: { sidebar?: ReactNode }) {
   const [selected, setSelected] = useState<any | null>(null);
+  const searchParams = useSearchParams();
+  const topic = searchParams.get("topic") || "all";
+
+  const topicQueries: Record<string, string> = {
+    frontend: "frontend OR React OR Next.js OR UI OR componentes",
+    backend: "backend OR Node.js OR API OR microservicos OR banco de dados",
+    mobile: "mobile OR Flutter OR React Native OR iOS OR Android",
+    devops: "DevOps OR Docker OR Kubernetes OR CI/CD OR deploy",
+    "ai-dev": "IA para dev OR machine learning OR LLM OR copilots OR automacao",
+    web3: "Web3 OR blockchain OR smart contracts OR crypto",
+    trpc: "tRPC OR TypeScript OR API type-safe OR backend",
+    rust: "Rust OR sistemas OR performance OR compilacao",
+    playwright: "Playwright OR testes e2e OR CI/CD OR QA",
+    mf: "Module Federation OR microfrontends OR frontend OR arquitetura",
+  };
+
+  const activeQuery = topicQueries[topic] || "desenvolvimento OR programação OR software OR desenvolvedor OR código OR DevOps OR framework";
+
   const { 
     articles: apiNews,
     lastSyncRelative
-  } = useNews("desenvolvimento OR programação OR software OR desenvolvedor OR código OR DevOps OR framework", "Dev", 12, 1);
+  } = useNews(activeQuery, "Dev", 12, 1);
   
   const displayArticles = apiNews.length > 0 ? apiNews.map((n: any, i: number) => {
     const mock = articles[i % articles.length];

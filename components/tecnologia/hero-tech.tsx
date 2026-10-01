@@ -3,6 +3,7 @@
 import { Bookmark, Cpu } from "lucide-react";
 import { useNews } from "@/hooks/useNews";
 import { Skeleton } from "@/components/ui/skeleton";
+import { getDistinctCover } from "@/lib/utils";
 
 import { NewsArticle } from "@/types/news";
 
@@ -22,8 +23,7 @@ export function HeroTech({
       title: "Novos Chips Prometem Dobrar a Velocidade",
       description:
         "Buscando as ultimas noticias para voce. Se demorar, o servico pode estar em manutencao.",
-      image:
-        "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2000",
+      image: getDistinctCover("tech-hero-default"),
       category: "HARDWARE",
       source: "FOCUS NEWS",
       url: "#",
