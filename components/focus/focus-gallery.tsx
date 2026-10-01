@@ -3,7 +3,15 @@
 import { useState } from "react";
 import { Camera, X } from "lucide-react";
 
-const galleryItems = [
+interface GalleryItem {
+  src: string;
+  alt: string;
+  label: string;
+  span: string;
+  fit?: "cover" | "contain";
+}
+
+const galleryItems: GalleryItem[] = [
   {
     src: "/Adriano%20comprando%20a%20microsoft.jpg",
     alt: "Integrante da Focus trabalhando em frente a uma tela de projetos",
@@ -17,15 +25,15 @@ const galleryItems = [
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/chefes.jpg",
-    alt: "Dois integrantes da Focus no espaço da empresa",
-    label: "Time Focus",
+    src: "/Mestre%20supremo%20feliz.jpg",
+    alt: "Dois integrantes da Focus posando juntos",
+    label: "Equipe Focus",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/equipe%20maneira.jpeg",
-    alt: "Dois integrantes da Focus no estande da empresa",
-    label: "Equipe Focus no estande",
+    src: "/mestre%20lendario.jpg",
+    alt: "Integrante da Focus em uma conversa de trabalho",
+    label: "Bastidores da equipe",
     span: "col-span-1 row-span-1",
   },
   {
@@ -35,15 +43,63 @@ const galleryItems = [
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/gissele.jpg",
-    alt: "Integrante da Focus no estande da empresa",
+    src: "/gisele.jpg",
+    alt: "Gisele no estande da empresa",
     label: "Equipe Focus no evento",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/mestre%20lendario.jpg",
-    alt: "Integrante da Focus em uma conversa de trabalho",
-    label: "Bastidores da equipe",
+    src: "/equipe%20maneira.jpeg",
+    alt: "Dois integrantes da Focus no estande da empresa",
+    label: "Equipe Focus no estande",
+    span: "col-span-2 row-span-1",
+  },
+  {
+    src: "/A%20FOCUS%20%C3%89%20%20A%20FOCUS.jpg",
+    alt: "Cartões de visita da Focus",
+    label: "Identidade Focus",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: "/Adriano%20negociando%20com%20a%20microsoft.jpg",
+    alt: "Integrante da Focus trabalhando diante de um computador",
+    label: "Bastidores de tecnologia",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: "/Adriano%20sendo%20ultra%20humilde.jpg",
+    alt: "Integrante da Focus conferindo anotações durante um evento",
+    label: "Anotações no evento",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: "/Chefes%20negociando.jpg",
+    alt: "Equipe da Focus conversando com visitantes no estande",
+    label: "Conversas no estande",
+    span: "col-span-2 row-span-1",
+  },
+  {
+    src: "/Equipe%20maneira%202.jpg",
+    alt: "Equipe reunida em um espaço de trabalho",
+    label: "Equipe em reunião",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: "/Equipe.jpg",
+    alt: "Integrante da Focus registrando um evento",
+    label: "Cobertura do evento",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: "/chefes.jpg",
+    alt: "Dois integrantes da Focus no espaço da empresa",
+    label: "Time Focus",
+    span: "col-span-2 row-span-1",
+  },
+  {
+    src: "/Rezende%20ultra%20feliz.jpg",
+    alt: "Integrante da Focus conversando durante um evento",
+    label: "Encontro no evento",
     span: "col-span-2 row-span-1",
   },
 ];
@@ -71,8 +127,8 @@ export function FocusGallery() {
             <img
               src={item.src}
               alt={item.alt}
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+              className={`h-full w-full ${item.fit === "contain" ? "bg-black object-contain" : "object-cover"} transition-transform duration-500 group-hover:scale-110`}
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             <div className="absolute bottom-0 left-0 right-0 translate-y-2 p-3 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
               <p className="text-xs font-bold text-foreground">{item.label}</p>
