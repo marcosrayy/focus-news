@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 const heroSlides = [
   {
@@ -25,6 +25,7 @@ const heroSlides = [
 export function HeroFocus() {
   const [current, setCurrent] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const gestureStart = useRef<{ x: number; y: number } | null>(null);
 
   const goTo = useCallback(
     (index: number) => {
@@ -51,7 +52,28 @@ export function HeroFocus() {
 
   return (
     <section className="group relative overflow-hidden rounded-2xl border border-border/60 shadow-card">
-      <div className="relative aspect-[8/3] w-full bg-black sm:aspect-[3/1]">
+      <div
+        className="relative aspect-[8/3] w-full touch-pan-y bg-black sm:aspect-[3/1]"
+        onPointerDown={(event) => {
+          if (!event.isPrimary || (event.pointerType === "mouse" && event.button !== 0)) return;
+          gestureStart.current = { x: event.clientX, y: event.clientY };
+          event.currentTarget.setPointerCapture(event.pointerId);
+        }}
+        onPointerUp={(event) => {
+          const start = gestureStart.current;
+          gestureStart.current = null;
+          if (!start) return;
+
+          const deltaX = event.clientX - start.x;
+          const deltaY = event.clientY - start.y;
+          if (Math.abs(deltaX) >= 40 && Math.abs(deltaX) > Math.abs(deltaY)) {
+            deltaX < 0 ? next() : prev();
+          }
+        }}
+        onPointerCancel={() => {
+          gestureStart.current = null;
+        }}
+      >
         {heroSlides.map((s, i) => (
           <img
             key={i}
