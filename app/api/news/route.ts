@@ -128,8 +128,7 @@ export async function GET(request: Request) {
     // Include the skipped featured article when deciding whether pagination has enough results.
     const requiredCount = max + offset;
     const shouldFetchSearchHistory = shouldMatchQuery && retentionDays > 3;
-    const hasCachedSectionResults = !shouldMatchQuery && filtered.length > 0;
-    if (shouldFetchSearchHistory || (filtered.length < requiredCount && !hasCachedSectionResults)) {
+    if (shouldFetchSearchHistory || filtered.length < requiredCount) {
       console.log(`[API/News] Insufficient articles for ${targetCategory} in Storage (${filtered.length}/${requiredCount}), fetching live...`);
       const freshArticles = shouldMatchQuery
         ? (await Promise.all(

@@ -1955,7 +1955,11 @@
     "source": "Startupi",
     "category": "Startups",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-02T17:33:00.620Z",
+=======
+    "importedAt": "2026-10-02T17:29:35.703Z",
+>>>>>>> d2cdb2858fab9aed483c20fb3feca8824dc70b89
     "importanceScore": 100,
     "expiresAt": "2026-10-06T08:00:00.000Z"
   },
@@ -1969,7 +1973,11 @@
     "source": "InfoMoney",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-02T17:33:01.508Z",
+=======
+    "importedAt": "2026-10-02T17:29:46.187Z",
+>>>>>>> d2cdb2858fab9aed483c20fb3feca8824dc70b89
     "importanceScore": 100,
     "expiresAt": "2026-10-03T17:28:13.000Z"
   },
@@ -1983,8 +1991,28 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-02T17:33:02.133Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-03T17:17:33.000Z"
+=======
+    "importedAt": "2026-10-02T17:29:47.180Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-03T17:17:33.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/empresas/marketing/noticia/2026/10/02/apos-sete-meses-no-cargo-ceo-da-wpp-creative-anuncia-saida.ghtml",
+    "title": "Após sete meses no cargo, CEO da WPP Creative anuncia saída",
+    "description": "...",
+    "url": "https://valor.globo.com/empresas/marketing/noticia/2026/10/02/apos-sete-meses-no-cargo-ceo-da-wpp-creative-anuncia-saida.ghtml",
+    "image": "https://s2-valor.glbimg.com/OqJ7pluV_dRLHxiJPiwIhjaEDok=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/8/w/62D0ncTBe5801vEfa9bw/030626wpp031.jpg",
+    "publishedAt": "Fri, 02 Oct 2026 17:42:45 -0000",
+    "source": "Valor",
+    "category": "Business",
+    "score": 100,
+    "importedAt": "2026-10-02T17:45:54.843Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T17:42:45.000Z"
+>>>>>>> d2cdb2858fab9aed483c20fb3feca8824dc70b89
   }
 ]
