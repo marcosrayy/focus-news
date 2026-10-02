@@ -115,17 +115,6 @@ export async function GET(request: Request) {
     }
 
     if (shouldMatchQuery) filtered = filtered.filter(matchesQuery);
-
-    filtered = filtered.map(art => {
-      const image = art.image || "";
-      const lowerImage = image.toLowerCase();
-      const isBadImage = !image || lowerImage.includes("youtube.com") || lowerImage.includes("youtu.be") || lowerImage.includes("vimeo.com") || lowerImage.includes("/embed/");
-      return isBadImage ? { ...art, image: getFallbackNewsImage(art.url || art.title || art.source || art.category || "news", targetCategory) } : art;
-    }).map(art => ({
-      ...art,
-      title: art.title ? decodeHtmlEntities(art.title) : art.title,
-      description: art.description ? decodeHtmlEntities(art.description) : art.description,
-    }));
     filtered = filtered.filter(art => {
       if (retentionDays > 3) {
         const publishedTime = new Date(art.publishedAt).getTime();
@@ -169,11 +158,26 @@ export async function GET(request: Request) {
       }
     }
 
+    if (!shouldMatchQuery) {
+      filtered = filtered.filter(art =>
+        hasCategoryEvidence(
+          art.title,
+          art.description,
+          targetCategory === "Home" ? art.category || "" : targetCategory,
+          art.url,
+        )
+      );
+    }
+
     filtered = filtered.map(art => {
       const image = art.image || "";
       const lowerImage = image.toLowerCase();
       const isBadImage = !image || lowerImage.includes("youtube.com") || lowerImage.includes("youtu.be") || lowerImage.includes("vimeo.com") || lowerImage.includes("/embed/");
-      return isBadImage ? { ...art, image: getFallbackNewsImage(art.url || art.title || art.source || art.category || "news", targetCategory) } : art;
+      return {
+        ...(isBadImage ? { ...art, image: getFallbackNewsImage(art.url || art.title || art.source || art.category || "news", targetCategory) } : art),
+        title: art.title ? decodeHtmlEntities(art.title) : art.title,
+        description: art.description ? decodeHtmlEntities(art.description) : art.description,
+      };
     });
     filtered = filtered.filter(art => {
       if (retentionDays > 3) {

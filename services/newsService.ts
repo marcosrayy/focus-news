@@ -26,8 +26,20 @@ const WINDOWS_1252_BYTES = new Map<number, number>([
   [0x0153, 0x9c], [0x017e, 0x9e], [0x0178, 0x9f],
 ]);
 
+const NAMED_HTML_ENTITIES: Record<string, string> = {
+  aacute: "á", acirc: "â", agrave: "à", atilde: "ã", auml: "ä",
+  ccedil: "ç", eacute: "é", ecirc: "ê", egrave: "è", iacute: "í",
+  icirc: "î", iuml: "ï", oacute: "ó", ocirc: "ô", otilde: "õ",
+  ouml: "ö", uacute: "ú", ucirc: "û", uuml: "ü", nbsp: " ",
+  hellip: "…", ndash: "–", mdash: "—", lsquo: "‘", rsquo: "’",
+  ldquo: "“", rdquo: "”",
+};
+
 export function decodeHtmlEntities(text: string): string {
   return text
+    .replace(/&([a-z]+);/gi, (entity, name: string) =>
+      NAMED_HTML_ENTITIES[name.toLowerCase()] || entity
+    )
     .replace(/&nbsp;/gi, " ")
     .replace(/&amp;/gi, "&")
     .replace(/&lt;/gi, "<")
@@ -42,13 +54,11 @@ export function decodeHtmlEntities(text: string): string {
     .replace(/&#8220;/gi, '"')
     .replace(/&#8221;/gi, '"')
     .replace(/&#039;/gi, "'")
-    .replace(/&#(?:x?)([0-9a-fA-F]+);/g, (_, hex) => {
-      const code = Number.parseInt(hex, 16);
-      return Number.isFinite(code) ? String.fromCodePoint(code) : `&#${hex};`;
-    })
-    .replace(/&#(\d+);/g, (_, dec) => {
-      const code = Number.parseInt(dec, 10);
-      return Number.isFinite(code) ? String.fromCodePoint(code) : `&#${dec};`;
+    .replace(/&#(?:x([0-9a-f]+)|(\d+));/gi, (entity, hex: string, decimal: string) => {
+      const code = Number.parseInt(hex || decimal, hex ? 16 : 10);
+      return Number.isInteger(code) && code >= 0 && code <= 0x10ffff && !(code >= 0xd800 && code <= 0xdfff)
+        ? String.fromCodePoint(code)
+        : entity;
     });
 }
 
@@ -384,6 +394,16 @@ const MODULE_KEYWORDS = {
   ]
 };
 
+const STRONG_TITLE_SIGNALS: Record<string, string[]> = {
+  Startups: ["startup", "startups", "venture capital", "aceleradora", "incubadora", "aporte", "rodada de investimento", "unicornio", "ipo", "saas"],
+  Economia: ["selic", "inflacao", "juros", "ibovespa", "bolsa de valores", "mercado financeiro", "dolar", "cambio", "pib", "banco central", "acoes"],
+  IA: ["inteligencia artificial", "ia generativa", "chatgpt", "openai", "anthropic", "gemini", "claude", "llm", "machine learning", "deep learning"],
+  Tecnologia: ["software", "hardware", "smartphone", "processador", "chip", "chips", "android", "ios", "gpu", "cpu", "nvidia", "intel", "amd", "samsung", "apple", "motorola", "xiaomi", "computador", "celular", "playstation", "xbox", "nintendo", "linux"],
+  Dev: ["programacao", "desenvolvedor", "desenvolvimento de software", "api", "framework", "javascript", "typescript", "python", "react", "backend", "frontend", "github", "open source", "kernel"],
+  Inovacao: ["patente", "descoberta cientifica", "cientistas", "cientifico", "ciencia", "nasa", "astronomia", "computacao quantica", "biotecnologia", "genetica", "vacina", "energia limpa", "robotica"],
+  Business: ["empreendedorismo", "ceo", "crescimento", "faturamento", "receita", "saas", "b2b", "b2c", "gestao empresarial", "marketplace", "franquia", "varejo"],
+};
+
 // 3. Proibições Absolutas (Mata-mata - Score vira 0 imediatamente)
 const PROHIBITED_TERMS = [
   "politica", "eleicoes", "lula", "bolsonaro", "stf", "bbb", "reality show", "reality", "show",
@@ -514,7 +534,15 @@ export function hasCategoryEvidence(title: string, description: string, category
     if (hasLegalOrPoliticalSignal && !hasTechContext) return false;
   }
 
-  return countMatches(text, keywords) > 0;
+  const hasStrongTitleSignal = countMatches(title, STRONG_TITLE_SIGNALS[category] || []) > 0;
+  if (hasStrongTitleSignal) return true;
+
+  const hasTitleKeyword = countMatches(title, keywords) > 0;
+  const distinctKeywordMatches = keywords.reduce(
+    (total, keyword) => total + (countMatches(text, [keyword]) > 0 ? 1 : 0),
+    0,
+  );
+  return hasTitleKeyword && distinctKeywordMatches >= 2;
 }
 
 export function isEnglishDevSource(source: string): boolean {
