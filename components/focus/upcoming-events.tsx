@@ -110,11 +110,11 @@ export function UpcomingEvents() {
         <Calendar className="ml-1 h-4 w-4 text-primary" />
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain scrollbar-hide sm:grid sm:grid-cols-2 sm:overflow-visible">
         {events.map((event) => (
           <article
             key={event.name}
-            className="group overflow-hidden rounded-xl border border-border bg-card transition-all duration-300 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
+            className="group min-w-full snap-center overflow-hidden rounded-xl border border-border bg-card transition-all duration-300 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 sm:min-w-0"
           >
             <div className="relative h-36 overflow-hidden">
               <img

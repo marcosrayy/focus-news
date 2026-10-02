@@ -25,13 +25,17 @@ const heroSlides = [
 export function HeroFocus() {
   const [current, setCurrent] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const gestureStart = useRef<{ x: number; y: number } | null>(null);
+  const mobileTrackRef = useRef<HTMLDivElement>(null);
 
   const goTo = useCallback(
     (index: number) => {
       if (isTransitioning) return;
       setIsTransitioning(true);
       setCurrent(index);
+      const track = mobileTrackRef.current;
+      if (track?.clientWidth) {
+        track.scrollTo({ left: index * track.clientWidth, behavior: "smooth" });
+      }
       setTimeout(() => setIsTransitioning(false), 700);
     },
     [isTransitioning],
@@ -52,38 +56,36 @@ export function HeroFocus() {
 
   return (
     <section className="group relative overflow-hidden rounded-2xl border border-border/60 shadow-card">
-      <div
-        className="relative aspect-[8/3] w-full touch-pan-y bg-black sm:aspect-[3/1]"
-        onPointerDown={(event) => {
-          if (!event.isPrimary || (event.pointerType === "mouse" && event.button !== 0)) return;
-          gestureStart.current = { x: event.clientX, y: event.clientY };
-          event.currentTarget.setPointerCapture(event.pointerId);
-        }}
-        onPointerUp={(event) => {
-          const start = gestureStart.current;
-          gestureStart.current = null;
-          if (!start) return;
+      <div className="relative aspect-[8/3] w-full bg-black sm:aspect-[3/1]">
+        <div
+          ref={mobileTrackRef}
+          onScroll={(event) => {
+            const track = event.currentTarget;
+            if (!track.clientWidth) return;
+            const index = Math.round(track.scrollLeft / track.clientWidth);
+            setCurrent((previous) => previous === index ? previous : index);
+          }}
+          className="absolute inset-0 z-10 flex snap-x snap-mandatory overflow-x-auto overscroll-x-contain scrollbar-hide sm:hidden"
+        >
+          {heroSlides.map((slide) => (
+            <div key={slide.image} className="relative h-full min-w-full snap-center">
+              <img src={slide.image} alt={slide.title} className="h-full w-full object-cover" />
+            </div>
+          ))}
+        </div>
 
-          const deltaX = event.clientX - start.x;
-          const deltaY = event.clientY - start.y;
-          if (Math.abs(deltaX) >= 40 && Math.abs(deltaX) > Math.abs(deltaY)) {
-            deltaX < 0 ? next() : prev();
-          }
-        }}
-        onPointerCancel={() => {
-          gestureStart.current = null;
-        }}
-      >
-        {heroSlides.map((s, i) => (
-          <img
-            key={i}
-            src={s.image}
-            alt={s.title}
-            className={`absolute inset-0 z-10 h-full w-full transition-all duration-700 ease-in-out ${
-              i === current ? "scale-100 opacity-100" : "scale-105 opacity-0"
-            } object-cover`}
-          />
-        ))}
+        <div className="absolute inset-0 hidden sm:block">
+          {heroSlides.map((slide, index) => (
+            <img
+              key={slide.image}
+              src={slide.image}
+              alt={slide.title}
+              className={`absolute inset-0 z-10 h-full w-full object-cover transition-all duration-700 ease-in-out ${
+                index === current ? "scale-100 opacity-100" : "scale-105 opacity-0"
+              }`}
+            />
+          ))}
+        </div>
 
         {current === 0 ? (
           <a
