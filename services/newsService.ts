@@ -397,9 +397,9 @@ const MODULE_KEYWORDS = {
 const STRONG_TITLE_SIGNALS: Record<string, string[]> = {
   Startups: ["startup", "startups", "venture capital", "aceleradora", "incubadora", "aporte", "rodada de investimento", "unicornio", "ipo", "saas"],
   Economia: ["selic", "inflacao", "juros", "ibovespa", "bolsa de valores", "mercado financeiro", "dolar", "cambio", "pib", "banco central", "acoes"],
-  IA: ["inteligencia artificial", "ia generativa", "chatgpt", "openai", "anthropic", "gemini", "claude", "llm", "machine learning", "deep learning"],
+  IA: ["ia", "inteligencia artificial", "ia generativa", "chatgpt", "openai", "anthropic", "gemini", "claude", "llm", "machine learning", "deep learning", "modelos de linguagem", "agentes de ia"],
   Tecnologia: ["software", "hardware", "smartphone", "processador", "chip", "chips", "android", "ios", "gpu", "cpu", "nvidia", "intel", "amd", "samsung", "apple", "motorola", "xiaomi", "computador", "celular", "playstation", "xbox", "nintendo", "linux"],
-  Dev: ["programacao", "desenvolvedor", "desenvolvimento de software", "api", "framework", "javascript", "typescript", "python", "react", "backend", "frontend", "github", "open source", "kernel"],
+  Dev: ["programacao", "desenvolvedor", "desenvolvedores", "desenvolvimento de software", "api", "framework", "javascript", "typescript", "python", "react", "backend", "frontend", "github", "git", "open source", "open-source", "codex", "rust", "docker", "kubernetes", "node.js", "compilador", "kernel"],
   Inovacao: ["patente", "descoberta cientifica", "cientistas", "cientifico", "ciencia", "nasa", "astronomia", "computacao quantica", "biotecnologia", "genetica", "vacina", "energia limpa", "robotica"],
   Business: ["empreendedorismo", "ceo", "crescimento", "faturamento", "receita", "saas", "b2b", "b2c", "gestao empresarial", "marketplace", "franquia", "varejo"],
 };
