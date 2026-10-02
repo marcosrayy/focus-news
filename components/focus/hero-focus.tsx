@@ -86,14 +86,14 @@ export function HeroFocus() {
             href="https://beevent.com.br/cart/?event=15057a07-7970-4b24-b656-d4d2e599b950&ticket=65786a55-b195-4a5f-a284-96f374fdf9e9&embed=1"
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute right-4 top-4 z-20 hidden min-h-9 items-center justify-center rounded-md border border-foreground/20 bg-background/85 px-4 text-xs font-semibold text-foreground shadow-lg backdrop-blur-sm transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:inline-flex"
+            className="absolute bottom-4 left-4 z-20 hidden min-h-9 items-center justify-center rounded-md border border-foreground/20 bg-background/85 px-4 text-xs font-semibold text-foreground shadow-lg backdrop-blur-sm transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:inline-flex"
           >
             Saiba Mais
           </a>
         ) : (
           <button
             type="button"
-            className="absolute right-4 top-4 z-20 hidden min-h-9 items-center justify-center rounded-md border border-foreground/20 bg-background/85 px-4 text-xs font-semibold text-foreground shadow-lg backdrop-blur-sm transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:inline-flex"
+            className="absolute bottom-4 left-4 z-20 hidden min-h-9 items-center justify-center rounded-md border border-foreground/20 bg-background/85 px-4 text-xs font-semibold text-foreground shadow-lg backdrop-blur-sm transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:inline-flex"
           >
             Saiba Mais
           </button>
