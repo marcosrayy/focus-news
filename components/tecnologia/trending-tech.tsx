@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { Clock, MessageSquare, Brain, Cloud, Shield, Blocks } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useNews } from "@/hooks/useNews";
@@ -25,6 +26,14 @@ function getTechCategoryColor(category: string) {
 }
 
 export function TrendingTech({ sidebar }: { sidebar?: ReactNode }) {
+  return (
+    <Suspense fallback={null}>
+      <TrendingTechContent sidebar={sidebar} />
+    </Suspense>
+  );
+}
+
+function TrendingTechContent({ sidebar }: { sidebar?: ReactNode }) {
   const searchParams = useSearchParams();
   const topic = searchParams.get("topic") || "all";
 

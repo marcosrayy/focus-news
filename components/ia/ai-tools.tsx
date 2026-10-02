@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useNews } from "@/hooks/useNews";
 import { Clock, MessageSquare, Brain, Bot, Wand2, Eye, Mic, FileCode } from "lucide-react";
@@ -33,6 +33,14 @@ const articles: AIArticle[] = [
 ];
 
 export function AITools({ sidebar }: { sidebar?: ReactNode }) {
+  return (
+    <Suspense fallback={null}>
+      <AIToolsContent sidebar={sidebar} />
+    </Suspense>
+  );
+}
+
+function AIToolsContent({ sidebar }: { sidebar?: ReactNode }) {
   const [selected, setSelected] = useState<any | null>(null);
   const searchParams = useSearchParams();
   const topic = searchParams.get("topic") || "all";

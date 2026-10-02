@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { Scale, Globe, Brain, ArrowRight, Sparkles, TrendingUp } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { SidebarCardsModal } from "@/components/sidebar-cards-modal";
@@ -133,6 +134,14 @@ export function IASidebarContent() {
 }
 
 export function IASidebar() {
+  return (
+    <Suspense fallback={null}>
+      <IASidebarInner />
+    </Suspense>
+  );
+}
+
+function IASidebarInner() {
   return (
     <SidebarCardsModal title="INTELIGÊNCIA ARTIFICIAL" items={["Ética e regulação", "Tendências globais", "IA na prática"]}>
       <IASidebarContent />

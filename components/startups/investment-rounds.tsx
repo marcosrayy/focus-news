@@ -1,11 +1,20 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import { useNews } from "@/hooks/useNews";
 import { NewsCardsGrid } from "@/components/news-cards-grid";
 import type { ReactNode } from "react";
 
 export function InvestmentRounds({ sidebar }: { sidebar?: ReactNode }) {
+  return (
+    <Suspense fallback={null}>
+      <InvestmentRoundsContent sidebar={sidebar} />
+    </Suspense>
+  );
+}
+
+function InvestmentRoundsContent({ sidebar }: { sidebar?: ReactNode }) {
   const searchParams = useSearchParams();
   const topic = searchParams.get("topic") || "all";
 

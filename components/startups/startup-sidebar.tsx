@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { Rocket, TrendingUp, Users, ArrowUpRight, Target, Lightbulb } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { SidebarCardsModal } from "@/components/sidebar-cards-modal";
@@ -146,6 +147,14 @@ export function StartupSidebarContent() {
 }
 
 export function StartupSidebar() {
+  return (
+    <Suspense fallback={null}>
+      <StartupSidebarInner />
+    </Suspense>
+  );
+}
+
+function StartupSidebarInner() {
   return (
     <SidebarCardsModal title="STARTUPS" items={["Maiores startups", "Investidores ativos", "Setores em alta"]}>
       <StartupSidebarContent />

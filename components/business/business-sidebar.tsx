@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { TrendingUp, BarChart3, Award, ArrowUpRight, Users, Briefcase } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { SidebarCardsModal } from "@/components/sidebar-cards-modal";
@@ -144,6 +145,14 @@ export function BusinessSidebarContent() {
 }
 
 export function BusinessSidebar() {
+  return (
+    <Suspense fallback={null}>
+      <BusinessSidebarInner />
+    </Suspense>
+  );
+}
+
+function BusinessSidebarInner() {
   return (
     <SidebarCardsModal title="BUSINESS" items={["Líderes de mercado", "Agenda do CEO", "Eventos"]}>
       <BusinessSidebarContent />

@@ -2,6 +2,7 @@
 
 import { Code2, BookOpen, Tag, ArrowRight, Terminal, Star } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import { SidebarCardsModal } from "@/components/sidebar-cards-modal";
 
 const tags = [
@@ -139,6 +140,14 @@ export function DevSidebarContent() {
 }
 
 export function DevSidebar() {
+  return (
+    <Suspense fallback={null}>
+      <DevSidebarInner />
+    </Suspense>
+  );
+}
+
+function DevSidebarInner() {
   return (
     <SidebarCardsModal title="DESENVOLVIMENTO" items={["Código da semana", "Tags populares", "Tutoriais"]}>
       <DevSidebarContent />

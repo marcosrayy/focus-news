@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { Mic, Sparkles, Lightbulb, ArrowRight, Globe } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { SidebarCardsModal } from "@/components/sidebar-cards-modal";
@@ -131,6 +132,14 @@ export function InovacaoSidebarContent() {
 }
 
 export function InovacaoSidebar() {
+  return (
+    <Suspense fallback={null}>
+      <InovacaoSidebarInner />
+    </Suspense>
+  );
+}
+
+function InovacaoSidebarInner() {
   return (
     <SidebarCardsModal title="INOVAÇÃO" items={["Entrevistas", "Modelos inovadores", "Futuro em construção"]}>
       <InovacaoSidebarContent />

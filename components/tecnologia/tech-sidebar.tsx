@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { Cpu, Brain, Cloud, Shield, Blocks, Zap, ArrowRight } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { SidebarCardsModal } from "@/components/sidebar-cards-modal";
@@ -139,6 +140,14 @@ export function TechSidebarContent() {
 }
 
 export function TechSidebar() {
+  return (
+    <Suspense fallback={null}>
+      <TechSidebarInner />
+    </Suspense>
+  );
+}
+
+function TechSidebarInner() {
   return (
     <SidebarCardsModal title="TECNOLOGIA" items={["Categorias", "Comparativos", "Análises profundas"]}>
       <TechSidebarContent />

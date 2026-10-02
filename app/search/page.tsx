@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Suspense, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import useSWRInfinite from "swr/infinite";
 import { Search, ArrowLeft, ChevronDown, SlidersHorizontal } from "lucide-react";
@@ -70,6 +70,14 @@ function getQueryScore(article: any, query: string) {
 }
 
 export default function SearchPage() {
+  return (
+    <Suspense fallback={null}>
+      <SearchPageContent />
+    </Suspense>
+  );
+}
+
+function SearchPageContent() {
   const params = useSearchParams();
   const query = params.get("q") || "";
   const normalizedQuery = query.trim();

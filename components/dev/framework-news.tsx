@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useNews } from "@/hooks/useNews";
 import { Clock, MessageSquare, ArrowUpRight } from "lucide-react";
@@ -33,6 +33,14 @@ const articles: DevArticle[] = [
 ];
 
 export function FrameworkNews({ sidebar }: { sidebar?: ReactNode }) {
+  return (
+    <Suspense fallback={null}>
+      <FrameworkNewsContent sidebar={sidebar} />
+    </Suspense>
+  );
+}
+
+function FrameworkNewsContent({ sidebar }: { sidebar?: ReactNode }) {
   const [selected, setSelected] = useState<any | null>(null);
   const searchParams = useSearchParams();
   const topic = searchParams.get("topic") || "all";
