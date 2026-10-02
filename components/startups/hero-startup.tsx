@@ -1,6 +1,6 @@
 "use client";
 
-import { Bookmark, Rocket } from "lucide-react";
+import { Rocket } from "lucide-react";
 import { useNews } from "@/hooks/useNews";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -48,19 +48,8 @@ export function HeroStartup() {
             <Rocket className="h-3.5 w-3.5" />
             {article.category || "DESTAQUE"}
           </span>
-          <button 
-            onClick={(e) => e.stopPropagation()}
-            className="hidden items-center gap-1.5 rounded-lg border border-foreground/30 bg-background/30 px-3 py-1.5 text-xs font-medium text-foreground backdrop-blur-sm transition-all duration-300 hover:border-blue-500 hover:text-blue-500 sm:flex"
-          >
-            <Bookmark className="h-3.5 w-3.5" />
-            ARQUIVAR
-          </button>
         </div>
-
         <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6">
-          <span className="mb-2 hidden text-xs font-bold tracking-[0.2em] text-blue-500 uppercase sm:inline-block">
-            {article.source}
-          </span>
           <h2 className="line-clamp-3 font-heading text-lg font-bold leading-tight text-foreground sm:line-clamp-none sm:text-2xl lg:text-4xl xl:text-5xl">
             <span className="text-balance">
               {article.title}

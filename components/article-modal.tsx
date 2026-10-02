@@ -1,6 +1,6 @@
 "use client";
 
-import { Clock, MessageSquare, Share2, Bookmark, User, TrendingUp, Eye } from "lucide-react";
+import { Clock, MessageSquare, Share2, User, TrendingUp, Eye } from "lucide-react";
 import Image from "next/image";
 import {
   Dialog,
@@ -182,10 +182,6 @@ export function ArticleModal({ article, open, onOpenChange }: ArticleModalProps)
               <button className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-xs font-bold text-primary-foreground transition-colors hover:bg-primary/90">
                 <Share2 className="h-3.5 w-3.5" />
                 Compartilhar
-              </button>
-              <button className="flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-xs font-medium text-muted-foreground transition-colors hover:border-primary hover:text-primary">
-                <Bookmark className="h-3.5 w-3.5" />
-                Salvar
               </button>
             </div>
             <p className="text-[11px] text-muted-foreground">

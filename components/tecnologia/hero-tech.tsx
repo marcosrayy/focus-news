@@ -1,6 +1,6 @@
 "use client";
 
-import { Bookmark, Cpu } from "lucide-react";
+import { Cpu } from "lucide-react";
 import { useNews } from "@/hooks/useNews";
 import { Skeleton } from "@/components/ui/skeleton";
 import { getDistinctCover } from "@/lib/utils";
@@ -63,20 +63,8 @@ export function HeroTech({
             <Cpu className="h-3.5 w-3.5" />
             {article.category || "LANCAMENTO"}
           </span>
-          <button
-            onClick={(e) => e.stopPropagation()}
-            className="hidden items-center gap-1.5 rounded-full border border-foreground/30 bg-background/30 px-3 py-1.5 text-xs font-medium text-foreground backdrop-blur-md transition-all duration-300 hover:border-sky-400 hover:text-sky-400 sm:flex"
-          >
-            <Bookmark className="h-3.5 w-3.5" />
-            ARQUIVAR
-          </button>
         </div>
-
         <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-7">
-          <span className="mb-2 hidden items-center gap-2 text-xs font-bold tracking-[0.2em] text-sky-400 uppercase sm:inline-flex">
-            <span className="h-px w-5 bg-sky-400" />
-            {article.source}
-          </span>
           <h2 className="line-clamp-3 font-heading text-lg font-bold leading-tight tracking-tight text-foreground sm:line-clamp-none sm:text-2xl sm:leading-[1.1] lg:text-4xl xl:text-5xl">
             <span className="text-balance">
               {article.title}

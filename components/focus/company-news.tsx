@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Clock, MessageSquare, Bookmark, Handshake, Rocket, Users, Code, TrendingUp } from "lucide-react";
+import { Clock, MessageSquare, Handshake, Rocket, Users, Code, TrendingUp } from "lucide-react";
 import { ArticleModal, type ArticleModalData } from "@/components/article-modal";
 import { getDistinctCover } from "@/lib/utils";
 
@@ -140,13 +140,6 @@ export function CompanyNews() {
                     <MessageSquare className="h-3 w-3" />
                     <span className="text-[11px]">{item.comments}</span>
                   </div>
-                  <button
-                    className="ml-auto text-muted-foreground transition-colors hover:text-primary"
-                    onClick={(e) => e.stopPropagation()}
-                    aria-label="Salvar"
-                  >
-                    <Bookmark className="h-3.5 w-3.5" />
-                  </button>
                 </div>
               </div>
             </article>

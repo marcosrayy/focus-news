@@ -1,6 +1,6 @@
 "use client";
 
-import { Terminal, Bookmark } from "lucide-react";
+import { Terminal } from "lucide-react";
 import { useNews } from "@/hooks/useNews";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -46,18 +46,6 @@ export function HeroDev() {
               <Terminal className="h-3.5 w-3.5" />
               {article.category || "ARTIGO EM DESTAQUE"}
             </span>
-            <button 
-              onClick={(e) => e.stopPropagation()}
-              className="hidden items-center gap-1.5 rounded-lg border border-foreground/30 bg-background/30 px-3 py-1.5 text-xs font-medium text-foreground backdrop-blur-sm transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400 sm:flex"
-            >
-              <Bookmark className="h-3.5 w-3.5" />
-              ARQUIVAR
-            </button>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="h-3 w-3 rounded-full bg-red-500/60" />
-            <span className="h-3 w-3 rounded-full bg-amber-500/60" />
-            <span className="h-3 w-3 rounded-full bg-emerald-500/60" />
           </div>
         </div>
 

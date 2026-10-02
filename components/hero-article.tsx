@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Bookmark } from "lucide-react";
 import { NewsArticle } from "@/types/news";
 import { Skeleton } from "@/components/ui/skeleton";
 import { getDistinctCover } from "@/lib/utils";
@@ -51,13 +50,6 @@ export function HeroArticle({ article, isLoading }: { article?: NewsArticle, isL
           <span className="rounded-full bg-primary px-4 py-1.5 text-xs font-bold tracking-wider text-primary-foreground uppercase shadow-glow-sm">
             {displayArticle.category || "DESTAQUE TECH"}
           </span>
-          <button 
-            onClick={(e) => e.stopPropagation()}
-            className="hidden items-center gap-1.5 rounded-full border border-foreground/30 bg-background/30 px-3 py-1.5 text-xs font-medium text-foreground backdrop-blur-md transition-all duration-300 hover:border-primary hover:text-primary sm:flex"
-          >
-            <Bookmark className="h-3.5 w-3.5" />
-            ARQUIVAR
-          </button>
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-7">
