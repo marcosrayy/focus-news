@@ -24,22 +24,16 @@ const heroSlides = [
 
 export function HeroFocus() {
   const [current, setCurrent] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
   const mobileTrackRef = useRef<HTMLDivElement>(null);
 
-  const goTo = useCallback(
-    (index: number) => {
-      if (isTransitioning) return;
-      setIsTransitioning(true);
-      setCurrent(index);
-      const track = mobileTrackRef.current;
-      if (track?.clientWidth) {
-        track.scrollTo({ left: index * track.clientWidth, behavior: "smooth" });
-      }
-      setTimeout(() => setIsTransitioning(false), 700);
-    },
-    [isTransitioning],
-  );
+  const goTo = useCallback((index: number) => {
+    const nextIndex = (index + heroSlides.length) % heroSlides.length;
+    setCurrent(nextIndex);
+    const track = mobileTrackRef.current;
+    if (track?.clientWidth) {
+      track.scrollTo({ left: nextIndex * track.clientWidth, behavior: "smooth" });
+    }
+  }, []);
 
   const next = useCallback(() => {
     goTo((current + 1) % heroSlides.length);
@@ -74,7 +68,7 @@ export function HeroFocus() {
           ))}
         </div>
 
-        <div className="absolute inset-0 hidden sm:block">
+        <div className="pointer-events-none absolute inset-0 hidden sm:block">
           {heroSlides.map((slide, index) => (
             <img
               key={slide.image}
@@ -109,7 +103,7 @@ export function HeroFocus() {
         <button
           onClick={prev}
           aria-label="Noticia anterior"
-          className="group/nav absolute left-2 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-foreground transition-all duration-300 sm:flex sm:opacity-0 sm:group-hover:opacity-100 lg:left-4"
+          className="group/nav absolute left-2 top-1/2 z-30 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-foreground transition-all duration-300 sm:flex sm:opacity-0 sm:group-hover:opacity-100 lg:left-4"
         >
           <span className="flex h-7 w-7 items-center justify-center rounded-full border border-border/40 bg-background/70 backdrop-blur-sm transition-colors group-hover/nav:bg-primary group-hover/nav:text-primary-foreground">
             <ChevronLeft className="h-3.5 w-3.5" />
@@ -118,7 +112,7 @@ export function HeroFocus() {
         <button
           onClick={next}
           aria-label="Proxima noticia"
-          className="group/nav absolute right-2 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-foreground transition-all duration-300 sm:flex sm:opacity-0 sm:group-hover:opacity-100 lg:right-4"
+          className="group/nav absolute right-2 top-1/2 z-30 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-foreground transition-all duration-300 sm:flex sm:opacity-0 sm:group-hover:opacity-100 lg:right-4"
         >
           <span className="flex h-7 w-7 items-center justify-center rounded-full border border-border/40 bg-background/70 backdrop-blur-sm transition-colors group-hover/nav:bg-primary group-hover/nav:text-primary-foreground">
             <ChevronRight className="h-3.5 w-3.5" />
