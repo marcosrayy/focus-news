@@ -20,17 +20,15 @@ interface BusinessArticle {
   time: string;
   comments: number;
   author: string;
-  metric: string;
-  metricLabel: string;
 }
 
 const articles: BusinessArticle[] = [
-  { id: 1, category: "CRESCIMENTO", categoryColor: "bg-amber-600", title: "Product-Led Growth: como empresas SaaS brasileiras estao crescendo 3x mais rapido", description: "Estudo revela que startups com estrategia PLG tem CAC 60% menor e retencao 40% maior.", image: getDistinctCover("business-growth-1"), time: "30 min", comments: 234, author: "Marina Santos", metric: "+300%", metricLabel: "ARR medio" },
-  { id: 2, category: "LIDERANCA", categoryColor: "bg-violet-600", title: "O novo perfil do C-Level: por que 67% dos CEOs tech tem background em engenharia", description: "Pesquisa com 500 empresas mostra mudanca no perfil de lideranca executiva no setor de tecnologia.", image: getDistinctCover("business-growth-2"), time: "1h", comments: 187, author: "Ricardo Alves", metric: "67%", metricLabel: "CEOs tech" },
-  { id: 3, category: "CASES", categoryColor: "bg-emerald-600", title: "iFood atinge breakeven e reveals estrategia de diversificacao com entregas de saude", description: "Empresa brasileira lucra pela primeira vez e anuncia expansao para entregas de medicamentos e exames.", image: getDistinctCover("business-growth-3"), time: "2h", comments: 345, author: "Julia Ferreira", metric: "R$ 45B", metricLabel: "GMV anual" },
-  { id: 4, category: "MERCADO", categoryColor: "bg-sky-600", title: "IPOs tech voltam ao radar: 12 empresas brasileiras preparam abertura de capital", description: "Janela de oportunidade se abre com queda da Selic e valorizacao de ativos de tecnologia.", image: getDistinctCover("business-growth-4"), time: "3h", comments: 198, author: "Paulo Mendes", metric: "12", metricLabel: "IPOs previstos" },
-  { id: 5, category: "CULTURA", categoryColor: "bg-amber-600", title: "Trabalho remoto vs hibrido: pesquisa revela modelo ideal para produtividade em tech", description: "Dados de 10 mil funcionarios mostram que modelo hibrido 3-2 gera melhor resultado.", image: getDistinctCover("business-growth-5"), time: "4h", comments: 567, author: "Camila Dias", metric: "+23%", metricLabel: "Produtividade" },
-  { id: 6, category: "EXPANSAO", categoryColor: "bg-emerald-600", title: "VTEX conquista mercado europeu e se torna lider em comercio composable na regiao", description: "Empresa brasileira de e-commerce enterprise fecha contratos com 5 grandes varejistas europeus.", image: getDistinctCover("business-growth-6"), time: "5h", comments: 143, author: "Andre Costa", metric: "5", metricLabel: "Novos mercados" },
+  { id: 1, category: "CRESCIMENTO", categoryColor: "bg-amber-600", title: "Product-Led Growth: como empresas SaaS brasileiras estao crescendo 3x mais rapido", description: "Estudo revela que startups com estrategia PLG tem CAC 60% menor e retencao 40% maior.", image: getDistinctCover("business-growth-1"), time: "30 min", comments: 234, author: "Marina Santos" },
+  { id: 2, category: "LIDERANCA", categoryColor: "bg-violet-600", title: "O novo perfil do C-Level: por que 67% dos CEOs tech tem background em engenharia", description: "Pesquisa com 500 empresas mostra mudanca no perfil de lideranca executiva no setor de tecnologia.", image: getDistinctCover("business-growth-2"), time: "1h", comments: 187, author: "Ricardo Alves" },
+  { id: 3, category: "CASES", categoryColor: "bg-emerald-600", title: "iFood atinge breakeven e reveals estrategia de diversificacao com entregas de saude", description: "Empresa brasileira lucra pela primeira vez e anuncia expansao para entregas de medicamentos e exames.", image: getDistinctCover("business-growth-3"), time: "2h", comments: 345, author: "Julia Ferreira" },
+  { id: 4, category: "MERCADO", categoryColor: "bg-sky-600", title: "IPOs tech voltam ao radar: 12 empresas brasileiras preparam abertura de capital", description: "Janela de oportunidade se abre com queda da Selic e valorizacao de ativos de tecnologia.", image: getDistinctCover("business-growth-4"), time: "3h", comments: 198, author: "Paulo Mendes" },
+  { id: 5, category: "CULTURA", categoryColor: "bg-amber-600", title: "Trabalho remoto vs hibrido: pesquisa revela modelo ideal para produtividade em tech", description: "Dados de 10 mil funcionarios mostram que modelo hibrido 3-2 gera melhor resultado.", image: getDistinctCover("business-growth-5"), time: "4h", comments: 567, author: "Camila Dias" },
+  { id: 6, category: "EXPANSAO", categoryColor: "bg-emerald-600", title: "VTEX conquista mercado europeu e se torna lider em comercio composable na regiao", description: "Empresa brasileira de e-commerce enterprise fecha contratos com 5 grandes varejistas europeus.", image: getDistinctCover("business-growth-6"), time: "5h", comments: 143, author: "Andre Costa" },
 ];
 
 export function GrowthStrategies({ sidebar }: { sidebar?: ReactNode }) {
@@ -106,10 +104,6 @@ function FeaturedBusinessCard({ article, onClick }: { article: BusinessArticle; 
         <div className="absolute left-3 top-3">
           <span className={`${article.categoryColor} rounded-md px-2.5 py-1 text-[10px] font-bold tracking-wider text-white`}>{article.category}</span>
         </div>
-        <div className="absolute bottom-3 right-3 rounded-lg border border-amber-500/30 bg-background/80 px-3 py-1.5 backdrop-blur-sm">
-          <p className="font-heading text-sm font-bold text-amber-400">{article.metric}</p>
-          <p className="text-[9px] text-muted-foreground">{article.metricLabel}</p>
-        </div>
       </div>
       <div className="p-4">
         <h3 className="font-heading text-sm font-bold leading-snug text-foreground transition-colors duration-300 group-hover:text-amber-400 lg:text-base">
@@ -152,7 +146,6 @@ function CompactBusinessCard({ article, onClick }: { article: BusinessArticle; o
             <Clock className="h-2.5 w-2.5" />
             <span className="text-[10px]">{article.time}</span>
           </div>
-          <span className="text-[10px] font-semibold text-amber-400">{article.metric}</span>
         </div>
       </div>
     </article>
