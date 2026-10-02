@@ -1,6 +1,6 @@
 "use client";
 
-import { Clock, MessageSquare, Bookmark, Brain, Cloud, Shield, Blocks } from "lucide-react";
+import { Clock, MessageSquare, Brain, Cloud, Shield, Blocks } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useNews } from "@/hooks/useNews";
 import { formatRelativeTime } from "@/lib/news-service";
@@ -99,9 +99,6 @@ function FeaturedTechCard({ article, onClick }: { article: any; onClick: () => v
             {article.category || "TECH"}
           </span>
         </div>
-        <button onClick={(e) => e.stopPropagation()} className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-lg border border-foreground/20 bg-background/40 text-foreground/60 backdrop-blur-sm transition-all duration-300 hover:border-sky-400 hover:text-sky-400">
-          <Bookmark className="h-3.5 w-3.5" />
-        </button>
       </div>
       <div className="p-4">
         <h3 className="font-heading text-sm font-bold leading-snug text-foreground transition-colors duration-300 group-hover:text-sky-400 lg:text-base">

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useNews } from "@/hooks/useNews";
-import { Clock, MessageSquare, Bookmark, Brain, Bot, Wand2, Eye, Mic, FileCode } from "lucide-react";
+import { Clock, MessageSquare, Brain, Bot, Wand2, Eye, Mic, FileCode } from "lucide-react";
 import { ArticleModal, type ArticleModalData } from "@/components/article-modal";
 import { useNewsRotation } from "@/hooks/use-news-rotation";
 import { FeaturedNewsCarousel, NewsSectionLayout } from "@/components/news-section-layout";
@@ -106,9 +106,6 @@ function FeaturedAICard({ article, onClick }: { article: AIArticle; onClick: () 
             {article.category}
           </span>
         </div>
-        <button onClick={(e) => e.stopPropagation()} className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-lg border border-foreground/20 bg-background/40 text-foreground/60 backdrop-blur-sm transition-all duration-300 hover:border-violet-400 hover:text-violet-400">
-          <Bookmark className="h-3.5 w-3.5" />
-        </button>
       </div>
       <div className="p-4">
         <h3 className="font-heading text-sm font-bold leading-snug text-foreground transition-colors duration-300 group-hover:text-violet-400 lg:text-base">

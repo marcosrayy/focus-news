@@ -1,6 +1,6 @@
 "use client";
 
-import { Bookmark, Clock, MessageSquare } from "lucide-react";
+import { Clock, MessageSquare } from "lucide-react";
 import { NewsArticle } from "@/types/news";
 import { formatRelativeTime } from "@/lib/news-service"; // Reusing existing helper or I can inline it
 import { useNewsRotation } from "@/hooks/use-news-rotation";
@@ -114,12 +114,6 @@ function FeaturedCard({ article, onClick }: { article: NewsArticle; onClick: () 
             {article.category}
           </span>
         </div>
-        <button
-          onClick={(e) => e.stopPropagation()}
-          className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full border border-foreground/20 bg-background/40 text-foreground/60 backdrop-blur-md transition-all duration-300 hover:border-primary hover:text-primary"
-        >
-          <Bookmark className="h-3.5 w-3.5" />
-        </button>
       </div>
       <div className="flex flex-1 flex-col p-4">
         <h3 className="line-clamp-3 min-h-[3.6em] font-heading text-sm font-bold leading-snug tracking-tight text-foreground transition-colors duration-300 group-hover:text-primary lg:text-base">

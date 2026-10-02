@@ -1,6 +1,6 @@
 "use client";
 
-import { Bookmark, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { useNews } from "@/hooks/useNews";
 
 export function HeroInovacao() {
@@ -47,13 +47,6 @@ export function HeroInovacao() {
             <Sparkles className="h-3.5 w-3.5" />
             {article.category || "INSPIRACAO"}
           </span>
-          <button 
-            onClick={(e) => e.stopPropagation()}
-            className="hidden items-center gap-1.5 rounded-lg border border-foreground/30 bg-background/30 px-3 py-1.5 text-xs font-medium text-foreground backdrop-blur-sm transition-all duration-300 hover:border-cyan-400 hover:text-cyan-400 sm:flex"
-          >
-            <Bookmark className="h-3.5 w-3.5" />
-            ARQUIVAR
-          </button>
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6">
