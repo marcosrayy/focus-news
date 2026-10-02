@@ -24,18 +24,16 @@ const heroSlides = [
 
 export function HeroFocus() {
   const [current, setCurrent] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const gestureStart = useRef<{ x: number; y: number } | null>(null);
+  const mobileTrackRef = useRef<HTMLDivElement>(null);
 
-  const goTo = useCallback(
-    (index: number) => {
-      if (isTransitioning) return;
-      setIsTransitioning(true);
-      setCurrent(index);
-      setTimeout(() => setIsTransitioning(false), 700);
-    },
-    [isTransitioning],
-  );
+  const goTo = useCallback((index: number) => {
+    const nextIndex = (index + heroSlides.length) % heroSlides.length;
+    setCurrent(nextIndex);
+    const track = mobileTrackRef.current;
+    if (track?.clientWidth) {
+      track.scrollTo({ left: nextIndex * track.clientWidth, behavior: "smooth" });
+    }
+  }, []);
 
   const next = useCallback(() => {
     goTo((current + 1) % heroSlides.length);
@@ -52,38 +50,36 @@ export function HeroFocus() {
 
   return (
     <section className="group relative overflow-hidden rounded-2xl border border-border/60 shadow-card">
-      <div
-        className="relative aspect-[8/3] w-full touch-pan-y bg-black sm:aspect-[3/1]"
-        onPointerDown={(event) => {
-          if (!event.isPrimary || (event.pointerType === "mouse" && event.button !== 0)) return;
-          gestureStart.current = { x: event.clientX, y: event.clientY };
-          event.currentTarget.setPointerCapture(event.pointerId);
-        }}
-        onPointerUp={(event) => {
-          const start = gestureStart.current;
-          gestureStart.current = null;
-          if (!start) return;
+      <div className="relative aspect-[8/3] w-full bg-black sm:aspect-[3/1]">
+        <div
+          ref={mobileTrackRef}
+          onScroll={(event) => {
+            const track = event.currentTarget;
+            if (!track.clientWidth) return;
+            const index = Math.round(track.scrollLeft / track.clientWidth);
+            setCurrent((previous) => previous === index ? previous : index);
+          }}
+          className="absolute inset-0 z-10 flex snap-x snap-mandatory overflow-x-auto overscroll-x-contain scrollbar-hide sm:hidden"
+        >
+          {heroSlides.map((slide) => (
+            <div key={slide.image} className="relative h-full min-w-full snap-center">
+              <img src={slide.image} alt={slide.title} className="h-full w-full object-cover" />
+            </div>
+          ))}
+        </div>
 
-          const deltaX = event.clientX - start.x;
-          const deltaY = event.clientY - start.y;
-          if (Math.abs(deltaX) >= 40 && Math.abs(deltaX) > Math.abs(deltaY)) {
-            deltaX < 0 ? next() : prev();
-          }
-        }}
-        onPointerCancel={() => {
-          gestureStart.current = null;
-        }}
-      >
-        {heroSlides.map((s, i) => (
-          <img
-            key={i}
-            src={s.image}
-            alt={s.title}
-            className={`absolute inset-0 z-10 h-full w-full transition-all duration-700 ease-in-out ${
-              i === current ? "scale-100 opacity-100" : "scale-105 opacity-0"
-            } object-cover`}
-          />
-        ))}
+        <div className="pointer-events-none absolute inset-0 hidden sm:block">
+          {heroSlides.map((slide, index) => (
+            <img
+              key={slide.image}
+              src={slide.image}
+              alt={slide.title}
+              className={`absolute inset-0 z-10 h-full w-full object-cover transition-all duration-700 ease-in-out ${
+                index === current ? "scale-100 opacity-100" : "scale-105 opacity-0"
+              }`}
+            />
+          ))}
+        </div>
 
         {current === 0 ? (
           <a
@@ -107,7 +103,7 @@ export function HeroFocus() {
         <button
           onClick={prev}
           aria-label="Noticia anterior"
-          className="group/nav absolute left-2 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-foreground transition-all duration-300 sm:flex sm:opacity-0 sm:group-hover:opacity-100 lg:left-4"
+          className="group/nav absolute left-2 top-1/2 z-30 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-foreground transition-all duration-300 sm:flex sm:opacity-0 sm:group-hover:opacity-100 lg:left-4"
         >
           <span className="flex h-7 w-7 items-center justify-center rounded-full border border-border/40 bg-background/70 backdrop-blur-sm transition-colors group-hover/nav:bg-primary group-hover/nav:text-primary-foreground">
             <ChevronLeft className="h-3.5 w-3.5" />
@@ -116,7 +112,7 @@ export function HeroFocus() {
         <button
           onClick={next}
           aria-label="Proxima noticia"
-          className="group/nav absolute right-2 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-foreground transition-all duration-300 sm:flex sm:opacity-0 sm:group-hover:opacity-100 lg:right-4"
+          className="group/nav absolute right-2 top-1/2 z-30 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-foreground transition-all duration-300 sm:flex sm:opacity-0 sm:group-hover:opacity-100 lg:right-4"
         >
           <span className="flex h-7 w-7 items-center justify-center rounded-full border border-border/40 bg-background/70 backdrop-blur-sm transition-colors group-hover/nav:bg-primary group-hover/nav:text-primary-foreground">
             <ChevronRight className="h-3.5 w-3.5" />
