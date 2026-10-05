@@ -1,8 +1,13 @@
 import { Header } from "@/components/header";
 import { Navigation } from "@/components/navigation";
 import { MarketTicker } from "@/components/market-ticker";
+<<<<<<< HEAD
 import { StartupNewsTicker } from "@/components/startups/startup-news-ticker";
 import { HeroStartup } from "@/components/startups/hero-startup";
+=======
+import { NewsTicker } from "@/components/news-ticker";
+import { CategoryNewsCarousel } from "@/components/category-news-carousel";
+>>>>>>> 965fc14ea07eda7b62669272ea301366e2f9a368
 import { InvestmentRounds } from "@/components/startups/investment-rounds";
 import { StartupSidebar } from "@/components/startups/startup-sidebar";
 
@@ -37,7 +42,7 @@ export default function StartupsPage() {
         </div>
 
         {/* Hero */}
-        <HeroStartup />
+        <CategoryNewsCarousel category="startups" />
 
         {/* Main Content + Sidebar */}
         <div className="mt-4">

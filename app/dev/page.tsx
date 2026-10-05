@@ -2,7 +2,7 @@ import { Header } from "@/components/header";
 import { Navigation } from "@/components/navigation";
 import { MarketTicker } from "@/components/market-ticker";
 import { NewsTicker } from "@/components/news-ticker";
-import { HeroDev } from "@/components/dev/hero-dev";
+import { CategoryNewsCarousel } from "@/components/category-news-carousel";
 import { FrameworkNews } from "@/components/dev/framework-news";
 import { DevSidebar } from "@/components/dev/dev-sidebar";
 import type { NewsArticle } from "@/types/news";
@@ -44,7 +44,7 @@ export default function DevPage() {
         </div>
 
         {/* Hero */}
-        <HeroDev />
+        <CategoryNewsCarousel category="dev" />
 
         {/* Main Content + Sidebar */}
         <div className="mt-4">

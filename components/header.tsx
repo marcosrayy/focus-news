@@ -115,10 +115,10 @@ export function Header() {
 
       <div className="absolute left-1/2 -translate-x-1/2">
         <a href="/" className="flex items-center gap-2">
-          <span className="h-2 w-2 shrink-0 rounded-full bg-primary shadow-glow-sm" />
+          <img src="/icon" alt="" className="h-6 w-6 shrink-0" />
           <h1 className="font-heading text-xl font-extrabold tracking-tight lg:text-2xl">
-            <span className="text-primary">FOCUS</span>{" "}
-            <span className="text-foreground">NEWS</span>
+            <span className="text-white">FOCUS</span>{" "}
+            <span className="text-primary">NEWS</span>
           </h1>
         </a>
       </div>

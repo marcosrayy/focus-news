@@ -5,7 +5,7 @@ import { Navigation } from "@/components/navigation";
 import { MarketTicker } from "@/components/market-ticker";
 import { NewsTicker } from "@/components/news-ticker";
 import { SectionHeader } from "@/components/section-header";
-import { HeroTech } from "@/components/tecnologia/hero-tech";
+import { CategoryNewsCarousel } from "@/components/category-news-carousel";
 import { NewsCardsGrid } from "@/components/news-cards-grid";
 import { HomeMarketSidebar } from "@/components/home-market-sidebar";
 import { useNews } from "@/hooks/useNews";
@@ -13,15 +13,14 @@ import { useNews } from "@/hooks/useNews";
 export default function Home() {
   // Fetch news using the useNews hook for different sections
   // Using generic terms as requested
-  const { articles: heroArticles, isLoading: heroLoading } = useNews("Tecnologia OR Empreendedorismo OR IA", "Tecnologia", 1, 0);
+  const { articles: heroArticles } = useNews("Tecnologia OR Empreendedorismo OR IA", "Tecnologia", 4, 0);
   const { 
     articles: gridArticles, 
     lastSyncRelative 
   } = useNews("Empreendedorismo OR Startups OR Tech", "Home", 12, 0);
   const { articles: tickerArticles } = useNews("Tecnologia OR Empreendedorismo OR Inovacao", "Destaques", 10, 0);
-  const gridArticlesWithoutHero = heroArticles[0]
-    ? gridArticles.filter(article => article.id !== heroArticles[0].id)
-    : gridArticles;
+  const heroArticleIds = new Set(heroArticles.map((article) => article.id));
+  const gridArticlesWithoutHero = gridArticles.filter((article) => !heroArticleIds.has(article.id));
 
   return (
     <div className="min-h-screen bg-background">
@@ -33,8 +32,8 @@ export default function Home() {
       <main className="mx-auto max-w-7xl px-2 py-3 sm:px-4 sm:py-4 lg:px-6">
         <SectionHeader />
 
-        <div className="mt-2 aspect-[16/10] w-full sm:aspect-[3/1]">
-          <HeroTech article={heroArticles[0]} isLoading={heroLoading} />
+        <div className="mt-2">
+          <CategoryNewsCarousel category="home" />
         </div>
 
         <div className="mt-4">

@@ -51,7 +51,9 @@ export function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-1 text-xl font-extrabold tracking-tight text-foreground">
               <img src="/icon" alt="" className="h-8 w-8 shrink-0" />
-              FOCUS<sup className="ml-0.5 text-[10px] font-semibold text-muted-foreground">®</sup>
+              <span className="text-white">FOCUS</span>{" "}
+              <span className="text-primary">NEWS</span>
+              <sup className="ml-0.5 text-[10px] font-semibold text-muted-foreground">®</sup>
             </div>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
               Desenvolvemos soluções digitais para automatizar processos, integrar

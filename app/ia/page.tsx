@@ -2,7 +2,7 @@ import { Header } from "@/components/header";
 import { Navigation } from "@/components/navigation";
 import { MarketTicker } from "@/components/market-ticker";
 import { NewsTicker } from "@/components/news-ticker";
-import { HeroIA } from "@/components/ia/hero-ia";
+import { CategoryNewsCarousel } from "@/components/category-news-carousel";
 import { AITools } from "@/components/ia/ai-tools";
 import { IASidebar } from "@/components/ia/ia-sidebar";
 import type { NewsArticle } from "@/types/news";
@@ -44,7 +44,7 @@ export default function IAPage() {
         </div>
 
         {/* Hero */}
-        <HeroIA />
+        <CategoryNewsCarousel category="ia" />
 
         {/* Main Content + Sidebar */}
         <div className="mt-4">
