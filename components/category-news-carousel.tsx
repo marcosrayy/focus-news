@@ -101,7 +101,7 @@ export function CategoryNewsCarousel({ category }: CategoryNewsCarouselProps) {
   }, [current, goTo, slides.length]);
 
   useEffect(() => {
-    const timer = setInterval(next, 6000);
+    const timer = setInterval(next, 15000);
     return () => clearInterval(timer);
   }, [next]);
 
@@ -134,9 +134,6 @@ export function CategoryNewsCarousel({ category }: CategoryNewsCarouselProps) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
         <div className="absolute bottom-5 left-5 right-5 text-white sm:bottom-10 sm:left-10 sm:right-16 lg:bottom-12 lg:left-14">
-          <span className="mb-2 inline-flex rounded-full bg-primary px-3 py-1 text-[10px] font-bold tracking-wider text-primary-foreground sm:text-xs">
-            {article.category || config.label}
-          </span>
           <h2 className="line-clamp-3 font-heading text-lg font-bold leading-tight sm:text-2xl lg:text-4xl">
             {article.title}
           </h2>
@@ -235,7 +232,7 @@ export function CategoryNewsCarousel({ category }: CategoryNewsCarouselProps) {
                 }`}
               />
               {index === current && (
-                <span className="absolute inset-[15px] animate-spin rounded-full border border-transparent border-t-primary/60 [animation-duration:6s]" />
+                <span className="absolute inset-[15px] animate-spin rounded-full border border-transparent border-t-primary/60 [animation-duration:15s]" />
               )}
             </button>
           ))}
