@@ -1,28 +1,12 @@
 {
-  "lastSync": "2026-10-05T18:53:19.419Z",
+  "lastSync": "2026-10-05T19:34:28.993Z",
   "syncHistory": [
     {
-      "timestamp": "2026-10-05T18:53:19.419Z",
-      "durationMs": 15022,
-      "importedCount": 1,
-      "updatedCount": 48,
-      "discardedCount": 840,
-      "modules": [
-        "Startups",
-        "Economia",
-        "IA",
-        "Tecnologia",
-        "Dev",
-        "Inovacao",
-        "Business"
-      ]
-    },
-    {
-      "timestamp": "2026-10-05T18:37:48.984Z",
-      "durationMs": 13237,
-      "importedCount": 74,
+      "timestamp": "2026-10-05T19:34:28.993Z",
+      "durationMs": 24759,
+      "importedCount": 75,
       "updatedCount": 0,
-      "discardedCount": 840,
+      "discardedCount": 839,
       "modules": [
         "Startups",
         "Economia",
@@ -37,83 +21,83 @@
   "sourcesHealth": {
     "Startupi": {
       "status": "Online",
-      "lastResponseMs": 870,
-      "lastChecked": "2026-10-05T18:53:18.710Z"
+      "lastResponseMs": 471,
+      "lastChecked": "2026-10-05T19:34:27.870Z"
     },
     "InfoMoney": {
       "status": "Online",
-      "lastResponseMs": 281,
-      "lastChecked": "2026-10-05T18:53:18.991Z"
+      "lastResponseMs": 405,
+      "lastChecked": "2026-10-05T19:34:28.275Z"
     },
     "Valor": {
       "status": "Online",
-      "lastResponseMs": 452,
-      "lastChecked": "2026-10-05T18:53:08.786Z"
+      "lastResponseMs": 337,
+      "lastChecked": "2026-10-05T19:34:08.255Z"
     },
     "Canaltech": {
       "status": "Online",
-      "lastResponseMs": 93,
-      "lastChecked": "2026-10-05T18:53:16.192Z"
+      "lastResponseMs": 373,
+      "lastChecked": "2026-10-05T19:34:21.135Z"
     },
     "TechMundo": {
       "status": "Online",
-      "lastResponseMs": 790,
-      "lastChecked": "2026-10-05T18:53:16.081Z"
+      "lastResponseMs": 482,
+      "lastChecked": "2026-10-05T19:34:20.762Z"
     },
     "Diolinux": {
       "status": "Online",
-      "lastResponseMs": 181,
-      "lastChecked": "2026-10-05T18:53:15.072Z"
+      "lastResponseMs": 589,
+      "lastChecked": "2026-10-05T19:34:20.077Z"
     },
     "Gizmodo": {
       "status": "Online",
       "lastResponseMs": 190,
-      "lastChecked": "2026-10-05T18:37:35.745Z"
+      "lastChecked": "2026-10-05T19:34:04.232Z"
     },
     "GNews": {
       "status": "Instável",
-      "lastResponseMs": 356,
-      "lastChecked": "2026-10-05T18:53:04.754Z"
+      "lastResponseMs": 521,
+      "lastChecked": "2026-10-05T19:34:04.813Z"
     },
     "Exame": {
       "status": "Online",
-      "lastResponseMs": 1199,
-      "lastChecked": "2026-10-05T18:53:06.309Z"
+      "lastResponseMs": 1645,
+      "lastChecked": "2026-10-05T19:34:06.705Z"
     },
     "Startups.com.br": {
       "status": "Online",
-      "lastResponseMs": 369,
-      "lastChecked": "2026-10-05T18:53:07.186Z"
+      "lastResponseMs": 68,
+      "lastChecked": "2026-10-05T19:34:06.974Z"
     },
     "Forbes": {
       "status": "Online",
-      "lastResponseMs": 424,
-      "lastChecked": "2026-10-05T18:53:19.415Z"
+      "lastResponseMs": 711,
+      "lastChecked": "2026-10-05T19:34:28.986Z"
     },
     "Globo": {
       "status": "Online",
-      "lastResponseMs": 799,
-      "lastChecked": "2026-10-05T18:53:17.602Z"
+      "lastResponseMs": 1796,
+      "lastChecked": "2026-10-05T19:34:27.129Z"
     },
     "CNN": {
       "status": "Online",
-      "lastResponseMs": 643,
-      "lastChecked": "2026-10-05T18:53:14.881Z"
+      "lastResponseMs": 1013,
+      "lastChecked": "2026-10-05T19:34:19.479Z"
     },
     "Tecnoblog": {
       "status": "Online",
-      "lastResponseMs": 189,
-      "lastChecked": "2026-10-05T18:53:15.291Z"
+      "lastResponseMs": 173,
+      "lastChecked": "2026-10-05T19:34:20.280Z"
     },
     "TabNews": {
       "status": "Online",
-      "lastResponseMs": 524,
-      "lastChecked": "2026-10-05T18:53:16.788Z"
+      "lastResponseMs": 858,
+      "lastChecked": "2026-10-05T19:34:25.322Z"
     }
   },
   "stats": {
     "imported": 75,
-    "updated": 48,
-    "discarded": 1680
+    "updated": 0,
+    "discarded": 839
   }
 }
