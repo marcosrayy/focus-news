@@ -6,6 +6,7 @@ import { NEWS_API_KEY } from '../config/newsConfig';
 const FALLBACK_FEEDS: Record<string, string[]> = {
   Startups: [
     'https://startupi.com.br/feed/',
+    'https://startups.com.br/feed/',
     'https://forbes.com.br/category/colunas/forbes-tech/feed/'
   ],
   Economia: [
@@ -53,6 +54,7 @@ const CATEGORIES = ['Startups', 'Economia', 'IA', 'Tecnologia', 'Dev', 'Inovacao
 function getFeedSourceName(feedUrl: string): string {
   const url = feedUrl.toLowerCase();
   if (url.includes('startupi')) return 'Startupi';
+  if (url.includes('startups.com.br')) return 'Startups.com.br';
   if (url.includes('infomoney')) return 'InfoMoney';
   if (url.includes('valor.globo')) return 'Valor';
   if (url.includes('canaltech')) return 'Canaltech';

@@ -552,6 +552,9 @@ export function isEnglishDevSource(source: string): boolean {
 
 export function isCategorySpecificRssFeed(feedUrl: string, category: string): boolean {
   const normalizedUrl = normalizeText(feedUrl).toLowerCase();
+  if (category === "Startups") {
+    return normalizedUrl.includes("startups.com.br/feed");
+  }
   if (category === "IA") {
     return normalizedUrl.includes("/noticias-sobre/inteligencia-artificial/feed") ||
       normalizedUrl.includes("/tudo-sobre/inteligencia-artificial/feed");
@@ -873,7 +876,7 @@ export async function fetchNewsBackend({
       const responses = await Promise.all(Array.from({ length: pageCount }, (_, pageIndex) => {
         const pageParams = new URLSearchParams(params);
         if (isHistoricalSearch) pageParams.set("page", String(pageIndex + 1));
-        return fetch(`https://gnews.io/api/v4/search?${pageParams.toString()}`, { cache: "force-cache" });
+        return fetch(`https://gnews.io/api/v4/search?${pageParams.toString()}`, { cache: "no-store" });
       }));
 
       for (const res of responses) {

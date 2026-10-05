@@ -1,11 +1,10 @@
 import { Header } from "@/components/header";
 import { Navigation } from "@/components/navigation";
 import { MarketTicker } from "@/components/market-ticker";
-import { NewsTicker } from "@/components/news-ticker";
+import { StartupNewsTicker } from "@/components/startups/startup-news-ticker";
 import { HeroStartup } from "@/components/startups/hero-startup";
 import { InvestmentRounds } from "@/components/startups/investment-rounds";
 import { StartupSidebar } from "@/components/startups/startup-sidebar";
-import type { NewsArticle } from "@/types/news";
 
 import type { Metadata } from "next";
 
@@ -16,18 +15,12 @@ export const metadata: Metadata = {
 };
 
 export default function StartupsPage() {
-  const tickerNews: NewsArticle[] = [
-    { id: "startup-1", title: "Rodadas de investimento seguem aquecidas para IA e fintech.", description: "", content: "", image: "/news-focus.jpg", source: "Focus News", author: "Focus", publishedAt: new Date().toISOString(), url: "#", category: "Startups" },
-    { id: "startup-2", title: "Aceleradoras priorizam startups com métricas de crescimento mensais.", description: "", content: "", image: "/news-focus.jpg", source: "Focus News", author: "Focus", publishedAt: new Date().toISOString(), url: "#", category: "Startups" },
-    { id: "startup-3", title: "Unicórnios brasileiros expandem operação para novos mercados.", description: "", content: "", image: "/news-focus.jpg", source: "Focus News", author: "Focus", publishedAt: new Date().toISOString(), url: "#", category: "Startups" },
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <Navigation />
       <MarketTicker />
-      <NewsTicker news={tickerNews} />
+      <StartupNewsTicker />
 
       <main className="mx-auto max-w-7xl px-3 py-3 sm:px-4 sm:py-4 lg:px-6">
         {/* Page Title */}
