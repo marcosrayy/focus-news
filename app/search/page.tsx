@@ -112,9 +112,7 @@ function SearchPageContent() {
   const isError = !!error;
   const lastSyncRelative = data?.[0]?.lastSyncRelative;
   const lastPage = data?.[data.length - 1];
-  const hasMore = size === 1
-    ? articles.length > 0
-    : !!lastPage && lastPage.articles.length > 0;
+  const hasMore = !!lastPage && lastPage.articles.length === SEARCH_PAGE_SIZE;
 
   const visibleArticles = useMemo(() => {
     const list = [...articles];

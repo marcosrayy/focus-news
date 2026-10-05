@@ -955,8 +955,7 @@ export async function fetchNewsBackend({
   // Se não obteve artigos suficientes do GNews, recorre ao Fallback RSS
   const minimumSourceCount = Math.min(3, max + offset);
   const gnewsSourceCount = new Set(approvedArticles.map(article => article.source.trim().toLowerCase())).size;
-  const shouldUseRssFallback = !(retentionWindowDays && retentionWindowDays > 3);
-  if (shouldUseRssFallback && (approvedArticles.length < max + offset || gnewsSourceCount < minimumSourceCount)) {
+  if (approvedArticles.length < max + offset || gnewsSourceCount < minimumSourceCount) {
     try {
       console.warn(`[FocusNews] GNews returned insufficient results. Using RSS Fallback for ${targetCategory}...`);
       
