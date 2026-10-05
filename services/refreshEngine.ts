@@ -1,5 +1,5 @@
 import { Storage, StorageArticle, EngineStatus } from '../utils/storage';
-import { classifyArticle, deduplicateArticles, fetchRssFeed, hasCategoryEvidence, isCategorySpecificRssFeed, isEnglishDevSource, isSourceAllowed, MODULE_SOURCES, repairMojibake } from './newsService';
+import { classifyArticle, deduplicateArticles, fetchRssFeed, hasCategoryEvidence, isArticleRejectedByPolicy, isCategorySpecificRssFeed, isEnglishDevSource, isSourceAllowed, MODULE_SOURCES, repairMojibake } from './newsService';
 import { NEWS_API_KEY } from '../config/newsConfig';
 
 // Categories mapping to RSS feeds
@@ -17,6 +17,9 @@ const FALLBACK_FEEDS: Record<string, string[]> = {
   ],
   IA: [
     'https://canaltech.com.br/rss/',
+    'https://tecnoblog.net/feed/',
+    'https://olhardigital.com.br/feed/',
+    'https://www.showmetech.com.br/feed/',
     'https://startupi.com.br/feed/',
     'https://rss.tecmundo.com.br/feed',
     'https://www.cnnbrasil.com.br/tudo-sobre/inteligencia-artificial/feed/',
@@ -58,6 +61,8 @@ function getFeedSourceName(feedUrl: string): string {
   if (url.includes('infomoney')) return 'InfoMoney';
   if (url.includes('valor.globo')) return 'Valor';
   if (url.includes('canaltech')) return 'Canaltech';
+  if (url.includes('olhardigital')) return 'Olhar Digital';
+  if (url.includes('showmetech')) return 'Showmetech';
   if (url.includes('tecnoblog')) return 'Tecnoblog';
   if (url.includes('diolinux')) return 'Diolinux';
   if (url.includes('gizmodo')) return 'Gizmodo';
@@ -454,7 +459,8 @@ export const RefreshEngine = {
 
           for (const item of items) {
             const articleUrl = item.link;
-            if (processedUrls.has(articleUrl)) continue;
+            const isSpecificCategoryFeed = isCategorySpecificRssFeed(feedUrl, category, articleUrl);
+            if (processedUrls.has(articleUrl) && !isSpecificCategoryFeed) continue;
             processedUrls.add(articleUrl);
 
             // Fetch image URL if present
@@ -489,12 +495,12 @@ export const RefreshEngine = {
             if (category === "Inovacao") {
               articleCategory = "Inovacao";
             }
-            if (isCategorySpecificRssFeed(feedUrl, category)) {
+            if (isSpecificCategoryFeed) {
               articleCategory = category;
             }
 
             // Verify category compatibility (only reject if classified as Rejeitado)
-            if (articleCategory === "Rejeitado" || !hasCategoryEvidence(title, cleanDesc, articleCategory)) {
+            if (isArticleRejectedByPolicy(title, cleanDesc, articleUrl) || articleCategory === "Rejeitado" || !hasCategoryEvidence(title, cleanDesc, articleCategory, articleUrl)) {
               discardedThisRun++;
               continue;
             }
@@ -518,9 +524,9 @@ export const RefreshEngine = {
               publishedAt,
               source: sourceName,
               category: articleCategory,
-              score: classification.score,
+              score: isSpecificCategoryFeed && classification.category === "Rejeitado" ? 80 : classification.score,
               importedAt: new Date().toISOString(),
-              importanceScore: classification.score + (title.toLowerCase().includes('urgente') ? 30 : 0),
+              importanceScore: (isSpecificCategoryFeed && classification.category === "Rejeitado" ? 80 : classification.score) + (title.toLowerCase().includes('urgente') ? 30 : 0),
               expiresAt: expDate
             };
 
@@ -532,6 +538,12 @@ export const RefreshEngine = {
                 title: articleEntry.title,
                 description: articleEntry.description,
                 image: articleEntry.image,
+                ...(isSpecificCategoryFeed ? {
+                  source: articleEntry.source,
+                  category: articleEntry.category,
+                  publishedAt: articleEntry.publishedAt,
+                  expiresAt: articleEntry.expiresAt,
+                } : {}),
                 score: articleEntry.score,
                 importanceScore: articleEntry.importanceScore,
                 // keep the original import date

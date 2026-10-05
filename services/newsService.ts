@@ -340,7 +340,7 @@ export function isArticleWithinRetention(
 export const MODULE_SOURCES = {
   Startups: ["startupi", "forbes", "gnews", "startups"],
   Economia: ["infomoney", "g1", "canaltech", "mercado tech", "valor", "globo", "cnn", "gnews"],
-  IA: ["canaltech", "techmundo", "noticias ia", "gnews", "forbes"],
+  IA: ["canaltech", "techmundo", "noticias ia", "gnews", "forbes", "tecnoblog", "olhar digital", "showmetech"],
   Tecnologia: ["tecnoblog", "noticias tech", "techmundo", "globo", "cnn", "forbes", "gnews"],
   Dev: ["tecnoblog", "noticias tech", "canaltech", "gnews", "diolinux", "forbes", "cnn", "exame", "tabnews"],
   Inovacao: ["globo", "forbes", "g1"],
@@ -523,6 +523,18 @@ export function isEntertainmentArticle(title: string, description: string, url =
   return ENTERTAINMENT_URL_SECTIONS.some(section => normalizedUrl.includes(section));
 }
 
+function hasProhibitedTerms(title: string, description: string): boolean {
+  const normText = normalizeText(`${title} ${description}`);
+  return PROHIBITED_TERMS.some(term => {
+    const termNorm = normalizeText(term);
+    return new RegExp("\\b" + termNorm + "\\b", "i").test(normText);
+  });
+}
+
+export function isArticleRejectedByPolicy(title: string, description: string, url = ""): boolean {
+  return isEntertainmentArticle(title, description, url) || hasProhibitedTerms(title, description);
+}
+
 export function hasCategoryEvidence(title: string, description: string, category: string, url = ""): boolean {
   const keywords = MODULE_KEYWORDS[category as keyof typeof MODULE_KEYWORDS];
   if (!keywords) return false;
@@ -567,14 +579,18 @@ export function isEnglishDevSource(source: string): boolean {
   return ["github", "stackoverflow", "infoq", "devto"].some(name => normalizedSource.includes(name));
 }
 
-export function isCategorySpecificRssFeed(feedUrl: string, category: string): boolean {
-  const normalizedUrl = normalizeText(feedUrl).toLowerCase();
+export function isCategorySpecificRssFeed(feedUrl: string, category: string, articleUrl = ""): boolean {
+  const normalizedUrl = normalizeText(`${feedUrl} ${articleUrl}`).toLowerCase();
   if (category === "Startups") {
     return normalizedUrl.includes("startups.com.br/feed");
   }
   if (category === "IA") {
     return normalizedUrl.includes("/noticias-sobre/inteligencia-artificial/feed") ||
-      normalizedUrl.includes("/tudo-sobre/inteligencia-artificial/feed");
+      normalizedUrl.includes("/tudo-sobre/inteligencia-artificial/feed") ||
+      normalizedUrl.includes("/inteligencia-artificial/") ||
+      normalizedUrl.includes("tecnoblog.net/feed") ||
+      normalizedUrl.includes("olhardigital.com.br/feed") ||
+      normalizedUrl.includes("showmetech.com.br/feed");
   }
   if (category === "Dev") {
     return normalizedUrl.includes("/noticias-sobre/desenvolvimento-de-software/feed") ||
@@ -590,13 +606,7 @@ function classifyArticleBySourceAndKeywords(title: string, description: string, 
   const normSource = normalizeText(source);
 
   // Regra Mata-mata (Proibições)
-  const hasProhibited = PROHIBITED_TERMS.some(term => {
-    const termNorm = normalizeText(term);
-    const regex = new RegExp('\\b' + termNorm + '\\b', 'i');
-    return regex.test(normText);
-  });
-
-  if (hasProhibited) {
+  if (hasProhibitedTerms(title, description)) {
     return { category: "Rejeitado", score: 0 };
   }
 
@@ -655,7 +665,7 @@ function classifyArticleBySourceAndKeywords(title: string, description: string, 
   }
 
   // Para fontes híbridas e gerais (Canaltech, TechMundo, Gizmodo, Globo, CNN, Forbes, GNews, etc.)
-  const isHybrid = ["canaltech", "techmundo", "noticias ia", "gizmodo", "startupi", "globo", "cnn", "forbes", "gnews"].some(src => normSource.includes(src));
+  const isHybrid = ["canaltech", "techmundo", "noticias ia", "gizmodo", "startupi", "globo", "cnn", "forbes", "gnews", "tecnoblog", "olhar digital", "showmetech"].some(src => normSource.includes(src));
   if (isHybrid) {
     const iaMatches = countMatches(fullText, MODULE_KEYWORDS.IA);
     const tecnologiaMatches = countMatches(fullText, MODULE_KEYWORDS.Tecnologia);
@@ -702,7 +712,7 @@ function classifyArticleBySourceAndKeywords(title: string, description: string, 
 }
 
 export function classifyArticle(title: string, description: string, source: string, url = ""): { category: string; score: number } {
-  if (isEntertainmentArticle(title, description, url)) return { category: "Rejeitado", score: 0 };
+  if (isArticleRejectedByPolicy(title, description, url)) return { category: "Rejeitado", score: 0 };
   const classification = classifyArticleBySourceAndKeywords(title, description, source);
   if (classification.category === "Rejeitado") return classification;
 
@@ -958,7 +968,7 @@ export async function fetchNewsBackend({
       } else if (targetCategory === "Business") {
         feedUrls = ['https://startupi.com.br/feed/', 'https://www.infomoney.com.br/feed/', 'https://www.cnnbrasil.com.br/ia/feed/'];
       } else if (targetCategory === "IA") {
-        feedUrls = ['https://canaltech.com.br/rss/', 'https://startupi.com.br/feed/', 'https://www.cnnbrasil.com.br/tudo-sobre/inteligencia-artificial/feed/', 'https://forbes.com.br/noticias-sobre/inteligencia-artificial/feed/'];
+        feedUrls = ['https://canaltech.com.br/rss/', 'https://tecnoblog.net/feed/', 'https://olhardigital.com.br/feed/', 'https://www.showmetech.com.br/feed/', 'https://startupi.com.br/feed/', 'https://www.cnnbrasil.com.br/tudo-sobre/inteligencia-artificial/feed/', 'https://forbes.com.br/noticias-sobre/inteligencia-artificial/feed/'];
       } else if (targetCategory === "Dev") {
         feedUrls = ['https://diolinux.com.br/feed', 'https://forbes.com.br/noticias-sobre/desenvolvimento-de-software/feed/', 'https://tecnoblog.net/feed/', 'https://rss.tecmundo.com.br/feed', 'https://canaltech.com.br/rss/', 'https://www.tabnews.com.br/rss'];
       } else if (targetCategory === "Inovacao") {
@@ -981,7 +991,8 @@ export async function fetchNewsBackend({
       allItems.sort((a, b) => new Date(b.pubDate || 0).getTime() - new Date(a.pubDate || 0).getTime());
 
       for (const item of allItems) {
-        if (seenUrls.has(item.link)) continue;
+        const isSpecificCategoryFeed = isCategorySpecificRssFeed(item.originFeedUrl, targetCategory, item.link);
+        if (seenUrls.has(item.link) && !isSpecificCategoryFeed) continue;
 
         let imageUrl = item.enclosure?.link || item.thumbnail;
         if (!imageUrl && item.description) {
@@ -1000,6 +1011,10 @@ export async function fetchNewsBackend({
         let feedSource = "Tecnoblog";
         if (item.originFeedUrl.includes("startupi")) {
           feedSource = "Startupi";
+        } else if (item.originFeedUrl.includes("olhardigital")) {
+          feedSource = "Olhar Digital";
+        } else if (item.originFeedUrl.includes("showmetech")) {
+          feedSource = "Showmetech";
         } else if (item.originFeedUrl.includes("infomoney")) {
           feedSource = "InfoMoney";
         } else if (item.originFeedUrl.includes("canaltech")) {
@@ -1030,10 +1045,10 @@ export async function fetchNewsBackend({
         if (targetCategory === "Inovacao") {
           articleCategory = "Inovacao"; // Forcefully allow these specific feeds
         }
-        if (isCategorySpecificRssFeed(item.originFeedUrl, targetCategory)) {
+        if (isSpecificCategoryFeed) {
           articleCategory = targetCategory;
         }
-        if (articleCategory !== targetCategory || !hasCategoryEvidence(title, cleanDesc, articleCategory)) continue;
+        if (isArticleRejectedByPolicy(title, cleanDesc, item.link) || articleCategory !== targetCategory || !hasCategoryEvidence(title, cleanDesc, articleCategory, item.link)) continue;
 
         seenUrls.add(item.link);
         approvedArticles.push({
@@ -1045,7 +1060,7 @@ export async function fetchNewsBackend({
           publishedAt: item.pubDate,
           source: feedSource,
           category: targetCategory,
-          score: classification.score
+          score: isSpecificCategoryFeed && classification.category === "Rejeitado" ? 80 : classification.score
         });
 
       }
