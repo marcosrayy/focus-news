@@ -8,7 +8,6 @@ import { UpcomingEvents } from "@/components/focus/upcoming-events";
 import { WorkshopsTrainings } from "@/components/focus/workshops-trainings";
 import { FocusTimeline } from "@/components/focus/focus-timeline";
 import { FocusGallery } from "@/components/focus/focus-gallery";
-import { FocusNews } from "@/components/focus/focus-news";
 
 import type { Metadata } from "next";
 
@@ -59,11 +58,6 @@ export default function FocusPage() {
         {/* Impacto Focus - Dashboard */}
         <div className="mt-8">
           <ImpactFocus />
-        </div>
-
-        {/* Focus News - GNews API Integration */}
-        <div className="mt-8">
-          <FocusNews />
         </div>
 
         {/* Timeline + Galeria side by side on desktop */}

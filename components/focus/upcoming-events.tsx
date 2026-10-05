@@ -33,24 +33,6 @@ const events: EventData[] = [
     typeColor: "bg-emerald-600",
     image: getDistinctCover("event-workshop-ai"),
   },
-  {
-    name: "Startup Summit Florianopolis",
-    location: "Florianopolis, SC",
-    date: "10-12 Jun 2026",
-    targetDate: new Date("2026-06-10T09:00:00"),
-    type: "Palestra",
-    typeColor: "bg-blue-600",
-    image: getDistinctCover("event-summit-floripa"),
-  },
-  {
-    name: "Treinamento: Automacao com N8N",
-    location: "Online - Ao Vivo",
-    date: "22 Mar 2026",
-    targetDate: new Date("2026-03-22T14:00:00"),
-    type: "Treinamento",
-    typeColor: "bg-amber-600",
-    image: getDistinctCover("event-automation-n8n"),
-  },
 ];
 
 function Countdown({ targetDate }: { targetDate: Date }) {

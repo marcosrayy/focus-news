@@ -23,7 +23,6 @@ export default function StartupsPage() {
       <StartupNewsTicker />
 
       <main className="mx-auto max-w-7xl px-3 py-3 sm:px-4 sm:py-4 lg:px-6">
-        {/* Page Title */}
         <div className="mb-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="h-6 w-1.5 rounded-full bg-blue-600" />
@@ -36,10 +35,8 @@ export default function StartupsPage() {
           </span>
         </div>
 
-        {/* Hero */}
         <CategoryNewsCarousel category="startups" />
 
-        {/* Main Content + Sidebar */}
         <div className="mt-4">
           <div>
             <div className="mb-4 flex items-center gap-2">
