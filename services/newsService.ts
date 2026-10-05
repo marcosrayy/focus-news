@@ -171,8 +171,25 @@ function findRssImage(item: any, description: string, content: string): string {
   const mediaContent = rssItems(item.content).find(entry => entry?.["@_url"]);
   const mediaThumbnail = rssItems(item.thumbnail).find(entry => entry?.["@_url"]);
   const enclosure = rssItems(item.enclosure).find(entry => entry?.["@_url"]);
-  const imageTag = `${description} ${content}`.match(/<img[^>]+src=["']([^"']+)["']/i);
-  return mediaContent?.["@_url"] || mediaThumbnail?.["@_url"] || enclosure?.["@_url"] || item.image?.url || imageTag?.[1] || "";
+  const html = `${description} ${content}`;
+  const inlineImages: string[] = [];
+  const imageTagPattern = /<img\b[^>]*>/gi;
+  let imageTag: RegExpExecArray | null;
+  while ((imageTag = imageTagPattern.exec(html)) !== null) {
+    const tag = imageTag[0];
+    const imageUrl = tag.match(/\b(?:src|data-src|data-lazy-src)=["']([^"']+)["']/i)?.[1];
+    if (imageUrl) inlineImages.push(imageUrl);
+  }
+
+  const candidates = [
+    mediaContent?.["@_url"],
+    ...inlineImages,
+    mediaThumbnail?.["@_url"],
+    enclosure?.["@_url"],
+    item.image?.url,
+  ].filter((url): url is string => typeof url === "string" && !!url);
+  const genericImagePattern = /(?:^|[-_.\/])(?:logo|placeholder|default|no[-_]?image|avatar|favicon|amz)(?:[-_.\/?#]|$)/i;
+  return candidates.find(url => !genericImagePattern.test(url)) || candidates[0] || "";
 }
 
 export async function fetchRssFeed(feedUrl: string): Promise<RssFeedItem[]> {
