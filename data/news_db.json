@@ -1048,5 +1048,33 @@
     "importedAt": "2026-10-05T19:34:25.332Z",
     "importanceScore": 0,
     "expiresAt": "2026-10-09T13:08:58.000Z"
+  },
+  {
+    "id": "https://www.infomoney.com.br/mercados/ibovespa-maior-alta-2020/",
+    "title": "Ibovespa dispara e caminha para maior alta desde 2020; relembre os maiores saltos",
+    "description": "Índice supera os 209 mil pontos após o primeiro turno e pode registrar nesta segunda-feira o maior avanço diário em mais de seis anos\nThe post Ibovesp...",
+    "url": "https://www.infomoney.com.br/mercados/ibovespa-maior-alta-2020/",
+    "image": "https://www.infomoney.com.br/wp-content/uploads/2026/10/Touro-de-Bronze-em-Alta-na-B3.jpg?fit=300%2C169&amp;quality=70&amp;strip=all",
+    "publishedAt": "Mon, 05 Oct 2026 19:43:29 +0000",
+    "source": "InfoMoney",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:06:06.281Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T19:43:29.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/empresas/noticia/2026/10/05/skydance-define-nova-liderana-s-vsperas-de-fechar-fuso-da-paramount-com-warner.ghtml",
+    "title": "Skydance define nova liderança às vésperas de fechar fusão da Paramount com Warner",
+    "description": "A Skydance detalhou a estrutura de liderança da nova companhia antes da conclusão definitiva do acordo da fusão entre a Paramount e a Warner Bros. Dis...",
+    "url": "https://valor.globo.com/empresas/noticia/2026/10/05/skydance-define-nova-liderana-s-vsperas-de-fechar-fuso-da-paramount-com-warner.ghtml",
+    "image": "https://s2-valor.glbimg.com/i4E8MQt7P6ll0NY7CNOpd1uPwkg=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/l/q/afZVBPSEeDsyH1Xucsxg/447600478.jpg",
+    "publishedAt": "Mon, 05 Oct 2026 19:29:03 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:06:06.837Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T19:29:03.000Z"
   }
 ]
