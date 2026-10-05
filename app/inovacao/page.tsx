@@ -2,7 +2,7 @@ import { Header } from "@/components/header";
 import { Navigation } from "@/components/navigation";
 import { MarketTicker } from "@/components/market-ticker";
 import { NewsTicker } from "@/components/news-ticker";
-import { HeroInovacao } from "@/components/inovacao/hero-inovacao";
+import { CategoryNewsCarousel } from "@/components/category-news-carousel";
 import { InnovationCases } from "@/components/inovacao/innovation-cases";
 import { InovacaoSidebar } from "@/components/inovacao/inovacao-sidebar";
 import type { NewsArticle } from "@/types/news";
@@ -44,7 +44,7 @@ export default function InovacaoPage() {
         </div>
 
         {/* Hero */}
-        <HeroInovacao />
+        <CategoryNewsCarousel category="inovacao" />
 
         {/* Main Content + Sidebar */}
         <div className="mt-4">

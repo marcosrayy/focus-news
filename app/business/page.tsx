@@ -2,7 +2,7 @@ import { Header } from "@/components/header";
 import { Navigation } from "@/components/navigation";
 import { MarketTicker } from "@/components/market-ticker";
 import { NewsTicker } from "@/components/news-ticker";
-import { HeroBusiness } from "@/components/business/hero-business";
+import { CategoryNewsCarousel } from "@/components/category-news-carousel";
 import { GrowthStrategies } from "@/components/business/growth-strategies";
 import { BusinessSidebar } from "@/components/business/business-sidebar";
 import type { NewsArticle } from "@/types/news";
@@ -44,7 +44,7 @@ export default function BusinessPage() {
         </div>
 
         {/* Hero */}
-        <HeroBusiness />
+        <CategoryNewsCarousel category="business" />
 
         {/* Main Content + Sidebar */}
         <div className="mt-4">

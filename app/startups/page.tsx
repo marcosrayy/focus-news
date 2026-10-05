@@ -2,7 +2,7 @@ import { Header } from "@/components/header";
 import { Navigation } from "@/components/navigation";
 import { MarketTicker } from "@/components/market-ticker";
 import { NewsTicker } from "@/components/news-ticker";
-import { HeroStartup } from "@/components/startups/hero-startup";
+import { CategoryNewsCarousel } from "@/components/category-news-carousel";
 import { InvestmentRounds } from "@/components/startups/investment-rounds";
 import { StartupSidebar } from "@/components/startups/startup-sidebar";
 import type { NewsArticle } from "@/types/news";
@@ -44,7 +44,7 @@ export default function StartupsPage() {
         </div>
 
         {/* Hero */}
-        <HeroStartup />
+        <CategoryNewsCarousel category="startups" />
 
         {/* Main Content + Sidebar */}
         <div className="mt-4">

@@ -2,7 +2,7 @@ import { Header } from "@/components/header";
 import { Navigation } from "@/components/navigation";
 import { MarketTicker } from "@/components/market-ticker";
 import { NewsTicker } from "@/components/news-ticker";
-import { HeroTech } from "@/components/tecnologia/hero-tech";
+import { CategoryNewsCarousel } from "@/components/category-news-carousel";
 import { TrendingTech } from "@/components/tecnologia/trending-tech";
 import { TechSidebar } from "@/components/tecnologia/tech-sidebar";
 import type { NewsArticle } from "@/types/news";
@@ -44,7 +44,7 @@ export default function TecnologiaPage() {
         </div>
 
         {/* Hero */}
-        <HeroTech />
+        <CategoryNewsCarousel category="tecnologia" />
 
         {/* Main Content + Sidebar */}
         <div className="mt-4">
