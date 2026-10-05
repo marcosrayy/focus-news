@@ -6,6 +6,21 @@ import { RefreshEngine } from "../../../services/refreshEngine";
 
 export const dynamic = "force-dynamic";
 
+const liveCategoryCache = new Map<string, {
+  expiresAt: number;
+  articles: Awaited<ReturnType<typeof fetchNewsBackend>>;
+}>();
+
+async function fetchLiveCategory(query: string, category: string, max: number) {
+  const key = `${category}:${query}:${max}`;
+  const cached = liveCategoryCache.get(key);
+  if (cached && cached.expiresAt > Date.now()) return cached.articles;
+
+  const articles = await fetchNewsBackend({ query, category, max, offset: 0 });
+  liveCategoryCache.set(key, { articles, expiresAt: Date.now() + 5 * 60 * 1000 });
+  return articles;
+}
+
 function getRelativeTimeServer(dateString: string): string {
   const date = new Date(dateString);
   const now = new Date();
@@ -128,7 +143,13 @@ export async function GET(request: Request) {
     // Include the skipped featured article when deciding whether pagination has enough results.
     const requiredCount = max + offset;
     const shouldFetchSearchHistory = shouldMatchQuery && retentionDays > 3;
-    if (shouldFetchSearchHistory || filtered.length < requiredCount) {
+    const newestStoredArticleTime = filtered.reduce(
+      (newest, article) => Math.max(newest, new Date(article.publishedAt).getTime()),
+      0,
+    );
+    const shouldRefreshStaleStartups = targetCategory === "Startups"
+      && Date.now() - newestStoredArticleTime > 6 * 60 * 60 * 1000;
+    if (shouldFetchSearchHistory || filtered.length < requiredCount || shouldRefreshStaleStartups) {
       console.log(`[API/News] Insufficient articles for ${targetCategory} in Storage (${filtered.length}/${requiredCount}), fetching live...`);
       const freshArticles = shouldMatchQuery
         ? (await Promise.all(
@@ -139,6 +160,14 @@ export async function GET(request: Request) {
               ),
             ]
           )).flat()
+        : targetCategory === "Home"
+          ? (await Promise.all(
+              ["Startups", "Tecnologia", "Inovacao"].map(searchCategory =>
+                fetchNewsBackend({ query, category: searchCategory, max: requiredCount, offset: 0 })
+              )
+            )).flat()
+        : targetCategory === "Startups"
+          ? await fetchLiveCategory(query, targetCategory, requiredCount)
         : await fetchNewsBackend({ query, category: targetCategory, max: requiredCount, offset: 0 });
       
       const existingIds = new Set(filtered.map(a => a.id));

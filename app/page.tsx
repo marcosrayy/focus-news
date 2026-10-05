@@ -17,7 +17,7 @@ export default function Home() {
   const { 
     articles: gridArticles, 
     lastSyncRelative 
-  } = useNews("Empreendedorismo OR Startups OR Tech", "Home", 12, 0);
+  } = useNews("Empreendedorismo OR Startups OR Tech", "Home", 24, 0);
   const { articles: tickerArticles } = useNews("Tecnologia OR Empreendedorismo OR Inovacao", "Destaques", 10, 0);
   const heroArticleIds = new Set(heroArticles.map((article) => article.id));
   const gridArticlesWithoutHero = gridArticles.filter((article) => !heroArticleIds.has(article.id));
