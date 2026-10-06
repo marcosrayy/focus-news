@@ -140,9 +140,6 @@ export function EconomySidebarContent({
         </div>
       </div>
 
-      <button className="w-full rounded-xl bg-primary py-3.5 text-center text-sm font-bold tracking-wider text-primary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-primary/20">
-        ABRIR TERMINAL COMPLETO
-      </button>
     </>
   );
 }

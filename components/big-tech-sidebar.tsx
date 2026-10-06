@@ -19,6 +19,14 @@ const initialStocks: StockData[] = [
 ];
 
 export function BigTechSidebar() {
+  return (
+    <SidebarCardsModal title="BIG TECH" items={["Mercado agora", "Ações tech"]}>
+      <BigTechSidebarContent />
+    </SidebarCardsModal>
+  );
+}
+
+export function BigTechSidebarContent() {
   const [stocks, setStocks] = useState(initialStocks);
   const [pulse, setPulse] = useState(false);
 
@@ -49,7 +57,6 @@ export function BigTechSidebar() {
   }, [fetchStocks]);
 
   return (
-    <SidebarCardsModal title="BIG TECH" items={["Mercado agora", "Ações tech"]}>
       <aside className="rounded-2xl border border-border bg-card p-4 shadow-card lg:p-5">
       <div className="mb-4 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
@@ -101,10 +108,6 @@ export function BigTechSidebar() {
         ))}
       </div>
 
-      <button className="mt-4 w-full rounded-xl bg-foreground py-3 text-center text-sm font-bold tracking-wider text-background transition-all duration-300 hover:opacity-90 hover:shadow-lg hover:shadow-foreground/10">
-        ABRIR TERMINAL
-      </button>
       </aside>
-    </SidebarCardsModal>
   );
 }

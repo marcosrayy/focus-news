@@ -98,9 +98,6 @@ export function TradeSidebarContent() {
         </div>
       </div>
 
-      <button className="w-full rounded-xl bg-emerald-600 py-3.5 text-center text-sm font-bold tracking-wider text-white transition-all duration-300 hover:bg-emerald-700 hover:shadow-lg hover:shadow-emerald-500/20">
-        ABRIR TERMINAL DE TRADE
-      </button>
     </>
   );
 }
