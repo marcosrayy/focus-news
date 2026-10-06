@@ -9,7 +9,6 @@ import { MarketLiveCards } from "@/components/economia/market-live-cards";
 import { SectorHeatmap } from "@/components/economia/sector-heatmap";
 import { CryptoPerformance } from "@/components/economia/crypto-performance";
 import { EconomySidebar } from "@/components/economia/economy-sidebar";
-import { CategoryNewsCarousel } from "@/components/category-news-carousel";
 
 import type { Metadata } from "next";
 
@@ -44,8 +43,6 @@ export default function EconomiaPage() {
             <span className="text-xs font-semibold text-primary">LIVE</span>
           </div>
         </div>
-
-        <CategoryNewsCarousel category="economia" />
 
         {/* Market Live Cards - Trading Terminal Style */}
         <MarketLiveCards />

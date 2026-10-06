@@ -1,77 +1,208 @@
 "use client";
 
-import { Terminal } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Suspense } from "react";
+import { useSearchParams } from "next/navigation";
+import { ChevronLeft, ChevronRight, Terminal } from "lucide-react";
 import { useNews } from "@/hooks/useNews";
-import { Skeleton } from "@/components/ui/skeleton";
+import { getDevNewsQuery } from "@/config/dev-news";
 
 export function HeroDev() {
-  const { articles: news, isLoading } = useNews("desenvolvimento OR programação OR software OR desenvolvedor OR código OR DevOps OR framework", "Dev", 1);
-  const article = news?.[0] || {
-    title: "O Futuro do Desenvolvimento Web",
-    description: "Buscando as ultimas noticias para voce. Se demorar, o servico pode estar em manutencao.",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=2000",
-    category: "DEV",
-    source: "FOCUS NEWS",
-    url: "#",
-    publishedAt: new Date().toISOString()
+  return (
+    <Suspense fallback={null}>
+      <HeroDevCarousel />
+    </Suspense>
+  );
+}
+
+function HeroDevCarousel() {
+  const searchParams = useSearchParams();
+  const topic = searchParams.get("topic") || "all";
+  const { articles, isLoading } = useNews(
+    getDevNewsQuery(topic),
+    "Dev",
+    12,
+    1,
+  );
+  const [current, setCurrent] = useState(0);
+  const [transitionEnabled, setTransitionEnabled] = useState(true);
+  const [autoplayReset, setAutoplayReset] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const slides = useMemo(() => {
+    const seenTitles = new Set<string>();
+    return articles.filter((article) => {
+      const normalizedTitle = article.title
+        .normalize("NFD")
+        .replace(/\p{Diacritic}/gu, "")
+        .toLowerCase()
+        .replace(/[^\p{L}\p{N}]+/gu, " ")
+        .trim();
+      if (!normalizedTitle || seenTitles.has(normalizedTitle)) return false;
+      seenTitles.add(normalizedTitle);
+      return true;
+    });
+  }, [articles]);
+  const article = slides[current] ?? slides[0];
+
+  useEffect(() => {
+    if (current >= slides.length) setCurrent(0);
+  }, [current, slides.length]);
+
+  useEffect(() => {
+    if (slides.length < 2) return;
+    const timeout = setTimeout(() => {
+      setCurrent((previous) => previous >= slides.length - 1 ? slides.length : previous + 1);
+    }, 15000);
+    return () => clearTimeout(timeout);
+  }, [autoplayReset, slides.length]);
+
+  const goTo = (index: number) => {
+    if (index < 0) {
+      setCurrent(slides.length - 1);
+      return;
+    }
+    setCurrent(Math.min(index, slides.length));
   };
 
-  if (isLoading && (!news || news.length === 0)) {
+  const navigateTo = (index: number) => {
+    goTo(index);
+    setAutoplayReset((previous) => previous + 1);
+  };
+
+  const resetAfterLastSlide = () => {
+    if (current !== slides.length) return;
+    setTransitionEnabled(false);
+    setCurrent(0);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => setTransitionEnabled(true));
+    });
+  };
+
+  if (isLoading && !article) {
     return (
       <article className="group relative aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-card sm:aspect-[3/1]">
-        <div className="relative h-full p-3 sm:p-6 animate-pulse">
+        <div className="relative h-full animate-pulse p-3 sm:p-6">
           <div className="mb-4 flex items-center justify-between">
-            <div className="h-8 w-32 bg-muted rounded"></div>
+            <div className="h-8 w-32 rounded bg-muted" />
           </div>
           <div className="rounded-xl border border-emerald-500/20 bg-background p-3 sm:p-6">
-            <div className="h-6 w-1/4 bg-muted rounded mb-4"></div>
-            <div className="h-10 w-3/4 bg-muted rounded mb-3"></div>
-            <div className="h-4 w-1/2 bg-muted rounded"></div>
+            <div className="mb-4 h-6 w-1/4 rounded bg-muted" />
+            <div className="mb-3 h-10 w-3/4 rounded bg-muted" />
+            <div className="h-4 w-1/2 rounded bg-muted" />
           </div>
         </div>
       </article>
     );
   }
 
+  if (!article) {
+    return (
+      <article className="group relative flex aspect-[16/10] items-center justify-center overflow-hidden rounded-2xl border border-border bg-card p-3 sm:aspect-[3/1] sm:p-6">
+        <div className="w-full rounded-xl border border-emerald-500/20 bg-background p-6 font-mono">
+          <div className="mb-3 flex items-center gap-2 border-b border-border pb-3">
+            <Terminal className="h-4 w-4 text-emerald-400" />
+            <span className="text-xs text-emerald-400">~/focus-news/dev</span>
+            <span className="text-xs text-muted-foreground">main</span>
+          </div>
+          <p className="text-sm text-muted-foreground">
+            Nenhuma notícia de desenvolvimento disponível no momento.
+          </p>
+        </div>
+      </article>
+    );
+  }
+
   return (
-    <article 
-      className="group relative aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-card cursor-pointer sm:aspect-[3/1]"
-      onClick={() => window.open(article.url, "_blank")}
+    <article
+      className="group relative aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-card sm:aspect-[3/1]"
+      onClick={() => {
+        if (article.url && article.url !== "#") window.open(article.url, "_blank", "noopener,noreferrer");
+      }}
     >
       <div className="relative flex h-full min-h-0 flex-col p-3 sm:p-6">
-        {/* Terminal Header */}
-        <div className="mb-2 flex items-center justify-between sm:mb-4">
-          <div className="flex items-center gap-2">
-            <span className="flex items-center gap-1.5 rounded-lg bg-emerald-500 px-4 py-1.5 text-xs font-bold tracking-wider text-white uppercase">
-              <Terminal className="h-3.5 w-3.5" />
-              {article.category || "ARTIGO EM DESTAQUE"}
-            </span>
+        <div className="mb-2 flex justify-end sm:mb-4">
+          {slides.length > 1 && (
+            <div className="flex items-center gap-1">
+              <button
+                type="button"
+                aria-label="Notícia anterior"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  navigateTo(current - 1);
+                }}
+                className="rounded-full border border-emerald-500/30 p-2 text-emerald-400 transition-colors hover:bg-emerald-500/10"
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </button>
+              <button
+                type="button"
+                aria-label="Próxima notícia"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  navigateTo(current + 1);
+                }}
+                className="rounded-full border border-emerald-500/30 p-2 text-emerald-400 transition-colors hover:bg-emerald-500/10"
+              >
+                <ChevronRight className="h-4 w-4" />
+              </button>
+            </div>
+          )}
+        </div>
+
+        <div
+          className="min-h-0 flex-1 overflow-hidden rounded-xl border border-emerald-500/20 bg-background font-mono transition-colors hover:border-emerald-500/50"
+          onTouchStart={(event) => {
+            touchStartX.current = event.changedTouches[0]?.clientX ?? null;
+          }}
+          onTouchEnd={(event) => {
+            const startX = touchStartX.current;
+            const endX = event.changedTouches[0]?.clientX;
+            touchStartX.current = null;
+            if (startX === null || endX === undefined || slides.length < 2) return;
+            const swipeDistance = endX - startX;
+            if (Math.abs(swipeDistance) < 40) return;
+            navigateTo(current + (swipeDistance < 0 ? 1 : -1));
+          }}
+        >
+          <div
+            onTransitionEnd={resetAfterLastSlide}
+            className={`flex h-full ${transitionEnabled ? "transition-transform duration-1000 ease-in-out" : ""}`}
+            style={{
+              width: `${(slides.length + 1) * 100}%`,
+              transform: `translateX(-${(current * 100) / (slides.length + 1)}%)`,
+            }}
+          >
+            {[...slides, slides[0]].map((slide, index) => (
+              <div
+                key={`${slide.id}-${index}`}
+                className="h-full shrink-0 p-3 sm:p-6"
+                style={{ width: `${100 / (slides.length + 1)}%` }}
+              >
+                <div className="mb-2 flex items-center gap-2 border-b border-border pb-2 sm:mb-3 sm:pb-3">
+                  <Terminal className="h-4 w-4 text-emerald-400" />
+                  <span className="hidden text-xs text-emerald-400 sm:inline">
+                    ~/focus-news/{slide.source.toLowerCase().replace(/\s/g, "")}
+                  </span>
+                  <span className="hidden text-xs text-muted-foreground sm:inline">main</span>
+                </div>
+                <div className="mb-2 sm:mb-4">
+                  <span className="text-xs text-emerald-400">$ </span>
+                  <span className="text-xs text-muted-foreground">cat destaque.md</span>
+                </div>
+                <span className="mb-1 hidden text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase sm:mb-2 sm:inline-block">
+                  {slide.source}
+                </span>
+                <h2 className="line-clamp-3 font-heading text-base font-bold leading-tight text-foreground sm:line-clamp-none sm:text-2xl lg:text-3xl xl:text-4xl">
+                  <span className="text-balance">{slide.title}</span>
+                </h2>
+                <p className="mt-3 hidden max-w-3xl text-sm leading-relaxed text-muted-foreground line-clamp-2 sm:block lg:text-base">
+                  {slide.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Terminal Block */}
-        <div className="min-h-0 flex-1 overflow-hidden rounded-xl border border-emerald-500/20 bg-background p-3 font-mono transition-colors hover:border-emerald-500/50 sm:p-6">
-          <div className="mb-2 flex items-center gap-2 border-b border-border pb-2 sm:mb-3 sm:pb-3">
-            <Terminal className="h-4 w-4 text-emerald-400" />
-            <span className="hidden text-xs text-emerald-400 sm:inline">~/focus-news/{article.source.toLowerCase().replace(/\s/g, '')}</span>
-            <span className="hidden text-xs text-muted-foreground sm:inline">main</span>
-          </div>
-          <div className="mb-2 sm:mb-4">
-            <span className="text-xs text-emerald-400">$ </span>
-            <span className="text-xs text-muted-foreground">cat destaque.md</span>
-          </div>
-          <span className="mb-1 hidden text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase sm:mb-2 sm:inline-block">
-            {article.source}
-          </span>
-          <h2 className="line-clamp-3 font-heading text-base font-bold leading-tight text-foreground sm:line-clamp-none sm:text-2xl lg:text-3xl xl:text-4xl">
-            <span className="text-balance">
-              {article.title}
-            </span>
-          </h2>
-          <p className="mt-3 hidden max-w-3xl text-sm leading-relaxed text-muted-foreground line-clamp-2 sm:block lg:text-base">
-            {article.description}
-          </p>
-        </div>
       </div>
     </article>
   );
