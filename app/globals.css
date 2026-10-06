@@ -77,8 +77,9 @@
     --sidebar-ring: 22 94% 54%;
   }
 
-  * {
-    @apply border-border;
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
   }
 
@@ -199,17 +200,6 @@ img {
   user-select: none;
 }
 
-/* Mobile card touch feedback */
-@media (hover: none) and (pointer: coarse) {
-  article {
-    -webkit-tap-highlight-color: transparent;
-  }
-  article:active {
-    transform: scale(0.98);
-    transition: transform 0.1s ease;
-  }
-}
-
 /* Ensure minimum touch target size (44x44px as per Apple HIG) */
 @media (max-width: 640px) {
   button,
@@ -218,10 +208,10 @@ img {
     min-height: 44px;
     min-width: 44px;
   }
-  /* Exception for inline text links and very small UI badges */
-  span > a,
-  .text-\[10px\],
-  .text-\[8px\] {
+
+  /* Preserve compact inline text and badges that are intentionally smaller. */
+  .compact-text,
+  .compact-badge {
     min-height: auto;
     min-width: auto;
   }
