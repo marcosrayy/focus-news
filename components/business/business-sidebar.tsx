@@ -3,7 +3,7 @@
 import { Suspense } from "react";
 import { TrendingUp, BarChart3, Award, ArrowUpRight, Users, Briefcase } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { SidebarCardsModal } from "@/components/sidebar-cards-modal";
+import { SidebarCardsModal, useCloseExploreModal } from "@/components/sidebar-cards-modal";
 
 const marketLeaders = [
   { key: "fintech", name: "Nubank", sector: "FinTech", valuation: "US$ 45B", change: "+12%" },
@@ -29,6 +29,7 @@ const upcomingEvents = [
 export function BusinessSidebarContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const closeExplore = useCloseExploreModal();
 
   const applyFilter = (filterKey: string | null) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -39,6 +40,7 @@ export function BusinessSidebarContent() {
     }
     const queryString = params.toString();
     router.push(queryString ? `/business?${queryString}` : "/business");
+    closeExplore();
   };
 
   const currentTopic = searchParams.get("topic");
@@ -56,10 +58,8 @@ export function BusinessSidebarContent() {
           {marketLeaders.map((company, i) => {
             const active = currentTopic === company.key;
             return (
-              <button
+              <div
                 key={company.name}
-                type="button"
-                onClick={() => applyFilter(company.key)}
                 className={`flex w-full items-center justify-between rounded-xl border px-3 py-2.5 text-left transition-all duration-300 ${
                   active ? "border-amber-400/50 bg-amber-500/5" : "border-border bg-secondary/40 hover:border-amber-400/30"
                 }`}
@@ -77,7 +77,7 @@ export function BusinessSidebarContent() {
                   <p className="text-[10px] font-semibold text-foreground">{company.valuation}</p>
                   <p className="text-[10px] font-semibold text-emerald-500">{company.change}</p>
                 </div>
-              </button>
+              </div>
             );
           })}
         </div>
@@ -92,10 +92,8 @@ export function BusinessSidebarContent() {
         </div>
         <div className="flex flex-col gap-2">
           {ceoAgenda.map((item) => (
-            <button
+            <div
               key={item.topic}
-              type="button"
-              onClick={() => applyFilter(item.key)}
               className="flex w-full items-center justify-between rounded-xl border border-border bg-secondary/40 px-3 py-2.5 text-left transition-all duration-300 hover:border-amber-400/30"
             >
               <div>
@@ -103,7 +101,7 @@ export function BusinessSidebarContent() {
                 <p className="text-[10px] text-muted-foreground">Prioridade {item.priority}</p>
               </div>
               <span className="text-xs font-semibold text-amber-400">{item.ceos}</span>
-            </button>
+            </div>
           ))}
         </div>
       </div>
@@ -117,10 +115,8 @@ export function BusinessSidebarContent() {
         </div>
         <div className="flex flex-col gap-2">
           {upcomingEvents.map((event) => (
-            <button
+            <div
               key={event.name}
-              type="button"
-              onClick={() => applyFilter(event.key)}
               className="flex w-full items-center justify-between rounded-xl border border-border bg-secondary/40 px-3 py-2.5 text-left transition-all duration-300 hover:border-emerald-500/30"
             >
               <div>
@@ -128,18 +124,11 @@ export function BusinessSidebarContent() {
                 <p className="text-[10px] text-muted-foreground">{event.type}</p>
               </div>
               <span className="text-[10px] font-semibold text-emerald-500">{event.date}</span>
-            </button>
+            </div>
           ))}
         </div>
       </div>
 
-      <button
-        type="button"
-        onClick={() => applyFilter("all")}
-        className="w-full rounded-xl bg-amber-600 py-3.5 text-center text-sm font-bold tracking-wider text-white transition-all duration-300 hover:bg-amber-700 hover:shadow-lg hover:shadow-amber-500/20"
-      >
-        VER MAIS BUSINESS
-      </button>
     </>
   );
 }

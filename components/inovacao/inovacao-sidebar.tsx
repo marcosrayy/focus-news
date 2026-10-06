@@ -3,7 +3,7 @@
 import { Suspense } from "react";
 import { Mic, Sparkles, Lightbulb, ArrowRight, Globe } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { SidebarCardsModal } from "@/components/sidebar-cards-modal";
+import { SidebarCardsModal, useCloseExploreModal } from "@/components/sidebar-cards-modal";
 
 const founderInterviews = [
   { key: "cleantech", name: "Maria Fernanda", company: "SolarPure", topic: "Dessalinizacao solar", tag: "CleanTech" },
@@ -27,6 +27,7 @@ const futureBuilding = [
 export function InovacaoSidebarContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const closeExplore = useCloseExploreModal();
 
   const applyFilter = (filterKey: string | null) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -37,6 +38,7 @@ export function InovacaoSidebarContent() {
     }
     const queryString = params.toString();
     router.push(queryString ? `/inovacao?${queryString}` : "/inovacao");
+    closeExplore();
   };
 
   const currentTopic = searchParams.get("topic");
@@ -52,10 +54,8 @@ export function InovacaoSidebarContent() {
         </div>
         <div className="flex flex-col gap-2">
           {founderInterviews.map((interview) => (
-            <button
+            <div
               key={interview.name}
-              type="button"
-              onClick={() => applyFilter(interview.key)}
               className={`group w-full cursor-pointer rounded-xl border px-3 py-2.5 text-left transition-all duration-300 ${
                 currentTopic === interview.key ? "border-cyan-400/50 bg-cyan-500/5" : "border-border bg-secondary/40 hover:border-cyan-400/30"
               }`}
@@ -67,7 +67,7 @@ export function InovacaoSidebarContent() {
                 </div>
                 <span className="rounded-md bg-cyan-500/10 px-1.5 py-0.5 text-[9px] font-bold text-cyan-400">{interview.tag}</span>
               </div>
-            </button>
+            </div>
           ))}
         </div>
       </div>
@@ -81,10 +81,8 @@ export function InovacaoSidebarContent() {
         </div>
         <div className="flex flex-col gap-2">
           {innovativeModels.map((model) => (
-            <button
+            <div
               key={model.name}
-              type="button"
-              onClick={() => applyFilter(model.key)}
               className="w-full rounded-xl border border-border bg-secondary/40 px-3 py-2.5 text-left transition-all duration-300 hover:border-cyan-400/30"
             >
               <div className="flex items-center justify-between">
@@ -92,7 +90,7 @@ export function InovacaoSidebarContent() {
                 <span className="text-[10px] font-semibold text-cyan-400">{model.trend}</span>
               </div>
               <p className="mt-0.5 text-[10px] text-muted-foreground">{model.description}</p>
-            </button>
+            </div>
           ))}
         </div>
       </div>
@@ -106,27 +104,18 @@ export function InovacaoSidebarContent() {
         </div>
         <div className="flex flex-col gap-2">
           {futureBuilding.map((item) => (
-            <button
+            <div
               key={item.title}
-              type="button"
-              onClick={() => applyFilter(item.key)}
               className="group w-full cursor-pointer rounded-xl border border-border bg-secondary/40 px-3 py-2.5 text-left transition-all duration-300 hover:border-cyan-400/30"
             >
               <span className="mb-0.5 inline-block text-[9px] font-bold tracking-wider text-cyan-400">{item.category}</span>
               <p className="text-xs font-bold text-foreground transition-colors duration-300 group-hover:text-cyan-400">{item.title}</p>
               <p className="mt-1 text-[10px] text-muted-foreground">{item.readTime} de leitura</p>
-            </button>
+            </div>
           ))}
         </div>
       </div>
 
-      <button
-        type="button"
-        onClick={() => applyFilter("all")}
-        className="w-full rounded-xl bg-cyan-500 py-3.5 text-center text-sm font-bold tracking-wider text-white transition-all duration-300 hover:bg-cyan-600 hover:shadow-lg hover:shadow-cyan-500/20"
-      >
-        EXPLORAR INOVACOES
-      </button>
     </>
   );
 }

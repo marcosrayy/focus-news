@@ -3,7 +3,7 @@
 import { Suspense } from "react";
 import { Rocket, TrendingUp, Users, ArrowUpRight, Target, Lightbulb } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { SidebarCardsModal } from "@/components/sidebar-cards-modal";
+import { SidebarCardsModal, useCloseExploreModal } from "@/components/sidebar-cards-modal";
 
 const activeInvestors = [
   { key: "fintech", name: "Sequoia Capital", deals: 12, focus: "FinTech, SaaS" },
@@ -32,6 +32,7 @@ const topStartups = [
 export function StartupSidebarContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const closeExplore = useCloseExploreModal();
 
   const applyFilter = (filterKey: string | null) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -42,6 +43,7 @@ export function StartupSidebarContent() {
     }
     const queryString = params.toString();
     router.push(queryString ? `/startups?${queryString}` : "/startups");
+    closeExplore();
   };
 
   const currentTopic = searchParams.get("topic");
@@ -57,10 +59,8 @@ export function StartupSidebarContent() {
         </div>
         <div className="flex flex-col gap-2">
           {topStartups.map((startup) => (
-            <button
+            <div
               key={startup.name}
-              type="button"
-              onClick={() => applyFilter(startup.key)}
               className={`flex w-full items-center justify-between rounded-xl border px-3 py-2.5 text-left transition-all duration-300 ${
                 currentTopic === startup.key ? "border-amber-500/50 bg-amber-500/5" : "border-border bg-secondary/40 hover:border-amber-500/30"
               }`}
@@ -75,7 +75,7 @@ export function StartupSidebarContent() {
                 </div>
               </div>
               <span className="text-[10px] font-semibold text-amber-500">{startup.valuation}</span>
-            </button>
+            </div>
           ))}
         </div>
       </div>
@@ -89,10 +89,8 @@ export function StartupSidebarContent() {
         </div>
         <div className="flex flex-col gap-2">
           {activeInvestors.map((investor, i) => (
-            <button
+            <div
               key={investor.name}
-              type="button"
-              onClick={() => applyFilter(investor.key)}
               className="flex w-full items-center justify-between rounded-xl border border-border bg-secondary/40 px-3 py-2.5 text-left transition-all duration-300 hover:border-blue-500/30"
             >
               <div className="flex items-center gap-2.5">
@@ -105,7 +103,7 @@ export function StartupSidebarContent() {
                 </div>
               </div>
               <span className="text-[10px] font-semibold text-blue-500">{investor.deals} deals</span>
-            </button>
+            </div>
           ))}
         </div>
       </div>
@@ -119,10 +117,8 @@ export function StartupSidebarContent() {
         </div>
         <div className="flex flex-col gap-2">
           {hotSectors.map((sector) => (
-            <button
+            <div
               key={sector.name}
-              type="button"
-              onClick={() => applyFilter(sector.key)}
               className="flex w-full items-center justify-between rounded-xl border border-border bg-secondary/40 px-3 py-2.5 text-left transition-all duration-300 hover:border-emerald-500/30"
             >
               <div>
@@ -130,18 +126,10 @@ export function StartupSidebarContent() {
                 <p className="text-[10px] text-muted-foreground">{sector.deals} deals no trimestre</p>
               </div>
               <span className="text-xs font-semibold text-emerald-500">{sector.growth}</span>
-            </button>
+            </div>
           ))}
         </div>
       </div>
-
-      <button
-        type="button"
-        onClick={() => applyFilter("all")}
-        className="w-full rounded-xl bg-blue-600 py-3.5 text-center text-sm font-bold tracking-wider text-white transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/20"
-      >
-        VER TODAS AS RODADAS
-      </button>
     </>
   );
 }
