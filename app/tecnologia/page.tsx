@@ -2,6 +2,7 @@ import { Header } from "@/components/header";
 import { Navigation } from "@/components/navigation";
 import { MarketTicker } from "@/components/market-ticker";
 import { NewsTicker } from "@/components/news-ticker";
+import { CategoryNewsFeed } from "@/components/category-news-feed";
 import { CategoryNewsCarousel } from "@/components/category-news-carousel";
 import { TrendingTech } from "@/components/tecnologia/trending-tech";
 import { TechSidebar } from "@/components/tecnologia/tech-sidebar";
@@ -43,12 +44,10 @@ export default function TecnologiaPage() {
           </span>
         </div>
 
-        {/* Hero */}
-        <CategoryNewsCarousel category="tecnologia" />
+        <CategoryNewsFeed category="tecnologia">
+          <CategoryNewsCarousel category="tecnologia" />
 
-        {/* Main Content + Sidebar */}
-        <div className="mt-4">
-          <div>
+          <div className="mt-4">
             <div className="mb-4 flex items-center gap-2">
               <div className="h-5 w-1 rounded-full bg-sky-500" />
               <h2 className="font-heading text-sm font-bold tracking-wider text-foreground">
@@ -57,7 +56,7 @@ export default function TecnologiaPage() {
             </div>
             <TrendingTech sidebar={<TechSidebar />} />
           </div>
-        </div>
+        </CategoryNewsFeed>
       </main>
     </div>
   );

@@ -1,12 +1,13 @@
 "use client";
 
 import { Suspense, useState } from "react";
-import { useSearchParams } from "next/navigation";
-import { useNews } from "@/hooks/useNews";
 import { Clock, MessageSquare } from "lucide-react";
 import { ArticleModal, type ArticleModalData } from "@/components/article-modal";
 import { useNewsRotation } from "@/hooks/use-news-rotation";
 import { FeaturedNewsCarousel, NewsSectionLayout } from "@/components/news-section-layout";
+import { LoadMoreNews } from "@/components/load-more-news";
+import { getCategoryNewsSections, useCategoryNewsFeed } from "@/components/category-news-feed";
+import { CategoryMoreNews } from "@/components/category-more-news";
 import { getDistinctCover } from "@/lib/utils";
 import type { ReactNode } from "react";
 
@@ -41,30 +42,9 @@ export function GrowthStrategies({ sidebar }: { sidebar?: ReactNode }) {
 
 function GrowthStrategiesContent({ sidebar }: { sidebar?: ReactNode }) {
   const [selected, setSelected] = useState<any | null>(null);
-  const searchParams = useSearchParams();
-  const topic = searchParams.get("topic") || "all";
-
-  const topicQueries: Record<string, string> = {
-    fintech: "Fintech OR pagamentos OR banco digital OR mercado financeiro",
-    foodtech: "FoodTech OR delivery OR restaurantes OR consumo",
-    commerce: "E-commerce OR varejo digital OR marketplace OR comercio online",
-    wellbeing: "Wellbeing OR fitness OR saúde digital OR cultura empresarial",
-    payments: "pagamentos OR fintech OR processamento de pagamentos",
-    ai: "IA OR inteligencia artificial OR automatizacao OR produtividade",
-    expansion: "expansao internacional OR expansao de mercado OR internacionalizacao",
-    mna: "fusao OR aquisicao OR M&A OR consolidacao de mercado",
-    esg: "ESG OR sustentabilidade OR impacto social OR clima",
-    events: "startup OR evento OR conferencias OR founders",
-    networking: "networking OR startup OR investidores OR founders",
-    roadshow: "roadshow OR startup OR investidores OR market",
-  };
-
-  const activeQuery = topicQueries[topic] || "Empreendedorismo OR Negocios OR Empresas OR Startups OR Economia OR Mercado Tech";
-
-  const { 
-    articles: apiNews,
-    lastSyncRelative
-  } = useNews(activeQuery, "Business", 15, 1);
+  const feed = useCategoryNewsFeed();
+  const { latestArticles: apiNews, moreArticles } = getCategoryNewsSections(feed.articles);
+  const { hasMore, loadMore, isValidating, lastSyncRelative } = feed;
   
   const displayArticles = apiNews.length > 0 ? apiNews.map((n: any, i: number) => {
     const mock = articles[i % articles.length];
@@ -98,6 +78,8 @@ function GrowthStrategiesContent({ sidebar }: { sidebar?: ReactNode }) {
           </div>
         ) : null}
       />
+      <CategoryMoreNews articles={moreArticles} />
+      <LoadMoreNews onLoadMore={loadMore} hasMore={hasMore} isLoading={isValidating} />
       <ArticleModal article={selected} open={!!selected} onOpenChange={(o) => !o && setSelected(null)} />
     </>
   );

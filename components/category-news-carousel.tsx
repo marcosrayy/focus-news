@@ -2,59 +2,10 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useNews } from "@/hooks/useNews";
 import { getDistinctCover } from "@/lib/utils";
+import { categoryContent, type CategoryKey } from "@/config/category-news";
+import { getCategoryNewsSections, useCategoryNewsFeed } from "@/components/category-news-feed";
 import type { NewsArticle } from "@/types/news";
-
-const categoryContent = {
-  home: {
-    category: "Home",
-    query: "Tecnologia OR Empreendedorismo OR IA",
-    label: "DESTAQUE",
-  },
-  tecnologia: {
-    category: "Tecnologia",
-    query: "Hardware OR Processador OR Inovacao OR Noticias Tech",
-    label: "TECNOLOGIA",
-  },
-  dev: {
-    category: "Dev",
-    query: "Desenvolvimento de software OR programação OR frameworks OR ferramentas para desenvolvedores",
-    label: "DESENVOLVIMENTO",
-  },
-  startups: {
-    category: "Startups",
-    query: "Startups OR empreendedorismo OR venture capital OR investimentos em startups",
-    label: "STARTUPS",
-  },
-  economia: {
-    category: "Economia",
-    query: "Economia OR mercado financeiro OR Ibovespa OR inflação OR juros",
-    label: "ECONOMIA",
-  },
-  ia: {
-    category: "IA",
-    query: "Inteligência Artificial OR IA OR ChatGPT OR OpenAI OR modelos de linguagem",
-    label: "INTELIGÊNCIA ARTIFICIAL",
-  },
-  business: {
-    category: "Business",
-    query: "Business OR negócios OR estratégia empresarial OR liderança corporativa",
-    label: "BUSINESS",
-  },
-  trade: {
-    category: "Trade",
-    query: "Mercado Financeiro OR Bolsa de Valores OR Ibovespa OR ações OR trading",
-    label: "TRADE & MERCADOS",
-  },
-  inovacao: {
-    category: "Inovacao",
-    query: "Inovação OR inovação tecnológica OR pesquisa e desenvolvimento OR novos negócios",
-    label: "INOVAÇÃO",
-  },
-} as const;
-
-type CategoryKey = keyof typeof categoryContent;
 
 interface CategoryNewsCarouselProps {
   category: CategoryKey;
@@ -62,13 +13,14 @@ interface CategoryNewsCarouselProps {
 
 export function CategoryNewsCarousel({ category }: CategoryNewsCarouselProps) {
   const config = categoryContent[category];
-  const { articles, isLoading } = useNews(config.query, config.category, 4);
+  const { articles: feedArticles, isLoading } = useCategoryNewsFeed();
+  const { featuredArticles } = getCategoryNewsSections(feedArticles);
   const [current, setCurrent] = useState(0);
   const mobileTrackRef = useRef<HTMLDivElement>(null);
   const slides = useMemo(
     () => {
       const seenTitles = new Set<string>();
-      return articles.filter((article) => {
+      return featuredArticles.filter((article) => {
         const normalizedTitle = article.title
           .normalize("NFD")
           .replace(/\p{Diacritic}/gu, "")
@@ -80,7 +32,7 @@ export function CategoryNewsCarousel({ category }: CategoryNewsCarouselProps) {
         return true;
       }).slice(0, 4);
     },
-    [articles],
+    [featuredArticles],
   );
 
   const goTo = useCallback((index: number) => {

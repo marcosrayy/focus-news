@@ -1,5 +1,6 @@
 [
   {
+<<<<<<< HEAD
     "id": "https://exame.com/inteligencia-artificial/aos-19-anos-fundador-capta-us-11-milhoes-para-criar-computador-de-ia/",
     "title": "Aos 19 anos, fundador capta US$ 11 milhões para criar computador de IA",
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
@@ -14,11 +15,14 @@
     "expiresAt": "2026-10-11T19:02:40.665Z"
   },
   {
+=======
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
     "id": "https://exame.com/inteligencia-artificial/anthropic-planeja-ipo-para-novembro-e-mira-avaliacao-de-ate-us-2-trilhoes/",
     "title": "Anthropic planeja IPO para novembro e mira avaliação de até US$ 2 trilhões",
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/inteligencia-artificial/anthropic-planeja-ipo-para-novembro-e-mira-avaliacao-de-ate-us-2-trilhoes/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/anthropic.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.665Z",
     "source": "Exame",
     "category": "Startups",
@@ -26,6 +30,15 @@
     "importedAt": "2026-10-06T19:02:40.665Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.665Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.839Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.839Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.839Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/negocios/esta-empresa-dobra-de-tamanho-todos-os-anos-ajudando-restaurantes-a-ouvir-seus-clientes/",
@@ -33,6 +46,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/esta-empresa-dobra-de-tamanho-todos-os-anos-ajudando-restaurantes-a-ouvir-seus-clientes/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Nova-imagem-26.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.665Z",
     "source": "Exame",
     "category": "Startups",
@@ -40,6 +54,15 @@
     "importedAt": "2026-10-06T19:02:40.666Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.665Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.839Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.839Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.839Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/inteligencia-artificial/com-us-185-mi-startup-brasileira-quer-ensinar-bom-gosto-a-ias-e-matar-lixo-digital/",
@@ -47,6 +70,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/inteligencia-artificial/com-us-185-mi-startup-brasileira-quer-ensinar-bom-gosto-a-ias-e-matar-lixo-digital/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/marcelo_afonseca.png",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.666Z",
     "source": "Exame",
     "category": "Startups",
@@ -54,6 +78,15 @@
     "importedAt": "2026-10-06T19:02:40.666Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.666Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.839Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.839Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.839Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/negocios/startup-mira-r-35-milhoes-ao-transformar-a-carga-mental-das-mulheres-em-produto/",
@@ -61,6 +94,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/startup-mira-r-35-milhoes-ao-transformar-a-carga-mental-das-mulheres-em-produto/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Aline-Santiago-Liv-for-Her.jpeg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.666Z",
     "source": "Exame",
     "category": "Startups",
@@ -68,6 +102,15 @@
     "importedAt": "2026-10-06T19:02:40.666Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.666Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.839Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.839Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.839Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/negocios/com-ia-marca-que-fazia-r-25-mi-com-carteiras-de-papel-renasce-como-laboratorio-de-tecnologia/",
@@ -75,6 +118,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/com-ia-marca-que-fazia-r-25-mi-com-carteiras-de-papel-renasce-como-laboratorio-de-tecnologia/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Nova-imagem-23.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.666Z",
     "source": "Exame",
     "category": "Startups",
@@ -82,6 +126,15 @@
     "importedAt": "2026-10-06T19:02:40.666Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.666Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.839Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.839Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.839Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/inteligencia-artificial/a-startup-brasileira-que-quer-pagar-voce-quando-uma-ia-usar-o-seu-conhecimento/",
@@ -89,6 +142,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/inteligencia-artificial/a-startup-brasileira-que-quer-pagar-voce-quando-uma-ia-usar-o-seu-conhecimento/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Marcos-Nader.png",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.666Z",
     "source": "Exame",
     "category": "Startups",
@@ -96,6 +150,15 @@
     "importedAt": "2026-10-06T19:02:40.666Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.666Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.839Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.839Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.839Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/inteligencia-artificial/startup-de-ia-que-escreve-codigo-dobra-receita-em-4-meses-e-mira-us-1-bilhao/",
@@ -103,6 +166,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/inteligencia-artificial/startup-de-ia-que-escreve-codigo-dobra-receita-em-4-meses-e-mira-us-1-bilhao/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/05/imgi_27_2000x1332.jpeg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.666Z",
     "source": "Exame",
     "category": "Startups",
@@ -110,6 +174,15 @@
     "importedAt": "2026-10-06T19:02:40.666Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.666Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.839Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.839Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.839Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/negocios/ele-fara-r-60-milhoes-com-um-mercado-livre-para-compras-publicas-de-governos/",
@@ -117,6 +190,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/ele-fara-r-60-milhoes-com-um-mercado-livre-para-compras-publicas-de-governos/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Leonardo-Ladeira-CEO-e-cofundador-do-Portal-de-Compras-Publicas.-Credito_Divulgacao-3.jpg.jpeg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.666Z",
     "source": "Exame",
     "category": "Startups",
@@ -124,6 +198,15 @@
     "importedAt": "2026-10-06T19:02:40.666Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-07T19:02:40.666Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.839Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.839Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T20:18:16.839Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/negocios/empresa-traz-ao-brasil-software-que-substitui-maquinas-de-r-300-mil-no-diagnostico-do-glaucoma/",
@@ -131,6 +214,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/empresa-traz-ao-brasil-software-que-substitui-maquinas-de-r-300-mil-no-diagnostico-do-glaucoma/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-23-at-14.53.38.jpeg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.666Z",
     "source": "Exame",
     "category": "Startups",
@@ -138,6 +222,15 @@
     "importedAt": "2026-10-06T19:02:40.666Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.666Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.839Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.839Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.839Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/negocios/o-americano-ex-uber-que-se-impressionou-com-o-pix-no-brasil-e-criou-uma-fintech-de-r-1-bilhao/",
@@ -145,6 +238,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/o-americano-ex-uber-que-se-impressionou-com-o-pix-no-brasil-e-criou-uma-fintech-de-r-1-bilhao/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/rovu.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.666Z",
     "source": "Exame",
     "category": "Startups",
@@ -152,6 +246,15 @@
     "importedAt": "2026-10-06T19:02:40.666Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.666Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.839Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.839Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.839Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/negocios/programa-que-conecta-startups-a-investidores-ajuda-empresas-a-crescer-mais-de-400-em-faturamento/",
@@ -159,6 +262,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/programa-que-conecta-startups-a-investidores-ajuda-empresas-a-crescer-mais-de-400-em-faturamento/",
     "image": "https://classic.exame.com/wp-content/uploads/2024/07/IMG_7134.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.666Z",
     "source": "Exame",
     "category": "Startups",
@@ -166,6 +270,15 @@
     "importedAt": "2026-10-06T19:02:40.666Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.666Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.839Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.839Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.839Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/negocios/de-startup-a-grupo-global-empresa-recebe-r-200-milhoes-e-vende-passagem-de-onibus-ate-pelo-chatgpt/",
@@ -173,6 +286,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/de-startup-a-grupo-global-empresa-recebe-r-200-milhoes-e-vende-passagem-de-onibus-ate-pelo-chatgpt/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/buson_feito.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.666Z",
     "source": "Exame",
     "category": "Startups",
@@ -180,6 +294,15 @@
     "importedAt": "2026-10-06T19:02:40.666Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.666Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.839Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.839Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.839Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/tecnologia/drones-feitos-em-portugal-startup-vira-unicornio-de-us-64-bilhoes-e-quer-comprar-rivais/",
@@ -187,6 +310,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/tecnologia/drones-feitos-em-portugal-startup-vira-unicornio-de-us-64-bilhoes-e-quer-comprar-rivais/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/imgi_3_Channel-Mission_website-scaled-1.jpeg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.666Z",
     "source": "Exame",
     "category": "Startups",
@@ -194,6 +318,15 @@
     "importedAt": "2026-10-06T19:02:40.666Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.666Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.839Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.839Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.839Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/inteligencia-artificial/startup-colombiana-de-ia-quer-decifrar-a-america-do-sul-para-multinacionais/",
@@ -201,6 +334,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/inteligencia-artificial/startup-colombiana-de-ia-quer-decifrar-a-america-do-sul-para-multinacionais/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/materia-hacker-4.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.666Z",
     "source": "Exame",
     "category": "Startups",
@@ -208,6 +342,15 @@
     "importedAt": "2026-10-06T19:02:40.666Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.666Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.839Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.839Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.839Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/negocios/do-sul-a-sao-paulo-parceria-entre-hubs-de-inovacao-conecta-empresas-e-abre-caminho-para-a-china/",
@@ -215,6 +358,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/do-sul-a-sao-paulo-parceria-entre-hubs-de-inovacao-conecta-empresas-e-abre-caminho-para-a-china/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Nova-imagem-2-3.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.666Z",
     "source": "Exame",
     "category": "Startups",
@@ -222,6 +366,15 @@
     "importedAt": "2026-10-06T19:02:40.666Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.666Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.839Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.839Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.839Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/negocios/startup-de-ia-cresce-750-no-brasil-ao-transformar-sites-em-dados-para-empresas/",
@@ -229,6 +382,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/startup-de-ia-cresce-750-no-brasil-ao-transformar-sites-em-dados-para-empresas/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Nova-imagem-4-4.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.666Z",
     "source": "Exame",
     "category": "Startups",
@@ -236,6 +390,15 @@
     "importedAt": "2026-10-06T19:02:40.666Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.666Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.839Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.839Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.839Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/negocios/com-15-palcos-e-300-palestrantes-evento-transforma-porto-alegre-em-centro-de-conexoes-nesta-semana/",
@@ -243,6 +406,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/com-15-palcos-e-300-palestrantes-evento-transforma-porto-alegre-em-centro-de-conexoes-nesta-semana/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Nova-imagem-1-6.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.666Z",
     "source": "Exame",
     "category": "Startups",
@@ -250,6 +414,15 @@
     "importedAt": "2026-10-06T19:02:40.666Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.666Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.839Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.840Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.839Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/negocios/startup-mexicana-clara-aposta-em-mercado-de-r-400-bilhoes-para-crescer-no-brasil/",
@@ -257,6 +430,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/startup-mexicana-clara-aposta-em-mercado-de-r-400-bilhoes-para-crescer-no-brasil/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/clara.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.666Z",
     "source": "Exame",
     "category": "Startups",
@@ -264,6 +438,15 @@
     "importedAt": "2026-10-06T19:02:40.666Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-07T19:02:40.666Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.840Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.840Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T20:18:16.840Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/exame-in/a-tese-que-trouxe-tres-fundos-estrangeiros-ao-brasil-e-r-10-milhoes-para-a-nuvia/",
@@ -271,6 +454,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/exame-in/a-tese-que-trouxe-tres-fundos-estrangeiros-ao-brasil-e-r-10-milhoes-para-a-nuvia/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Arthur-John-Antero.jpg.jpeg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.666Z",
     "source": "Exame",
     "category": "Startups",
@@ -278,6 +462,15 @@
     "importedAt": "2026-10-06T19:02:40.667Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.666Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.840Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.840Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.840Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/bussola/mineiros-criam-plataforma-all-in-one-para-clinicas-e-miram-1000-clientes/",
@@ -285,6 +478,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/bussola/mineiros-criam-plataforma-all-in-one-para-clinicas-e-miram-1000-clientes/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Captura-de-Tela-1.png",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.667Z",
     "source": "Exame",
     "category": "Startups",
@@ -292,6 +486,15 @@
     "importedAt": "2026-10-06T19:02:40.667Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.667Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.840Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.840Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.840Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/inteligencia-artificial/essa-startup-nasceu-ha-um-mes-e-ja-vale-quase-us-4-bilhoes-conheca-a-emulate/",
@@ -299,6 +502,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/inteligencia-artificial/essa-startup-nasceu-ha-um-mes-e-ja-vale-quase-us-4-bilhoes-conheca-a-emulate/",
     "image": "https://classic.exame.com/wp-content/uploads/2024/06/GettyImages-2151467843.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.667Z",
     "source": "Exame",
     "category": "Startups",
@@ -306,6 +510,15 @@
     "importedAt": "2026-10-06T19:02:40.667Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.667Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.840Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.840Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.840Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/negocios/em-dois-anos-e-meio-startup-de-agentes-de-ia-chega-a-valuation-de-us-45-bilhoes-e-mira-o-brasil/",
@@ -313,6 +526,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/em-dois-anos-e-meio-startup-de-agentes-de-ia-chega-a-valuation-de-us-45-bilhoes-e-mira-o-brasil/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-15-at-16.30.00.jpeg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.667Z",
     "source": "Exame",
     "category": "Startups",
@@ -320,6 +534,15 @@
     "importedAt": "2026-10-06T19:02:40.667Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.667Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.840Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.840Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.840Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/exame-in/fundador-da-clickbus-volta-ao-cargo-de-ceo-e-mira-r-25-bi-em-vendas-este-ano/",
@@ -327,6 +550,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/exame-in/fundador-da-clickbus-volta-ao-cargo-de-ceo-e-mira-r-25-bi-em-vendas-este-ano/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/fernando-prado-clickbus.jpeg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.667Z",
     "source": "Exame",
     "category": "Startups",
@@ -334,6 +558,15 @@
     "importedAt": "2026-10-06T19:02:40.667Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.667Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.840Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.840Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.840Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://exame.com/negocios/a-placa-do-seu-carro-virou-uma-tag-e-ele-ja-movimentou-r-400-milhoes-com-essas-cobrancas/",
@@ -341,6 +574,7 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/a-placa-do-seu-carro-virou-uma-tag-e-ele-ja-movimentou-r-400-milhoes-com-essas-cobrancas/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/09/Nova-imagem-15.jpg",
+<<<<<<< HEAD
     "publishedAt": "2026-10-06T19:02:40.667Z",
     "source": "Exame",
     "category": "Startups",
@@ -348,22 +582,50 @@
     "importedAt": "2026-10-06T19:02:40.667Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T19:02:40.667Z"
+=======
+    "publishedAt": "2026-10-05T20:18:16.840Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.840Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.840Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
-    "id": "https://startupi.com.br/brics-biodesign-brasil-india-pesquisas-saude-mercado/",
-    "title": "Brasil e Índia criam aceleradora conjunta para levar pesquisas biomédicas da bancada ao mercado",
-    "description": "Startupi\n\nBrasil e Índia criam aceleradora conjunta para levar pesquisas biomédicas da bancada ao mercado\nLançado em Nova Délhi, o programa BRICS+ Bio...",
-    "url": "https://startupi.com.br/brics-biodesign-brasil-india-pesquisas-saude-mercado/",
-    "image": "https://startupi.com.br/wp-content/uploads/2026/10/20261005_00_programa_brics_biodesign.jpg",
-    "publishedAt": "Tue, 06 Oct 2026 08:00:00 +0000",
+    "id": "https://exame.com/negocios/fim-do-dinheiro-facil-por-que-o-venture-capital-ficou-mais-seletivo-para-startups-no-brasil/",
+    "title": "Fim do dinheiro fácil: por que o venture capital ficou mais seletivo para startups no Brasil",
+    "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
+    "url": "https://exame.com/negocios/fim-do-dinheiro-facil-por-que-o-venture-capital-ficou-mais-seletivo-para-startups-no-brasil/",
+    "image": "https://classic.exame.com/wp-content/uploads/2026/09/407-File469.jpg",
+    "publishedAt": "2026-10-05T20:18:16.840Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:16.840Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:18:16.840Z"
+  },
+  {
+    "id": "https://startupi.com.br/a-maior-aceleradora-do-mundo-em-busca-de-um-match-o-que-a-carta-anual-da-y-combinator-revela-sobre-2026/",
+    "title": "A maior aceleradora do mundo em busca de um match: o que a “carta anual” da Y Combinator revela sobre 2026",
+    "description": "Startupi\n\nA maior aceleradora do mundo em busca de um match: o que a “carta anual” da Y Combinator revela sobre 2026\nA RFS de 2026 da Y Combinator tra...",
+    "url": "https://startupi.com.br/a-maior-aceleradora-do-mundo-em-busca-de-um-match-o-que-a-carta-anual-da-y-combinator-revela-sobre-2026/",
+    "image": "https://startupi.com.br/wp-content/uploads/2026/09/y-combinator.jpeg",
+    "publishedAt": "Thu, 01 Oct 2026 08:00:00 +0000",
     "source": "Startupi",
     "category": "Startups",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-06T19:02:40.870Z",
+=======
+    "importedAt": "2026-10-05T20:18:17.049Z",
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
     "importanceScore": 100,
-    "expiresAt": "2026-10-08T08:00:00.000Z"
+    "expiresAt": "2026-10-06T08:00:00.000Z"
   },
   {
+<<<<<<< HEAD
     "id": "https://startupi.com.br/engenheiro-de-marketing-um-novo-cargo-para-quem-quer-tentar-sobreviver-a-era-da-ia/",
     "title": "Engenheiro de Marketing: um novo cargo para quem quer (tentar) sobreviver à Era da IA",
     "description": "Startupi\n\nEngenheiro de Marketing: um novo cargo para quem quer (tentar) sobreviver à Era da IA\nHíbrido entre construtor de sistemas e estrategista de...",
@@ -378,6 +640,736 @@
     "expiresAt": "2026-10-10T23:41:47.000Z"
   },
   {
+=======
+    "id": "https://startups.com.br/negocios/startup-quer-democratizar-o-wealth-management-com-ia/",
+    "title": "Startup quer democratizar o wealth management com IA",
+    "description": "Yuri Miyazaki e Pedro Avena, fundadores da Auro | Foto: DivulgaçãoA Auro foi fundada por Pedro Avena, ex-aluno da Link School, e Yuri Miyazaki, da FEA...",
+    "url": "https://startups.com.br/negocios/startup-quer-democratizar-o-wealth-management-com-ia/",
+    "image": "https://uploads.startups.com.br/2026/10/Yuri-Miyazaki-e-Pedro-Avena-fundadores-da-Auro-.jpg",
+    "publishedAt": "Mon, 05 Oct 2026 11:00:00 +0000",
+    "source": "Startups.com.br",
+    "category": "Startups",
+    "score": 80,
+    "importedAt": "2026-10-05T20:18:17.127Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-10T11:00:00.000Z"
+  },
+  {
+    "id": "https://www.infomoney.com.br/mercados/ibovespa-200-mil-100-mil-marcos-historicos/",
+    "title": "Dos 100 mil aos 200 mil: como o Ibovespa dobrou e acelerou nos últimos anos",
+    "description": "Índice levou pouco mais de sete anos para sair dos 100 mil e alcançar os 200 mil pontos; trajetória teve longa pausa e forte aceleração a partir de 20...",
+    "url": "https://www.infomoney.com.br/mercados/ibovespa-200-mil-100-mil-marcos-historicos/",
+    "image": "https://www.infomoney.com.br/wp-content/uploads/2026/10/Mercado-em-Alta-sobre-a-Metropole.jpg?fit=300%2C169&amp;quality=70&amp;strip=all",
+    "publishedAt": "Mon, 05 Oct 2026 20:08:30 +0000",
+    "source": "InfoMoney",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:24.626Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T20:08:30.000Z"
+  },
+  {
+    "id": "https://www.infomoney.com.br/business/startup-alema-de-robotica-robco-atinge-avaliacao-de-us-1-bilhao/",
+    "title": "Startup alemã de robótica RobCo atinge avaliação de US$ 1 bilhão",
+    "description": "Empresa sediada em Munique informou que a avaliação se baseou em uma ⁠venda ‌secundária de ações\nThe post Startup alemã de robótica RobCo atinge avali...",
+    "url": "https://www.infomoney.com.br/business/startup-alema-de-robotica-robco-atinge-avaliacao-de-us-1-bilhao/",
+    "image": "https://www.infomoney.com.br/wp-content/uploads/2026/10/InfoMoney-Imagem-de-destaque-32.jpg?fit=300%2C169&amp;quality=70&amp;strip=all",
+    "publishedAt": "Mon, 05 Oct 2026 19:56:38 +0000",
+    "source": "InfoMoney",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:24.627Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T19:56:38.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/empresas/noticia/2026/10/05/skydance-define-nova-liderana-s-vsperas-de-fechar-fuso-da-paramount-com-warner.ghtml",
+    "title": "Skydance define nova liderança às vésperas de fechar fusão da Paramount com Warner",
+    "description": "A Skydance detalhou a estrutura de liderança da nova companhia antes da conclusão definitiva do acordo da fusão entre a Paramount e a Warner Bros. Dis...",
+    "url": "https://valor.globo.com/empresas/noticia/2026/10/05/skydance-define-nova-liderana-s-vsperas-de-fechar-fuso-da-paramount-com-warner.ghtml",
+    "image": "https://s2-valor.glbimg.com/i4E8MQt7P6ll0NY7CNOpd1uPwkg=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/l/q/afZVBPSEeDsyH1Xucsxg/447600478.jpg",
+    "publishedAt": "Mon, 05 Oct 2026 19:29:03 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:25.637Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T19:29:03.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/noticia/2026/10/05/com-onda-azul-aes-de-varejo-e-construo-crescem-at-trs-vezes-mais-que-a-bolsa.ghtml",
+    "title": "Com ‘onda azul’, ações de varejo e construção crescem até três vezes mais que Ibovespa",
+    "description": "...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/05/com-onda-azul-aes-de-varejo-e-construo-crescem-at-trs-vezes-mais-que-a-bolsa.ghtml",
+    "image": "https://s2-valor.glbimg.com/xAwsv_36qb_U2tIiPgiFdGrQ_jM=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2024/M/D/FH95iuRqWeIqIiGFQmtA/foto08emp-101-magalu-b4.jpg",
+    "publishedAt": "Mon, 05 Oct 2026 19:03:25 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:25.640Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T19:03:25.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/empresas/noticia/2026/10/05/ch-robinson-fecha-compra-da-rxo-por-us-53-bi-para-criar-gigante-logstica-de-us-25-bi-em-receita.ghtml",
+    "title": "C.H. Robinson fecha compra da RXO por US$ 5,3 bi para criar gigante logística de US$ 25 bi em receita",
+    "description": "A C.H. Robinson fechou um acordo para adquirir a intermediária de fretes rodoviários RXO por cerca de US$ 5,3 bilhões em dinheiro e ações, em uma oper...",
+    "url": "https://valor.globo.com/empresas/noticia/2026/10/05/ch-robinson-fecha-compra-da-rxo-por-us-53-bi-para-criar-gigante-logstica-de-us-25-bi-em-receita.ghtml",
+    "image": "https://s2-valor.glbimg.com/YBbAOH2zydw9leH4RNVEd9Fw5zw=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/3/D/wB3EntQTO77r18oCF1aQ/532154237-736303682504506-8597920412586477713-n.jpg",
+    "publishedAt": "Mon, 05 Oct 2026 18:43:41 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:25.642Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T18:43:41.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/noticia/2026/10/05/valor-de-mercado-das-empresas-do-ibovespa-sobe-r-410-bilhes-somente-nesta-segunda-feira.ghtml",
+    "title": "Valor de mercado das empresas do Ibovespa sobe R$ 410 bilhões somente nesta segunda-feira com euforia eleitoral",
+    "description": "...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/05/valor-de-mercado-das-empresas-do-ibovespa-sobe-r-410-bilhes-somente-nesta-segunda-feira.ghtml",
+    "image": "https://s2-valor.glbimg.com/VnUoLavAz5FXy_93_x_abgBt0iU=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2025/4/X/jf5md0Rc2q2qjqLn1jGg/422019428.jpg",
+    "publishedAt": "Mon, 05 Oct 2026 18:19:22 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:25.644Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T18:19:22.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/noticia/2026/10/05/ouro-cai-com-dolar-forte-e-persistencia-das-pressoes-inflacionarias.ghtml",
+    "title": "Ouro cai com dólar forte e persistência das pressões inflacionárias",
+    "description": "Os preços dos contratos futuros do ouro fecharam em queda, nesta segunda-feira (5), dando sequência às perdas da semana passada, pressionados pelo dól...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/05/ouro-cai-com-dolar-forte-e-persistencia-das-pressoes-inflacionarias.ghtml",
+    "image": "https://s2-valor.glbimg.com/BsuQH-y-6hqzqCTdUt9CKLbk4HA=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2020/r/h/xj8YlySryeO4xQ1J7u8g/gold-is-money-2496344-1280.jpg",
+    "publishedAt": "Mon, 05 Oct 2026 18:16:46 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:25.644Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T18:16:46.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/noticia/2026/10/05/b3-volta-a-ampliar-limites-de-oscilao-dos-contratos-de-di-juros-futuros-renovam-mnimas.ghtml",
+    "title": "B3 volta a ampliar limites de oscilação dos contratos de DI; juros futuros renovam mínimas",
+    "description": "Os juros futuros renovaram mínimas na tarde desta segunda-feira, logo após os contratos de Depósito Interfinanceiro (DI) voltarem a leilão com uma nov...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/05/b3-volta-a-ampliar-limites-de-oscilao-dos-contratos-de-di-juros-futuros-renovam-mnimas.ghtml",
+    "image": "https://s2-valor.glbimg.com/1jJ3SvNMLXgS1oeoEo5afIiWfuI=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2023/p/D/JYt4BJTPyuMTt9JI9FdA/405762826.jpg",
+    "publishedAt": "Mon, 05 Oct 2026 17:30:03 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:25.647Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T17:30:03.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/ao-vivo/2023/06/16/dolar-avanca-e-ibovespa-recua-em-dia-de-correcao-siga-os-mercados.ghtml",
+    "title": "Ibovespa tem leve queda após disparada da véspera; rali segue no câmbio e nos juros futuros",
+    "description": "Ibovespa tem leve queda após disparada da véspera; rali segue no câmbio e nos juros futuros Juros futuros domésticos recuam, assim como petróleo, rend...",
+    "url": "https://valor.globo.com/financas/ao-vivo/2023/06/16/dolar-avanca-e-ibovespa-recua-em-dia-de-correcao-siga-os-mercados.ghtml",
+    "image": "https://s2-valor.glbimg.com/rM0EhwAnrEhDRy0Q5CQEUsybo-A=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/l/X/MJArR4TaSl4HMyhkcuYQ/313583423.jpg",
+    "publishedAt": "Mon, 05 Oct 2026 16:47:10 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:25.651Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T16:47:10.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/empresas/noticia/2026/10/05/ge-healthcare-compra-sofie-biosciences-por-us-945-milhoes.ghtml",
+    "title": "GE HealthCare compra Sofie Biosciences por US$ 945 milhões",
+    "description": "A GE HealthCare Technologies anunciou nesta segunda-feira (5) a aquisição, integralmente em dinheiro, da fabricante de produtos para imagem radioativa...",
+    "url": "https://valor.globo.com/empresas/noticia/2026/10/05/ge-healthcare-compra-sofie-biosciences-por-us-945-milhoes.ghtml",
+    "image": "https://s2-valor.glbimg.com/vpJDzI2wNu5ImXnEp1q1LQ8wM_8=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2023/C/5/2Co3t0QpCA9HIYlgrBBg/394863093-2-.jpg",
+    "publishedAt": "Mon, 05 Oct 2026 16:19:26 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:25.653Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T16:19:26.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/noticia/2026/10/05/estrangeiros-aportam-mais-de-r-268-milhoes-em-1o-de-outubro.ghtml",
+    "title": "Estrangeiros aportam mais de R$ 268 milhões em 1º de outubro",
+    "description": "Os investidores estrangeiros aportaram R$ 268,1 milhões no segmento secundário da B3 (ações já listadas) na última quinta-feira (1º), dia em que o Ibo...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/05/estrangeiros-aportam-mais-de-r-268-milhoes-em-1o-de-outubro.ghtml",
+    "image": "https://s2-valor.glbimg.com/jZ-lQub7SrhXjgtziwmujIb5R0g=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/V/Q/A5mGbKTCKeHFL6bJCGyA/foto03fin-201-crdcs-c6.jpg",
+    "publishedAt": "Mon, 05 Oct 2026 16:04:40 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:25.655Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T16:04:40.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/noticia/2026/10/05/rali-nao-deve-ser-passageiro-e-bolsa-pode-subir-ate-45percent-com-provavel-vitoria-de-flavio-apontam-bancos.ghtml",
+    "title": "Rali não deve ser passageiro e bolsa pode subir até 45% com provável vitória de Flávio, apontam bancos",
+    "description": "...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/05/rali-nao-deve-ser-passageiro-e-bolsa-pode-subir-ate-45percent-com-provavel-vitoria-de-flavio-apontam-bancos.ghtml",
+    "image": "https://s2-valor.glbimg.com/SwlrxuAGoRO95WaEQngzocSRx2o=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/R/f/UdI0WdRa2A5W1TaLoyNA/417075513.jpg",
+    "publishedAt": "Mon, 05 Oct 2026 15:14:20 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:25.660Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T15:14:20.000Z"
+  },
+  {
+    "id": "https://g1.globo.com/economia/noticia/2026/10/05/smartfit-buddha-spa.ghtml",
+    "title": "Smart Fit fecha acordo para comprar até 20% do Buddha Spa por R$ 32 milhões",
+    "description": "Smartfit\nDivulgação\nO grupo Smart Fit anunciou nesta segunda-feira (5) um acordo para investir até R$ 32 milhões no Buddha Spa. Com a operação, a empr...",
+    "url": "https://g1.globo.com/economia/noticia/2026/10/05/smartfit-buddha-spa.ghtml",
+    "image": "https://s2-g1.glbimg.com/x7DSHI7ny9y15pDxk9PcYj4OyU4=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2020/M/A/rqt9w4QRChhiN0sBj7hQ/imagem-3.jpg",
+    "publishedAt": "Mon, 05 Oct 2026 11:42:27 -0000",
+    "source": "Globo",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:26.370Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T11:42:27.000Z"
+  },
+  {
+    "id": "https://g1.globo.com/tecnologia/ciberseguranca/noticia/2026/10/05/como-e-por-que-a-inteligencia-artificial-e-capaz-de-aprender-a-burlar-regras.ghtml",
+    "title": "Como e por que a inteligência artificial é capaz de aprender a burlar regras",
+    "description": "ChatGPT, da OpenAI, e Claude, da Antrhopic\nAerps.com/Unsplash; Ryan Donegan/Flickr\nNos últimos meses, uma sequência de episódios trouxe para o mundo r...",
+    "url": "https://g1.globo.com/tecnologia/ciberseguranca/noticia/2026/10/05/como-e-por-que-a-inteligencia-artificial-e-capaz-de-aprender-a-burlar-regras.ghtml",
+    "image": "https://s2-g1.glbimg.com/K72chojgy8Sg94J6pD0bz-O50Og=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/D/u/7ve6HkSImvj4UYPV4eCQ/chatgpt-claude.png",
+    "publishedAt": "Mon, 05 Oct 2026 06:00:00 -0000",
+    "source": "Globo",
+    "category": "IA",
+    "score": 80,
+    "importedAt": "2026-10-05T20:18:26.372Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-10T06:00:00.000Z"
+  },
+  {
+    "id": "https://g1.globo.com/economia/agronegocios/noticia/2026/10/03/a-ciencia-por-tras-do-ato-de-lavar-o-arroz-antes-de-cozinhar.ghtml",
+    "title": "Faz diferença? Qual a ciência por trás do ato de lavar o arroz antes de cozinhar",
+    "description": "Água quente com vinagre pode ser o segredo para arroz soltinho\nAfinal, precisa lavar o arroz antes de cozinhar?Prática vista como essencial por alguns...",
+    "url": "https://g1.globo.com/economia/agronegocios/noticia/2026/10/03/a-ciencia-por-tras-do-ato-de-lavar-o-arroz-antes-de-cozinhar.ghtml",
+    "image": "https://s2-g1.glbimg.com/PTs5RPh1l3EjgpzVPDS88EuZYdQ=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2025/W/f/OkRrKCROO1ApjuzMWJgg/arroz.jpg",
+    "publishedAt": "Sat, 03 Oct 2026 06:00:01 -0000",
+    "source": "Globo",
+    "category": "Inovacao",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:26.384Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-08T06:00:01.000Z"
+  },
+  {
+    "id": "https://g1.globo.com/economia/noticia/2026/10/02/paramount-e-warner-bros-vao-operar-sob-o-nome-skydance-apos-fusao.ghtml",
+    "title": "Paramount e Warner Bros. vão operar sob o nome Skydance após fusão",
+    "description": "Logo da Warner Bros.\nEric Gaillard/Reuters\nA empresa que resultará da fusão entre a Paramount e a Warner Bros. Discovery terá o nome Skydance, anuncio...",
+    "url": "https://g1.globo.com/economia/noticia/2026/10/02/paramount-e-warner-bros-vao-operar-sob-o-nome-skydance-apos-fusao.ghtml",
+    "image": "https://s2-g1.glbimg.com/uRyMzVOwRTMUblxpjYkLaGGrSY0=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/M/s/qUTDZOQt6f1ZRhA2JuPA/2026-01-13t210627z-1399086304-rc2k0ja2ov89-rtrmadp-3-warner-bros-dis-m-a-netflix.jpg",
+    "publishedAt": "Fri, 02 Oct 2026 16:28:38 -0000",
+    "source": "Globo",
+    "category": "Economia",
+    "score": 75,
+    "importedAt": "2026-10-05T20:18:26.391Z",
+    "importanceScore": 75,
+    "expiresAt": "2026-10-07T16:28:38.000Z"
+  },
+  {
+    "id": "https://g1.globo.com/economia/noticia/2026/10/01/lynas-terras-raras-minas-gerais.ghtml",
+    "title": "Empresa australiana compra projeto de terras raras em Minas Gerais por R$ 3,5 bilhões",
+    "description": "MP pede que TCU faça auditoria nos projetos de exploração de terras raras no Sul de MG\nA Lynas Rare Earths anunciou nesta quinta-feira (1º) um acordo ...",
+    "url": "https://g1.globo.com/economia/noticia/2026/10/01/lynas-terras-raras-minas-gerais.ghtml",
+    "image": "https://s2-g1.glbimg.com/H_Koxe-BJ7dqkQ9gMNvf3_fOtoQ=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/I/S/hXTiIwRdOihHjwdCcwoQ/design-sem-nome-73-.png",
+    "publishedAt": "Thu, 01 Oct 2026 10:50:30 -0000",
+    "source": "Globo",
+    "category": "Economia",
+    "score": 80,
+    "importedAt": "2026-10-05T20:18:26.407Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-06T10:50:30.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/inteligencia-artificial/pesquisadores-descobrem-frota-de-agentes-de-ia-misteriosa-mapeando-a-internet/",
+    "title": "Pesquisadores descobrem \"frota de agentes\" de IA misteriosa mapeando a internet",
+    "description": "Um grupo de pesquisadores independentes identificou uma nova “frota de agentes” de inteligência artificial em atividade na internet. De acordo com des...",
+    "url": "https://canaltech.com.br/inteligencia-artificial/pesquisadores-descobrem-frota-de-agentes-de-ia-misteriosa-mapeando-a-internet/",
+    "image": "https://tl.ctcdn.com.br/gEy2TCbtop1uXJOZAV55naMPMQA=/0x0/filters:format(webp):quality(85)/7f0505ac-9bd0-4a75-bf82-9ad396817713.jpeg",
+    "publishedAt": "Mon, 05 Oct 2026 20:05:03 +0000",
+    "source": "Canaltech",
+    "category": "IA",
+    "score": 80,
+    "importedAt": "2026-10-05T20:18:26.755Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-07T20:05:03.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/inteligencia-artificial/cientistas-criam-ia-capaz-de-entender-quando-deu-resposta-errada/",
+    "title": "Cientistas criam IA capaz de entender quando deu resposta errada",
+    "description": "Os pesquisadores do Instituto Avançado de Ciência e Tecnologia da Coreia (KAIST), em parceria com a Microsoft Research Asia, desenvolveram um sistema ...",
+    "url": "https://canaltech.com.br/inteligencia-artificial/cientistas-criam-ia-capaz-de-entender-quando-deu-resposta-errada/",
+    "image": "https://tl.ctcdn.com.br/HOWjQKvx2Z2j7DfpaVA2X-qRSWg=/0x0/filters:format(webp):quality(85)/31d129a3-92ae-496b-b368-f64183fe11aa.jpg",
+    "publishedAt": "Mon, 05 Oct 2026 18:06:01 +0000",
+    "source": "Canaltech",
+    "category": "IA",
+    "score": 80,
+    "importedAt": "2026-10-05T20:18:26.758Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-07T18:06:01.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/inteligencia-artificial/chatgpt-comeca-a-exibir-mais-anuncios-agora-no-gerador-de-imagens/",
+    "title": "ChatGPT começa a exibir mais anúncios, agora no gerador de imagens",
+    "description": "A OpenAI vai ampliar a presença de anúncios no ChatGPT com um novo formato visual exibido durante a geração de imagens. A novidade começa a ser testad...",
+    "url": "https://canaltech.com.br/inteligencia-artificial/chatgpt-comeca-a-exibir-mais-anuncios-agora-no-gerador-de-imagens/",
+    "image": "https://tl.ctcdn.com.br/CEAixp0U6IRxGw1QNTS8ISJNZNc=/0x0/filters:format(webp):quality(85)/2e80b9e8-8dc5-4717-80f6-41febb19dfea.png",
+    "publishedAt": "Mon, 05 Oct 2026 16:01:01 +0000",
+    "source": "Canaltech",
+    "category": "IA",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:26.763Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T16:01:01.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/eletro/samsung-lanca-ar-condicionado-que-tambem-ilumina-o-ambiente/",
+    "title": "Samsung lança ar-condicionado que também ilumina o ambiente",
+    "description": "A Samsung lançou na índia o Infinite One-Way Cassette, um novo ar-condicionado que também ajuda a iluminar o ambiente. O aparelho combina refrigeração...",
+    "url": "https://canaltech.com.br/eletro/samsung-lanca-ar-condicionado-que-tambem-ilumina-o-ambiente/",
+    "image": "https://tl.ctcdn.com.br/FjZFBCiHmW5VI8u_4rwydgHWn7U=/0x0/filters:format(webp):quality(85)/c82ba371-a207-4d25-bdda-12cf72ac0779.png",
+    "publishedAt": "Mon, 05 Oct 2026 15:56:51 +0000",
+    "source": "Canaltech",
+    "category": "Tecnologia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:26.763Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T15:56:51.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/apps/recursos-e-truques-ocultos-do-ios-atalhos-gestos-e-acessibilidade-no-iphone/",
+    "title": "Recursos e truques ocultos do iOS: atalhos, gestos e acessibilidade no iPhone",
+    "description": "O iPhone possui uma série de funções que ajudam a torná-lo mais acessível, economizar toques, automatizar tarefas e proteger conteúdos pessoais. Além ...",
+    "url": "https://canaltech.com.br/apps/recursos-e-truques-ocultos-do-ios-atalhos-gestos-e-acessibilidade-no-iphone/",
+    "image": "https://tl.ctcdn.com.br/TGyxFCUVL_aBKVEO5H7NjgrQwe8=/0x0/filters:format(webp):quality(85)/dd4756e1-5333-4967-ae55-8d2a0003f285.png",
+    "publishedAt": "Mon, 05 Oct 2026 14:42:28 +0000",
+    "source": "Canaltech",
+    "category": "Tecnologia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:26.765Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T14:42:28.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/inteligencia-artificial/google-rebaixa-gemini-gratis-e-corta-modelos-pro-do-plano-mais-barato/",
+    "title": "Google rebaixa Gemini grátis e corta modelos Pro do plano mais barato",
+    "description": "A partir de 9 de outubro de 2026, o Google começará a alterar a disponibilidade e os limites de acesso aos modelos do Gemini para contas pessoais. Os ...",
+    "url": "https://canaltech.com.br/inteligencia-artificial/google-rebaixa-gemini-gratis-e-corta-modelos-pro-do-plano-mais-barato/",
+    "image": "https://tl.ctcdn.com.br/KjYxfq9ZwNJUzGi10239oTXZ0Uw=/0x0/filters:format(webp):quality(85)/bdc06da0-0714-4caa-bbad-1e18aad4f7e7.jpeg",
+    "publishedAt": "Mon, 05 Oct 2026 14:08:01 +0000",
+    "source": "Canaltech",
+    "category": "IA",
+    "score": 80,
+    "importedAt": "2026-10-05T20:18:26.767Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-10T14:08:01.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/tablet/tablet-robusto-da-samsung-ganha-novo-modelo-com-5g-e-bateria-removivel/",
+    "title": "Tablet robusto da Samsung ganha novo modelo com 5G e bateria removível",
+    "description": "A Samsung deu um novo sinal de que está preparando o Galaxy Tab Active 6 5G, próximo tablet robusto da marca para ambientes de trabalho. O possível no...",
+    "url": "https://canaltech.com.br/tablet/tablet-robusto-da-samsung-ganha-novo-modelo-com-5g-e-bateria-removivel/",
+    "image": "https://tl.ctcdn.com.br/D4N3UFYCnZ2wm9KzSZbuNx1dx18=/0x0/filters:format(webp):quality(85)/3ed4b991-b4a7-4d45-b703-1791537ffd78.png",
+    "publishedAt": "Mon, 05 Oct 2026 10:52:13 +0000",
+    "source": "Canaltech",
+    "category": "Tecnologia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:26.772Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-06T10:52:13.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/carros/voce-sabe-usar-as-funcoes-p-e-n-do-cambio-automatico/",
+    "title": "Você sabe usar as funções \"P\" e \"N\" do câmbio automático?",
+    "description": "Os carros com câmbio automático já deixaram de ser novidade no Brasil há muito tempo. Mesmo assim, algumas funções da transmissão ainda confundem quem...",
+    "url": "https://canaltech.com.br/carros/voce-sabe-usar-as-funcoes-p-e-n-do-cambio-automatico/",
+    "image": "https://tl.ctcdn.com.br/1bcScoJhs8sv33wXG0ITmW3bKRo=/0x0/filters:format(webp):quality(85)/4522e791-04d4-4e7a-bcfe-b99e69c43314.jpg",
+    "publishedAt": "Mon, 05 Oct 2026 10:06:01 +0000",
+    "source": "Canaltech",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:26.773Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T10:06:01.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/carros/quanto-custaria-um-nissan-livina-hoje-com-a-inflacao/",
+    "title": "Quanto custaria um Nissan Livina hoje, com a inflação?",
+    "description": "Sucesso de vendas na China, Indonésia e áfrica do Sul, o Nissan Livina chegou ao Brasil em março de 2009 para marcar um capítulo importante da marca n...",
+    "url": "https://canaltech.com.br/carros/quanto-custaria-um-nissan-livina-hoje-com-a-inflacao/",
+    "image": "https://tl.ctcdn.com.br/Fm26qpZldXaY00Ej1jb2VaYWWF0=/0x0/filters:format(webp):quality(85)/8cb58990-38b3-4a3d-8048-fc23bb92b707.jpg",
+    "publishedAt": "Sun, 04 Oct 2026 22:06:00 +0000",
+    "source": "Canaltech",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:26.776Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-09T22:06:00.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/inteligencia-artificial/como-migrar-gpts-personalizados-para-plugins-no-chatgpt/",
+    "title": "Como migrar GPTs personalizados para plugins no ChatGPT?",
+    "description": "A OpenAI vai encerrar os GPTs personalizados no ChatGPT em 11 de dezembro de 2026. A mudança acontece porque a OpenAI está levando esse tipo de config...",
+    "url": "https://canaltech.com.br/inteligencia-artificial/como-migrar-gpts-personalizados-para-plugins-no-chatgpt/",
+    "image": "https://tl.ctcdn.com.br/f_vIcSSaobYTOe-zf2DVFpHNHB4=/0x0/filters:format(webp):quality(85)/eff842d1-2d07-43d0-ad5f-2cc5ef98c683.jpeg",
+    "publishedAt": "Sun, 04 Oct 2026 18:00:01 +0000",
+    "source": "Canaltech",
+    "category": "IA",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:26.780Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-09T18:00:01.000Z"
+  },
+  {
+    "id": "https://tecnoblog.net/noticias/openai-anuncia-marca-dagua-invisivel-para-textos-do-chatgpt/",
+    "title": "OpenAI anuncia marca-d’água invisível para textos do ChatGPT",
+    "description": "Tecnologia textGrainm começará a funcionar no ChatGPT e Codex da União Europeia nesta fase inicial.\nOpenAI anuncia marca-d’água invisível para textos ...",
+    "url": "https://tecnoblog.net/noticias/openai-anuncia-marca-dagua-invisivel-para-textos-do-chatgpt/",
+    "image": "https://files.tecnoblog.net/wp-content/uploads/2023/06/chatgpt-1_capa.png",
+    "publishedAt": "Mon, 05 Oct 2026 19:44:32 +0000",
+    "source": "Tecnoblog",
+    "category": "IA",
+    "score": 80,
+    "importedAt": "2026-10-05T20:18:27.036Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-10T19:44:32.000Z"
+  },
+  {
+    "id": "https://tecnoblog.net/noticias/chatgpt-comeca-a-testar-anuncios-com-imagens/",
+    "title": "ChatGPT começa a testar anúncios com imagens",
+    "description": "Novo formato será testado de início durante a geração de imagens; OpenAI afirma que publicidade continuará separada das respostas.\nChatGPT começa a te...",
+    "url": "https://tecnoblog.net/noticias/chatgpt-comeca-a-testar-anuncios-com-imagens/",
+    "image": "https://files.tecnoblog.net/wp-content/uploads/2023/06/sam-altman-3-capa.png",
+    "publishedAt": "Mon, 05 Oct 2026 18:20:05 +0000",
+    "source": "Tecnoblog",
+    "category": "IA",
+    "score": 80,
+    "importedAt": "2026-10-05T20:18:27.040Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-10T18:20:05.000Z"
+  },
+  {
+    "id": "https://tecnoblog.net/noticias/gemini-vai-ficar-mais-limitado-para-usuarios-de-contas-gratuitas/",
+    "title": "Gemini vai ficar mais limitado para usuários de contas gratuitas",
+    "description": "Gemini gratuito deixará de oferecer os modelos Flash e Pro, ficando limitado ao Flash Lite. Também haverá mudanças no Google AI Plus.\nGemini vai ficar...",
+    "url": "https://tecnoblog.net/noticias/gemini-vai-ficar-mais-limitado-para-usuarios-de-contas-gratuitas/",
+    "image": "https://files.tecnoblog.net/wp-content/uploads/2026/06/capas-google-gemini-2026-1.png",
+    "publishedAt": "Mon, 05 Oct 2026 17:58:14 +0000",
+    "source": "Tecnoblog",
+    "category": "IA",
+    "score": 80,
+    "importedAt": "2026-10-05T20:18:27.042Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-10T17:58:14.000Z"
+  },
+  {
+    "id": "https://tecnoblog.net/noticias/apple-vai-dificultar-controle-de-acesso-aos-dados-do-mac-por-causa-da-ia/",
+    "title": "Apple vai dificultar acesso aos dados do Mac por causa da IA",
+    "description": "Mudança no Acesso Total ao Disco busca reforçar a segurança diante de agentes de inteligência artificial. \nApple vai dificultar acesso aos dados do Ma...",
+    "url": "https://tecnoblog.net/noticias/apple-vai-dificultar-controle-de-acesso-aos-dados-do-mac-por-causa-da-ia/",
+    "image": "https://files.tecnoblog.net/wp-content/uploads/2025/04/Capa-TBR-MacOS.png",
+    "publishedAt": "Mon, 05 Oct 2026 13:15:37 +0000",
+    "source": "Tecnoblog",
+    "category": "IA",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:27.049Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T13:15:37.000Z"
+  },
+  {
+    "id": "https://tecnoblog.net/noticias/apple-pode-lancar-camera-residencial-com-ia-mas-que-nao-grava-videos/",
+    "title": "Apple pode lançar câmera residencial com IA (mas que não grava vídeos)",
+    "description": "Dispositivo analisaria o ambiente e descreveria eventos em texto. Câmera faria parte do novo ecossistema de casa inteligente da Apple.\nApple pode lanç...",
+    "url": "https://tecnoblog.net/noticias/apple-pode-lancar-camera-residencial-com-ia-mas-que-nao-grava-videos/",
+    "image": "https://files.tecnoblog.net/wp-content/uploads/2024/02/camera-seguranca-monitoramento.jpg",
+    "publishedAt": "Fri, 02 Oct 2026 14:47:03 +0000",
+    "source": "Tecnoblog",
+    "category": "IA",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:27.062Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T14:47:03.000Z"
+  },
+  {
+    "id": "https://olhardigital.com.br/2026/10/05/inteligencia-artificial/chatgpt-comeca-a-exibir-anuncios-ao-lado-de-imagens-geradas/",
+    "title": "ChatGPT começa a exibir anúncios ao lado de imagens geradas",
+    "description": "Novidade começará a ser testada nos Estados Unidos ainda em outubro, com um grupo inicial de anunciantes\nO post ChatGPT começa a exibir anúncios ao la...",
+    "url": "https://olhardigital.com.br/2026/10/05/inteligencia-artificial/chatgpt-comeca-a-exibir-anuncios-ao-lado-de-imagens-geradas/",
+    "image": "https://olhardigital.com.br/wp-content/uploads/2026/10/openai-1-1024x682.jpg",
+    "publishedAt": "Mon, 05 Oct 2026 19:13:54 +0000",
+    "source": "Olhar Digital",
+    "category": "IA",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:27.255Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T19:13:54.000Z"
+  },
+  {
+    "id": "https://www.showmetech.com.br/lenovo-destaca-ia-qira-em-notebooks/",
+    "title": "Lenovo destaca Qira, a nova inteligência artificial de seus notebooks",
+    "description": "IA combina processamento local e nuvem para responder perguntas, ler documentos e até comparar produtos para ajudar o usuário a escolher a melhor comp...",
+    "url": "https://www.showmetech.com.br/lenovo-destaca-ia-qira-em-notebooks/",
+    "image": "",
+    "publishedAt": "Mon, 05 Oct 2026 16:54:12 +0000",
+    "source": "Showmetech",
+    "category": "IA",
+    "score": 80,
+    "importedAt": "2026-10-05T20:18:27.454Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-10T16:54:12.000Z"
+  },
+  {
+    "id": "https://forbes.com.br/carreira/2026/10/geracao-z-investe-em-habilidades-de-ia-para-ampliar-seu-potencial-de-ganhos/",
+    "title": "Geração Z Investe em Habilidades de IA para Ampliar Seu Potencial de Ganhos",
+    "description": "À medida que a inteligência artificial reduz vagas de entrada, jovens profissionais recorrem à tecnologia para ganhar produtividade, construir portfól...",
+    "url": "https://forbes.com.br/carreira/2026/10/geracao-z-investe-em-habilidades-de-ia-para-ampliar-seu-potencial-de-ganhos/",
+    "image": "",
+    "publishedAt": "Fri, 02 Oct 2026 08:00:00 +0000",
+    "source": "Forbes",
+    "category": "IA",
+    "score": 80,
+    "importedAt": "2026-10-05T20:18:28.926Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-07T08:00:00.000Z"
+  },
+  {
+    "id": "https://diolinux.com.br/noticias/kagi-encerra-orion-para-linux.html",
+    "title": "Kagi encerra o desenvolvimento do Orion para Linux e Windows",
+    "description": "O Orion Browser estava ganhando espaço fora do ecossistema da Apple, mas uma mudança importante pode alterar o futuro do navegador no Linux e no Windo...",
+    "url": "https://diolinux.com.br/noticias/kagi-encerra-orion-para-linux.html",
+    "image": "",
+    "publishedAt": "Mon, 05 Oct 2026 14:42:44 +0000",
+    "source": "Diolinux",
+    "category": "Dev",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:32.386Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T14:42:44.000Z"
+  },
+  {
+    "id": "https://diolinux.com.br/aplicativos/adeus-capcut-o-cutwire-drift.html",
+    "title": "Adeus CapCut! O Cutwire Drift é uma alternativa grátis e open source",
+    "description": "Cutwire Drift é um editor de vídeo gratuito e open source que funciona no Linux, Windows, macOS e Android e oferece recursos semelhantes aos do CapCut...",
+    "url": "https://diolinux.com.br/aplicativos/adeus-capcut-o-cutwire-drift.html",
+    "image": "https://diolinux.com.br/wp-content/uploads/2026/10/Adeus-CapCut-O-Cutwire-Drift-e-uma-alternativa-gratis-e-open-source-4-1024x576.avif",
+    "publishedAt": "Sun, 04 Oct 2026 11:00:00 +0000",
+    "source": "Diolinux",
+    "category": "Dev",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:32.386Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-09T11:00:00.000Z"
+  },
+  {
+    "id": "https://diolinux.com.br/noticias/rust-prioritaria-microsoft.html",
+    "title": "Rust agora é uma linguagem prioritária dentro da Microsoft",
+    "description": "A Microsoft elevou o Rust ao status de linguagem Tier-1 para desenvolvimento interno, com suporte oficial de ferramentas, segurança e integração com o...",
+    "url": "https://diolinux.com.br/noticias/rust-prioritaria-microsoft.html",
+    "image": "",
+    "publishedAt": "Sat, 03 Oct 2026 20:41:44 +0000",
+    "source": "Diolinux",
+    "category": "Dev",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:32.386Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-08T20:41:44.000Z"
+  },
+  {
+    "id": "https://diolinux.com.br/sistemas-operacionais/soplos-e-uma-distro-linux.html",
+    "title": "Soplos é uma distro Linux que você ainda não conhece, mas deveria!",
+    "description": "Conheça o Soplos, uma nova distribuição Linux baseada no Debian Testing que reúne ferramentas próprias, instalação simplificada de apps e suporte a di...",
+    "url": "https://diolinux.com.br/sistemas-operacionais/soplos-e-uma-distro-linux.html",
+    "image": "https://diolinux.com.br/wp-content/uploads/2026/10/Soplos-e-uma-distro-Linux-que-voce-ainda-nao-conhece-mas-deveria-13-1024x576.avif",
+    "publishedAt": "Sat, 03 Oct 2026 16:33:04 +0000",
+    "source": "Diolinux",
+    "category": "Dev",
+    "score": 100,
+    "importedAt": "2026-10-05T20:18:32.387Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-08T16:33:04.000Z"
+  },
+  {
+    "id": "https://www.tabnews.com.br/NewsletterOficial/google-suspende-programa-de-recompensas-em-projetos-de-codigo-aberto-devido-ao-aumento-de-relatorios-invalidos-gerados-por-ia",
+    "title": "Google suspende programa de recompensas em projetos de código aberto devido ao aumento de relatórios inválidos gerados por IA",
+    "description": "A medida atinge o OSS VRP, que abrange tecnologias como Golang, Angular e Fuchsia. Engenheiros e mantenedores estariam sobrecarregados por milhares de...",
+    "url": "https://www.tabnews.com.br/NewsletterOficial/google-suspende-programa-de-recompensas-em-projetos-de-codigo-aberto-devido-ao-aumento-de-relatorios-invalidos-gerados-por-ia",
+    "image": "",
+    "publishedAt": "Mon, 05 Oct 2026 14:35:04 GMT",
+    "source": "TabNews",
+    "category": "Dev",
+    "score": 80,
+    "importedAt": "2026-10-05T20:18:35.720Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-10T14:35:04.000Z"
+  },
+  {
+    "id": "https://www.tabnews.com.br/dmanoel/a-api-do-pncp-ignora-filtros-em-silencio-o-que-aprendi-montando-um-servidor-mcp-de-licitacoes",
+    "title": "A API do PNCP ignora filtros em silêncio: o que aprendi montando um servidor MCP de licitações",
+    "description": "Estou montando um servidor MCP sobre o PNCP (Portal Nacional de Contratações Públicas): licitações abertas, compras que um órgão publicou e contratos ...",
+    "url": "https://www.tabnews.com.br/dmanoel/a-api-do-pncp-ignora-filtros-em-silencio-o-que-aprendi-montando-um-servidor-mcp-de-licitacoes",
+    "image": "",
+    "publishedAt": "Mon, 05 Oct 2026 02:29:15 GMT",
+    "source": "TabNews",
+    "category": "Dev",
+    "score": 80,
+    "importedAt": "2026-10-05T20:18:35.722Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-06T02:29:15.000Z"
+  },
+  {
+    "id": "https://www.tabnews.com.br/ca4ti/ext-monitor-segunda-tela-com-rust",
+    "title": "Ext-monitor , segunda tela com rust",
+    "description": "Não vou me extender muito . Estou trazendo o projeto que fiz esses dias : https://lnkd.in/p/dusxP5TH https://github.com/programandosolucoes/ext-monito...",
+    "url": "https://www.tabnews.com.br/ca4ti/ext-monitor-segunda-tela-com-rust",
+    "image": "",
+    "publishedAt": "Mon, 05 Oct 2026 01:01:57 GMT",
+    "source": "TabNews",
+    "category": "Dev",
+    "score": 80,
+    "importedAt": "2026-10-05T20:18:35.724Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-10T01:01:57.000Z"
+  },
+  {
+    "id": "https://www.tabnews.com.br/brasilutils/pitch-5-pegadinhas-ao-converter-xml-de-nf-e-em-planilha-com-codigo-python",
+    "title": "Pitch: 5 pegadinhas ao converter XML de NF-e em planilha (com código Python)",
+    "description": "Se você já somou nota cancelada no faturamento ou viu a chave de acesso virar 3,52609E+43 no Excel, este post é para você. Aviso logo de cara: nós, da...",
+    "url": "https://www.tabnews.com.br/brasilutils/pitch-5-pegadinhas-ao-converter-xml-de-nf-e-em-planilha-com-codigo-python",
+    "image": "",
+    "publishedAt": "Sun, 04 Oct 2026 13:08:58 GMT",
+    "source": "TabNews",
+    "category": "Dev",
+    "score": 80,
+    "importedAt": "2026-10-05T20:18:35.726Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-09T13:08:58.000Z"
+  },
+  {
+    "id": "https://olhardigital.com.br/2026/10/05/inteligencia-artificial/corrida-da-ia-pode-consumir-trilhoes-antes-de-entregar-retorno-esperado/",
+    "title": "Corrida da IA pode consumir trilhões antes de entregar retorno esperado",
+    "description": "Nunca houve tanto dinheiro direcionado a uma nova tecnologia quanto está sendo investido atualmente em IA\nO post Corrida da IA pode consumir trilhões ...",
+    "url": "https://olhardigital.com.br/2026/10/05/inteligencia-artificial/corrida-da-ia-pode-consumir-trilhoes-antes-de-entregar-retorno-esperado/",
+    "image": "https://olhardigital.com.br/wp-content/uploads/2026/10/openai-1-1024x682.jpg",
+    "publishedAt": "Mon, 05 Oct 2026 20:03:56 +0000",
+    "source": "Olhar Digital",
+    "category": "IA",
+    "score": 80,
+    "importedAt": "2026-10-05T20:34:18.070Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-10T20:03:56.000Z"
+  },
+  {
+    "id": "https://olhardigital.com.br/2026/10/05/inteligencia-artificial/ia-generativa-pesquisa-revela-o-que-ocorre-dentro-dos-modelos/",
+    "title": "IA generativa: pesquisa revela o que ocorre dentro dos modelos",
+    "description": "Pesquisadores identificam padrões internos que ajudam a explicar como sistemas de IA generativa produzem respostas — e apontam o que ainda segue sem r...",
+    "url": "https://olhardigital.com.br/2026/10/05/inteligencia-artificial/ia-generativa-pesquisa-revela-o-que-ocorre-dentro-dos-modelos/",
+    "image": "",
+    "publishedAt": "Mon, 05 Oct 2026 19:55:05 +0000",
+    "source": "Olhar Digital",
+    "category": "IA",
+    "score": 80,
+    "importedAt": "2026-10-05T20:34:18.071Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-07T19:55:05.000Z"
+  },
+  {
+    "id": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-05102026-primeiro-turno-eleicoes/",
+    "title": "Dólar cai 4,1%, maior baixa diária desde 2018, com Flávio à frente no 1º turno",
+    "description": "Resultado contrariou a maior parte das pesquisas divulgadas na reta final\nThe post Dólar cai 4,1%, maior baixa diária desde 2018, com Flávio à frente ...",
+    "url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-05102026-primeiro-turno-eleicoes/",
+    "image": "https://www.infomoney.com.br/wp-content/uploads/2026/08/Captura-de-tela-2026-08-18-125421.png?fit=300%2C201&amp;quality=70&amp;strip=all",
+    "publishedAt": "Mon, 05 Oct 2026 20:49:17 +0000",
+    "source": "InfoMoney",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:49:46.197Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T20:49:17.000Z"
+  },
+  {
+    "id": "https://www.cnnbrasil.com.br/economia/money/mercado/apos-1o-turno-investidores-devem-ter-cautela-com-euforia-do-mercado/",
+    "title": "Após 1º turno, investidores devem ter cautela com euforia do mercado",
+    "description": "Resultado eleitoral faz bolsa disparar, enquanto dólar e juros futuros recuam...",
+    "url": "https://www.cnnbrasil.com.br/economia/money/mercado/apos-1o-turno-investidores-devem-ter-cautela-com-euforia-do-mercado/",
+    "image": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/09/2021-09-27T151816Z_1_LYNXMPEH8Q0TF_RTROPTP_4_BOVESPA-ABRE.jpg?w=200",
+    "publishedAt": "Mon, 05 Oct 2026 20:39:22 +0000",
+    "source": "CNN",
+    "category": "Economia",
+    "score": 83,
+    "importedAt": "2026-10-05T20:49:56.033Z",
+    "importanceScore": 83,
+    "expiresAt": "2026-10-06T20:39:22.000Z"
+  },
+  {
+    "id": "https://www.cnnbrasil.com.br/economia/money/mercado/juros-futuros-desabam-apos-resultados-do-1o-turno/",
+    "title": "Juros futuros desabam após resultados do 1º turno",
+    "description": "Queda foi de mais de 130 pontos-base; taxa para janeiro de 2028 estava em 12,665%, com baixa de 84 pontos-base ante o ajuste de 13,509% da sessão ante...",
+    "url": "https://www.cnnbrasil.com.br/economia/money/mercado/juros-futuros-desabam-apos-resultados-do-1o-turno/",
+    "image": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/Reuters_Direct_Media/BrazilOnlineReportBusinessNews/tagreuters.com2026binary_LYNXMPEM441JH-BASEIMAGE.jpg?w=200",
+    "publishedAt": "Mon, 05 Oct 2026 19:47:33 +0000",
+    "source": "CNN",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-05T20:49:56.045Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T19:47:33.000Z"
+  },
+  {
+    "id": "https://exame.com/inteligencia-artificial/aos-19-anos-fundador-capta-us-11-milhoes-para-criar-computador-de-ia/",
+    "title": "Aos 19 anos, fundador capta US$ 11 milhões para criar computador de IA",
+    "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
+    "url": "https://exame.com/inteligencia-artificial/aos-19-anos-fundador-capta-us-11-milhoes-para-criar-computador-de-ia/",
+    "image": "https://classic.exame.com/wp-content/uploads/2026/10/ghost_ai.jpeg",
+    "publishedAt": "2026-10-06T17:02:51.434Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:51.434Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T17:02:51.434Z"
+  },
+  {
+    "id": "https://startupi.com.br/brics-biodesign-brasil-india-pesquisas-saude-mercado/",
+    "title": "Brasil e Índia criam aceleradora conjunta para levar pesquisas biomédicas da bancada ao mercado",
+    "description": "Startupi\n\nBrasil e Índia criam aceleradora conjunta para levar pesquisas biomédicas da bancada ao mercado\nLançado em Nova Délhi, o programa BRICS+ Bio...",
+    "url": "https://startupi.com.br/brics-biodesign-brasil-india-pesquisas-saude-mercado/",
+    "image": "https://startupi.com.br/wp-content/uploads/2026/10/20261005_00_programa_brics_biodesign.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 08:00:00 +0000",
+    "source": "Startupi",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:52.239Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-08T08:00:00.000Z"
+  },
+  {
+    "id": "https://startupi.com.br/engenheiro-de-marketing-um-novo-cargo-para-quem-quer-tentar-sobreviver-a-era-da-ia/",
+    "title": "Engenheiro de Marketing: um novo cargo para quem quer (tentar) sobreviver à Era da IA",
+    "description": "Startupi\n\nEngenheiro de Marketing: um novo cargo para quem quer (tentar) sobreviver à Era da IA\nHíbrido entre construtor de sistemas e estrategista de...",
+    "url": "https://startupi.com.br/engenheiro-de-marketing-um-novo-cargo-para-quem-quer-tentar-sobreviver-a-era-da-ia/",
+    "image": "https://startupi.com.br/wp-content/uploads/2026/10/office.jpg",
+    "publishedAt": "Mon, 05 Oct 2026 23:41:47 +0000",
+    "source": "Startupi",
+    "category": "IA",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:52.254Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T23:41:47.000Z"
+  },
+  {
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
     "id": "https://forbes.com.br/forbes-tech/2026/10/openai-passa-a-exibir-anuncios-com-imagem-no-chatgpt/",
     "title": "OpenAI Passa a Exibir Anúncios com Imagem no ChatGPT",
     "description": "Usuários dos EUA serão os primeiros a serem impactdos por esse tipo de propaganda; não há previsão de quando a função chega ao Brasil\nO post OpenAI Pa...",
@@ -387,11 +1379,16 @@
     "source": "Forbes",
     "category": "IA",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-06T19:02:41.262Z",
+=======
+    "importedAt": "2026-10-06T17:02:52.618Z",
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
     "importanceScore": 100,
     "expiresAt": "2026-10-10T20:55:04.000Z"
   },
   {
+<<<<<<< HEAD
     "id": "https://valor.globo.com/financas/noticia/2026/10/06/juros-europeus-recuam-aps-rali-na-frana-spread-entre-taxas-alems-e-francesas-diminui.ghtml",
     "title": "Juros europeus recuam após rali na França; spread entre taxas alemãs e francesas diminui",
     "description": "Os rendimentos dos títulos públicos europeus fecharam em queda, após o avanço das taxas dos títulos franceses na véspera, enquanto a situação fiscal d...",
@@ -404,6 +1401,874 @@
     "importedAt": "2026-10-06T19:02:42.187Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-11T18:38:56.000Z"
+=======
+    "id": "https://www.infomoney.com.br/mercados/bbas3-bbdc4-rali-de-bancos-e-financeiras-muda-preferencias-quais-acoes-ainda-podem-subir-mais/",
+    "title": "Rali de bancos e financeiras muda preferências: quais ações podem subir ainda mais?",
+    "description": "XP, Nubank e Inter mantêm espaço na visão dos analistas; entre bancões, Itaú e Bradesco ganham preferência, enquanto BB é rebaixado pelo J.P. Morgan\nT...",
+    "url": "https://www.infomoney.com.br/mercados/bbas3-bbdc4-rali-de-bancos-e-financeiras-muda-preferencias-quais-acoes-ainda-podem-subir-mais/",
+    "image": "https://www.infomoney.com.br/wp-content/uploads/2026/09/bancos-eleicoes-relatorios.jpg?fit=300%2C200&amp;quality=70&amp;strip=all",
+    "publishedAt": "Tue, 06 Oct 2026 17:00:00 +0000",
+    "source": "InfoMoney",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:53.887Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T17:00:00.000Z"
+  },
+  {
+    "id": "https://www.infomoney.com.br/mercados/bbas3-cai-perde-suporte-ate-onde-banco-do-brasil-pode-recuar/",
+    "title": "BBAS3 cai mais de 6% e perde suporte: até onde ação do Banco do Brasil pode recuar?",
+    "description": "Papel devolve parte do rali recente, IFR sai da sobrecompra e gráfico coloca MM21 e região de R$ 22 no radar\nThe post BBAS3 cai mais de 6% e perde sup...",
+    "url": "https://www.infomoney.com.br/mercados/bbas3-cai-perde-suporte-ate-onde-banco-do-brasil-pode-recuar/",
+    "image": "https://www.infomoney.com.br/wp-content/uploads/2026/10/Arranha-Ceu-Financeiro-e-Rally-de-Mercado.jpg?fit=300%2C169&amp;quality=70&amp;strip=all",
+    "publishedAt": "Tue, 06 Oct 2026 16:57:52 +0000",
+    "source": "InfoMoney",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:53.892Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T16:57:52.000Z"
+  },
+  {
+    "id": "https://www.infomoney.com.br/business/wall-street-caminha-para-bonus-recordes-com-lucro-acima-de-us-90-bilhoes/",
+    "title": "Wall Street caminha para bônus recordes com lucro acima de US$ 90 bilhões",
+    "description": "Corretoras e bancos de investimento de Nova York vivem seu melhor primeiro semestre da história, impulsionados por emissões, M&A e volatilidade dos me...",
+    "url": "https://www.infomoney.com.br/business/wall-street-caminha-para-bonus-recordes-com-lucro-acima-de-us-90-bilhoes/",
+    "image": "https://www.infomoney.com.br/wp-content/uploads/2026/10/470027783.jpg?fit=300%2C200&amp;quality=70&amp;strip=all",
+    "publishedAt": "Tue, 06 Oct 2026 16:54:42 +0000",
+    "source": "InfoMoney",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:53.895Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T16:54:42.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/noticia/2026/10/06/bolsas-na-europa-sobem-com-apoio-de-queda-nos-precos-do-petroleo-e-nos-juros.ghtml",
+    "title": "Bolsas na Europa sobem com apoio de queda nos preços do petróleo e nos juros",
+    "description": "Os principais índices de ações da Europa fecharam em alta nesta terça-feira (6), recuperando parte das perdas recentes, com apoio de um alívio nos ren...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/06/bolsas-na-europa-sobem-com-apoio-de-queda-nos-precos-do-petroleo-e-nos-juros.ghtml",
+    "image": "https://s2-valor.glbimg.com/Q2Q3bweyRPeZxlFbaSZL2QUDmso=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2025/0/c/2vlR1QSUqF8yMEKiNd2w/439084435.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 16:54:49 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:54.465Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T16:54:49.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/noticia/2026/10/06/b3-mira-tecnologia-renda-fixa-e-ma-para-acelerar-crescimento-diz-bofa.ghtml",
+    "title": "B3 mira tecnologia, renda fixa e M&A para acelerar crescimento, diz BofA",
+    "description": "A nova gestão da B3 pretende colocar a tecnologia no centro da estratégia para melhorar a experiência dos clientes e acelerar o desenvolvimento de pro...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/06/b3-mira-tecnologia-renda-fixa-e-ma-para-acelerar-crescimento-diz-bofa.ghtml",
+    "image": "https://s2-valor.glbimg.com/0PH6ogRTfK5zCqolmIQqaZA74gg=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2021/A/9/1wX2CfSU61k7k8LlL5HQ/foto12fin-301-betres-c7.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 16:46:36 -0000",
+    "source": "Valor",
+    "category": "Business",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:54.476Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T16:46:36.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/empresas/noticia/2026/10/06/alpargatas-v-potencial-de-crescimento-em-lojas-especializadas-e-no-mercado-externo.ghtml",
+    "title": "Alpargatas vê potencial de crescimento em lojas especializadas e no mercado externo",
+    "description": "Com uma média de um par de Havaianas vendido para cada brasileiro por ano, a Alpargatas aposta no mercado externo para crescer, contou o CEO, Liel Mir...",
+    "url": "https://valor.globo.com/empresas/noticia/2026/10/06/alpargatas-v-potencial-de-crescimento-em-lojas-especializadas-e-no-mercado-externo.ghtml",
+    "image": "https://s2-valor.glbimg.com/4ISjQtcVzKDJsEyDnHvsrx5vEXw=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2021/j/x/4FCXPEQg6dvmebhIdRcQ/210218souzacruz06.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 16:44:06 -0000",
+    "source": "Valor",
+    "category": "Business",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:54.477Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-08T16:44:06.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/empresas/noticia/2026/10/06/aegea-diz-que-nao-ha-meta-para-abertura-de-capital-mas-quer-estar-preparada.ghtml",
+    "title": "Aegea diz que não há meta para abertura de capital, mas quer estar preparada",
+    "description": "A Aegea não tem uma meta para realizar sua oferta pública inicial de ações (IPO, na sigla em inglês), mas quer estar pronta para isto, afirmou Radamés...",
+    "url": "https://valor.globo.com/empresas/noticia/2026/10/06/aegea-diz-que-nao-ha-meta-para-abertura-de-capital-mas-quer-estar-preparada.ghtml",
+    "image": "https://s2-valor.glbimg.com/9zPGB-8A_5qhBoVLuc_Ph1sxEUw=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2022/P/B/hjTVCuRD2cI55L8pocGA/radames-casseb-ceo-da-aegea.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 16:30:24 -0000",
+    "source": "Valor",
+    "category": "Business",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:54.485Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T16:30:24.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/empresas/noticia/2026/10/06/sap-anuncia-compra-da-belga-techwolf-para-reforar-servios-em-gesto-de-recursos-humanos.ghtml",
+    "title": "SAP anuncia compra da belga TechWolf para reforçar serviços em gestão de recursos humanos",
+    "description": "A SAP planeja adquirir a empresa belga de tecnologias para gestão de recursos humanos TechWolf. Matéria exclusiva para assinantes. Para ter acesso com...",
+    "url": "https://valor.globo.com/empresas/noticia/2026/10/06/sap-anuncia-compra-da-belga-techwolf-para-reforar-servios-em-gesto-de-recursos-humanos.ghtml",
+    "image": "https://s2-valor.glbimg.com/csCqEe02SSn2YyCbutcs_jkTAGU=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2020/S/D/VAt5e0Q4SBIDV4NHdkFg/sap-locations-walldorf-2012-009-1920-600-f-540x310.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 16:13:09 -0000",
+    "source": "Valor",
+    "category": "Business",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:54.490Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T16:13:09.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/noticia/2026/10/06/bancos-revisam-projecao-de-inadimplencia-para-o-fim-do-ano-de-58percent-para-61percent.ghtml",
+    "title": "Bancos revisam projeção de inadimplência para o fim do ano de 5,8% para 6,1%",
+    "description": "A Pesquisa de Economia Bancária da Federação Brasileira de Bancos (Febraban) mostrou um piora nas expectativas do setor. A projeção de inadimplência p...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/06/bancos-revisam-projecao-de-inadimplencia-para-o-fim-do-ano-de-58percent-para-61percent.ghtml",
+    "image": "https://s2-valor.glbimg.com/hEWY-eHW7kCR8YPoKNaONrbQsKo=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2023/e/V/FYRBDjS6CUPaIAPqE7gQ/161110rubens20.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 15:42:51 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:54.491Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-08T15:42:51.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/patrocinado/pulse-brand/noticia/2026/10/06/o-que-muda-na-lideranca-quando-a-ia-entra-para-valer-no-negocio-1.ghtml",
+    "title": "O que muda na liderança quando a IA entra para valer no negócio",
+    "description": "...",
+    "url": "https://valor.globo.com/patrocinado/pulse-brand/noticia/2026/10/06/o-que-muda-na-lideranca-quando-a-ia-entra-para-valer-no-negocio-1.ghtml",
+    "image": "https://s2-valor.glbimg.com/v94t5IwZO1LXONnGdzgTgtmnhbg=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/g/K/tBJf3nTCe3MaFBNumAiA/publicador-api-valor-pulse-brand-100-5a330477-df88-408a-940e-140d0759843d.jpeg-20261006123225",
+    "publishedAt": "Tue, 06 Oct 2026 15:32:40 -0000",
+    "source": "Valor",
+    "category": "Business",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:54.494Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T15:32:40.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/noticia/2026/10/06/ceo-explica-receita-para-ita-sofrer-menos-com-inadimplncia-do-que-restante-do-mercado.ghtml",
+    "title": "CEO explica receita para Itaú sofrer menos com inadimplência do que restante do mercado",
+    "description": "O CEO do Itaú Unibanco, Milton Maluhy, afirmou que a inadimplência no mercado de crédito bancário está subindo mês a mês, para patamares historicament...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/06/ceo-explica-receita-para-ita-sofrer-menos-com-inadimplncia-do-que-restante-do-mercado.ghtml",
+    "image": "https://s2-valor.glbimg.com/GIV8jHewQZVJzZGBUBkCGmE-zUI=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2025/k/e/rgdYTGR3OY4CsKhcEwxw/17rel-170-exec6-a11-img01.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 15:20:15 -0000",
+    "source": "Valor",
+    "category": "Business",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:54.503Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T15:20:15.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/noticia/2026/10/06/jp-morgan-rebaixa-recomendacao-para-acoes-do-bb-e-eleva-para-bradesco-acoes-reagem.ghtml",
+    "title": "J.P. Morgan rebaixa recomendação para BB e eleva para Bradesco; ações reagem",
+    "description": "...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/06/jp-morgan-rebaixa-recomendacao-para-acoes-do-bb-e-eleva-para-bradesco-acoes-reagem.ghtml",
+    "image": "https://s2-valor.glbimg.com/wSsiDUq5rlAEDPlYC01skOz3qIw=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2025/h/y/EHO4JKRqyxqO3SUtazFg/439452971.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 15:03:55 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:54.506Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T15:03:55.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/empresas/noticia/2026/10/06/micron-pagara-us-600-mi-a-netlist-em-acordo-para-encerrar-disputa-de-patentes.ghtml",
+    "title": "Micron pagará US$ 600 mi à Netlist em acordo para encerrar disputa de patentes",
+    "description": "A fabricante de memórias para computadores Netlist anunciou nesta terça-feira que a Micron pagará US$ 600 milhões para encerrar uma disputa de patente...",
+    "url": "https://valor.globo.com/empresas/noticia/2026/10/06/micron-pagara-us-600-mi-a-netlist-em-acordo-para-encerrar-disputa-de-patentes.ghtml",
+    "image": "https://s2-valor.glbimg.com/KAYDi0B6pGjfO10i-PTfmOxDY1U=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2024/o/D/YIOF64S6K9v12PIk4Zww/410441846.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 14:57:50 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:54.509Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T14:57:50.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/noticia/2026/10/06/banco-gosta-de-trabalhar-com-juros-abaixo-de-dois-digitos-o-que-permite-impulsionar-a-economia-diz-ceo-do-itau.ghtml",
+    "title": "Banco gosta de trabalhar com juros abaixo de dois dígitos, o que permite impulsionar a economia, diz CEO do Itaú",
+    "description": "O CEO do Itaú Unibanco, Milton Maluhy, participou nesta manhã do Panorama Itaúsa, evento da holding que é a principal acionista do banco. Falando sobr...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/06/banco-gosta-de-trabalhar-com-juros-abaixo-de-dois-digitos-o-que-permite-impulsionar-a-economia-diz-ceo-do-itau.ghtml",
+    "image": "https://s2-valor.glbimg.com/Q4ZfyFq7OcC7x-FTD_trfDxJUZk=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2025/x/P/xecoH7TbGHKhscfaGHDw/foto03fin-101-maluhy-c10.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 14:43:52 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:54.517Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T14:43:52.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/noticia/2026/10/06/s-vsperas-do-1-turno-estrangeiros-aportaram-r-23-bilhes-na-b3.ghtml",
+    "title": "Às vésperas do 1º turno, estrangeiros aportaram R$ 2,3 bilhões na B3",
+    "description": "Os investidores estrangeiros aportaram R$ 2,3 bilhões em recursos no segmento secundário da B3 (ações já listadas) em 2 de outubro, dia em que o Ibove...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/06/s-vsperas-do-1-turno-estrangeiros-aportaram-r-23-bilhes-na-b3.ghtml",
+    "image": "https://s2-valor.glbimg.com/sSPTXEiQ4OSzAqinbL03Tmb3ltY=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2021/r/i/rHBWiETkmJY421KWcfsg/190612-20bmf-20bovespa-2037.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 14:42:26 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:54.519Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T14:42:26.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/noticia/2026/10/06/economista-chefe-do-bce-diz-que-no-se-observam-efeitos-secundrios-sobre-a-inflao.ghtml",
+    "title": "Economista-chefe do BCE diz que não se observam efeitos secundários sobre a inflação",
+    "description": "...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/06/economista-chefe-do-bce-diz-que-no-se-observam-efeitos-secundrios-sobre-a-inflao.ghtml",
+    "image": "https://s2-valor.glbimg.com/ViA4_DBVwFQGsR4mmSmlim9fD_w=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/r/S/2RQcCsSROzwWN5xwqQ2A/452476678.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 14:35:13 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:54.520Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T14:35:13.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/noticia/2026/10/06/morgan-stanley-eleva-brasil-para-compra-aps-1-turno-e-v-ibovespa-a-250-mil-pontos-em-cenrio-otimista.ghtml",
+    "title": "Morgan Stanley eleva Brasil para compra após 1º turno e vê Ibovespa a 250 mil pontos em cenário otimista",
+    "description": "...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/06/morgan-stanley-eleva-brasil-para-compra-aps-1-turno-e-v-ibovespa-a-250-mil-pontos-em-cenrio-otimista.ghtml",
+    "image": "https://s2-valor.glbimg.com/SwlrxuAGoRO95WaEQngzocSRx2o=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/R/f/UdI0WdRa2A5W1TaLoyNA/417075513.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 14:31:47 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:54.521Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T14:31:47.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/noticia/2026/10/06/ibovespa-sobe-em-ritmo-moderado-apos-rali-da-vespera.ghtml",
+    "title": "Ibovespa recua com realização de lucros após rali, mas segue acima dos 205 mil pontos",
+    "description": "O Ibovespa opera em leve queda nesta terça-feira (6), em um movimento de realização de lucros, após a forte alta observada na véspera. Mesmo depois de...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/06/ibovespa-sobe-em-ritmo-moderado-apos-rali-da-vespera.ghtml",
+    "image": "https://s2-valor.glbimg.com/jZ-lQub7SrhXjgtziwmujIb5R0g=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/V/Q/A5mGbKTCKeHFL6bJCGyA/foto03fin-201-crdcs-c6.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 13:45:28 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:54.527Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T13:45:28.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/empresas/noticia/2026/10/06/paramount-conclui-aquisio-da-warner-por-us-81-bi-e-cria-gigante-global-de-mdia.ghtml",
+    "title": "Paramount conclui aquisição da Warner por US$ 81 bi e cria gigante global de mídia",
+    "description": "A Paramount Skydance concluiu a sua transação de US$ 81 bilhões para a aquisição da Warner Bros. Discovery, finalizando uma fusão que cria uma das mai...",
+    "url": "https://valor.globo.com/empresas/noticia/2026/10/06/paramount-conclui-aquisio-da-warner-por-us-81-bi-e-cria-gigante-global-de-mdia.ghtml",
+    "image": "https://s2-valor.glbimg.com/i4E8MQt7P6ll0NY7CNOpd1uPwkg=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/l/q/afZVBPSEeDsyH1Xucsxg/447600478.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 13:37:35 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:54.533Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T13:37:35.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/noticia/2026/10/06/abbc-anuncia-ex-diretor-do-banco-central-como-novo-ceo.ghtml",
+    "title": "ABBC anuncia ex-diretor do Banco Central como novo CEO",
+    "description": "O economista e ex-diretor do Banco Central Renato Gomes é o novo CEO da Associação Brasileira de Bancos (ABBC). O anúncio foi feito na manhã desta ter...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/06/abbc-anuncia-ex-diretor-do-banco-central-como-novo-ceo.ghtml",
+    "image": "https://s2-valor.glbimg.com/DlAMjXtGHJ4O_ChHsNu0HOw_axY=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2025/B/X/RpBBbVR5OVD2LL3dXpJA/54473115806-fa68cc9c1f-k.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 13:33:28 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:54.536Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T13:33:28.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/empresas/noticia/2026/10/06/uber-compra-ezcater-por-us-23-bi-para-reforar-atuao-no-mercado-corporativo.ghtml",
+    "title": "Uber compra ezCater por US$ 2,3 bi para reforçar atuação no mercado corporativo",
+    "description": "...",
+    "url": "https://valor.globo.com/empresas/noticia/2026/10/06/uber-compra-ezcater-por-us-23-bi-para-reforar-atuao-no-mercado-corporativo.ghtml",
+    "image": "https://s2-valor.glbimg.com/Cr98PB7GZComeqh6UGRN9KezXK0=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/r/d/pdTkqOQ1yLKVyBskFvfQ/ezcater-plataforma-dos-eua-que-oferece-servico-de-catering-para-empresas-rep-ezcater.webp",
+    "publishedAt": "Tue, 06 Oct 2026 13:27:05 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:54.537Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T13:27:05.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/patrocinado/dino/noticia/2026/10/06/reputacao-do-ceo-representa-quase-metade-do-valor-de-mercado-1.ghtml",
+    "title": "Reputação do CEO representa quase metade do valor de mercado",
+    "description": "...",
+    "url": "https://valor.globo.com/patrocinado/dino/noticia/2026/10/06/reputacao-do-ceo-representa-quase-metade-do-valor-de-mercado-1.ghtml",
+    "image": "https://s2-valor.glbimg.com/3-sYZzEyj-T4RbxHtElCl-eHEg4=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/g/o/AjxjKeRqCUv5dmAgc7YA/publicador-api-valor-dino-100-b032720d-2fa4-45a2-83a1-422f1b20aa4e.png-20261006101828",
+    "publishedAt": "Tue, 06 Oct 2026 13:18:45 -0000",
+    "source": "Valor",
+    "category": "Business",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:54.537Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T13:18:45.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/noticia/2026/10/06/dolar-aprofunda-queda-da-vespera-no-inicio-dos-negocios.ghtml",
+    "title": "Dólar hoje estende queda da véspera com exterior favorável e menor risco local",
+    "description": "O dólar à vista estende a desvalorização observada na sessão de ontem e opera abaixo de R$ 5 nesta terça-feira (6). O movimento chegou a ser mais fort...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/06/dolar-aprofunda-queda-da-vespera-no-inicio-dos-negocios.ghtml",
+    "image": "https://s2-valor.glbimg.com/9VNZMVh4hH9tMRarT1iE-gUGrg4=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2019/h/1/Y1LBDfT2e2982UG6icug/005fev12.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 12:29:18 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:54.543Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T12:29:18.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/noticia/2026/10/06/juros-futuros-recuam-e-evitam-correcao-apos-rali-da-vespera.ghtml",
+    "title": "Renda fixa dá continuidade a rali eleitoral e juros médios e longos recuam",
+    "description": "Os juros futuros de médio e longo prazo operam em queda firme nesta terça-feira (6), de mais de 10 pontos-base (0,1 ponto percentual), ainda com apoio...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/06/juros-futuros-recuam-e-evitam-correcao-apos-rali-da-vespera.ghtml",
+    "image": "https://s2-valor.glbimg.com/D4cWb3YQRmZ4jzSneyALk6qA5lc=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2025/B/d/rBRUB5QuGfAApzzXNNEw/juros-percentual-taxas-rdne-pexels.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 12:19:42 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:54.551Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T12:19:42.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/produtos/apple-prepara-duas-ondas-de-lancamentos-em-outubro-veja-o-que-pode-chegar/",
+    "title": "Apple prepara duas ondas de lançamentos em outubro; veja o que pode chegar",
+    "description": "A Apple prepara duas rodadas de lançamentos em outubro, segundo informações do MacRumors. A primeira deve acontecer em 13 de outubro, com novidades pa...",
+    "url": "https://canaltech.com.br/produtos/apple-prepara-duas-ondas-de-lancamentos-em-outubro-veja-o-que-pode-chegar/",
+    "image": "https://tl.ctcdn.com.br/9wpDGhg8d9PAkUanp6ZxeHYTRas=/0x0/filters:format(webp):quality(85)/7f12c2d1-ac9d-4e36-9bbd-5bba6488537b.webp",
+    "publishedAt": "Tue, 06 Oct 2026 16:51:20 +0000",
+    "source": "Canaltech",
+    "category": "Tecnologia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:55.888Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T16:51:20.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/inteligencia-artificial/ia-liga-para-sua-mae-google-testa-gemini-para-dar-recados-a-amigos-e-parentes/",
+    "title": "IA liga para sua mãe: Google testa Gemini para dar recados a amigos e parentes",
+    "description": "O Google parece estar preparando uma expansão do Gemini para deixar a inteligência artificial fazer ligações e conversar com amigos e familiares em no...",
+    "url": "https://canaltech.com.br/inteligencia-artificial/ia-liga-para-sua-mae-google-testa-gemini-para-dar-recados-a-amigos-e-parentes/",
+    "image": "https://tl.ctcdn.com.br/jRqJWTozp8IWO4jAHtKF_JFMbMY=/0x0/filters:format(webp):quality(85)/f6f1d501-9189-4dc0-953a-f67852a000d3.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 15:01:00 +0000",
+    "source": "Canaltech",
+    "category": "IA",
+    "score": 80,
+    "importedAt": "2026-10-06T17:02:55.900Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-07T15:01:00.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/games/ceo-da-ubisoft-ameaca-fazer-remake-de-watch-dogs/",
+    "title": "CEO da Ubisoft \"ameaça\" fazer remake de Watch Dogs",
+    "description": "O CEO da Ubisoft, Yves Guillemot, revelou que a franquia Watch Dogs ainda é importante para a produtora e que há planos para um remake do primeiro tít...",
+    "url": "https://canaltech.com.br/games/ceo-da-ubisoft-ameaca-fazer-remake-de-watch-dogs/",
+    "image": "https://tl.ctcdn.com.br/P90dkiEYgqVkSKgadciJGVtr3UM=/0x0/filters:format(webp):quality(85)/b5c8d990-4f6b-496e-986b-6f8596df64e1.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 14:56:00 +0000",
+    "source": "Canaltech",
+    "category": "Business",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:55.905Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T14:56:00.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/smartphone/motorola-razr-60-fica-em-12x-de-r-24999-em-oferta-imperdivel/",
+    "title": "Motorola Razr 60 fica em 12x de R$ 249,99 em oferta imperdível",
+    "description": "Se você quer entrar no mundo dos celulares dobráveis sem abrir mão de bastante memória e uma tela grande, o Motorola Razr 60 aparece como uma opção in...",
+    "url": "https://canaltech.com.br/smartphone/motorola-razr-60-fica-em-12x-de-r-24999-em-oferta-imperdivel/",
+    "image": "https://tl.ctcdn.com.br/HmstyYX6wfJVdUiUdlgC6Sej04Q=/0x0/filters:format(webp):quality(85)/45b42dc3-c601-4e8d-9e5a-196897a2f533.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 13:39:03 +0000",
+    "source": "Canaltech",
+    "category": "Tecnologia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:55.924Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T13:39:03.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/apps/chatgpt-no-trabalho-e-estudos-como-usar-para-resumos-e-mails-pesquisas-e-textos/",
+    "title": "ChatGPT no trabalho e estudos: como usar para resumos, e-mails, pesquisas e textos",
+    "description": "O ChatGPT pode ajudar a resumir documentos, escrever e-mails, organizar informações e preparar materiais de estudo. Também é possível usar a plataform...",
+    "url": "https://canaltech.com.br/apps/chatgpt-no-trabalho-e-estudos-como-usar-para-resumos-e-mails-pesquisas-e-textos/",
+    "image": "https://tl.ctcdn.com.br/vfHYXeNOBRgQUmYKf3-erxzT0BE=/0x0/filters:format(webp):quality(85)/a2f5608b-828b-404b-9143-f74eedc59325.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 13:26:54 +0000",
+    "source": "Canaltech",
+    "category": "IA",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:55.931Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-08T13:26:54.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/apps/instagram-estuda-navegacao-invisivel-para-assinantes-espiarem-sem-deixar-rastros/",
+    "title": "Instagram estuda navegação invisível para assinantes espiarem sem deixar rastros",
+    "description": "O Instagram está desenvolvendo internamente um recurso chamado “modo somente leitura” (read-only mode), que permitirá navegar pela rede social sem dei...",
+    "url": "https://canaltech.com.br/apps/instagram-estuda-navegacao-invisivel-para-assinantes-espiarem-sem-deixar-rastros/",
+    "image": "https://tl.ctcdn.com.br/tLvOj-TeH7_oYLETYqMgOfbm8lw=/0x0/filters:format(webp):quality(85)/1146ab60-2749-424c-b235-ec1d6e177871.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 13:06:00 +0000",
+    "source": "Canaltech",
+    "category": "Tecnologia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:55.936Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T13:06:00.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/hardware/pesadelo-sem-fim-donos-de-intel-raptor-lake-relatam-ate-4-trocas-de-cpu-por-degradacao/",
+    "title": "Pesadelo sem fim: dono de Intel Raptor Lake relata até 4 trocas de CPU por degradação",
+    "description": "Alguns usuários de processadores Intel Core de 13&ordf; e 14&ordf; gerações tiveram sérias dores de cabeça nos últimos anos por conta de um problema e...",
+    "url": "https://canaltech.com.br/hardware/pesadelo-sem-fim-donos-de-intel-raptor-lake-relatam-ate-4-trocas-de-cpu-por-degradacao/",
+    "image": "",
+    "publishedAt": "Tue, 06 Oct 2026 12:37:00 +0000",
+    "source": "Canaltech",
+    "category": "Tecnologia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:55.951Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T12:37:00.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/inteligencia-artificial/nova-ia-da-meta-esta-mapeando-e-fichando-todos-os-seus-amigos-e-familiares/",
+    "title": "Nova IA da Meta está mapeando e \"fichando\" todos os seus amigos e familiares",
+    "description": "Um pesquisador identificou que o Muse, agente de IA pessoal da Meta, cria perfis detalhados sobre os familiares e amigos de cada conta. Os registros t...",
+    "url": "https://canaltech.com.br/inteligencia-artificial/nova-ia-da-meta-esta-mapeando-e-fichando-todos-os-seus-amigos-e-familiares/",
+    "image": "https://tl.ctcdn.com.br/ZP2rv_O0mShjPVaFTg_b9aTaW3o=/0x0/filters:format(webp):quality(85)/1a06d835-5d0d-4637-a37d-4bd1cf76a68c.png",
+    "publishedAt": "Tue, 06 Oct 2026 11:00:02 +0000",
+    "source": "Canaltech",
+    "category": "IA",
+    "score": 80,
+    "importedAt": "2026-10-06T17:02:55.972Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-08T11:00:02.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/produtos/samsung-lanca-galaxy-tab-s12-e-smarttag-3-na-coreia-do-sul/",
+    "title": "Samsung lança Galaxy Tab S12 e SmartTag 3 na Coreia do Sul",
+    "description": "A Samsung lançou nesta terça-feira (6), na Coreia do Sul, os novos Galaxy Tab S12+ e Galaxy Tab S12 Ultra, além do Galaxy SmartTag 3. Os tablets chega...",
+    "url": "https://canaltech.com.br/produtos/samsung-lanca-galaxy-tab-s12-e-smarttag-3-na-coreia-do-sul/",
+    "image": "https://tl.ctcdn.com.br/oubpSmv9hfKtHmlg1HtVYTaw4lI=/0x0/filters:format(webp):quality(85)/4a731c99-7f2c-426d-a333-80aa376dd09e.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 09:25:58 +0000",
+    "source": "Canaltech",
+    "category": "Tecnologia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:56.018Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T09:25:58.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/inteligencia-artificial/chatgpt-copia-o-claude-e-tambem-comeca-a-carimbar-textos-feitos-por-sua-ia/",
+    "title": "ChatGPT copia o Claude e também começa a \"carimbar\" textos feitos por sua IA",
+    "description": "O ChatGPT vai começar a colocar uma marca-d’água invisível em textos gerados pela inteligência artificial. A OpenAI anunciou nesta segunda-feira (5) o...",
+    "url": "https://canaltech.com.br/inteligencia-artificial/chatgpt-copia-o-claude-e-tambem-comeca-a-carimbar-textos-feitos-por-sua-ia/",
+    "image": "https://tl.ctcdn.com.br/V_m3L7PCGu1dxxWPI7PkOEJWOA8=/0x0/filters:format(webp):quality(85)/4ef463f1-605c-4ee7-be94-35fafeebbf38.png",
+    "publishedAt": "Tue, 06 Oct 2026 00:04:00 +0000",
+    "source": "Canaltech",
+    "category": "IA",
+    "score": 80,
+    "importedAt": "2026-10-06T17:02:56.021Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-11T00:04:00.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/inteligencia-artificial/chatgpt-vai-ganhar-carteira-digital-para-fazer-compras-por-voce/",
+    "title": "ChatGPT vai ganhar carteira digital para fazer compras por você",
+    "description": "O ChatGPT está prestes a ganhar uma carteira digital própria. A opção “Wallet” começou a aparecer no aplicativo móvel da plataforma com a indicação de...",
+    "url": "https://canaltech.com.br/inteligencia-artificial/chatgpt-vai-ganhar-carteira-digital-para-fazer-compras-por-voce/",
+    "image": "https://tl.ctcdn.com.br/02gMzZ13-ru4ePC1pTZQgz9DhW8=/0x0/filters:format(webp):quality(85)/68a62ae2-6523-4cec-9d7f-ff9e1979f4e9.png",
+    "publishedAt": "Mon, 05 Oct 2026 23:02:00 +0000",
+    "source": "Canaltech",
+    "category": "IA",
+    "score": 100,
+    "importedAt": "2026-10-06T17:02:56.035Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-10T23:02:00.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/inteligencia-artificial/gemini-ganha-botao-de-mapa-para-voce-circular-onde-quer-pesquisar-veja-como-funciona/",
+    "title": "Gemini ganha botão de mapa para você circular onde quer pesquisar; veja como funciona",
+    "description": "O Google lançou uma nova ferramenta chamada “Mapa” para o aplicativo do Gemini em dispositivos móveis. A novidade permite fazer pesquisas e enviar com...",
+    "url": "https://canaltech.com.br/inteligencia-artificial/gemini-ganha-botao-de-mapa-para-voce-circular-onde-quer-pesquisar-veja-como-funciona/",
+    "image": "https://tl.ctcdn.com.br/TjmC0YMFKXwLJnWjDqhy4xunPTY=/0x0/filters:format(webp):quality(85)/ace8cb5a-227d-4d53-a00b-dfbfc98ef1ff.jpeg",
+    "publishedAt": "Mon, 05 Oct 2026 22:07:00 +0000",
+    "source": "Canaltech",
+    "category": "IA",
+    "score": 80,
+    "importedAt": "2026-10-06T17:02:56.039Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-07T22:07:00.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/inteligencia-artificial/imagens-de-abuso-infantil-criadas-por-ia-explodem-e-faz-autoridades-alertarem-familias/",
+    "title": "Imagens de abuso infantil criadas por IA explodem e faz autoridades alertarem famílias",
+    "description": "Aviso: esta matéria aborda violência sexual contra crianças e adolescentes. O texto não contém descrições gráficas.\nA quantidade de imagens de abuso s...",
+    "url": "https://canaltech.com.br/inteligencia-artificial/imagens-de-abuso-infantil-criadas-por-ia-explodem-e-faz-autoridades-alertarem-familias/",
+    "image": "https://tl.ctcdn.com.br/KZt9u27EYcNIs588_GOTO3c7RL8=/0x0/filters:format(webp):quality(85)/750bf174-4890-4df9-a47a-180120b6fa88.jpg",
+    "publishedAt": "Mon, 05 Oct 2026 21:04:00 +0000",
+    "source": "Canaltech",
+    "category": "IA",
+    "score": 80,
+    "importedAt": "2026-10-06T17:02:56.049Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-10T21:04:00.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/telecom/favelas-de-8-estados-vao-ganhar-4g-e-5g-apos-investimento-de-r-73-milhoes/",
+    "title": "Favelas de 8 estados vão ganhar 4G e 5G após investimento de R$ 73 milhões",
+    "description": "Moradores de 13 favelas em oito estados devem receber reforço na cobertura de telefonia móvel após a aprovação de R$ 72,9 milhões para um projeto da e...",
+    "url": "https://canaltech.com.br/telecom/favelas-de-8-estados-vao-ganhar-4g-e-5g-apos-investimento-de-r-73-milhoes/",
+    "image": "https://tl.ctcdn.com.br/_3kd8nB3dJRayRdfDNP_Ck76TGE=/0x0/filters:format(webp):quality(85)/6589e9eb-5ca3-4c17-a1d1-2bcfd336a18c.jpg",
+    "publishedAt": "Mon, 05 Oct 2026 21:03:53 +0000",
+    "source": "Canaltech",
+    "category": "Economia",
+    "score": 75,
+    "importedAt": "2026-10-06T17:02:56.060Z",
+    "importanceScore": 75,
+    "expiresAt": "2026-10-10T21:03:53.000Z"
+  },
+  {
+    "id": "https://www.showmetech.com.br/agentes-de-ia-da-openai-invadem-a-wikipedia/",
+    "title": "Agentes de IA da OpenAI invadem a Wikipédia",
+    "description": "Fundação relata edições não autorizadas e tráfego excessivo, mas não encontrou evidência de invasão de seus sistemas.\nO post Agentes de IA da OpenAI i...",
+    "url": "https://www.showmetech.com.br/agentes-de-ia-da-openai-invadem-a-wikipedia/",
+    "image": "",
+    "publishedAt": "Tue, 06 Oct 2026 01:56:51 +0000",
+    "source": "Showmetech",
+    "category": "IA",
+    "score": 80,
+    "importedAt": "2026-10-06T17:02:57.784Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-11T01:56:51.000Z"
+  },
+  {
+    "id": "https://www.cnnbrasil.com.br/nacional/sudeste/sp/dia-das-criancas-operacao-fiscaliza-venda-de-brinquedos-em-sao-paulo/",
+    "title": "Dia das Crianças: operação fiscaliza venda de brinquedos em São Paulo",
+    "description": "Ação vistoria lojas na região central da capital e verifica se produtos destinados a crianças e adolescentes atendem às normas de segurança e proteção...",
+    "url": "https://www.cnnbrasil.com.br/nacional/sudeste/sp/dia-das-criancas-operacao-fiscaliza-venda-de-brinquedos-em-sao-paulo/",
+    "image": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/03/WhatsApp-Image-2026-03-04-at-07.24.30.jpeg?w=200",
+    "publishedAt": "Tue, 06 Oct 2026 16:40:43 +0000",
+    "source": "CNN",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:03:01.537Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T16:40:43.000Z"
+  },
+  {
+    "id": "https://www.cnnbrasil.com.br/economia/money/macroeconomia/fmi-crises-de-custo-de-vida-tem-impacto-nas-expectativas-de-inflacao/",
+    "title": "FMI: Crises de custo de vida têm impacto nas expectativas de inflação",
+    "description": "Novo modelo revelou uma diferença de 0,8 ponto percentual em relação à medida padrão de inflação, indicando que, de 2021 a 2024, 23 milhões de pessoas...",
+    "url": "https://www.cnnbrasil.com.br/economia/money/macroeconomia/fmi-crises-de-custo-de-vida-tem-impacto-nas-expectativas-de-inflacao/",
+    "image": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/Reuters_Direct_Media/BrazilOnlineReportBusinessNews/tagreuters.com2025binary_LYNXMPEL6S0RW-BASEIMAGE.jpg?w=200",
+    "publishedAt": "Tue, 06 Oct 2026 15:18:49 +0000",
+    "source": "CNN",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:03:01.562Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T15:18:49.000Z"
+  },
+  {
+    "id": "https://www.cnnbrasil.com.br/economia/money/tecnologia/reino-unido-abre-investigacao-de-seguranca-contra-recurso-do-instagram/",
+    "title": "Reino Unido abre investigação de segurança contra recurso do Instagram",
+    "description": "Órgão vai apurar se a Meta avaliou os riscos da ferramenta Instants antes do lançamento...",
+    "url": "https://www.cnnbrasil.com.br/economia/money/tecnologia/reino-unido-abre-investigacao-de-seguranca-contra-recurso-do-instagram/",
+    "image": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/Reuters_Direct_Media/BrazilOnlineReportBusinessNews/tagreuters.com2025binary_LYNXNPEL8T0ZL-BASEIMAGE.jpg?w=200",
+    "publishedAt": "Tue, 06 Oct 2026 14:56:44 +0000",
+    "source": "CNN",
+    "category": "Tecnologia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:03:01.571Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T14:56:44.000Z"
+  },
+  {
+    "id": "https://www.cnnbrasil.com.br/economia/money/mercado/jp-morgan-rebaixa-banco-do-brasil-e-acoes-caem-apos-rali-da-vespera/",
+    "title": "JP Morgan rebaixa Banco do Brasil e ações caem após rali da véspera",
+    "description": "Papéis da instituição financeira estavam classificados como \"neutros\"; relatório aumentou preço-alvo para R$ 23...",
+    "url": "https://www.cnnbrasil.com.br/economia/money/mercado/jp-morgan-rebaixa-banco-do-brasil-e-acoes-caem-apos-rali-da-vespera/",
+    "image": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/Reuters_Direct_Media/BrazilOnlineReportBusinessNews/tagreuters.com2026binary_LYNXMPEM6J1FF-BASEIMAGE.jpg?w=200",
+    "publishedAt": "Tue, 06 Oct 2026 14:27:43 +0000",
+    "source": "CNN",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:03:01.583Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T14:27:43.000Z"
+  },
+  {
+    "id": "https://www.tabnews.com.br/MrJ/openheinerss-o-maestro-universal-de-ai-coding-agents-harness-orquestrador-de-clis-e-sdks-oficiais-agy-claude-code-codex-aider-opencode",
+    "title": "Pitch: Openheinerss: O Maestro Universal de AI Coding Agents Harness - Orquestrador de cli's e sdk's oficiais - AGY, claude-code, codex, aider, opencode",
+    "description": "\"Esse projeto foi criado rapidamente depois de alguns estudos, e ele visa ser a base de um dos meus outros projetos, mas ele era importante demais par...",
+    "url": "https://www.tabnews.com.br/MrJ/openheinerss-o-maestro-universal-de-ai-coding-agents-harness-orquestrador-de-clis-e-sdks-oficiais-agy-claude-code-codex-aider-opencode",
+    "image": "https://tv.crom.run/og-crom-tv.png",
+    "publishedAt": "Tue, 06 Oct 2026 15:00:18 GMT",
+    "source": "TabNews",
+    "category": "Dev",
+    "score": 80,
+    "importedAt": "2026-10-06T17:03:06.323Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-08T15:00:18.000Z"
+  },
+  {
+    "id": "https://www.tabnews.com.br/NewsletterOficial/desenvolvedor-cria-ferramenta-que-remove-recursos-de-ia-do-macos-27-e-promete-liberar-12-gb-ou-mais-de-armazenamento",
+    "title": "Desenvolvedor cria ferramenta que remove recursos de IA do macOS 27 e promete liberar 12 GB ou mais de armazenamento",
+    "description": "O RemoveMacAI, de Om Lahore, utiliza um serviço da própria Apple para remover os modelos baixados e impedir novos downloads. No entanto, a ferramenta ...",
+    "url": "https://www.tabnews.com.br/NewsletterOficial/desenvolvedor-cria-ferramenta-que-remove-recursos-de-ia-do-macos-27-e-promete-liberar-12-gb-ou-mais-de-armazenamento",
+    "image": "",
+    "publishedAt": "Tue, 06 Oct 2026 14:55:06 GMT",
+    "source": "TabNews",
+    "category": "Dev",
+    "score": 80,
+    "importedAt": "2026-10-06T17:03:06.327Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-11T14:55:06.000Z"
+  },
+  {
+    "id": "https://www.tabnews.com.br/NewsletterOficial/openai-aplicara-marca-dagua-em-textos-gerados-pelo-chatgpt-e-codex-inicialmente-na-uniao-europeia",
+    "title": "OpenAI aplicará marca d’água em textos gerados pelo ChatGPT e Codex, inicialmente na União Europeia",
+    "description": "A tecnologia textGrain insere um sinal estatístico invisível nas escolhas de palavras do modelo. A medida atende à legislação da região, que exige que...",
+    "url": "https://www.tabnews.com.br/NewsletterOficial/openai-aplicara-marca-dagua-em-textos-gerados-pelo-chatgpt-e-codex-inicialmente-na-uniao-europeia",
+    "image": "",
+    "publishedAt": "Tue, 06 Oct 2026 14:30:03 GMT",
+    "source": "TabNews",
+    "category": "Dev",
+    "score": 80,
+    "importedAt": "2026-10-06T17:03:06.332Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-11T14:30:03.000Z"
+  },
+  {
+    "id": "https://www.tabnews.com.br/nikolovv/jev-em-25-linhas-de-python",
+    "title": "# Jev em 25 linhas de Python",
+    "description": "Meu nome é Jev Todo mundo está falando de Jev. Jev isso, Jev aquilo. No Twitter, todo mundo só fala de Jev, que é a próxima fronteira dos grandes mode...",
+    "url": "https://www.tabnews.com.br/nikolovv/jev-em-25-linhas-de-python",
+    "image": "",
+    "publishedAt": "Tue, 06 Oct 2026 14:21:05 GMT",
+    "source": "TabNews",
+    "category": "Dev",
+    "score": 80,
+    "importedAt": "2026-10-06T17:03:06.332Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-11T14:21:05.000Z"
+  },
+  {
+    "id": "https://www.tabnews.com.br/oukayuka/por-que-continuo-escolhendo-o-jujutsu-mesmo-com-a-ia-cuidando-do-git",
+    "title": "Por que continuo escolhendo o Jujutsu mesmo com a IA cuidando do Git",
+    "description": "\"Se um agente de IA já cuida do Git para você, por que aprender outro sistema de controle de versões, como o Jujutsu?\" Essa foi a objeção mais comum a...",
+    "url": "https://www.tabnews.com.br/oukayuka/por-que-continuo-escolhendo-o-jujutsu-mesmo-com-a-ia-cuidando-do-git",
+    "image": "https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/2at8siq1khmugcgxyjpm.png",
+    "publishedAt": "Tue, 06 Oct 2026 13:07:03 GMT",
+    "source": "TabNews",
+    "category": "Dev",
+    "score": 80,
+    "importedAt": "2026-10-06T17:03:06.334Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-11T13:07:03.000Z"
+  },
+  {
+    "id": "https://www.tabnews.com.br/gabrielbahia/perguntas-de-entrevistas-para-desenvolvedor-java-junior",
+    "title": "Perguntas de Entrevistas para Desenvolvedor Java Júnior.",
+    "description": "Perguntas de Entrevistas para Desenvolvedor Java Júnior. Bom pensando em ajudar alguns colegas fiz esse compilado onde trago um pouco da minha experiê...",
+    "url": "https://www.tabnews.com.br/gabrielbahia/perguntas-de-entrevistas-para-desenvolvedor-java-junior",
+    "image": "https://cdn-images-1.medium.com/max/2000/1*9w4XrFLqHiNf07a3tvQVCA.jpeg",
+    "publishedAt": "Tue, 06 Oct 2026 10:21:15 GMT",
+    "source": "TabNews",
+    "category": "Dev",
+    "score": 80,
+    "importedAt": "2026-10-06T17:03:06.339Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-08T10:21:15.000Z"
+  },
+  {
+    "id": "https://www.tabnews.com.br/nullninja/como-gerenciar-o-docker-pelo-navegador-com-portainer-numa-vps-com-https",
+    "title": "Como gerenciar o Docker pelo navegador com Portainer numa VPS (com HTTPS)",
+    "description": "Docker sem decorar comando O Docker é ótimo, mas gerenciar tudo pelo terminal cansa: ver qual container caiu, ler log, reiniciar serviço, limpar image...",
+    "url": "https://www.tabnews.com.br/nullninja/como-gerenciar-o-docker-pelo-navegador-com-portainer-numa-vps-com-https",
+    "image": "",
+    "publishedAt": "Tue, 06 Oct 2026 02:34:25 GMT",
+    "source": "TabNews",
+    "category": "Dev",
+    "score": 80,
+    "importedAt": "2026-10-06T17:03:06.345Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-11T02:34:25.000Z"
+  },
+  {
+    "id": "https://www.tabnews.com.br/nullninja/como-criar-um-bot-de-whatsapp-que-roda-24h-numa-vps-com-node-js-passo-a-passo",
+    "title": "Como criar um bot de WhatsApp que roda 24h numa VPS com Node.js (passo a passo)",
+    "description": "O problema do bot no notebook Quase todo bot de WhatsApp começa rodando no computador de quem programou. Funciona até o notebook fechar, a internet ca...",
+    "url": "https://www.tabnews.com.br/nullninja/como-criar-um-bot-de-whatsapp-que-roda-24h-numa-vps-com-node-js-passo-a-passo",
+    "image": "",
+    "publishedAt": "Tue, 06 Oct 2026 02:23:32 GMT",
+    "source": "TabNews",
+    "category": "Dev",
+    "score": 80,
+    "importedAt": "2026-10-06T17:03:06.347Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-11T02:23:32.000Z"
+  },
+  {
+    "id": "https://www.tabnews.com.br/nullninja/como-instalar-o-n8n-numa-vps-com-docker-e-https-automatico-passo-a-passo",
+    "title": "Como instalar o n8n numa VPS com Docker e HTTPS automático (passo a passo)",
+    "description": "Por que hospedar o próprio n8n O n8n é uma das ferramentas de automação mais usadas por quem integra sistemas, CRMs, planilhas e WhatsApp. Ele pode se...",
+    "url": "https://www.tabnews.com.br/nullninja/como-instalar-o-n8n-numa-vps-com-docker-e-https-automatico-passo-a-passo",
+    "image": "",
+    "publishedAt": "Tue, 06 Oct 2026 02:13:47 GMT",
+    "source": "TabNews",
+    "category": "Dev",
+    "score": 80,
+    "importedAt": "2026-10-06T17:03:06.348Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-11T02:13:47.000Z"
+  },
+  {
+    "id": "https://www.infomoney.com.br/onde-investir/etf-de-brasil-em-ny-capta-us-700-milhoes-em-um-dia-maior-valor-da-historia/",
+    "title": "ETF de Brasil em NY capta US$ 700 milhões em um dia, maior valor da história",
+    "description": "Fundo também teve o maior volume negociado desde sua criação, há 25 anos, e ficou atrás apenas de ETFs de S&P500 e Nasdaq, com mercado em euforia após...",
+    "url": "https://www.infomoney.com.br/onde-investir/etf-de-brasil-em-ny-capta-us-700-milhoes-em-um-dia-maior-valor-da-historia/",
+    "image": "https://www.infomoney.com.br/wp-content/uploads/2026/10/lukas-souza-u8Usmbfq1Z0-unsplash-e1791306983948.jpg?fit=200%2C300&amp;quality=70&amp;strip=all",
+    "publishedAt": "Tue, 06 Oct 2026 17:18:23 +0000",
+    "source": "InfoMoney",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:20:33.258Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T17:18:23.000Z"
+  },
+  {
+    "id": "https://www.infomoney.com.br/mercados/bbas3-bbdc4-jpmorgan-rebaixa-banco-do-brasil-para-venda-e-eleva-bradesco-a-compra-apos-rali-acoes-reagem/",
+    "title": "JPMorgan rebaixa Banco do Brasil para venda e eleva Bradesco após rali; ações reagem",
+    "description": "Banco revisa preços-alvo de financeiras após queda dos juros longos; XP, Nubank e Inter ainda aparecem com potenciais expressivos\nThe post JPMorgan re...",
+    "url": "https://www.infomoney.com.br/mercados/bbas3-bbdc4-jpmorgan-rebaixa-banco-do-brasil-para-venda-e-eleva-bradesco-a-compra-apos-rali-acoes-reagem/",
+    "image": "https://www.infomoney.com.br/wp-content/uploads/2025/05/Captura-de-tela-2025-05-16-083653.png?fit=300%2C199&amp;quality=70&amp;strip=all",
+    "publishedAt": "Tue, 06 Oct 2026 17:13:00 +0000",
+    "source": "InfoMoney",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:20:33.260Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T17:13:00.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/empresas/noticia/2026/10/06/skydance-estabelece-metas-financeiras-ambiciosas-aps-compra-da-warner.ghtml",
+    "title": "Skydance estabelece metas financeiras ambiciosas após compra da Warner",
+    "description": "A Skydance apresentou metas financeiras ambiciosas, incluindo o objetivo de gerar mais de US$ 10 bilhões em fluxo de caixa livre em 2030, após conclui...",
+    "url": "https://valor.globo.com/empresas/noticia/2026/10/06/skydance-estabelece-metas-financeiras-ambiciosas-aps-compra-da-warner.ghtml",
+    "image": "https://s2-valor.glbimg.com/i4E8MQt7P6ll0NY7CNOpd1uPwkg=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/l/q/afZVBPSEeDsyH1Xucsxg/447600478.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 17:08:13 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:20:34.321Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T17:08:13.000Z"
+  },
+  {
+    "id": "https://www.cnnbrasil.com.br/economia/encontro-de-investidores-debate-alta-da-bolsa/",
+    "title": "Encontro de investidores debate alta da bolsa",
+    "description": "Analista de Economia da CNN Débora Oliveira acompanha evento Panorama Itaúsa que reúne executivos para discutir cenário econômico após alta recorde de...",
+    "url": "https://www.cnnbrasil.com.br/economia/encontro-de-investidores-debate-alta-da-bolsa/",
+    "image": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/06/2075_44BDAA7073980EBB-4.jpeg?w=200",
+    "publishedAt": "Tue, 06 Oct 2026 17:34:41 +0000",
+    "source": "CNN",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T17:38:32.139Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T17:34:41.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/noticia/2026/10/06/ceo-do-bofa-no-brasil-deixa-o-cargo-apos-quase-dez-anos.ghtml",
+    "title": "CEO do BofA no Brasil deixa o cargo após quase dez anos",
+    "description": "Eduardo Alcalay comunicou, em uma postagem no LinkedIn, que está deixando o posto de CEO do Bank of America (BofA) no Brasil, após quase dez anos. O c...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/06/ceo-do-bofa-no-brasil-deixa-o-cargo-apos-quase-dez-anos.ghtml",
+    "image": "https://s2-valor.glbimg.com/tvr8pBBzYU_mA5FchbAfTLnV5gk=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2019/E/G/tyUVJeRFmSZ7Kb2vp9Ww/090919eduardo6.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 17:44:35 -0000",
+    "source": "Valor",
+    "category": "Business",
+    "score": 100,
+    "importedAt": "2026-10-06T18:35:35.378Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T17:44:35.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/empresas/noticia/2026/10/06/dexco-segue-plano-para-conquistar-o-direito-de-crescer-diz-ceo.ghtml",
+    "title": "Dexco segue plano para ‘conquistar o direito de crescer’, diz CEO",
+    "description": "Reduzir a alavancagem e o valor geral da sua dívida é o foco da Dexco, fabricante de painéis de madeira, revestimentos cerâmicos e louças e metais san...",
+    "url": "https://valor.globo.com/empresas/noticia/2026/10/06/dexco-segue-plano-para-conquistar-o-direito-de-crescer-diz-ceo.ghtml",
+    "image": "https://s2-valor.glbimg.com/gENQmm21FOqD0-TJzjKI4P0ubz4=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/T/Z/DqWBp3TVaI3gJGCD1OUA/foto26emp-101-dexco-b5.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 17:28:35 -0000",
+    "source": "Valor",
+    "category": "Business",
+    "score": 100,
+    "importedAt": "2026-10-06T18:35:35.382Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T17:28:35.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/brasil/noticia/2026/10/06/banco-mundial-eleva-previsao-de-crescimento-do-pib-brasileiro-para-21percent-em-2026.ghtml",
+    "title": "Banco Mundial eleva previsão de crescimento do PIB brasileiro para 2,1% em 2026",
+    "description": "O Banco Mundial revisou para cima a estimativa para o crescimento da economia brasileira em 2026, de 1,9% para 2,1%. A projeção para 2027 passou de 2%...",
+    "url": "https://valor.globo.com/brasil/noticia/2026/10/06/banco-mundial-eleva-previsao-de-crescimento-do-pib-brasileiro-para-21percent-em-2026.ghtml",
+    "image": "https://s2-valor.glbimg.com/uy1yVzPqHDYjWmM2rWDYRGMo8nE=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2024/0/M/A2cQMLRoOyOOhfMblOnQ/photo-1563126171-fa019bbbfa18.avif",
+    "publishedAt": "Tue, 06 Oct 2026 17:27:04 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T18:35:35.383Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T17:27:04.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/apps/app-do-google-acaba-com-a-bagunca-e-ganha-novo-visual-em-cartoes-veja/",
+    "title": "App do Google acaba com a bagunça e ganha novo visual em cartões; veja",
+    "description": "O Google prepara uma reformulação da página de configurações de seu aplicativo para Android. O novo visual troca a lista atual por cartões que agrupam...",
+    "url": "https://canaltech.com.br/apps/app-do-google-acaba-com-a-bagunca-e-ganha-novo-visual-em-cartoes-veja/",
+    "image": "https://tl.ctcdn.com.br/oUTsPPmuC4lMqbK6pZFgRqMJImU=/0x0/filters:format(webp):quality(85)/17e58a92-6417-48e5-8c1c-7dce03b8f41e.png",
+    "publishedAt": "Tue, 06 Oct 2026 18:02:00 +0000",
+    "source": "Canaltech",
+    "category": "Tecnologia",
+    "score": 100,
+    "importedAt": "2026-10-06T18:35:37.733Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T18:02:00.000Z"
+  },
+  {
+    "id": "https://canaltech.com.br/smartphone/intermediario-da-motorola-chega-ao-brasil-por-r-999-com-bateria-de-5200-mah/",
+    "title": "Intermediário da Motorola chega ao Brasil por R$ 999 com bateria de 5.200 mAh",
+    "description": "A Motorola lançou nesta terça-feira (6) o Moto G37 no Brasil, novo celular intermediário da marca com preço inicial de R$ 999. O aparelho se destaca p...",
+    "url": "https://canaltech.com.br/smartphone/intermediario-da-motorola-chega-ao-brasil-por-r-999-com-bateria-de-5200-mah/",
+    "image": "https://tl.ctcdn.com.br/7-m8TdHyrRQFFxctNAgXgKVMGzU=/0x0/filters:format(webp):quality(85)/99e053dc-f879-493b-bf02-002151e3df1e.png",
+    "publishedAt": "Tue, 06 Oct 2026 17:40:13 +0000",
+    "source": "Canaltech",
+    "category": "Tecnologia",
+    "score": 100,
+    "importedAt": "2026-10-06T18:35:37.744Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T17:40:13.000Z"
+  },
+  {
+    "id": "https://www.cnnbrasil.com.br/economia/money/mercado/bolsas-da-europa-sobem-impulsionadas-por-acoes-de-farmaceuticas-e-bancos/",
+    "title": "Bolsas da Europa sobem impulsionadas por ações de farmacêuticas e bancos",
+    "description": "Outro fator importante foi a terceira queda consecutiva do petróleo; FTSE 100 fechou em alta de 0,42%, DAX subiu 0,82%, CAC 40 ganhou 0,40%, FTSE MIB ...",
+    "url": "https://www.cnnbrasil.com.br/economia/money/mercado/bolsas-da-europa-sobem-impulsionadas-por-acoes-de-farmaceuticas-e-bancos/",
+    "image": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/Reuters_Direct_Media/BrazilOnlineReportBusinessNews/tagreuters.com2026binary_LYNXMPEM4B1EV-BASEIMAGE.jpg?w=200",
+    "publishedAt": "Tue, 06 Oct 2026 18:00:09 +0000",
+    "source": "CNN",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T18:35:43.331Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T18:00:09.000Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://valor.globo.com/financas/noticia/2026/10/06/bnp-paribas-abre-posio-no-real-contra-o-euro-e-aposta-em-queda-dos-juros-com-rali-eleitoral.ghtml",
@@ -415,11 +2280,16 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-06T19:02:42.188Z",
+=======
+    "importedAt": "2026-10-06T18:51:03.169Z",
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
     "importanceScore": 100,
     "expiresAt": "2026-10-11T18:36:59.000Z"
   },
   {
+<<<<<<< HEAD
     "id": "https://valor.globo.com/financas/ao-vivo/2023/06/16/dolar-avanca-e-ibovespa-recua-em-dia-de-correcao-siga-os-mercados.ghtml",
     "title": "Ibovespa tem leve queda após disparada da véspera; rali segue no câmbio e nos juros futuros",
     "description": "Ibovespa tem leve queda após disparada da véspera; rali segue no câmbio e nos juros futuros Juros futuros domésticos recuam, assim como petróleo, rend...",
@@ -434,6 +2304,8 @@
     "expiresAt": "2026-10-11T18:28:28.000Z"
   },
   {
+=======
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
     "id": "https://valor.globo.com/mundo/noticia/2026/10/06/chile-reduz-projeo-de-crescimento-para-2026-e-eleva-previso-de-inflao.ghtml",
     "title": "Chile reduz projeção de crescimento para 2026 e eleva previsão de inflação",
     "description": "...",
@@ -443,11 +2315,16 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-06T19:02:42.190Z",
+=======
+    "importedAt": "2026-10-06T18:51:03.179Z",
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
     "importanceScore": 100,
     "expiresAt": "2026-10-11T18:23:52.000Z"
   },
   {
+<<<<<<< HEAD
     "id": "https://valor.globo.com/financas/noticia/2026/10/06/ceo-do-bofa-no-brasil-deixa-o-cargo-apos-quase-dez-anos.ghtml",
     "title": "CEO do BofA no Brasil deixa o cargo após quase dez anos",
     "description": "Eduardo Alcalay comunicou, em uma postagem no LinkedIn, que está deixando o posto de CEO do Bank of America (BofA) no Brasil, após quase dez anos. O c...",
@@ -1246,6 +3123,8 @@
     "expiresAt": "2026-10-08T16:33:04.000Z"
   },
   {
+=======
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
     "id": "https://www.tabnews.com.br/danielramos/desenvolvendo-um-desktop-linux-estereo-com-o-kde-e-todo-o-ecossistema",
     "title": "Desenvolvendo um desktop Linux estéreo com o KDE e todo o ecossistema",
     "description": "Estou construindo o Sparky Stereo OS 9 \"Mashtabba\", a edição estéreo 3D do SparkyLinux, baseada no Debian 14 \"Forky\", só com KDE Plasma. **A ideia: qu...",
@@ -1255,11 +3134,16 @@
     "source": "TabNews",
     "category": "Dev",
     "score": 80,
+<<<<<<< HEAD
     "importedAt": "2026-10-06T19:02:51.081Z",
+=======
+    "importedAt": "2026-10-06T18:51:14.205Z",
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
     "importanceScore": 80,
     "expiresAt": "2026-10-11T18:49:38.000Z"
   },
   {
+<<<<<<< HEAD
     "id": "https://www.tabnews.com.br/MrJ/openheinerss-o-maestro-universal-de-ai-coding-agents-harness-orquestrador-de-clis-e-sdks-oficiais-agy-claude-code-codex-aider-opencode",
     "title": "Pitch: Openheinerss: O Maestro Universal de AI Coding Agents Harness - Orquestrador de cli's e sdk's oficiais - AGY, claude-code, codex, aider, opencode",
     "description": "\"Esse projeto foi criado rapidamente depois de alguns estudos, e ele visa ser a base de um dos meus outros projetos, mas ele era importante demais par...",
@@ -1398,6 +3282,20 @@
     "importedAt": "2026-10-06T19:18:35.223Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-07T19:03:03.000Z"
+=======
+    "id": "https://valor.globo.com/financas/noticia/2026/10/06/juros-europeus-recuam-aps-rali-na-frana-spread-entre-taxas-alems-e-francesas-diminui.ghtml",
+    "title": "Juros europeus recuam após rali na França; spread entre taxas alemãs e francesas diminui",
+    "description": "Os rendimentos dos títulos públicos europeus fecharam em queda, após o avanço das taxas dos títulos franceses na véspera, enquanto a situação fiscal d...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/06/juros-europeus-recuam-aps-rali-na-frana-spread-entre-taxas-alems-e-francesas-diminui.ghtml",
+    "image": "https://s2-valor.glbimg.com/AP6aOmr0zLwjMzcb5iZlvm5EGcA=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/1/4/BcFPcpSiqig1HRdbApwA/foto30opin-201-col-op1-a18.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 18:38:56 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T19:06:59.427Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-11T18:38:56.000Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   },
   {
     "id": "https://www.infomoney.com.br/mercados/rali-eleitoral-provoca-rotacao-na-bolsa-quais-acoes-ganham-e-quais-perdem-espaco/",
@@ -1409,11 +3307,16 @@
     "source": "InfoMoney",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
     "importedAt": "2026-10-06T19:34:39.657Z",
+=======
+    "importedAt": "2026-10-06T19:35:25.136Z",
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
     "importanceScore": 100,
     "expiresAt": "2026-10-07T19:35:20.000Z"
   },
   {
+<<<<<<< HEAD
     "id": "https://startups.com.br/negocios/lambda-prepara-ultima-rodada-de-ate-us-4b-antes-do-ipo/",
     "title": "Lambda prepara última rodada de até US$ 4B antes do IPO",
     "description": "Logo da Lambda | Crédito: DivulgaçãoApoiada pela Nvidia, empresa de infraestrutura de IA é avaliada em US$ 14,5 bilhões pré-money em rodada liderada p...",
@@ -1468,5 +3371,19 @@
     "importedAt": "2026-10-06T20:08:55.942Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-08T19:31:12.000Z"
+=======
+    "id": "https://valor.globo.com/financas/noticia/2026/10/06/ouro-sobe-com-recuo-do-dolar-e-dos-rendimentos-dos-treasuries.ghtml",
+    "title": "Ouro sobe com recuo do dólar e dos rendimentos dos Treasuries",
+    "description": "...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/06/ouro-sobe-com-recuo-do-dolar-e-dos-rendimentos-dos-treasuries.ghtml",
+    "image": "https://s2-valor.glbimg.com/NKkXPy_Vpa4TkPzrEbE5L8a7GfE=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2025/8/8/y75c77T7CnmDxwDWwCww/432450861-1-.jpg",
+    "publishedAt": "Tue, 06 Oct 2026 19:03:03 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-06T19:35:25.836Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-07T19:03:03.000Z"
+>>>>>>> f948419a351cf6cc678cbd7ed2af3aa2a3ead3ca
   }
 ]

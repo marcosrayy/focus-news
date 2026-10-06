@@ -13,6 +13,7 @@ export interface NewsArticle {
 
 export interface NewsResponse {
   articles: NewsArticle[];
+  totalArticles?: number;
   isFallback?: boolean;
   lastSync?: string;
   lastSyncRelative?: string;

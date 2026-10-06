@@ -9,10 +9,6 @@ const heroSlides = [
     title: "Siará Tech Summit 2026 com a Focus Tech",
   },
   {
-    image: "/workshop.jpg",
-    title: "Focus anuncia expansao para 5 novas capitais em 2026",
-  },
-  {
     image: "/focus-blog.jpg",
     title: "Focus Tech Blog: conteúdo sobre tecnologia e inovação",
   },
@@ -33,20 +29,20 @@ export function HeroFocus() {
     if (track?.clientWidth) {
       track.scrollTo({ left: nextIndex * track.clientWidth, behavior: "smooth" });
     }
-  }, []);
+  }, [heroSlides.length]);
 
   const next = useCallback(() => {
     goTo((current + 1) % heroSlides.length);
-  }, [current, goTo]);
+  }, [current, goTo, heroSlides.length]);
 
   const prev = useCallback(() => {
     goTo((current - 1 + heroSlides.length) % heroSlides.length);
-  }, [current, goTo]);
+  }, [current, goTo, heroSlides.length]);
 
   useEffect(() => {
     const timer = setInterval(next, 6000);
     return () => clearInterval(timer);
-  }, [next]);
+  }, [next, heroSlides.length]);
 
   return (
     <section className="group relative overflow-hidden rounded-2xl border border-border/60 shadow-card">

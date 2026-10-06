@@ -1,17 +1,18 @@
 "use client";
 
 import { Clock, MessageSquare, TrendingUp, TrendingDown } from "lucide-react";
-import { useNews } from "@/hooks/useNews";
 import { formatRelativeTime } from "@/lib/news-service";
 import { useNewsRotation } from "@/hooks/use-news-rotation";
 import { FeaturedNewsCarousel, NewsSectionLayout } from "@/components/news-section-layout";
+import { LoadMoreNews } from "@/components/load-more-news";
+import { getCategoryNewsSections, useCategoryNewsFeed } from "@/components/category-news-feed";
+import { CategoryMoreNews } from "@/components/category-more-news";
 import type { ReactNode } from "react";
 
 export function TradeArticles({ sidebar }: { sidebar?: ReactNode }) {
-  const { 
-    articles: news,
-    lastSyncRelative
-  } = useNews("Bolsa de valores OR Mercado Financeiro OR Ibovespa OR B3 OR Mercado Tech OR Fintech OR Fintechs", "Trade", 15, 1);
+  const feed = useCategoryNewsFeed();
+  const { latestArticles: news, moreArticles } = getCategoryNewsSections(feed.articles);
+  const { hasMore, loadMore, isValidating, lastSyncRelative } = feed;
   
   const articlesToRender = news.length > 0 ? news : [];
   const { featuredArticles, remainingArticles } = useNewsRotation(articlesToRender);
@@ -42,6 +43,8 @@ export function TradeArticles({ sidebar }: { sidebar?: ReactNode }) {
           </div>
         ) : null}
       />
+      <CategoryMoreNews articles={moreArticles} />
+      <LoadMoreNews onLoadMore={loadMore} hasMore={hasMore} isLoading={isValidating} />
     </>
   );
 }

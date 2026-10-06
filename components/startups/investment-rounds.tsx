@@ -1,9 +1,10 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
-import { useNews } from "@/hooks/useNews";
 import { NewsCardsGrid } from "@/components/news-cards-grid";
+import { LoadMoreNews } from "@/components/load-more-news";
+import { getCategoryNewsSections, useCategoryNewsFeed } from "@/components/category-news-feed";
+import { CategoryMoreNews } from "@/components/category-more-news";
 import type { ReactNode } from "react";
 
 export function InvestmentRounds({ sidebar }: { sidebar?: ReactNode }) {
@@ -15,27 +16,9 @@ export function InvestmentRounds({ sidebar }: { sidebar?: ReactNode }) {
 }
 
 function InvestmentRoundsContent({ sidebar }: { sidebar?: ReactNode }) {
-  const searchParams = useSearchParams();
-  const topic = searchParams.get("topic") || "all";
-
-  const topicQueries: Record<string, string> = {
-    fintech: 'Fintech OR "banco digital" OR "pagamentos" OR "startup fintech"',
-    ai: 'IA OR inteligência artificial OR agentes OR deep tech',
-    logistics: 'logistica OR marketplace OR delivery OR mobility',
-    edtech: 'EdTech OR educação digital OR educação startup',
-    healthtech: 'HealthTech OR saúde digital OR biotech OR medicina',
-    proptech: 'PropTech OR imobiliário digital OR real estate tech',
-    logtech: 'LogTech OR logística digital OR supply chain',
-    agtech: 'AgTech OR agricultura digital OR agritech',
-    cleantech: 'CleanTech OR sustentabilidade OR energia limpa',
-  };
-
-  const activeQuery = topicQueries[topic] || '"Startup" OR "Venture Capital" OR "Fintech" OR "Rodada de investimento"';
-
-  const { 
-    articles: apiNews,
-    lastSyncRelative
-  } = useNews(activeQuery, "Startups", 12, 1);
+  const feed = useCategoryNewsFeed();
+  const { latestArticles: apiNews, moreArticles } = getCategoryNewsSections(feed.articles);
+  const { hasMore, loadMore, isValidating, lastSyncRelative } = feed;
   
   return (
     <>
@@ -53,6 +36,8 @@ function InvestmentRoundsContent({ sidebar }: { sidebar?: ReactNode }) {
             <NewsCardsGrid news={apiNews} sidebar={sidebar} />
           </div>
         )}
+        <CategoryMoreNews articles={moreArticles} />
+        <LoadMoreNews onLoadMore={loadMore} hasMore={hasMore} isLoading={isValidating} />
       </div>
     </>
   );

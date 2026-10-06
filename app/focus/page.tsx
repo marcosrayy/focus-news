@@ -36,7 +36,6 @@ export default function FocusPage() {
           </div>
         </div>
 
-        {/* Novidades da Focus - Hero Carousel */}
         <div className="mb-1 flex items-center gap-2">
           <div className="h-4 w-1 rounded-full bg-primary" />
           <h2 className="font-heading text-xs font-bold uppercase tracking-[0.12em] text-primary sm:text-sm">
