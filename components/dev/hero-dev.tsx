@@ -2,10 +2,8 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Suspense } from "react";
-import { useSearchParams } from "next/navigation";
 import { ChevronLeft, ChevronRight, Terminal } from "lucide-react";
-import { useNews } from "@/hooks/useNews";
-import { getDevNewsQuery } from "@/config/dev-news";
+import { getCategoryNewsSections, useCategoryNewsFeed } from "@/components/category-news-feed";
 
 export function HeroDev() {
   return (
@@ -16,14 +14,9 @@ export function HeroDev() {
 }
 
 function HeroDevCarousel() {
-  const searchParams = useSearchParams();
-  const topic = searchParams.get("topic") || "all";
-  const { articles, isLoading } = useNews(
-    getDevNewsQuery(topic),
-    "Dev",
-    12,
-    1,
-  );
+  const feed = useCategoryNewsFeed();
+  const { featuredArticles: articles } = getCategoryNewsSections(feed.articles);
+  const { isLoading } = feed;
   const [current, setCurrent] = useState(0);
   const [transitionEnabled, setTransitionEnabled] = useState(true);
   const [autoplayReset, setAutoplayReset] = useState(0);

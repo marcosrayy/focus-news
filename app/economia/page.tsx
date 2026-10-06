@@ -2,6 +2,9 @@ import { Header } from "@/components/header";
 import { Navigation } from "@/components/navigation";
 import { NewsTicker } from "@/components/news-ticker";
 import { MarketTicker } from "@/components/market-ticker";
+import { CategoryNewsFeed } from "@/components/category-news-feed";
+import { CategoryNewsCarousel } from "@/components/category-news-carousel";
+import { EconomyNews } from "@/components/economia/economy-news";
 import { MarketSummaryCards } from "@/components/economia/market-summary-cards";
 import { MarketCharts } from "@/components/economia/market-charts";
 import { StockScoreboards } from "@/components/economia/stock-scoreboards";
@@ -43,6 +46,13 @@ export default function EconomiaPage() {
             <span className="text-xs font-semibold text-primary">LIVE</span>
           </div>
         </div>
+
+        <CategoryNewsFeed category="economia">
+          <div className="mb-4">
+            <CategoryNewsCarousel category="economia" />
+          </div>
+          <EconomyNews />
+        </CategoryNewsFeed>
 
         {/* Market Live Cards - Trading Terminal Style */}
         <MarketLiveCards />

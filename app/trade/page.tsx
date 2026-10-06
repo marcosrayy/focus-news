@@ -2,6 +2,7 @@ import { Header } from "@/components/header";
 import { Navigation } from "@/components/navigation";
 import { MarketTicker } from "@/components/market-ticker";
 import { NewsTicker } from "@/components/news-ticker";
+import { CategoryNewsFeed } from "@/components/category-news-feed";
 import { CategoryNewsCarousel } from "@/components/category-news-carousel";
 import { TradeArticles } from "@/components/trade/trade-articles";
 import { TradeSidebar } from "@/components/trade/trade-sidebar";
@@ -43,12 +44,10 @@ export default function TradePage() {
           </span>
         </div>
 
-        {/* Hero */}
-        <CategoryNewsCarousel category="trade" />
+        <CategoryNewsFeed category="trade">
+          <CategoryNewsCarousel category="trade" />
 
-        {/* Main Content + Sidebar */}
-        <div className="mt-4">
-          <div>
+          <div className="mt-4">
             <div className="mb-4 flex items-center gap-2">
               <div className="h-5 w-1 rounded-full bg-emerald-500" />
               <h2 className="font-heading text-sm font-bold tracking-wider text-foreground">
@@ -57,7 +56,7 @@ export default function TradePage() {
             </div>
             <TradeArticles sidebar={<TradeSidebar />} />
           </div>
-        </div>
+        </CategoryNewsFeed>
       </main>
     </div>
   );

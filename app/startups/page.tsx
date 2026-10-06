@@ -2,6 +2,7 @@ import { Header } from "@/components/header";
 import { Navigation } from "@/components/navigation";
 import { MarketTicker } from "@/components/market-ticker";
 import { StartupNewsTicker } from "@/components/startups/startup-news-ticker";
+import { CategoryNewsFeed } from "@/components/category-news-feed";
 import { CategoryNewsCarousel } from "@/components/category-news-carousel";
 import { InvestmentRounds } from "@/components/startups/investment-rounds";
 import { StartupSidebar } from "@/components/startups/startup-sidebar";
@@ -35,10 +36,10 @@ export default function StartupsPage() {
           </span>
         </div>
 
-        <CategoryNewsCarousel category="startups" />
+        <CategoryNewsFeed category="startups">
+          <CategoryNewsCarousel category="startups" />
 
-        <div className="mt-4">
-          <div>
+          <div className="mt-4">
             <div className="mb-4 flex items-center gap-2">
               <div className="h-5 w-1 rounded-full bg-blue-600" />
               <h2 className="font-heading text-sm font-bold tracking-wider text-foreground">
@@ -47,7 +48,7 @@ export default function StartupsPage() {
             </div>
             <InvestmentRounds sidebar={<StartupSidebar />} />
           </div>
-        </div>
+        </CategoryNewsFeed>
       </main>
     </div>
   );

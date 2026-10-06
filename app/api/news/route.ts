@@ -49,6 +49,7 @@ export async function GET(request: Request) {
   const category = searchParams.get("category") || "Geral";
   const max = parseInt(searchParams.get("max") || "6", 10);
   const offset = parseInt(searchParams.get("offset") || "0", 10);
+  const includeArchive = searchParams.get("archive") === "true";
   const retentionDaysParam = parseInt(searchParams.get("retentionDays") || "", 10);
   const retentionDays = Number.isFinite(retentionDaysParam) && retentionDaysParam > 0 ? Math.min(retentionDaysParam, 90) : 3;
 
@@ -130,14 +131,16 @@ export async function GET(request: Request) {
     }
 
     if (shouldMatchQuery) filtered = filtered.filter(matchesQuery);
-    filtered = filtered.filter(art => {
-      if (retentionDays > 3) {
-        const publishedTime = new Date(art.publishedAt).getTime();
-        if (!Number.isFinite(publishedTime)) return false;
-        return Date.now() - publishedTime <= retentionDays * 24 * 60 * 60 * 1000;
-      }
-      return isArticleWithinRetention(art.publishedAt, art.expiresAt);
-    });
+    if (!includeArchive) {
+      filtered = filtered.filter(art => {
+        if (retentionDays > 3) {
+          const publishedTime = new Date(art.publishedAt).getTime();
+          if (!Number.isFinite(publishedTime)) return false;
+          return Date.now() - publishedTime <= retentionDays * 24 * 60 * 60 * 1000;
+        }
+        return isArticleWithinRetention(art.publishedAt, art.expiresAt);
+      });
+    }
     filtered = deduplicateArticles(filtered);
 
     // Include the skipped featured article when deciding whether pagination has enough results.
@@ -207,14 +210,16 @@ export async function GET(request: Request) {
         description: art.description ? decodeHtmlEntities(art.description) : art.description,
       };
     });
-    filtered = filtered.filter(art => {
-      if (retentionDays > 3) {
-        const publishedTime = new Date(art.publishedAt).getTime();
-        if (!Number.isFinite(publishedTime)) return false;
-        return Date.now() - publishedTime <= retentionDays * 24 * 60 * 60 * 1000;
-      }
-      return isArticleWithinRetention(art.publishedAt, art.expiresAt);
-    });
+    if (!includeArchive) {
+      filtered = filtered.filter(art => {
+        if (retentionDays > 3) {
+          const publishedTime = new Date(art.publishedAt).getTime();
+          if (!Number.isFinite(publishedTime)) return false;
+          return Date.now() - publishedTime <= retentionDays * 24 * 60 * 60 * 1000;
+        }
+        return isArticleWithinRetention(art.publishedAt, art.expiresAt);
+      });
+    }
     filtered = deduplicateArticles(filtered);
 
     // Keep ordering stable so separate hero/list requests paginate the same set.
@@ -226,6 +231,7 @@ export async function GET(request: Request) {
 
     return NextResponse.json({
       articles,
+      totalArticles: balanced.length,
       isFallback: articles.length === 0,
       lastSync: status.lastSync,
       lastSyncRelative: getRelativeTimeServer(status.lastSync)

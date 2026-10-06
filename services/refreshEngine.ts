@@ -580,11 +580,8 @@ export const RefreshEngine = {
     }
 
     // Apply expiration (retention logic) - filter out expired news
-    const nowTime = Date.now();
-    const searchArchiveStart = nowTime - 90 * 24 * 60 * 60 * 1000;
     const finalArticles = deduplicateArticles(Array.from(articleMap.values()).filter(art =>
-      !(art.category === "Dev" && isEnglishDevSource(art.source)) &&
-      new Date(art.publishedAt).getTime() >= searchArchiveStart
+      !(art.category === "Dev" && isEnglishDevSource(art.source))
     ));
 
     // Save final lists back to storage

@@ -1,14 +1,14 @@
 "use client";
 
 import { Suspense, useState } from "react";
-import { useSearchParams } from "next/navigation";
-import { useNews } from "@/hooks/useNews";
 import { Clock, MessageSquare, ArrowUpRight } from "lucide-react";
 import { ArticleModal, type ArticleModalData } from "@/components/article-modal";
 import { useNewsRotation } from "@/hooks/use-news-rotation";
 import { FeaturedNewsCarousel, NewsSectionLayout } from "@/components/news-section-layout";
+import { LoadMoreNews } from "@/components/load-more-news";
 import { getDistinctCover } from "@/lib/utils";
-import { getDevNewsQuery } from "@/config/dev-news";
+import { getCategoryNewsSections, useCategoryNewsFeed } from "@/components/category-news-feed";
+import { CategoryMoreNews } from "@/components/category-more-news";
 import type { ReactNode } from "react";
 
 interface DevArticle {
@@ -43,15 +43,9 @@ export function FrameworkNews({ sidebar }: { sidebar?: ReactNode }) {
 
 function FrameworkNewsContent({ sidebar }: { sidebar?: ReactNode }) {
   const [selected, setSelected] = useState<any | null>(null);
-  const searchParams = useSearchParams();
-  const topic = searchParams.get("topic") || "all";
-
-  const activeQuery = getDevNewsQuery(topic);
-
-  const { 
-    articles: apiNews,
-    lastSyncRelative
-  } = useNews(activeQuery, "Dev", 12, 1);
+  const feed = useCategoryNewsFeed();
+  const { latestArticles: apiNews, moreArticles } = getCategoryNewsSections(feed.articles);
+  const { hasMore, loadMore, isValidating, lastSyncRelative } = feed;
   
   const displayArticles = apiNews.length > 0 ? apiNews.map((n: any, i: number) => {
     const mock = articles[i % articles.length];
@@ -85,6 +79,8 @@ function FrameworkNewsContent({ sidebar }: { sidebar?: ReactNode }) {
           </div>
         ) : null}
       />
+      <CategoryMoreNews articles={moreArticles} />
+      <LoadMoreNews onLoadMore={loadMore} hasMore={hasMore} isLoading={isValidating} />
       <ArticleModal article={selected} open={!!selected} onOpenChange={(o) => !o && setSelected(null)} />
     </>
   );

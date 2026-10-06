@@ -2,11 +2,12 @@
 
 import { Suspense } from "react";
 import { Clock, MessageSquare, Brain, Cloud, Shield, Blocks } from "lucide-react";
-import { useSearchParams } from "next/navigation";
-import { useNews } from "@/hooks/useNews";
 import { formatRelativeTime } from "@/lib/news-service";
 import { useNewsRotation } from "@/hooks/use-news-rotation";
+import { LoadMoreNews } from "@/components/load-more-news";
 import { FeaturedNewsCarousel, NewsSectionLayout } from "@/components/news-section-layout";
+import { getCategoryNewsSections, useCategoryNewsFeed } from "@/components/category-news-feed";
+import { CategoryMoreNews } from "@/components/category-more-news";
 import type { ReactNode } from "react";
 
 function getTechIcon(category: string) {
@@ -34,29 +35,14 @@ export function TrendingTech({ sidebar }: { sidebar?: ReactNode }) {
 }
 
 function TrendingTechContent({ sidebar }: { sidebar?: ReactNode }) {
-  const searchParams = useSearchParams();
-  const topic = searchParams.get("topic") || "all";
-
-  const topicQueries: Record<string, string> = {
-    ai: "Inteligencia Artificial OR IA OR ChatGPT OR OpenAI OR LLM",
-    cloud: "Cloud Computing OR AWS OR Azure OR GCP OR Kubernetes",
-    cyber: "Ciberseguranca OR Cybersecurity OR segurança digital OR ransomware",
-    web3: "Blockchain OR Web3 OR cripto OR Ethereum OR Bitcoin",
-    hardware: "Hardware OR chip OR processador OR GPU OR CPU OR smartphone",
-    "m4-vs-snapdragon": "M4 Ultra OR Snapdragon X Elite OR processadores",
-    "cloud-compare": "AWS OR Azure OR GCP OR Cloud Computing",
-    "ai-models": "GPT-5 OR Claude 4 OR Gemini 2 OR IA generativa",
-    quantum: "computacao quantica OR quantum computing",
-    "ai-dev": "IA generativa OR desenvolvimento de software OR copilots",
-    edge: "edge computing OR computacao em periferia",
-  };
-
-  const activeQuery = topicQueries[topic] || "Tecnologia OR Hardware OR Software OR Noticias Tech";
-
-  const { 
-    articles: news,
+  const feed = useCategoryNewsFeed();
+  const { latestArticles: news, moreArticles } = getCategoryNewsSections(feed.articles);
+  const {
+    hasMore,
+    loadMore,
+    isValidating,
     lastSyncRelative
-  } = useNews(activeQuery, "Tecnologia", 12, 1);
+  } = feed;
   
   const articlesToRender = news.length > 0 ? news : [];
   const { featuredArticles, remainingArticles } = useNewsRotation(articlesToRender);
@@ -87,6 +73,8 @@ function TrendingTechContent({ sidebar }: { sidebar?: ReactNode }) {
           </div>
         ) : null}
       />
+      <CategoryMoreNews articles={moreArticles} />
+      <LoadMoreNews onLoadMore={loadMore} hasMore={hasMore} isLoading={isValidating} />
     </>
   );
 }
