@@ -7,6 +7,8 @@ import { Search, ArrowLeft, ChevronDown, SlidersHorizontal } from "lucide-react"
 import Link from "next/link";
 import { Header } from "@/components/header";
 import { Navigation } from "@/components/navigation";
+import { technologyTopicQueries } from "@/config/technology-topics";
+import { DEV_TOPIC_QUERIES } from "@/config/dev-news";
 import type { NewsArticle, NewsResponse } from "@/types/news";
 
 const SEARCH_PAGE_SIZE = 18;
@@ -81,6 +83,9 @@ function SearchPageContent() {
   const params = useSearchParams();
   const query = params.get("q") || "";
   const normalizedQuery = query.trim();
+  const topic = params.get("topic") || "";
+  const devTopic = params.get("devTopic") || "";
+  const searchQuery = DEV_TOPIC_QUERIES[devTopic] || technologyTopicQueries[topic] || normalizedQuery;
   const [sortBy, setSortBy] = useState<(typeof sortOptions)[number]["value"]>("relevance");
   const [period, setPeriod] = useState<(typeof periodOptions)[number]["value"]>("all");
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -88,7 +93,7 @@ function SearchPageContent() {
     (pageIndex) => {
       if (!normalizedQuery) return null;
       const searchParams = new URLSearchParams({
-        query: normalizedQuery,
+        query: searchQuery,
         category: "Geral",
         max: String(SEARCH_PAGE_SIZE),
         offset: String(pageIndex * SEARCH_PAGE_SIZE),

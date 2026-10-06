@@ -1,7 +1,7 @@
 "use client";
 
 import { Search, Sun, Moon } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import { SidebarCardsModal } from "@/components/sidebar-cards-modal";
@@ -18,9 +18,28 @@ import { HomeMarketSidebarContent } from "@/components/home-market-sidebar";
 export function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
+  const desktopSearchInputRef = useRef<HTMLInputElement>(null);
+  const mobileSearchInputRef = useRef<HTMLInputElement>(null);
   const pathname = usePathname();
   const router = useRouter();
   const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    if (pathname !== "/search") return;
+
+    const query = new URLSearchParams(window.location.search).get("q") || "";
+    setSearchValue(query);
+    if (query) setSearchOpen(true);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (pathname !== "/search" || !searchValue) return;
+
+    const input = window.matchMedia("(min-width: 640px)").matches
+      ? desktopSearchInputRef.current
+      : mobileSearchInputRef.current;
+    input?.focus();
+  }, [pathname, searchOpen, searchValue]);
 
   const handleSearch = (event?: React.FormEvent) => {
     event?.preventDefault();
@@ -97,6 +116,7 @@ export function Header() {
         <form onSubmit={handleSearch} className="hidden items-center gap-2 rounded-full border border-border bg-secondary/70 px-4 py-2 transition-colors duration-300 focus-within:border-primary/50 sm:flex">
           <Search className="h-4 w-4 text-muted-foreground" />
           <input
+            ref={desktopSearchInputRef}
             type="text"
             value={searchValue}
             onChange={(event) => setSearchValue(event.target.value)}
@@ -145,6 +165,7 @@ export function Header() {
           <form onSubmit={handleSearch} className="flex items-center gap-2 rounded-full border border-border bg-secondary/70 px-4 py-2">
             <Search className="h-4 w-4 text-muted-foreground" />
             <input
+              ref={mobileSearchInputRef}
               type="text"
               value={searchValue}
               onChange={(event) => setSearchValue(event.target.value)}

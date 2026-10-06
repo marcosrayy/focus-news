@@ -1,5 +1,6 @@
 "use client";
 
+import { createContext, useContext, useState } from "react";
 import { ArrowRight, LayoutGrid } from "lucide-react";
 import {
   Dialog,
@@ -10,6 +11,12 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
+const CloseExploreContext = createContext<() => void>(() => {});
+
+export function useCloseExploreModal() {
+  return useContext(CloseExploreContext);
+}
+
 interface SidebarCardsModalProps {
   title: string;
   items: string[];
@@ -18,8 +25,10 @@ interface SidebarCardsModalProps {
 }
 
 export function SidebarCardsModal({ title, items, children, triggerVariant = "card" }: SidebarCardsModalProps) {
+  const [open, setOpen] = useState(false);
+
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         {triggerVariant === "icon" ? (
           <button
@@ -85,7 +94,9 @@ export function SidebarCardsModal({ title, items, children, triggerVariant = "ca
             Informações atualizadas da seção selecionada.
           </DialogDescription>
         </DialogHeader>
-        <div className="flex flex-col gap-4">{children}</div>
+        <CloseExploreContext.Provider value={() => setOpen(false)}>
+          <div className="flex flex-col gap-4">{children}</div>
+        </CloseExploreContext.Provider>
       </DialogContent>
     </Dialog>
   );

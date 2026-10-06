@@ -6,8 +6,12 @@ import { formatRelativeTime } from "@/lib/news-service";
 import { useNewsRotation } from "@/hooks/use-news-rotation";
 import { LoadMoreNews } from "@/components/load-more-news";
 import { FeaturedNewsCarousel, NewsSectionLayout } from "@/components/news-section-layout";
+<<<<<<< HEAD
 import { getCategoryNewsSections, useCategoryNewsFeed } from "@/components/category-news-feed";
 import { CategoryMoreNews } from "@/components/category-more-news";
+=======
+import { defaultTechnologyQuery, technologyTopicQueries } from "@/config/technology-topics";
+>>>>>>> 7dd38f14c30b392be2789cba8e18b342bd16b3ea
 import type { ReactNode } from "react";
 
 function getTechIcon(category: string) {
@@ -35,12 +39,22 @@ export function TrendingTech({ sidebar }: { sidebar?: ReactNode }) {
 }
 
 function TrendingTechContent({ sidebar }: { sidebar?: ReactNode }) {
+<<<<<<< HEAD
   const feed = useCategoryNewsFeed();
   const { latestArticles: news, moreArticles } = getCategoryNewsSections(feed.articles);
   const {
     hasMore,
     loadMore,
     isValidating,
+=======
+  const searchParams = useSearchParams();
+  const topic = searchParams.get("topic") || "all";
+
+  const activeQuery = technologyTopicQueries[topic] || defaultTechnologyQuery;
+
+  const { 
+    articles: news,
+>>>>>>> 7dd38f14c30b392be2789cba8e18b342bd16b3ea
     lastSyncRelative
   } = feed;
   
