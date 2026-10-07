@@ -1,6 +1,6 @@
 "use client";
 
-import { GraduationCap, Users, Calendar, ExternalLink } from "lucide-react";
+import { GraduationCap, Users, Calendar, ExternalLink, MapPin } from "lucide-react";
 import { getDistinctCover } from "@/lib/utils";
 
 const tagColors: Record<string, string> = {
@@ -13,12 +13,13 @@ const tagColors: Record<string, string> = {
 
 const workshops = [
   {
-    title: "IA Generativa para Equipes de Marketing",
-    image: getDistinctCover("workshop-generative-ai"),
+    title: "De zero ao MVP",
+    image: "/workshop.jpg",
     type: "Workshop",
-    date: "22 Jan 2026",
-    participants: 48,
-    tags: ["Marketing", "IA"],
+    date: "05 out 2026",
+    location: "Fortaleza, CE",
+    participants: 10,
+    tags: ["Desenvolvimento", "Tecnologia"],
     status: "Realizado",
   },
   {
@@ -26,6 +27,7 @@ const workshops = [
     image: getDistinctCover("workshop-automation"),
     type: "Treinamento Corporativo",
     date: "05 Fev 2026",
+    location: "São Paulo, SP",
     participants: 32,
     tags: ["Automacao", "Growth"],
     status: "Realizado",
@@ -35,6 +37,7 @@ const workshops = [
     image: getDistinctCover("workshop-full-stack"),
     type: "Capacitacao Interna",
     date: "12 Fev 2026",
+    location: "Fortaleza, CE",
     participants: 24,
     tags: ["Desenvolvimento"],
     status: "Realizado",
@@ -99,7 +102,11 @@ export function WorkshopsTrainings() {
               </div>
 
               <div className="flex items-center justify-between border-t border-border pt-3 text-muted-foreground">
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                  <div className="flex items-center gap-1">
+                    <MapPin className="h-3 w-3" />
+                    <span className="text-[11px]">{ws.location}</span>
+                  </div>
                   <div className="flex items-center gap-1">
                     <Calendar className="h-3 w-3" />
                     <span className="text-[11px]">{ws.date}</span>
