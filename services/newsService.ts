@@ -1,4 +1,4 @@
-
+﻿
 import { NEWS_API_KEY, NEWSAPI_API_KEY } from "../config/newsConfig";
 import { XMLParser } from "fast-xml-parser";
 
@@ -27,12 +27,12 @@ const WINDOWS_1252_BYTES = new Map<number, number>([
 ]);
 
 const NAMED_HTML_ENTITIES: Record<string, string> = {
-  aacute: "á", acirc: "â", agrave: "à", atilde: "ã", auml: "ä",
-  ccedil: "ç", eacute: "é", ecirc: "ê", egrave: "è", iacute: "í",
-  icirc: "î", iuml: "ï", oacute: "ó", ocirc: "ô", otilde: "õ",
-  ouml: "ö", uacute: "ú", ucirc: "û", uuml: "ü", nbsp: " ",
-  hellip: "…", ndash: "–", mdash: "—", lsquo: "‘", rsquo: "’",
-  ldquo: "“", rdquo: "”",
+  aacute: "Ã¡", acirc: "Ã¢", agrave: "Ã ", atilde: "Ã£", auml: "Ã¤",
+  ccedil: "Ã§", eacute: "Ã©", ecirc: "Ãª", egrave: "Ã¨", iacute: "Ã­",
+  icirc: "Ã®", iuml: "Ã¯", oacute: "Ã³", ocirc: "Ã´", otilde: "Ãµ",
+  ouml: "Ã¶", uacute: "Ãº", ucirc: "Ã»", uuml: "Ã¼", nbsp: " ",
+  hellip: "â€¦", ndash: "â€“", mdash: "â€”", lsquo: "â€˜", rsquo: "â€™",
+  ldquo: "â€œ", rdquo: "â€",
 };
 
 export function decodeHtmlEntities(text: string): string {
@@ -188,7 +188,7 @@ function findRssImage(item: any, description: string, content: string): string {
     enclosure?.["@_url"],
     item.image?.url,
   ].filter((url): url is string => typeof url === "string" && !!url);
-  const genericImagePattern = /(?:^|[-_.\/])(?:logo|placeholder|default|no[-_]?image|avatar|favicon|amz)(?:[-_.\/?#]|$)/i;
+  const genericImagePattern = /(?:^|[-_./])(?:logo|placeholder|default|no[-_]?image|avatar|favicon|amz)(?:[-_./?#]|$)/i;
   return candidates.find(url => !genericImagePattern.test(url)) || candidates[0] || "";
 }
 
@@ -336,7 +336,7 @@ export function isArticleWithinRetention(
   return effectiveExpiry > nowTime;
 }
 
-// 1. Definições de Fontes por Módulo
+// 1. DefiniÃ§Ãµes de Fontes por MÃ³dulo
 export const MODULE_SOURCES = {
   Startups: ["startupi", "forbes", "gnews", "startups"],
   Economia: ["infomoney", "g1", "canaltech", "mercado tech", "valor", "globo", "cnn", "gnews"],
@@ -347,7 +347,7 @@ export const MODULE_SOURCES = {
   Business: ["startupi", "infomoney", "valor", "forbes", "gnews", "cnn"]
 };
 
-// 2. Palavras-chave Permitidas por Módulo (para cálculo de Score)
+// 2. Palavras-chave Permitidas por MÃ³dulo (para cÃ¡lculo de Score)
 const MODULE_KEYWORDS = {
   Startups: [
     "startup", "startups", "empreendedorismo", "empreendedor", "venture capital",
@@ -376,8 +376,8 @@ const MODULE_KEYWORDS = {
     "nvidia", "intel", "amd", "ryzen", "gpu", "cpu", "armazenamento", "computador", "internet",
     "internet das coisas", "iot", "rede", "wifi", "bluetooth", "5g", "6g", "tecnologia de ponta",
     "inovacao tecnologica", "realidade virtual", "realidade aumentada", "vr", "ar", "metaverso",
-    "blockchain", "criptomoeda", "criptomoedas", "bitcoin", "ethereum", "web3", "segurança digital",
-    "cibersegurança", "privacidade", "dados", "cloud computing", "computacao em nuvem", "servidores",
+    "blockchain", "criptomoeda", "criptomoedas", "bitcoin", "ethereum", "web3", "seguranÃ§a digital",
+    "ciberseguranÃ§a", "privacidade", "dados", "cloud computing", "computacao em nuvem", "servidores",
     "google", "microsoft", "amazon", "facebook", "meta", "tiktok", "twitter", "linkedin", "instagram",
     "linux", "distro"
   ],
@@ -395,7 +395,7 @@ const MODULE_KEYWORDS = {
     "inovacao", "pesquisa", "patente", "descoberta", "ciencia", "cientifico",
     "cientistas", "vacina", "espacial", "nasa", "astronomia", "planeta", "energia limpa",
     "energia sustentavel", "biotecnologia", "genetica", "quantum", "computacao quantica",
-    "invenção", "descobertas", "tecnologica", "transformacao digital", "ia",
+    "invenÃ§Ã£o", "descobertas", "tecnologica", "transformacao digital", "ia",
     "inteligencia artificial", "software", "hardware", "automacao", "algoritmo",
     "sensor", "engenharia", "robotica", "dados", "sistema inteligente", "tecnologia"
   ],
@@ -421,7 +421,7 @@ const STRONG_TITLE_SIGNALS: Record<string, string[]> = {
   Business: ["empreendedorismo", "ceo", "crescimento", "faturamento", "receita", "saas", "b2b", "b2c", "gestao empresarial", "marketplace", "franquia", "varejo"],
 };
 
-// 3. Proibições Absolutas (Mata-mata - Score vira 0 imediatamente)
+// 3. ProibiÃ§Ãµes Absolutas (Mata-mata - Score vira 0 imediatamente)
 const PROHIBITED_TERMS = [
   "politica", "eleicoes", "lula", "bolsonaro", "stf", "bbb", "reality show", "reality", "show",
   "futebol", "esportes", "esporte", "goleiro", "goleira", "goleiros", "goleiras", "crimes", "crime", "acidentes", "acidente",
@@ -439,7 +439,7 @@ const PROHIBITED_TERMS = [
   "morreu", "morreram", "preso", "presos", "prisao", "prisoes", "custodia", "presidio",
   "policia", "policial", "homicidio", "assassinado", "assassinada", "assassinatos", "tortura", "bet",
   "apostas", "fashion show", "desfile", "moda", "passarela", "trump", "biden", "renan santos", "augusto cury", "ciro gomes",
-  "flavio bolsonaro", "zema", "capitao wagner", "eduardo bolsonaro", "eleição", "eleições", "haddad", "quaest", "tarot",
+  "flavio bolsonaro", "zema", "capitao wagner", "eduardo bolsonaro", "eleiÃ§Ã£o", "eleiÃ§Ãµes", "haddad", "quaest", "tarot",
   "alexandre de moraes", "xandao", "moraes"
 ];
 
@@ -461,26 +461,26 @@ const TECH_CONTEXT_TERMS = [
 ];
 const NON_TECH_DOMAIN_TERMS = [
   "boi", "bois", "gado", "galinha", "galinhas", "pecuaria", "agro", "agricultura",
-  "eleicao", "eleições", "politica", "governo", "partido", "senador", "prefeito",
+  "eleicao", "eleiÃ§Ãµes", "politica", "governo", "partido", "senador", "prefeito",
   "saude", "medicina", "hospital", "educacao", "escola", "futebol", "esporte",
   "cinema", "filme", "celebridade", "moda", "jogo", "jogos", "estupro", "estupros",
   "violencia", "crime", "crimes", "homicidio", "assassinato", "seguranca publica",
-  "segurança pública", "ocorrencia", "ocorrências", "ssp", "policia", "batalhao", "detento",
-  "hospitalar", "vítima", "vitima", "justica", "audiencia", "depoimento",
+  "seguranÃ§a pÃºblica", "ocorrencia", "ocorrÃªncias", "ssp", "policia", "batalhao", "detento",
+  "hospitalar", "vÃ­tima", "vitima", "justica", "audiencia", "depoimento",
   "idoso", "idosos", "envelhecer", "qualidade de vida", "aposentadoria", "aposentado"
 ];
 const PUBLIC_SAFETY_REJECTION_TERMS = [
   "estupro", "estupros", "violencia", "crime", "crimes", "homicidio", "assassinato",
-  "seguranca publica", "segurança pública", "ocorrencia", "ocorrencias", "policia", "ssp",
-  "vítima", "vitima", "justica", "tribunal", "audiencia", "depoimento"
+  "seguranca publica", "seguranÃ§a pÃºblica", "ocorrencia", "ocorrencias", "policia", "ssp",
+  "vÃ­tima", "vitima", "justica", "tribunal", "audiencia", "depoimento"
 ];
 const LEGAL_AND_POLITICAL_REJECTION_TERMS = [
-  "moraes", "advogado", "reu", "réu", "peticao", "petição", "stf", "suprema corte",
-  "tribunal", "justica", "processo", "acao judicial", "ação judicial", "pedido judicial",
-  "ministerio", "governo", "política", "politica", "candidato", "eleicao", "eleições"
+  "moraes", "advogado", "reu", "rÃ©u", "peticao", "petiÃ§Ã£o", "stf", "suprema corte",
+  "tribunal", "justica", "processo", "acao judicial", "aÃ§Ã£o judicial", "pedido judicial",
+  "ministerio", "governo", "polÃ­tica", "politica", "candidato", "eleicao", "eleiÃ§Ãµes"
 ];
 const INNOVATION_CONTEXT_TERMS = [
-  "pesquisa", "cientifico", "científica", "tecnologia", "software", "hardware", "ia",
+  "pesquisa", "cientifico", "cientÃ­fica", "tecnologia", "software", "hardware", "ia",
   "inteligencia artificial", "algoritmo", "computacao", "dados", "ciencia", "inovacao",
   "biotecnologia", "engenharia", "sistema", "inteligente", "sensor", "automacao",
   "energia limpa", "energia sustentavel", "astronomia", "nasa", "robotica", "computacao quantica",
@@ -495,16 +495,16 @@ function normalizeText(text: string): string {
     .replace(/[\u0300-\u036f]/g, "");
 }
 
-// Helper para contar ocorrências exatas de palavras-chave no texto
+// Helper para contar ocorrÃªncias exatas de palavras-chave no texto
 function countMatches(text: string, keywords: string[]): number {
   let count = 0;
   const normText = normalizeText(text);
 
   for (const kw of keywords) {
     const kwNorm = normalizeText(kw);
-    const escaped = kwNorm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    const escaped = kwNorm.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
     
-    // Se o termo tem espaço, busca literal, senão busca palavra inteira com limite de borda
+    // Se o termo tem espaÃ§o, busca literal, senÃ£o busca palavra inteira com limite de borda
     const regex = kwNorm.includes(' ')
       ? new RegExp(escaped, 'g')
       : new RegExp('\\b' + escaped + '\\b', 'g');
@@ -605,7 +605,7 @@ function classifyArticleBySourceAndKeywords(title: string, description: string, 
   const normText = normalizeText(fullText);
   const normSource = normalizeText(source);
 
-  // Regra Mata-mata (Proibições)
+  // Regra Mata-mata (ProibiÃ§Ãµes)
   if (hasProhibitedTerms(title, description)) {
     return { category: "Rejeitado", score: 0 };
   }
@@ -622,8 +622,8 @@ function classifyArticleBySourceAndKeywords(title: string, description: string, 
     if (isFintech) {
       return { category: "Economia", score: 100 };
     }
-    // Startupi é naturalmente sobre empreendedorismo — classifica como Startups OU Business
-    // Somente artigos com termos explícitos de VC/funding/rodadas vão para Startups
+    // Startupi Ã© naturalmente sobre empreendedorismo â€” classifica como Startups OU Business
+    // Somente artigos com termos explÃ­citos de VC/funding/rodadas vÃ£o para Startups
     const startupMatches = countMatches(fullText, ["venture capital", "rodada de investimento", "aporte", "seed", "serie a", "serie b", "unicornio", "incubadora", "aceleradora"]);
     if (startupMatches > 0) {
       return { category: "Startups", score: 100 };
@@ -641,7 +641,7 @@ function classifyArticleBySourceAndKeywords(title: string, description: string, 
     return { category: "Economia", score: 100 };
   }
 
-  // Tecnoblog e Notícias Tech podem ter classificação entre Tecnologia e Dev
+  // Tecnoblog e NotÃ­cias Tech podem ter classificaÃ§Ã£o entre Tecnologia e Dev
   const isTechSource = normSource.includes("tecnoblog") || normSource.includes("noticias tech");
   if (isTechSource) {
     const devMatches = countMatches(fullText, MODULE_KEYWORDS.Dev);
@@ -664,7 +664,7 @@ function classifyArticleBySourceAndKeywords(title: string, description: string, 
     return { category: "Dev", score: 100 };
   }
 
-  // Para fontes híbridas e gerais (Canaltech, TechMundo, Gizmodo, Globo, CNN, Forbes, GNews, etc.)
+  // Para fontes hÃ­bridas e gerais (Canaltech, TechMundo, Gizmodo, Globo, CNN, Forbes, GNews, etc.)
   const isHybrid = ["canaltech", "techmundo", "noticias ia", "gizmodo", "startupi", "globo", "cnn", "forbes", "gnews", "tecnoblog", "olhar digital", "showmetech"].some(src => normSource.includes(src));
   if (isHybrid) {
     const iaMatches = countMatches(fullText, MODULE_KEYWORDS.IA);
@@ -723,7 +723,7 @@ export function classifyArticle(title: string, description: string, source: stri
   return classification;
 }
 
-// Verifica se a fonte do artigo é permitida para o módulo solicitado
+// Verifica se a fonte do artigo Ã© permitida para o mÃ³dulo solicitado
 export function isSourceAllowed(source: string, targetCategory: string): boolean {
   const normSource = normalizeText(source);
   if (normSource.includes("gnews")) return true;
@@ -743,7 +743,7 @@ export function isSourceAllowed(source: string, targetCategory: string): boolean
     "techmundo"
   ];
 
-  // Verifica se o canal está na lista geral de origens válidas do portal
+  // Verifica se o canal estÃ¡ na lista geral de origens vÃ¡lidas do portal
   return allAllowed.some(src => normSource.includes(src));
 }
 
@@ -863,7 +863,7 @@ export async function fetchNewsBackend({
 }): Promise<NewsArticle[]> {
   let approvedArticles: NewsArticle[] = [];
   
-  // Mapeamento de categorias virtuais para categorias físicas do MetaPrompt
+  // Mapeamento de categorias virtuais para categorias fÃ­sicas do MetaPrompt
   let targetCategory = category;
   if (category === "Geral" || category === "Destaques") {
     targetCategory = "Tecnologia";
@@ -877,13 +877,13 @@ export async function fetchNewsBackend({
     targetCategory = "Dev";
   }
 
-  // Cache temporário em memória para evitar duplicação nesta execução
+  // Cache temporÃ¡rio em memÃ³ria para evitar duplicaÃ§Ã£o nesta execuÃ§Ã£o
   const seenUrls = new Set<string>();
 
   try {
-    // API GNEWS como Fonte Primária
+    // API GNEWS como Fonte PrimÃ¡ria
     if (targetCategory !== "Inovacao" || (retentionWindowDays && retentionWindowDays > 3)) {
-      const searchQuery = query || "tecnologia OR startups OR economia OR inteligência artificial";
+      const searchQuery = query || "tecnologia OR startups OR economia OR inteligÃªncia artificial";
       const isHistoricalSearch = !!retentionWindowDays && retentionWindowDays > 3;
       const requestMax = isHistoricalSearch ? 10 : Math.min(100, Math.max(1, (max + offset) * 2));
       const targetResultCount = Math.min(50, Math.max(10, (max + offset) * 2));
@@ -920,10 +920,10 @@ export async function fetchNewsBackend({
             const title = repairMojibake(item.title || "");
             const description = repairMojibake(item.description || "");
             
-            // Validação 1: Origem Válida
+            // ValidaÃ§Ã£o 1: Origem VÃ¡lida
             if (!isSourceAllowed(sourceName, targetCategory)) continue;
 
-            // Validação 2: Classificação e Score Semântico
+            // ValidaÃ§Ã£o 2: ClassificaÃ§Ã£o e Score SemÃ¢ntico
             const classification = classifyArticle(title, description, sourceName, item.url);
             let articleCategory = classification.category;
             if (targetCategory === "Startups" && sourceName.toLowerCase().includes("startupi") && (articleCategory === "Startups" || articleCategory === "Business")) {
@@ -952,7 +952,7 @@ export async function fetchNewsBackend({
     console.warn(`[GNews API] Fetch failed. Error:`, error);
   }
 
-  // Se não obteve artigos suficientes do GNews, recorre ao Fallback RSS
+  // Se nÃ£o obteve artigos suficientes do GNews, recorre ao Fallback RSS
   const minimumSourceCount = Math.min(3, max + offset);
   const gnewsSourceCount = new Set(approvedArticles.map(article => article.source.trim().toLowerCase())).size;
   if (approvedArticles.length < max + offset || gnewsSourceCount < minimumSourceCount) {
@@ -1006,7 +1006,7 @@ export async function fetchNewsBackend({
         const title = repairMojibake(item.title || "");
         const cleanDesc = repairMojibake((item.description || "").replace(/<[^>]+>/g, '')).slice(0, 150) + '...';
         
-        // Mapeia origem correta para classificação
+        // Mapeia origem correta para classificaÃ§Ã£o
         let feedSource = "Tecnoblog";
         if (item.originFeedUrl.includes("startupi")) {
           feedSource = "Startupi";
@@ -1036,7 +1036,7 @@ export async function fetchNewsBackend({
 
             const classification = classifyArticle(title, cleanDesc, feedSource, item.link);
 
-        // Validação 2 no Fallback RSS
+        // ValidaÃ§Ã£o 2 no Fallback RSS
         let articleCategory = classification.category;
         if (targetCategory === "Startups" && feedSource.toLowerCase().includes("startupi") && (articleCategory === "Startups" || articleCategory === "Business")) {
           articleCategory = "Startups";
@@ -1080,3 +1080,4 @@ export async function fetchNewsBackend({
     });
   return balanceArticlesBySource(recentUniqueArticles).slice(offset, offset + max);
 }
+
