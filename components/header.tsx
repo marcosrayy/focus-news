@@ -120,7 +120,7 @@ export function Header() {
             type="text"
             value={searchValue}
             onChange={(event) => setSearchValue(event.target.value)}
-            placeholder="Pesquisar Terminal..."
+            placeholder="Pesquisar..."
             className="w-40 bg-transparent text-sm text-foreground placeholder:text-muted-foreground focus:outline-none lg:w-56"
           />
         </form>
@@ -169,7 +169,7 @@ export function Header() {
               type="text"
               value={searchValue}
               onChange={(event) => setSearchValue(event.target.value)}
-              placeholder="Pesquisar Terminal..."
+              placeholder="Pesquisar..."
               className="w-full bg-transparent text-sm text-foreground placeholder:text-muted-foreground focus:outline-none"
               autoFocus
             />

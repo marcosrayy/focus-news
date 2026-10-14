@@ -15,7 +15,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Focus News - Terminal de Tecnologia e Mercados",
+  title: "Focus News",
   description:
     "Portal premium de notícias de tecnologia, startups, IA e mercados financeiros em tempo real.",
 };
