@@ -1,6 +1,6 @@
 # Focus News
 
-> **Terminal de Tecnologia e Mercados**
+> **Portal de Notícias e Inovação**
 
 O **Focus News** é uma plataforma digital de notícias e informações sobre tecnologia, inovação e mercados, desenvolvida para oferecer uma experiência moderna, rápida e objetiva para acompanhar os principais acontecimentos do setor.
 
