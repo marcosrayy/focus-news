@@ -1,0 +1,43 @@
+diff --git a/app/api/news/route.ts b/app/api/news/route.ts
+index e0e97d2..8139fe7 100644
+--- a/app/api/news/route.ts
++++ b/app/api/news/route.ts
+@@ -6,6 +6,8 @@ import { RefreshEngine } from "../../../services/refreshEngine";
+ 
+ export const dynamic = "force-dynamic";
+ 
++const STALE_AFTER_MS = 6 * 60 * 60 * 1000;
++
+ const liveCategoryCache = new Map<string, {
+   expiresAt: number;
+   articles: Awaited<ReturnType<typeof fetchNewsBackend>>;
+@@ -150,9 +152,11 @@ export async function GET(request: Request) {
+       (newest, article) => Math.max(newest, new Date(article.publishedAt).getTime()),
+       0,
+     );
+-    const shouldRefreshStaleStartups = targetCategory === "Startups"
+-      && Date.now() - newestStoredArticleTime > 6 * 60 * 60 * 1000;
+-    if (shouldFetchSearchHistory || filtered.length < requiredCount || shouldRefreshStaleStartups) {
++    // The stored DB can be frozen (e.g. read-only serverless filesystem) and the archive mode
++    // skips retention filters, so also go live whenever the newest stored item is stale.
++    const shouldRefreshStale = !shouldMatchQuery
++      && Date.now() - newestStoredArticleTime > STALE_AFTER_MS;
++    if (shouldFetchSearchHistory || filtered.length < requiredCount || shouldRefreshStale) {
+       console.log(`[API/News] Insufficient articles for ${targetCategory} in Storage (${filtered.length}/${requiredCount}), fetching live...`);
+       const freshArticles = shouldMatchQuery
+         ? (await Promise.all(
+@@ -166,12 +170,10 @@ export async function GET(request: Request) {
+         : targetCategory === "Home"
+           ? (await Promise.all(
+               ["Startups", "Tecnologia", "Inovacao"].map(searchCategory =>
+-                fetchNewsBackend({ query, category: searchCategory, max: requiredCount, offset: 0 })
++                fetchLiveCategory(query, searchCategory, requiredCount)
+               )
+             )).flat()
+-        : targetCategory === "Startups"
+-          ? await fetchLiveCategory(query, targetCategory, requiredCount)
+-        : await fetchNewsBackend({ query, category: targetCategory, max: requiredCount, offset: 0 });
++        : await fetchLiveCategory(query, targetCategory, requiredCount);
+       
+       const existingIds = new Set(filtered.map(a => a.id));
+       for (const fa of freshArticles) {
