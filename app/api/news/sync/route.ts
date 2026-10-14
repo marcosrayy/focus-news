@@ -3,11 +3,12 @@ import { Storage } from "../../../../utils/storage";
 import { RefreshEngine } from "../../../../services/refreshEngine";
 
 export const dynamic = "force-dynamic";
+export const maxDuration = 60;
 
 export async function GET() {
   try {
-    const status = Storage.readStatus();
-    const articles = Storage.readArticles();
+    const status = await Storage.readStatus();
+    const articles = await Storage.readArticles();
     
     // Group count by category
     const categoryCounts: Record<string, number> = {};
@@ -41,7 +42,7 @@ export async function POST() {
       }, { status: 409 });
     }
 
-    const status = Storage.readStatus();
+    const status = await Storage.readStatus();
     return NextResponse.json({
       status: "success",
       syncStats: result.stats,

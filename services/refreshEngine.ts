@@ -137,8 +137,8 @@ export const RefreshEngine = {
     console.log('[RefreshEngine] Starting synchronization cycle...');
 
     // Load existing database and status
-    const existingArticles = Storage.readArticles();
-    const status = Storage.readStatus();
+    const existingArticles = await Storage.readArticles();
+    const status = await Storage.readStatus();
     
     // Track stats for this run
     let importedThisRun = 0;

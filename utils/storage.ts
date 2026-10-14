@@ -115,67 +115,108 @@ export interface EngineStatus {
   };
 }
 
-export const Storage = {
-  // Read all articles
-  readArticles(): StorageArticle[] {
-    ensureDirAndFiles();
-    try {
-      const data = fs.readFileSync(NEWS_DB_FILE, 'utf-8');
-      return JSON.parse(data) as StorageArticle[];
-    } catch (err) {
-      console.error('Failed to read news database, returning empty array:', err);
-      return [];
-    }
-  },
+// --- Persistent remote store (Upstash Redis / Vercel KV via REST, no extra dependency) ---
+// On serverless hosts (e.g. Vercel) the project filesystem is read-only, so the JSON files
+// can never be updated at runtime. When REST credentials exist we keep the data there and
+// use the committed JSON files only as the initial seed / local-dev fallback.
+const REMOTE_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || '';
+const REMOTE_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN || '';
+const REMOTE_ENABLED = !!(REMOTE_URL && REMOTE_TOKEN);
+const ARTICLES_KEY = 'focus-news:articles';
+const STATUS_KEY = 'focus-news:status';
 
-  // Save articles (thread-safe queue write)
-  async saveArticles(articles: StorageArticle[]): Promise<void> {
-    ensureDirAndFiles();
-    return writeQueue.add(async () => {
-      const tempPath = `${NEWS_DB_FILE}.tmp`;
-      try {
-        fs.writeFileSync(tempPath, JSON.stringify(articles, null, 2), 'utf-8');
-        fs.renameSync(tempPath, NEWS_DB_FILE);
-      } catch (err) {
-        console.error('Failed to save articles:', err);
-        if (fs.existsSync(tempPath)) {
-          fs.unlinkSync(tempPath);
-        }
-        throw err;
-      }
-    });
-  },
+async function remoteCommand(command: unknown[]): Promise<unknown> {
+  const res = await fetch(REMOTE_URL, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${REMOTE_TOKEN}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify(command),
+    cache: 'no-store',
+  });
+  if (!res.ok) throw new Error(`Remote store returned HTTP ${res.status}`);
+  const data = await res.json();
+  if (data.error) throw new Error(`Remote store error: ${data.error}`);
+  return data.result;
+}
 
-  // Read status
-  readStatus(): EngineStatus {
-    ensureDirAndFiles();
-    try {
-      const data = fs.readFileSync(ENGINE_STATUS_FILE, 'utf-8');
-      return JSON.parse(data) as EngineStatus;
-    } catch (err) {
-      console.error('Failed to read engine status, rebuilding initial state:', err);
-      // Re-create initial state
-      fs.unlinkSync(ENGINE_STATUS_FILE);
-      ensureDirAndFiles();
-      return JSON.parse(fs.readFileSync(ENGINE_STATUS_FILE, 'utf-8')) as EngineStatus;
-    }
-  },
+async function remoteGet<T>(key: string): Promise<T | null> {
+  const result = await remoteCommand(['GET', key]);
+  return typeof result === 'string' ? (JSON.parse(result) as T) : null;
+}
 
-  // Save status (thread-safe queue write)
-  async saveStatus(status: EngineStatus): Promise<void> {
-    ensureDirAndFiles();
-    return writeQueue.add(async () => {
-      const tempPath = `${ENGINE_STATUS_FILE}.tmp`;
-      try {
-        fs.writeFileSync(tempPath, JSON.stringify(status, null, 2), 'utf-8');
-        fs.renameSync(tempPath, ENGINE_STATUS_FILE);
-      } catch (err) {
-        console.error('Failed to save engine status:', err);
-        if (fs.existsSync(tempPath)) {
-          fs.unlinkSync(tempPath);
-        }
-        throw err;
-      }
-    });
+async function remoteSet(key: string, value: unknown): Promise<void> {
+  await remoteCommand(['SET', key, JSON.stringify(value)]);
+}
+
+function readArticlesFromFile(): StorageArticle[] {
+  ensureDirAndFiles();
+  try {
+    return JSON.parse(fs.readFileSync(NEWS_DB_FILE, 'utf-8')) as StorageArticle[];
+  } catch (err) {
+    console.error('Failed to read news database, returning empty array:', err);
+    return [];
   }
+}
+
+function readStatusFromFile(): EngineStatus {
+  ensureDirAndFiles();
+  try {
+    return JSON.parse(fs.readFileSync(ENGINE_STATUS_FILE, 'utf-8')) as EngineStatus;
+  } catch (err) {
+    console.error('Failed to read engine status, rebuilding initial state:', err);
+    fs.unlinkSync(ENGINE_STATUS_FILE);
+    ensureDirAndFiles();
+    return JSON.parse(fs.readFileSync(ENGINE_STATUS_FILE, 'utf-8')) as EngineStatus;
+  }
+}
+
+function writeFileAtomic(file: string, value: unknown): Promise<void> {
+  return writeQueue.add(async () => {
+    const tempPath = `${file}.tmp`;
+    try {
+      fs.writeFileSync(tempPath, JSON.stringify(value, null, 2), 'utf-8');
+      fs.renameSync(tempPath, file);
+    } catch (err) {
+      console.error(`Failed to save ${path.basename(file)}:`, err);
+      if (fs.existsSync(tempPath)) fs.unlinkSync(tempPath);
+      throw err;
+    }
+  });
+}
+
+export const Storage = {
+  async readArticles(): Promise<StorageArticle[]> {
+    if (REMOTE_ENABLED) {
+      try {
+        const remote = await remoteGet<StorageArticle[]>(ARTICLES_KEY);
+        if (remote) return remote;
+      } catch (err) {
+        console.error('Remote read of articles failed, using bundled file:', err);
+      }
+    }
+    return readArticlesFromFile();
+  },
+
+  async saveArticles(articles: StorageArticle[]): Promise<void> {
+    if (REMOTE_ENABLED) return remoteSet(ARTICLES_KEY, articles);
+    ensureDirAndFiles();
+    return writeFileAtomic(NEWS_DB_FILE, articles);
+  },
+
+  async readStatus(): Promise<EngineStatus> {
+    if (REMOTE_ENABLED) {
+      try {
+        const remote = await remoteGet<EngineStatus>(STATUS_KEY);
+        if (remote) return remote;
+      } catch (err) {
+        console.error('Remote read of status failed, using bundled file:', err);
+      }
+    }
+    return readStatusFromFile();
+  },
+
+  async saveStatus(status: EngineStatus): Promise<void> {
+    if (REMOTE_ENABLED) return remoteSet(STATUS_KEY, status);
+    ensureDirAndFiles();
+    return writeFileAtomic(ENGINE_STATUS_FILE, status);
+  },
 };

@@ -1,10 +1,11 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
 
 import { balanceArticlesBySource, decodeHtmlEntities, deduplicateArticles, fetchNewsApiArticles, fetchNewsBackend, getFallbackNewsImage, hasCategoryEvidence, isArticleWithinRetention, isEnglishDevSource } from "../../../services/newsService";
 import { Storage } from "../../../utils/storage";
 import { RefreshEngine } from "../../../services/refreshEngine";
 
 export const dynamic = "force-dynamic";
+export const maxDuration = 60;
 
 const STALE_AFTER_MS = 6 * 60 * 60 * 1000;
 
@@ -57,20 +58,26 @@ export async function GET(request: Request) {
 
   try {
     // 1. Fetch current status to check for lazy sync trigger
-    const status = Storage.readStatus();
+    const status = await Storage.readStatus();
     const lastSyncTime = new Date(status.lastSync).getTime();
     const timeSinceLastSync = Date.now() - lastSyncTime;
 
     // Trigger background sync asynchronously if cache is older than 15 minutes
     if (timeSinceLastSync > 15 * 60 * 1000) {
       console.log(`[API/News] Lazy triggering sync. Stale time: ${Math.round(timeSinceLastSync / 1000)}s`);
-      RefreshEngine.runSync().catch(err => {
-        console.error('[API/News] Lazy trigger background sync failed:', err);
+      // after() keeps the serverless invocation alive until the sync finishes (a bare
+      // fire-and-forget promise is frozen as soon as the response is sent).
+      after(async () => {
+        try {
+          await RefreshEngine.runSync();
+        } catch (err) {
+          console.error('[API/News] Lazy trigger background sync failed:', err);
+        }
       });
     }
 
     // 2. Fetch persisted articles
-    const allArticles = Storage.readArticles();
+    const allArticles = await Storage.readArticles();
 
     // 3. Filter by category
     // virtual category mapping
