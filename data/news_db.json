@@ -2602,5 +2602,47 @@
     "importedAt": "2026-10-16T18:07:33.911Z",
     "importanceScore": 80,
     "expiresAt": "2026-10-20T15:10:07.000Z"
+  },
+  {
+    "id": "https://valor.globo.com/financas/noticia/2026/10/16/ouro-sobe-com-reducao-das-expectativas-de-alta-dos-juros-nos-eua.ghtml",
+    "title": "Ouro sobe com redução das expectativas de alta dos juros nos EUA",
+    "description": "Os preços dos contratos futuros do ouro fecharam em alta, nesta sexta-feira (16), diante da redução das expectativas de aumento dos juros nos Estados ...",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/16/ouro-sobe-com-reducao-das-expectativas-de-alta-dos-juros-nos-eua.ghtml",
+    "image": "https://s2-valor.glbimg.com/J3p4ai0x49FfKIka316Lh2YbArw=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2020/V/e/PPV1NgRESHYzwMSj1UOg/363631538-0-8.jpg.jpg",
+    "publishedAt": "Fri, 16 Oct 2026 18:13:02 -0000",
+    "source": "Valor",
+    "category": "Economia",
+    "score": 100,
+    "importedAt": "2026-10-16T18:31:45.879Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-21T18:13:02.000Z"
+  },
+  {
+    "id": "https://www.estadao.com.br/tecmundo/produto-e-review/app-moto-buds-ganha-versao-para-ios-com-recursos-avancados-em-fones-da-motorola/",
+    "title": "App Moto Buds ganha versão para iOS com recursos avançados em fones da Motorola",
+    "description": "...",
+    "url": "https://www.estadao.com.br/tecmundo/produto-e-review/app-moto-buds-ganha-versao-para-ios-com-recursos-avancados-em-fones-da-motorola/",
+    "image": "https://www.estadao.com.br/resizer/v2/IGQYTW5ZSVGTXGS5Z44KD3SLDI.jpg?quality=80&auth=3003f82402dc7b7149341eb86d3ba28a5fdb7e68695fd7f6ce9368a7ec7aa70d&width=710",
+    "publishedAt": "Fri, 16 Oct 2026 18:00:00 +0000",
+    "source": "TechMundo",
+    "category": "Tecnologia",
+    "score": 100,
+    "importedAt": "2026-10-16T18:31:49.405Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-21T18:00:00.000Z"
+  },
+  {
+    "id": "https://www.cnnbrasil.com.br/infra/ons-eleva-previsao-de-crescimento-da-carga-de-energia-no-brasil-em-outubro/",
+    "title": "ONS eleva previsão de crescimento da carga de energia no Brasil em outubro",
+    "description": "Operador Nacional do Sistema Elétrico prevê maior volume de chuvas na região Sudeste/Centro-Oeste, estimado em 156% da média para o mês...",
+    "url": "https://www.cnnbrasil.com.br/infra/ons-eleva-previsao-de-crescimento-da-carga-de-energia-no-brasil-em-outubro/",
+    "image": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/plenario-senado-6x1-1.jpg?w=200",
+    "publishedAt": "Fri, 16 Oct 2026 17:49:01 +0000",
+    "source": "CNN",
+    "category": "Business",
+    "score": 100,
+    "importedAt": "2026-10-16T18:31:53.786Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-21T17:49:01.000Z"
   }
 ]
