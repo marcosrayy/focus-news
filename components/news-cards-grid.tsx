@@ -2,7 +2,7 @@
 
 import { Clock, MessageSquare } from "lucide-react";
 import { NewsArticle } from "@/types/news";
-import { formatRelativeTime } from "@/lib/news-service"; // Reusing existing helper or I can inline it
+import { formatRelativeTime, FALLBACK_NEWS_IMAGES } from "@/lib/news-service";
 import { useNewsRotation } from "@/hooks/use-news-rotation";
 import { FeaturedNewsCarousel, NewsSectionLayout } from "@/components/news-section-layout";
 import type { ReactNode } from "react";
@@ -14,6 +14,46 @@ function getCategoryColor(category: string) {
   return colors[hash % colors.length];
 }
 
+function getArticlesWithUniqueImages<T extends NewsArticle>(articles: T[]): (T & { displayImage: string })[] {
+  const usedImages = new Set<string>();
+  const originalImages = new Set(
+    articles.map((article) => normalizeImageUrl(article.image)).filter(Boolean)
+  );
+
+  return articles.map((article) => {
+    const image = article.image?.trim() || "";
+    const normalized = normalizeImageUrl(image);
+
+    if (normalized && !usedImages.has(normalized)) {
+      usedImages.add(normalized);
+      return { ...article, displayImage: image };
+    }
+
+    const replacement = FALLBACK_NEWS_IMAGES.find((candidate) => {
+      const key = normalizeImageUrl(candidate);
+      return key && !usedImages.has(key) && !originalImages.has(key);
+    });
+
+    if (replacement) {
+      usedImages.add(normalizeImageUrl(replacement));
+      return { ...article, displayImage: replacement };
+    }
+
+    return { ...article, displayImage: image };
+  });
+}
+
+function normalizeImageUrl(value: string): string {
+  if (!value) return "";
+  try {
+    const url = new URL(value);
+    url.hash = "";
+    return url.toString();
+  } catch {
+    return value.trim();
+  }
+}
+
 export function NewsCardsGrid({
   news = [],
   variant = "default",
@@ -23,8 +63,8 @@ export function NewsCardsGrid({
   variant?: "default" | "three";
   sidebar?: ReactNode;
 }) {
-  // If no news, we could show skeletons, but for now just render what we have
-  const articlesToRender = news.length > 0 ? news : [];
+  // Mantém as capas originais quando são únicas e troca apenas URLs repetidas.
+  const articlesToRender = getArticlesWithUniqueImages(news);
   const { featuredArticles, remainingArticles } = useNewsRotation(articlesToRender);
 
   if (variant === "three") {
@@ -102,7 +142,7 @@ function FeaturedCard({ article, onClick }: { article: NewsArticle; onClick: () 
     >
       <div className="relative aspect-[16/10] overflow-hidden">
         <img
-          src={article.image}
+          src={article.displayImage}
           alt={article.title}
           className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
@@ -152,7 +192,7 @@ function CompactCard({ article, onClick }: { article: NewsArticle; onClick: () =
     >
       <div className="relative h-[72px] w-[96px] flex-shrink-0 overflow-hidden rounded-lg sm:h-24 sm:w-32">
         <img
-          src={article.image}
+          src={article.displayImage}
           alt={article.title}
           className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
         />

@@ -131,3 +131,4 @@ export function getCategoryStyle(category: NewsCategory, index: number) {
   const cats = categoryMappings[category] || categoryMappings.general;
   return cats[index % cats.length];
 }
+

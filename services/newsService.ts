@@ -62,7 +62,7 @@ export function decodeHtmlEntities(text: string): string {
     });
 }
 
-const FALLBACK_NEWS_IMAGES = [
+export const FALLBACK_NEWS_IMAGES = [
   "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200",
   "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200",
   "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&q=80&w=1200",
@@ -472,7 +472,7 @@ const NON_TECH_DOMAIN_TERMS = [
   "segurança pública", "ocorrencia", "ocorrências", "ssp", "policia", "batalhao", "detento",
   "hospitalar", "vítima", "vitima", "justica", "audiencia", "depoimento",
   "idoso", "idosos", "envelhecer", "qualidade de vida", "aposentadoria", "aposentado",
-  "lollapalooza", "festival", "passarela"
+  "lollapalooza", "festival", "passarela", 
 ];
 const PUBLIC_SAFETY_REJECTION_TERMS = [
   "estupro", "estupros", "violencia", "crime", "crimes", "homicidio", "assassinato",
