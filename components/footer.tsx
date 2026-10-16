@@ -49,11 +49,19 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-1 text-xl font-extrabold tracking-tight text-foreground">
-              <img src="/icon" alt="" className="h-8 w-8 shrink-0" />
-              <span className="text-foreground">FOCUS</span>{" "}
-              <span className="text-primary">NEWS</span>
-              <sup className="ml-0.5 text-[10px] font-semibold text-muted-foreground">®</sup>
+            <div className="flex items-center">
+              <img src="/icon" alt="" aria-hidden="true" className="h-8 w-8 shrink-0" />
+              <img
+                src="/focus-news-logo-light.png"
+                alt="Focus News"
+                className="h-auto w-44 dark:hidden"
+              />
+              <img
+                src="/focus-news-logo.png"
+                alt=""
+                aria-hidden="true"
+                className="hidden h-auto w-44 dark:block"
+              />
             </div>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
               Desenvolvemos soluções digitais para automatizar processos, integrar

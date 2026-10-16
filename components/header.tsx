@@ -135,9 +135,18 @@ export function Header() {
 
       <div className="absolute left-1/2 -translate-x-1/2">
         <a href="/" className="flex items-center">
-          <h1 className="font-heading text-xl font-extrabold tracking-tight lg:text-2xl">
-            <span className="text-foreground">FOCUS</span>{" "}
-            <span className="text-primary">NEWS</span>
+          <h1>
+            <img
+              src="/focus-news-logo-light.png"
+              alt="Focus News"
+              className="h-auto w-36 dark:hidden sm:w-44 lg:w-52"
+            />
+            <img
+              src="/focus-news-logo.png"
+              alt=""
+              aria-hidden="true"
+              className="hidden h-auto w-36 dark:block sm:w-44 lg:w-52"
+            />
           </h1>
         </a>
       </div>
