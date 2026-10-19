@@ -170,7 +170,7 @@ export function DevSidebarContent() {
           <h3 className="font-heading text-sm font-bold tracking-wider text-foreground">TUTORIAIS</h3>
         </div>
         <p className="mb-3 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-          3 tutoriais de desenvolvimento do Brasil · Atualiza a cada 7 dias
+          3 tutorias de programação
         </p>
         <div className="flex flex-col gap-2">
           {tutorialData?.videos.map((video) => (

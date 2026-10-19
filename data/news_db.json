@@ -2646,6 +2646,8 @@
     "expiresAt": "2026-10-21T17:49:01.000Z"
   },
   {
+<<<<<<< HEAD
+=======
     "id": "https://valor.globo.com/financas/noticia/2026/10/16/whg-amplia-equipe-de-acoes-locais-com-novas-contratacoes.ghtml",
     "title": "WHG amplia equipe de ações locais com novas contratações",
     "description": "A WHG, gestora brasileira de recursos e wealth management fundada por ex-executivos do Credit Suisse, está reforçando sua recém-criada equipe focada e...",
@@ -2786,11 +2788,21 @@
     "expiresAt": "2026-10-21T19:22:24.000Z"
   },
   {
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "id": "https://exame.com/ciencia/como-ia-pode-ajudar-a-reviver-o-dodo-ave-extinta-ha-mais-de-300-anos/",
     "title": "Como IA pode ajudar a ‘reviver’ o dodô, ave extinta há mais de 300 anos",
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/ciencia/como-ia-pode-ajudar-a-reviver-o-dodo-ave-extinta-ha-mais-de-300-anos/",
     "image": "https://classic.exame.com/wp-content/uploads/2025/12/aveextinta.jpg",
+<<<<<<< HEAD
+    "publishedAt": "2026-10-19T16:23:42.316Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-19T16:23:42.316Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-24T16:23:42.316Z"
+=======
     "publishedAt": "2026-10-19T16:16:07.666Z",
     "source": "Exame",
     "category": "Startups",
@@ -2798,6 +2810,7 @@
     "importedAt": "2026-10-19T16:16:07.666Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-24T16:16:07.666Z"
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
   },
   {
     "id": "https://exame.com/negocios/esta-ia-reduz-em-70-o-tempo-para-criar-documentos-juridicos-e-virou-aposta-milionaria/",
@@ -2805,6 +2818,15 @@
     "description": "Acompanhe notícias sobre startups, negócios e ecossistema de inovação na revista Exame.",
     "url": "https://exame.com/negocios/esta-ia-reduz-em-70-o-tempo-para-criar-documentos-juridicos-e-virou-aposta-milionaria/",
     "image": "https://classic.exame.com/wp-content/uploads/2026/10/0I1A0812.JPG.jpeg",
+<<<<<<< HEAD
+    "publishedAt": "2026-10-19T16:23:42.317Z",
+    "source": "Exame",
+    "category": "Startups",
+    "score": 100,
+    "importedAt": "2026-10-19T16:23:42.317Z",
+    "importanceScore": 100,
+    "expiresAt": "2026-10-24T16:23:42.317Z"
+=======
     "publishedAt": "2026-10-19T16:16:07.667Z",
     "source": "Exame",
     "category": "Startups",
@@ -2812,6 +2834,7 @@
     "importedAt": "2026-10-19T16:16:07.667Z",
     "importanceScore": 100,
     "expiresAt": "2026-10-24T16:16:07.667Z"
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
   },
   {
     "id": "https://startupi.com.br/sompo-hotmilk-desafio-inovacao-prevencao-incendios-maquinas-agricolas/",
@@ -2823,7 +2846,11 @@
     "source": "Startupi",
     "category": "IA",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:42.538Z",
+=======
     "importedAt": "2026-10-19T16:16:08.131Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T07:00:00.000Z"
   },
@@ -2837,7 +2864,11 @@
     "source": "Startupi",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:42.540Z",
+=======
     "importedAt": "2026-10-19T16:16:08.133Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T06:59:00.000Z"
   },
@@ -2851,7 +2882,11 @@
     "source": "InfoMoney",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:43.966Z",
+=======
     "importedAt": "2026-10-19T16:16:09.000Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T16:00:00.000Z"
   },
@@ -2865,7 +2900,11 @@
     "source": "InfoMoney",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:43.969Z",
+=======
     "importedAt": "2026-10-19T16:16:09.005Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-20T15:59:35.000Z"
   },
@@ -2879,7 +2918,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.574Z",
+=======
     "importedAt": "2026-10-19T16:16:09.700Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T16:08:07.000Z"
   },
@@ -2893,7 +2936,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.580Z",
+=======
     "importedAt": "2026-10-19T16:16:09.707Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T15:29:24.000Z"
   },
@@ -2907,7 +2954,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.597Z",
+=======
     "importedAt": "2026-10-19T16:16:09.724Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T14:53:00.000Z"
   },
@@ -2921,7 +2972,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.598Z",
+=======
     "importedAt": "2026-10-19T16:16:09.726Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T14:47:11.000Z"
   },
@@ -2935,7 +2990,11 @@
     "source": "Valor",
     "category": "Business",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.606Z",
+=======
     "importedAt": "2026-10-19T16:16:09.738Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T14:05:20.000Z"
   },
@@ -2949,7 +3008,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.613Z",
+=======
     "importedAt": "2026-10-19T16:16:09.741Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T14:03:24.000Z"
   },
@@ -2963,7 +3026,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.619Z",
+=======
     "importedAt": "2026-10-19T16:16:09.747Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-20T13:52:10.000Z"
   },
@@ -2977,7 +3044,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.620Z",
+=======
     "importedAt": "2026-10-19T16:16:09.749Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-20T13:48:17.000Z"
   },
@@ -2991,7 +3062,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.620Z",
+=======
     "importedAt": "2026-10-19T16:16:09.750Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T13:46:42.000Z"
   },
@@ -3005,7 +3080,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.626Z",
+=======
     "importedAt": "2026-10-19T16:16:09.760Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T13:22:54.000Z"
   },
@@ -3019,7 +3098,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.628Z",
+=======
     "importedAt": "2026-10-19T16:16:09.765Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-20T13:04:10.000Z"
   },
@@ -3033,7 +3116,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.631Z",
+=======
     "importedAt": "2026-10-19T16:16:09.771Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T12:47:19.000Z"
   },
@@ -3047,7 +3134,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.634Z",
+=======
     "importedAt": "2026-10-19T16:16:09.777Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T12:39:27.000Z"
   },
@@ -3061,7 +3152,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.638Z",
+=======
     "importedAt": "2026-10-19T16:16:09.783Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T12:27:12.000Z"
   },
@@ -3075,7 +3170,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.638Z",
+=======
     "importedAt": "2026-10-19T16:16:09.784Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-20T12:25:46.000Z"
   },
@@ -3089,7 +3188,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.642Z",
+=======
     "importedAt": "2026-10-19T16:16:09.790Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-20T12:19:33.000Z"
   },
@@ -3103,7 +3206,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.644Z",
+=======
     "importedAt": "2026-10-19T16:16:09.792Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-20T12:13:05.000Z"
   },
@@ -3117,7 +3224,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.649Z",
+=======
     "importedAt": "2026-10-19T16:16:09.803Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-20T11:43:48.000Z"
   },
@@ -3131,7 +3242,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.654Z",
+=======
     "importedAt": "2026-10-19T16:16:09.811Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T11:29:55.000Z"
   },
@@ -3145,7 +3260,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.666Z",
+=======
     "importedAt": "2026-10-19T16:16:09.822Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-20T11:12:18.000Z"
   },
@@ -3159,7 +3278,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.669Z",
+=======
     "importedAt": "2026-10-19T16:16:09.824Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-20T11:11:13.000Z"
   },
@@ -3173,7 +3296,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.672Z",
+=======
     "importedAt": "2026-10-19T16:16:09.831Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-20T11:05:12.000Z"
   },
@@ -3187,7 +3314,11 @@
     "source": "Valor",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:44.681Z",
+=======
     "importedAt": "2026-10-19T16:16:09.855Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T08:00:00.000Z"
   },
@@ -3201,7 +3332,11 @@
     "source": "Globo",
     "category": "Tecnologia",
     "score": 83,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:45.103Z",
+=======
     "importedAt": "2026-10-19T16:16:10.040Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 83,
     "expiresAt": "2026-10-24T15:14:46.000Z"
   },
@@ -3215,7 +3350,11 @@
     "source": "Globo",
     "category": "Business",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:45.106Z",
+=======
     "importedAt": "2026-10-19T16:16:10.043Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T14:11:40.000Z"
   },
@@ -3229,7 +3368,11 @@
     "source": "Globo",
     "category": "Economia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:45.130Z",
+=======
     "importedAt": "2026-10-19T16:16:10.068Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-22T08:00:00.000Z"
   },
@@ -3243,7 +3386,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:45.637Z",
+=======
     "importedAt": "2026-10-19T16:16:10.680Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T16:04:00.000Z"
   },
@@ -3257,7 +3404,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:45.649Z",
+=======
     "importedAt": "2026-10-19T16:16:10.690Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T14:26:00.000Z"
   },
@@ -3271,7 +3422,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:45.654Z",
+=======
     "importedAt": "2026-10-19T16:16:10.693Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-21T14:02:00.000Z"
   },
@@ -3285,7 +3440,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:45.658Z",
+=======
     "importedAt": "2026-10-19T16:16:10.697Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-20T13:49:01.000Z"
   },
@@ -3299,7 +3458,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:45.661Z",
+=======
     "importedAt": "2026-10-19T16:16:10.699Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T13:47:10.000Z"
   },
@@ -3313,7 +3476,11 @@
     "source": "Canaltech",
     "category": "IA",
     "score": 80,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:45.664Z",
+=======
     "importedAt": "2026-10-19T16:16:10.702Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 80,
     "expiresAt": "2026-10-21T13:30:26.000Z"
   },
@@ -3327,7 +3494,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:45.667Z",
+=======
     "importedAt": "2026-10-19T16:16:10.705Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-20T13:20:34.000Z"
   },
@@ -3341,7 +3512,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 75,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:45.676Z",
+=======
     "importedAt": "2026-10-19T16:16:10.713Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 75,
     "expiresAt": "2026-10-24T12:17:49.000Z"
   },
@@ -3355,7 +3530,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:45.680Z",
+=======
     "importedAt": "2026-10-19T16:16:10.716Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-20T10:59:46.000Z"
   },
@@ -3369,7 +3548,11 @@
     "source": "Canaltech",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:45.686Z",
+=======
     "importedAt": "2026-10-19T16:16:10.721Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-20T10:00:49.000Z"
   },
@@ -3383,7 +3566,11 @@
     "source": "Canaltech",
     "category": "IA",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:45.692Z",
+=======
     "importedAt": "2026-10-19T16:16:10.726Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-19T20:00:06.000Z"
   },
@@ -3397,7 +3584,11 @@
     "source": "Canaltech",
     "category": "IA",
     "score": 80,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:45.713Z",
+=======
     "importedAt": "2026-10-19T16:16:10.741Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 80,
     "expiresAt": "2026-10-23T11:30:00.000Z"
   },
@@ -3411,11 +3602,32 @@
     "source": "Tecnoblog",
     "category": "IA",
     "score": 80,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:45.989Z",
+=======
     "importedAt": "2026-10-19T16:16:11.303Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 80,
     "expiresAt": "2026-10-24T15:41:42.000Z"
   },
   {
+<<<<<<< HEAD
+    "id": "https://tecnoblog.net/noticias/meta-pode-coletar-noticias-para-treinar-ia-sem-pagar-por-licencas/",
+    "title": "Meta pode coletar notícias para treinar IA sem pagar por licenças",
+    "description": "Novos termos comerciais autorizam a coleta automatizada de páginas vinculadas a contas empresariais. Atualização entra em vigor em 30 de outubro.\nMeta...",
+    "url": "https://tecnoblog.net/noticias/meta-pode-coletar-noticias-para-treinar-ia-sem-pagar-por-licencas/",
+    "image": "https://files.tecnoblog.net/wp-content/uploads/2025/02/Capa-Mark-Zuckerberg-03.png",
+    "publishedAt": "Fri, 16 Oct 2026 19:24:57 +0000",
+    "source": "Tecnoblog",
+    "category": "IA",
+    "score": 80,
+    "importedAt": "2026-10-19T16:23:46.008Z",
+    "importanceScore": 80,
+    "expiresAt": "2026-10-21T19:24:57.000Z"
+  },
+  {
+=======
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "id": "https://olhardigital.com.br/2026/10/19/internet-e-redes-sociais/menores-conseguem-baixar-apps-que-criam-nudes-com-ia-aponta-investigacao/",
     "title": "Menores conseguem baixar apps que criam nudes com IA, aponta investigação",
     "description": "Um estudo encontrou 135 apps de imagens íntimas falsas acessíveis a adolescentes, mesmo com controles parentais ativados\nO post Menores conseguem baix...",
@@ -3425,7 +3637,11 @@
     "source": "Olhar Digital",
     "category": "IA",
     "score": 80,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:46.266Z",
+=======
     "importedAt": "2026-10-19T16:16:11.578Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 80,
     "expiresAt": "2026-10-21T13:53:40.000Z"
   },
@@ -3439,7 +3655,11 @@
     "source": "Showmetech",
     "category": "IA",
     "score": 80,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:46.489Z",
+=======
     "importedAt": "2026-10-19T16:16:11.758Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 80,
     "expiresAt": "2026-10-24T13:36:40.000Z"
   },
@@ -3453,7 +3673,11 @@
     "source": "TechMundo",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:48.321Z",
+=======
     "importedAt": "2026-10-19T16:16:13.555Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T15:15:00.000Z"
   },
@@ -3467,7 +3691,11 @@
     "source": "TechMundo",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:48.323Z",
+=======
     "importedAt": "2026-10-19T16:16:13.564Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-20T15:00:00.000Z"
   },
@@ -3481,7 +3709,11 @@
     "source": "TechMundo",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:48.336Z",
+=======
     "importedAt": "2026-10-19T16:16:13.592Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-23T18:15:00.000Z"
   },
@@ -3495,7 +3727,11 @@
     "source": "TechMundo",
     "category": "IA",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:48.342Z",
+=======
     "importedAt": "2026-10-19T16:16:13.609Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-22T21:00:00.000Z"
   },
@@ -3509,7 +3745,11 @@
     "source": "TechMundo",
     "category": "Tecnologia",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:48.352Z",
+=======
     "importedAt": "2026-10-19T16:16:13.633Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-22T10:00:00.000Z"
   },
@@ -3523,7 +3763,11 @@
     "source": "TechMundo",
     "category": "IA",
     "score": 80,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:48.355Z",
+=======
     "importedAt": "2026-10-19T16:16:13.638Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 80,
     "expiresAt": "2026-10-21T23:15:00.000Z"
   },
@@ -3537,7 +3781,11 @@
     "source": "TechMundo",
     "category": "Inovacao",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:48.357Z",
+=======
     "importedAt": "2026-10-19T16:16:13.641Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-21T22:00:00.000Z"
   },
@@ -3551,7 +3799,11 @@
     "source": "TechMundo",
     "category": "IA",
     "score": 80,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:48.359Z",
+=======
     "importedAt": "2026-10-19T16:16:13.645Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 80,
     "expiresAt": "2026-10-21T21:30:00.000Z"
   },
@@ -3565,7 +3817,11 @@
     "source": "Forbes",
     "category": "IA",
     "score": 80,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:49.180Z",
+=======
     "importedAt": "2026-10-19T16:16:14.472Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 80,
     "expiresAt": "2026-10-23T08:04:00.000Z"
   },
@@ -3579,7 +3835,11 @@
     "source": "CNN",
     "category": "Business",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:51.764Z",
+=======
     "importedAt": "2026-10-19T16:16:15.820Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T14:49:07.000Z"
   },
@@ -3593,7 +3853,11 @@
     "source": "Diolinux",
     "category": "Dev",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:52.250Z",
+=======
     "importedAt": "2026-10-19T16:16:16.271Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-24T11:30:00.000Z"
   },
@@ -3607,7 +3871,11 @@
     "source": "Diolinux",
     "category": "Dev",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:52.252Z",
+=======
     "importedAt": "2026-10-19T16:16:16.273Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-23T13:00:00.000Z"
   },
@@ -3621,7 +3889,11 @@
     "source": "Diolinux",
     "category": "Dev",
     "score": 100,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:52.253Z",
+=======
     "importedAt": "2026-10-19T16:16:16.274Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 100,
     "expiresAt": "2026-10-22T14:00:00.000Z"
   },
@@ -3635,7 +3907,11 @@
     "source": "TabNews",
     "category": "Dev",
     "score": 80,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:54.082Z",
+=======
     "importedAt": "2026-10-19T16:16:17.582Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 80,
     "expiresAt": "2026-10-24T14:33:43.000Z"
   },
@@ -3649,7 +3925,11 @@
     "source": "TabNews",
     "category": "Dev",
     "score": 80,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:54.093Z",
+=======
     "importedAt": "2026-10-19T16:16:17.589Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 80,
     "expiresAt": "2026-10-24T11:58:33.000Z"
   },
@@ -3663,7 +3943,11 @@
     "source": "TabNews",
     "category": "Dev",
     "score": 80,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:54.098Z",
+=======
     "importedAt": "2026-10-19T16:16:17.593Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 80,
     "expiresAt": "2026-10-24T04:09:13.000Z"
   },
@@ -3677,7 +3961,11 @@
     "source": "TabNews",
     "category": "Dev",
     "score": 80,
+<<<<<<< HEAD
+    "importedAt": "2026-10-19T16:23:54.103Z",
+=======
     "importedAt": "2026-10-19T16:16:17.598Z",
+>>>>>>> f0c7226507232c669ebfa761e069a16ae43a232a
     "importanceScore": 80,
     "expiresAt": "2026-10-24T01:59:11.000Z"
   },

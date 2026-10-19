@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "lastSync": "2026-10-19T18:07:41.959Z",
   "syncHistory": [
     {
@@ -336,14 +337,49 @@
       "status": "Online",
       "lastResponseMs": 382,
       "lastChecked": "2026-10-19T18:07:36.852Z"
+=======
+  "lastSync": "2026-10-19T15:38:49.979Z",
+  "syncHistory": [],
+  "sourcesHealth": {
+    "Startupi": {
+      "status": "Online",
+      "lastResponseMs": 120,
+      "lastChecked": "2026-10-19T16:38:49.980Z"
+    },
+    "InfoMoney": {
+      "status": "Online",
+      "lastResponseMs": 150,
+      "lastChecked": "2026-10-19T16:38:49.980Z"
+    },
+    "Valor": {
+      "status": "Online",
+      "lastResponseMs": 180,
+      "lastChecked": "2026-10-19T16:38:49.980Z"
+    },
+    "Canaltech": {
+      "status": "Online",
+      "lastResponseMs": 200,
+      "lastChecked": "2026-10-19T16:38:49.980Z"
+    },
+    "TechMundo": {
+      "status": "Online",
+      "lastResponseMs": 210,
+      "lastChecked": "2026-10-19T16:38:49.980Z"
+    },
+    "Diolinux": {
+      "status": "Online",
+      "lastResponseMs": 110,
+      "lastChecked": "2026-10-19T16:38:49.980Z"
+>>>>>>> 76cd27d97cb77efcd4f59cebc067f39b6e413da3
     },
     "Gizmodo": {
       "status": "Online",
       "lastResponseMs": 190,
-      "lastChecked": "2026-10-14T16:42:34.285Z"
+      "lastChecked": "2026-10-19T16:38:49.980Z"
     },
     "GNews": {
       "status": "Online",
+<<<<<<< HEAD
       "lastResponseMs": 268,
       "lastChecked": "2026-10-19T18:07:21.716Z"
     },
@@ -397,5 +433,15 @@
     "imported": 279,
     "updated": 999,
     "discarded": 16935
+=======
+      "lastResponseMs": 250,
+      "lastChecked": "2026-10-19T16:38:49.980Z"
+    }
+  },
+  "stats": {
+    "imported": 0,
+    "updated": 0,
+    "discarded": 0
+>>>>>>> 76cd27d97cb77efcd4f59cebc067f39b6e413da3
   }
 }
