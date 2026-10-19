@@ -1,6 +1,22 @@
 {
-  "lastSync": "2026-10-16T18:32:01.834Z",
+  "lastSync": "2026-10-19T16:23:55.908Z",
   "syncHistory": [
+    {
+      "timestamp": "2026-10-19T16:23:55.908Z",
+      "durationMs": 16999,
+      "importedCount": 65,
+      "updatedCount": 7,
+      "discardedCount": 886,
+      "modules": [
+        "Startups",
+        "Economia",
+        "IA",
+        "Tecnologia",
+        "Dev",
+        "Inovacao",
+        "Business"
+      ]
+    },
     {
       "timestamp": "2026-10-16T18:32:01.834Z",
       "durationMs": 22552,
@@ -149,33 +165,33 @@
   "sourcesHealth": {
     "Startupi": {
       "status": "Online",
-      "lastResponseMs": 460,
-      "lastChecked": "2026-10-16T18:32:01.280Z"
+      "lastResponseMs": 409,
+      "lastChecked": "2026-10-19T16:23:55.288Z"
     },
     "InfoMoney": {
       "status": "Online",
-      "lastResponseMs": 231,
-      "lastChecked": "2026-10-16T18:32:01.511Z"
+      "lastResponseMs": 271,
+      "lastChecked": "2026-10-19T16:23:55.559Z"
     },
     "Valor": {
       "status": "Online",
-      "lastResponseMs": 578,
-      "lastChecked": "2026-10-16T18:31:45.871Z"
+      "lastResponseMs": 395,
+      "lastChecked": "2026-10-19T16:23:44.572Z"
     },
     "Canaltech": {
       "status": "Online",
-      "lastResponseMs": 432,
-      "lastChecked": "2026-10-16T18:31:55.172Z"
+      "lastResponseMs": 410,
+      "lastChecked": "2026-10-19T16:23:52.991Z"
     },
     "TechMundo": {
       "status": "Online",
-      "lastResponseMs": 93,
-      "lastChecked": "2026-10-16T18:31:54.740Z"
+      "lastResponseMs": 130,
+      "lastChecked": "2026-10-19T16:23:52.581Z"
     },
     "Diolinux": {
       "status": "Online",
-      "lastResponseMs": 500,
-      "lastChecked": "2026-10-16T18:31:54.378Z"
+      "lastResponseMs": 473,
+      "lastChecked": "2026-10-19T16:23:52.248Z"
     },
     "Gizmodo": {
       "status": "Online",
@@ -183,59 +199,59 @@
       "lastChecked": "2026-10-14T16:42:34.285Z"
     },
     "GNews": {
-      "status": "Online",
-      "lastResponseMs": 436,
-      "lastChecked": "2026-10-16T18:31:39.726Z"
+      "status": "Instável",
+      "lastResponseMs": 713,
+      "lastChecked": "2026-10-19T16:23:39.627Z"
     },
     "Exame": {
       "status": "Online",
-      "lastResponseMs": 1418,
-      "lastChecked": "2026-10-16T18:31:41.633Z"
+      "lastResponseMs": 2390,
+      "lastChecked": "2026-10-19T16:23:42.320Z"
     },
     "Startups.com.br": {
       "status": "Online",
-      "lastResponseMs": 296,
-      "lastChecked": "2026-10-16T18:31:42.491Z"
+      "lastResponseMs": 78,
+      "lastChecked": "2026-10-19T16:23:42.623Z"
     },
     "Forbes": {
       "status": "Online",
-      "lastResponseMs": 300,
-      "lastChecked": "2026-10-16T18:32:01.811Z"
+      "lastResponseMs": 322,
+      "lastChecked": "2026-10-19T16:23:55.881Z"
     },
     "Globo": {
       "status": "Online",
-      "lastResponseMs": 558,
-      "lastChecked": "2026-10-16T18:31:58.244Z"
+      "lastResponseMs": 300,
+      "lastChecked": "2026-10-19T16:23:54.409Z"
     },
     "Tecnoblog": {
       "status": "Online",
-      "lastResponseMs": 137,
-      "lastChecked": "2026-10-16T18:31:54.647Z"
+      "lastResponseMs": 126,
+      "lastChecked": "2026-10-19T16:23:52.451Z"
     },
     "Olhar Digital": {
       "status": "Online",
-      "lastResponseMs": 232,
-      "lastChecked": "2026-10-16T18:31:47.739Z"
+      "lastResponseMs": 192,
+      "lastChecked": "2026-10-19T16:23:46.255Z"
     },
     "Showmetech": {
       "status": "Online",
-      "lastResponseMs": 882,
-      "lastChecked": "2026-10-16T18:31:48.639Z"
+      "lastResponseMs": 215,
+      "lastChecked": "2026-10-19T16:23:46.484Z"
     },
     "CNN": {
       "status": "Online",
-      "lastResponseMs": 495,
-      "lastChecked": "2026-10-16T18:31:53.768Z"
+      "lastResponseMs": 641,
+      "lastChecked": "2026-10-19T16:23:51.734Z"
     },
     "TabNews": {
       "status": "Online",
-      "lastResponseMs": 1397,
-      "lastChecked": "2026-10-16T18:31:57.647Z"
+      "lastResponseMs": 636,
+      "lastChecked": "2026-10-19T16:23:54.073Z"
     }
   },
   "stats": {
-    "imported": 189,
-    "updated": 403,
-    "discarded": 8048
+    "imported": 254,
+    "updated": 410,
+    "discarded": 8934
   }
 }
