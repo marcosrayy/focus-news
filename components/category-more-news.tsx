@@ -2,6 +2,7 @@
 
 import { Clock } from "lucide-react";
 import { formatRelativeTime } from "@/lib/news-service";
+import { getGeneratedCover } from "@/lib/utils";
 import type { NewsArticle } from "@/types/news";
 
 export function CategoryMoreNews({ articles }: { articles: NewsArticle[] }) {
@@ -26,17 +27,24 @@ export function CategoryMoreNews({ articles }: { articles: NewsArticle[] }) {
               <div className="absolute inset-0 flex items-center justify-center px-2 text-center text-[10px] text-muted-foreground">
                 Imagem indisponível
               </div>
-              {article.image && (
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  loading="lazy"
-                  onError={(event) => {
-                    event.currentTarget.style.display = "none";
-                  }}
-                  className="relative h-full w-full object-cover"
-                />
-              )}
+              <img
+                src={
+                  article.image ||
+                  getGeneratedCover(String(article.id), String(article.category ?? ""))
+                }
+                alt={article.title}
+                loading="lazy"
+                onError={(event) => {
+                  const img = event.currentTarget;
+                  if (img.dataset.fallbackApplied === "true") {
+                    img.style.display = "none";
+                    return;
+                  }
+                  img.dataset.fallbackApplied = "true";
+                  img.src = getGeneratedCover(String(article.id), String(article.category ?? ""));
+                }}
+                className="relative h-full w-full object-cover"
+              />
             </div>
             <div className="flex min-w-0 flex-1 flex-col justify-between">
               <div>

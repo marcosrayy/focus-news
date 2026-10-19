@@ -1,9 +1,10 @@
 "use client";
 
-import { createContext, Suspense, useContext } from "react";
+import { createContext, Suspense, useContext, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import { categoryContent, getCategoryNewsQuery, type CategoryKey } from "@/config/category-news";
 import { useNews } from "@/hooks/useNews";
+import { assignCovers } from "@/lib/utils";
 import type { NewsArticle } from "@/types/news";
 import type { ReactNode } from "react";
 
@@ -50,8 +51,16 @@ function CategoryNewsFeedContent({
   const config = getCategoryNewsQuery(category, topic);
   const feed = useNews(config, categoryContent[category].category, FEATURED_COUNT + INITIAL_LIST_COUNT, 0, undefined, true);
 
+  // Atribui as capas uma única vez para a lista inteira da categoria, para que
+  // carrossel, grid e "mais notícias" nunca repitam a mesma imagem.
+  const articles = useMemo(
+    () => assignCovers(feed.articles, `${category}:${topic}`),
+    [feed.articles, category, topic]
+  );
+  const value = useMemo(() => ({ ...feed, articles }), [feed, articles]);
+
   return (
-    <CategoryNewsFeedContext.Provider value={feed}>
+    <CategoryNewsFeedContext.Provider value={value}>
       {children}
     </CategoryNewsFeedContext.Provider>
   );

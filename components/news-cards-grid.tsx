@@ -5,19 +5,14 @@ import { NewsArticle } from "@/types/news";
 import { formatRelativeTime } from "@/lib/news-service";
 import { useNewsRotation } from "@/hooks/use-news-rotation";
 import { FeaturedNewsCarousel, NewsSectionLayout } from "@/components/news-section-layout";
-import type { ReactNode } from "react";
+import { useMemo, type ReactNode } from "react";
+import { getGeneratedCover } from "@/lib/utils";
 
 type NewsArticleWithDisplayImage = NewsArticle & {
   displayImage: string;
 };
 
-const FALLBACK_NEWS_IMAGES = [
-  "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-];
+
 
 
 // Helper to assign a random or fixed color per category
@@ -39,47 +34,6 @@ function getCategoryColor(category: string | number) {
   return colors[hash % colors.length];
 }
 
-function getArticlesWithUniqueImages<T extends NewsArticle>(
-  articles: T[]
-): (T & { displayImage: string })[] {
-  const usedImages = new Set<string>();
-
-  return articles.map((article) => {
-    const image = article.image?.trim() || "";
-    const normalized = normalizeImageUrl(image);
-
-    if (normalized && !usedImages.has(normalized)) {
-      usedImages.add(normalized);
-      return { ...article, displayImage: image };
-    }
-
-    const replacement = FALLBACK_NEWS_IMAGES.find((candidate) => {
-      const key = normalizeImageUrl(candidate);
-      return key && !usedImages.has(key);
-    });
-
-    if (replacement) {
-      usedImages.add(normalizeImageUrl(replacement));
-      return { ...article, displayImage: replacement };
-    }
-
-    // Não reutiliza uma capa repetida quando todas as alternativas já foram usadas.
-    return { ...article, displayImage: "" };
-  });
-}
-
-
-function normalizeImageUrl(value: string): string {
-  if (!value) return "";
-  try {
-    const url = new URL(value);
-    url.hash = "";
-    return url.toString();
-  } catch {
-    return value.trim();
-  }
-}
-
 export function NewsCardsGrid({
   news = [],
   variant = "default",
@@ -89,8 +43,17 @@ export function NewsCardsGrid({
   variant?: "default" | "three";
   sidebar?: ReactNode;
 }) {
-  // Mantém as capas originais quando são únicas e troca apenas URLs repetidas.
-  const articlesToRender = getArticlesWithUniqueImages(news);
+  // As capas já chegam únicas de assignCovers() (feito uma vez no feed da categoria).
+  const articlesToRender = useMemo<NewsArticleWithDisplayImage[]>(
+    () =>
+      news.map((article) => ({
+        ...article,
+        displayImage:
+          article.image?.trim() ||
+          getGeneratedCover(String(article.id), String(article.category ?? "")),
+      })),
+    [news]
+  );
   const { featuredArticles, remainingArticles } = useNewsRotation(articlesToRender);
 
   if (variant === "three") {
@@ -179,8 +142,7 @@ function FeaturedCard({ article, onClick }: { article: NewsArticleWithDisplayIma
                 return;
               }
               img.dataset.fallbackApplied = "true";
-              const seed = Array.from(String(article.id)).reduce((sum, char) => sum + char.charCodeAt(0), 0);
-              img.src = FALLBACK_NEWS_IMAGES[seed % FALLBACK_NEWS_IMAGES.length];
+              img.src = getGeneratedCover(String(article.id), String(article.category ?? ""));
             }}
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
           />
@@ -246,8 +208,7 @@ function CompactCard({ article, onClick }: { article: NewsArticleWithDisplayImag
                 return;
               }
               img.dataset.fallbackApplied = "true";
-              const seed = Array.from(String(article.id)).reduce((sum, char) => sum + char.charCodeAt(0), 0);
-              img.src = FALLBACK_NEWS_IMAGES[seed % FALLBACK_NEWS_IMAGES.length];
+              img.src = getGeneratedCover(String(article.id), String(article.category ?? ""));
             }}
             className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
           />

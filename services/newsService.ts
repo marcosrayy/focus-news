@@ -1108,7 +1108,7 @@ export async function fetchNewsBackend({
           title,
           description: cleanDesc,
           url: item.link,
-          image: item.urlToImage || "",
+          image: imageUrl || "",
           publishedAt: item.pubDate,
           source: feedSource,
           category: targetCategory,
@@ -1132,10 +1132,6 @@ export async function fetchNewsBackend({
       return isArticleWithinRetention(article.publishedAt);
     });
   return balanceArticlesBySource(recentUniqueArticles).slice(offset, offset + max);
-  return assignUniqueFallbackImages(
-  deduplicateArticles(approvedArticles)
-).slice(offset, offset + max);
-  
 }
 
 

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { getDistinctCover, NEWS_COVER_POOL } from "@/lib/utils";
+import { getGeneratedCover } from "@/lib/utils";
 import { categoryContent, type CategoryKey } from "@/config/category-news";
 import { getCategoryNewsSections, useCategoryNewsFeed } from "@/components/category-news-feed";
 import type { NewsArticle } from "@/types/news";
@@ -19,51 +19,25 @@ export function CategoryNewsCarousel({ category }: CategoryNewsCarouselProps) {
   const mobileTrackRef = useRef<HTMLDivElement>(null);
  
 const slides = useMemo(() => {
-  const seenTitles = new Set<string>();
-  const seenImages = new Set<string>();
+    const seenTitles = new Set<string>();
 
-  return featuredArticles
-    .filter((article) => {
-      const title = article.title
-        .normalize("NFD")
-        .replace(/\p{Diacritic}/gu, "")
-        .toLowerCase()
-        .replace(/[^\p{L}\p{N}]+/gu, " ")
-        .trim();
+    // As capas já chegam únicas de assignCovers() (feito uma vez no feed da categoria).
+    return featuredArticles
+      .filter((article) => {
+        const title = article.title
+          .normalize("NFD")
+          .replace(/\p{Diacritic}/gu, "")
+          .toLowerCase()
+          .replace(/[^\p{L}\p{N}]+/gu, " ")
+          .trim();
 
-      if (!title || seenTitles.has(title)) return false;
+        if (!title || seenTitles.has(title)) return false;
 
-      seenTitles.add(title);
-      return true;
-    })
-    .slice(0, 4)
-    .map((article, index) => {
-      const originalImage = article.image?.trim() || "";
-      const normalizedImage = originalImage.split("?")[0].toLowerCase();
-
-      let displayImage = originalImage;
-
-      if (!originalImage || seenImages.has(normalizedImage)) {
-        for (let offset = 0; offset < NEWS_COVER_POOL.length; offset++) {
-          const candidate = NEWS_COVER_POOL[
-            (index + offset) % NEWS_COVER_POOL.length
-          ];
-          const candidateKey = candidate.split("?")[0].toLowerCase();
-
-          if (!seenImages.has(candidateKey)) {
-            displayImage = candidate;
-            break;
-          }
-        }
-      }
-
-      if (displayImage) {
-        seenImages.add(displayImage.split("?")[0].toLowerCase());
-      }
-
-      return { ...article, image: displayImage };
-    });
-}, [featuredArticles]);
+        seenTitles.add(title);
+        return true;
+      })
+      .slice(0, 4);
+  }, [featuredArticles]);
 
   const goTo = useCallback((index: number) => {
     const nextIndex = (index + slides.length) % slides.length;
@@ -110,7 +84,7 @@ const slides = useMemo(() => {
     const content = (
       <>
         <img
-          src={article.image || getDistinctCover(`${category}-feature-${index + 1}`)}
+          src={article.image || getGeneratedCover(`${category}-feature-${index + 1}`, category)}
           alt={article.title}
           className="h-full w-full object-cover"
 
@@ -123,9 +97,7 @@ const slides = useMemo(() => {
           }
 
           img.dataset.fallbackApplied = "true";
-          img.src = getDistinctCover(
-            `${category}-${article.url || article.title}-fallback`
-          );
+          img.src = getGeneratedCover(`${category}-${article.url || article.title}`, category);
 }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
