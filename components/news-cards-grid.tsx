@@ -2,10 +2,20 @@
 
 import { Clock, MessageSquare } from "lucide-react";
 import { NewsArticle } from "@/types/news";
-import { formatRelativeTime, FALLBACK_NEWS_IMAGES } from "@/lib/news-service";
+import { formatRelativeTime } from "@/lib/news-service";
 import { useNewsRotation } from "@/hooks/use-news-rotation";
 import { FeaturedNewsCarousel, NewsSectionLayout } from "@/components/news-section-layout";
 import type { ReactNode } from "react";
+
+
+const FALLBACK_NEWS_IMAGES = [
+  "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
+];
+
 
 // Helper to assign a random or fixed color per category
 function getCategoryColor(category: string) {
@@ -14,11 +24,11 @@ function getCategoryColor(category: string) {
   return colors[hash % colors.length];
 }
 
-function getArticlesWithUniqueImages<T extends NewsArticle>(articles: T[]): (T & { displayImage: string })[] {
+
+function getArticlesWithUniqueImages<T extends NewsArticle>(
+  articles: T[]
+): (T & { displayImage: string })[] {
   const usedImages = new Set<string>();
-  const originalImages = new Set(
-    articles.map((article) => normalizeImageUrl(article.image)).filter(Boolean)
-  );
 
   return articles.map((article) => {
     const image = article.image?.trim() || "";
@@ -31,7 +41,7 @@ function getArticlesWithUniqueImages<T extends NewsArticle>(articles: T[]): (T &
 
     const replacement = FALLBACK_NEWS_IMAGES.find((candidate) => {
       const key = normalizeImageUrl(candidate);
-      return key && !usedImages.has(key) && !originalImages.has(key);
+      return key && !usedImages.has(key);
     });
 
     if (replacement) {
@@ -42,6 +52,7 @@ function getArticlesWithUniqueImages<T extends NewsArticle>(articles: T[]): (T &
     return { ...article, displayImage: image };
   });
 }
+
 
 function normalizeImageUrl(value: string): string {
   if (!value) return "";
