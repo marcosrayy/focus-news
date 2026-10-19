@@ -62,6 +62,45 @@ export function decodeHtmlEntities(text: string): string {
     });
 }
 
+
+export function assignUniqueFallbackImages<
+  T extends { id?: string; title?: string; image?: string; url?: string }
+>(articles: T[]): T[] {
+  const usedImages = new Set<string>();
+
+  return articles.map((article) => {
+    const currentImage = article.image?.trim();
+
+    // Preserva a imagem original se ela ainda não foi utilizada.
+    if (currentImage && !usedImages.has(currentImage)) {
+      usedImages.add(currentImage);
+      return article;
+    }
+
+    // Procura uma capa alternativa que ainda não foi utilizada.
+    const seed = article.url || article.id || article.title || "news";
+    const start = Math.abs(
+      Array.from(seed).reduce(
+        (hash, char) => (hash * 31 + char.charCodeAt(0)) >>> 0,
+        0
+      )
+    ) % FALLBACK_NEWS_IMAGES.length;
+
+    for (let offset = 0; offset < FALLBACK_NEWS_IMAGES.length; offset++) {
+      const candidate =
+        FALLBACK_NEWS_IMAGES[(start + offset) % FALLBACK_NEWS_IMAGES.length];
+
+      if (!usedImages.has(candidate)) {
+        usedImages.add(candidate);
+        return { ...article, image: candidate };
+      }
+    }
+
+    return article;
+  });
+}
+
+
 export const FALLBACK_NEWS_IMAGES = [
   "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200",
   "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200",
@@ -71,6 +110,7 @@ export const FALLBACK_NEWS_IMAGES = [
   "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200",
   "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=1200",
   "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200",
+  "https://unsplash.com/pt-br/fotografias/foto-do-espaco-sideral-Q1p7bh3SHj8?auto=format&fit=crop&q=80&w=1200",
 ];
 
 export function getFallbackNewsImage(seed: string, category = "tech"): string {
@@ -869,7 +909,9 @@ export async function fetchNewsBackend({
   max?: number;
   offset?: number;
   retentionWindowDays?: number;
-}): Promise<NewsArticle[]> {
+}
+
+): Promise<NewsArticle[]> {
   let approvedArticles: NewsArticle[] = [];
   
   // Mapeamento de categorias virtuais para categorias físicas do MetaPrompt
@@ -1088,4 +1130,10 @@ export async function fetchNewsBackend({
       return isArticleWithinRetention(article.publishedAt);
     });
   return balanceArticlesBySource(recentUniqueArticles).slice(offset, offset + max);
+  return assignUniqueFallbackImages(
+  deduplicateArticles(approvedArticles)
+).slice(offset, offset + max);
+  
 }
+
+
