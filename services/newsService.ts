@@ -110,7 +110,9 @@ export const FALLBACK_NEWS_IMAGES = [
   "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200",
   "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=1200",
   "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200",
-  "https://unsplash.com/pt-br/fotografias/foto-do-espaco-sideral-Q1p7bh3SHj8?auto=format&fit=crop&q=80&w=1200",
+  "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=1200",
+  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
 ];
 
 export function getFallbackNewsImage(seed: string, category = "tech"): string {
@@ -875,7 +877,7 @@ export async function fetchNewsApiArticles({
           content,
           author: item.author || "",
           url,
-          image: item.urlToImage || getFallbackNewsImage(url || title, classification.category),
+          image: item.urlToImage || "",
           publishedAt: item.publishedAt,
           source: sourceName,
           category: classification.category,
@@ -988,7 +990,7 @@ export async function fetchNewsBackend({
               title,
               description,
               url: item.url,
-              image: item.image || getFallbackNewsImage(item.url || item.title || sourceName, targetCategory),
+              image: item.urlToImage || "",
               publishedAt: item.publishedAt,
               source: sourceName,
               category: targetCategory,
@@ -1106,7 +1108,7 @@ export async function fetchNewsBackend({
           title,
           description: cleanDesc,
           url: item.link,
-          image: imageUrl || getFallbackNewsImage(item.link || item.guid || title, targetCategory),
+          image: item.urlToImage || "",
           publishedAt: item.pubDate,
           source: feedSource,
           category: targetCategory,

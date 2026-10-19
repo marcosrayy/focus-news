@@ -34,3 +34,11 @@ export function getDistinctCover(seed: string, offset = 0) {
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
+
+export function getCoverByIndex(index: number): string {
+  const safeIndex =
+    ((index % NEWS_COVER_POOL.length) + NEWS_COVER_POOL.length) %
+    NEWS_COVER_POOL.length;
+
+  return NEWS_COVER_POOL[safeIndex];
+}

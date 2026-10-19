@@ -22,13 +22,21 @@ export function CategoryMoreNews({ articles }: { articles: NewsArticle[] }) {
             rel="noopener noreferrer"
             className="group flex gap-3 rounded-xl border border-border bg-card p-3 transition-colors hover:border-primary/30 sm:gap-4"
           >
-            <div className="h-20 w-28 shrink-0 overflow-hidden rounded-lg sm:h-24 sm:w-32">
-              <img
-                src={article.image}
-                alt={article.title}
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
+            <div className="relative h-20 w-28 shrink-0 overflow-hidden rounded-lg bg-muted sm:h-24 sm:w-32">
+              <div className="absolute inset-0 flex items-center justify-center px-2 text-center text-[10px] text-muted-foreground">
+                Imagem indisponível
+              </div>
+              {article.image && (
+                <img
+                  src={article.image}
+                  alt={article.title}
+                  loading="lazy"
+                  onError={(event) => {
+                    event.currentTarget.style.display = "none";
+                  }}
+                  className="relative h-full w-full object-cover"
+                />
+              )}
             </div>
             <div className="flex min-w-0 flex-1 flex-col justify-between">
               <div>

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { getDistinctCover } from "@/lib/utils";
+import { getDistinctCover, NEWS_COVER_POOL } from "@/lib/utils";
 import { categoryContent, type CategoryKey } from "@/config/category-news";
 import { getCategoryNewsSections, useCategoryNewsFeed } from "@/components/category-news-feed";
 import type { NewsArticle } from "@/types/news";
@@ -17,23 +17,53 @@ export function CategoryNewsCarousel({ category }: CategoryNewsCarouselProps) {
   const { featuredArticles } = getCategoryNewsSections(feedArticles);
   const [current, setCurrent] = useState(0);
   const mobileTrackRef = useRef<HTMLDivElement>(null);
-  const slides = useMemo(
-    () => {
-      const seenTitles = new Set<string>();
-      return featuredArticles.filter((article) => {
-        const normalizedTitle = article.title
-          .normalize("NFD")
-          .replace(/\p{Diacritic}/gu, "")
-          .toLowerCase()
-          .replace(/[^\p{L}\p{N}]+/gu, " ")
-          .trim();
-        if (!normalizedTitle || seenTitles.has(normalizedTitle)) return false;
-        seenTitles.add(normalizedTitle);
-        return true;
-      }).slice(0, 4);
-    },
-    [featuredArticles],
-  );
+ 
+const slides = useMemo(() => {
+  const seenTitles = new Set<string>();
+  const seenImages = new Set<string>();
+
+  return featuredArticles
+    .filter((article) => {
+      const title = article.title
+        .normalize("NFD")
+        .replace(/\p{Diacritic}/gu, "")
+        .toLowerCase()
+        .replace(/[^\p{L}\p{N}]+/gu, " ")
+        .trim();
+
+      if (!title || seenTitles.has(title)) return false;
+
+      seenTitles.add(title);
+      return true;
+    })
+    .slice(0, 4)
+    .map((article, index) => {
+      const originalImage = article.image?.trim() || "";
+      const normalizedImage = originalImage.split("?")[0].toLowerCase();
+
+      let displayImage = originalImage;
+
+      if (!originalImage || seenImages.has(normalizedImage)) {
+        for (let offset = 0; offset < NEWS_COVER_POOL.length; offset++) {
+          const candidate = NEWS_COVER_POOL[
+            (index + offset) % NEWS_COVER_POOL.length
+          ];
+          const candidateKey = candidate.split("?")[0].toLowerCase();
+
+          if (!seenImages.has(candidateKey)) {
+            displayImage = candidate;
+            break;
+          }
+        }
+      }
+
+      if (displayImage) {
+        seenImages.add(displayImage.split("?")[0].toLowerCase());
+      }
+
+      return { ...article, image: displayImage };
+    });
+}, [featuredArticles]);
 
   const goTo = useCallback((index: number) => {
     const nextIndex = (index + slides.length) % slides.length;
@@ -83,6 +113,20 @@ export function CategoryNewsCarousel({ category }: CategoryNewsCarouselProps) {
           src={article.image || getDistinctCover(`${category}-feature-${index + 1}`)}
           alt={article.title}
           className="h-full w-full object-cover"
+
+          onError={(event) => {
+          const img = event.currentTarget;
+
+          if (img.dataset.fallbackApplied === "true") {
+            img.style.visibility = "hidden";
+            return;
+          }
+
+          img.dataset.fallbackApplied = "true";
+          img.src = getDistinctCover(
+            `${category}-${article.url || article.title}-fallback`
+          );
+}}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
         <div className="absolute bottom-5 left-5 right-5 text-white sm:bottom-10 sm:left-10 sm:right-16 lg:bottom-12 lg:left-14">

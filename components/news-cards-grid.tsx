@@ -7,6 +7,9 @@ import { useNewsRotation } from "@/hooks/use-news-rotation";
 import { FeaturedNewsCarousel, NewsSectionLayout } from "@/components/news-section-layout";
 import type { ReactNode } from "react";
 
+type NewsArticleWithDisplayImage = NewsArticle & {
+  displayImage: string;
+};
 
 const FALLBACK_NEWS_IMAGES = [
   "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
@@ -18,12 +21,23 @@ const FALLBACK_NEWS_IMAGES = [
 
 
 // Helper to assign a random or fixed color per category
-function getCategoryColor(category: string) {
-  const colors = ["bg-primary", "bg-emerald-600", "bg-sky-600", "bg-amber-600", "bg-violet-600", "bg-teal-600"];
-  const hash = Array.from(category).reduce((acc, char) => acc + char.charCodeAt(0), 0);
+function getCategoryColor(category: string | number) {
+  const colors = [
+    "bg-primary",
+    "bg-emerald-600",
+    "bg-sky-600",
+    "bg-amber-600",
+    "bg-violet-600",
+    "bg-teal-600",
+  ];
+
+  const hash = Array.from(String(category)).reduce(
+    (acc, char) => acc + char.charCodeAt(0),
+    0
+  );
+
   return colors[hash % colors.length];
 }
-
 
 function getArticlesWithUniqueImages<T extends NewsArticle>(
   articles: T[]
@@ -49,7 +63,8 @@ function getArticlesWithUniqueImages<T extends NewsArticle>(
       return { ...article, displayImage: replacement };
     }
 
-    return { ...article, displayImage: image };
+    // Não reutiliza uma capa repetida quando todas as alternativas já foram usadas.
+    return { ...article, displayImage: "" };
   });
 }
 
@@ -141,7 +156,7 @@ export function NewsCardsGrid({
   );
 }
 
-function FeaturedCard({ article, onClick }: { article: NewsArticle; onClick: () => void }) {
+function FeaturedCard({ article, onClick }: { article: NewsArticleWithDisplayImage; onClick: () => void }) {
   const categoryColor = getCategoryColor(article.category);
   const time = formatRelativeTime(article.publishedAt);
   const comments = Math.floor(Math.random() * 500); // Mock comments as real API doesn't have it usually
@@ -151,12 +166,29 @@ function FeaturedCard({ article, onClick }: { article: NewsArticle; onClick: () 
       onClick={onClick}
       className="group flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-card-hover"
     >
-      <div className="relative aspect-[16/10] overflow-hidden">
-        <img
-          src={article.displayImage}
-          alt={article.title}
-          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-        />
+      <div className="relative aspect-[16/10] w-full overflow-hidden bg-muted">
+        {article.displayImage ? (
+          <img
+            src={article.displayImage}
+            alt={article.title}
+            loading="lazy"
+            onError={(event) => {
+              const img = event.currentTarget;
+              if (img.dataset.fallbackApplied === "true") {
+                img.style.display = "none";
+                return;
+              }
+              img.dataset.fallbackApplied = "true";
+              const seed = Array.from(String(article.id)).reduce((sum, char) => sum + char.charCodeAt(0), 0);
+              img.src = FALLBACK_NEWS_IMAGES[seed % FALLBACK_NEWS_IMAGES.length];
+            }}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center text-xs text-muted-foreground">
+            Imagem indisponível
+          </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/10 to-transparent" />
         <div className="absolute left-3 top-3 flex items-center gap-2">
           <span
@@ -191,7 +223,7 @@ function FeaturedCard({ article, onClick }: { article: NewsArticle; onClick: () 
   );
 }
 
-function CompactCard({ article, onClick }: { article: NewsArticle; onClick: () => void }) {
+function CompactCard({ article, onClick }: { article: NewsArticleWithDisplayImage; onClick: () => void }) {
   const categoryColor = getCategoryColor(article.category);
   const time = formatRelativeTime(article.publishedAt);
   const comments = Math.floor(Math.random() * 500);
@@ -201,12 +233,29 @@ function CompactCard({ article, onClick }: { article: NewsArticle; onClick: () =
       onClick={onClick}
       className="group flex cursor-pointer gap-3 rounded-xl border border-border bg-card p-2.5 shadow-card transition-all duration-300 hover:border-primary/30 hover:shadow-card-hover sm:gap-4 sm:p-3 active:scale-[0.98]"
     >
-      <div className="relative h-[72px] w-[96px] flex-shrink-0 overflow-hidden rounded-lg sm:h-24 sm:w-32">
-        <img
-          src={article.displayImage}
-          alt={article.title}
-          className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-        />
+      <div className="relative h-24 w-32 flex-shrink-0 overflow-hidden rounded-lg bg-muted sm:h-28 sm:w-40 lg:h-32 lg:w-44">
+        {article.displayImage ? (
+          <img
+            src={article.displayImage}
+            alt={article.title}
+            loading="lazy"
+            onError={(event) => {
+              const img = event.currentTarget;
+              if (img.dataset.fallbackApplied === "true") {
+                img.style.display = "none";
+                return;
+              }
+              img.dataset.fallbackApplied = "true";
+              const seed = Array.from(String(article.id)).reduce((sum, char) => sum + char.charCodeAt(0), 0);
+              img.src = FALLBACK_NEWS_IMAGES[seed % FALLBACK_NEWS_IMAGES.length];
+            }}
+            className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center px-2 text-center text-xs text-muted-foreground">
+            Imagem indisponível
+          </div>
+        )}
         <span
           className={`${categoryColor} absolute left-1.5 top-1.5 rounded px-1.5 py-0.5 text-[8px] font-bold tracking-wider text-primary-foreground`}
         >
