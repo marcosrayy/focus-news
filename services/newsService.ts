@@ -1,6 +1,7 @@
 
 import { NEWS_API_KEY, NEWSAPI_API_KEY } from "../config/newsConfig";
 import { XMLParser } from "fast-xml-parser";
+import { getSpecialistFeeds, getSpecialistFeedSource, isSpecialistSourceAllowed } from "../config/specialist-news-feeds";
 
 export interface NewsArticle {
   id: string;
@@ -237,6 +238,7 @@ function findRssImage(item: any, description: string, content: string): string {
 export async function fetchRssFeed(feedUrl: string): Promise<RssFeedItem[]> {
   const response = await fetch(feedUrl, {
     cache: "no-store",
+    signal: AbortSignal.timeout(10000),
     headers: { accept: "application/rss+xml, application/atom+xml, application/xml, text/xml;q=0.9" },
   });
   if (!response.ok) throw new Error(`RSS returned HTTP ${response.status}`);
@@ -454,11 +456,11 @@ const MODULE_KEYWORDS = {
 };
 
 const STRONG_TITLE_SIGNALS: Record<string, string[]> = {
-  Startups: ["startup", "startups", "venture capital", "aceleradora", "incubadora", "aporte", "rodada de investimento", "unicornio", "ipo", "saas"],
+  Startups: ["startup", "startups", "venture capital", "aceleradora", "incubadora", "aporte", "rodada de investimento", "unicornio", "ipo", "saas", "fintech", "edtech", "healthtech", "agtech", "logtech", "proptech", "insurtech", "deeptech", "cleantech", "pre-seed", "serie a", "serie b"],
   Economia: ["selic", "inflacao", "juros", "ibovespa", "bolsa de valores", "mercado financeiro", "dolar", "cambio", "pib", "banco central", "acoes"],
   IA: ["ia", "inteligencia artificial", "ia generativa", "chatgpt", "openai", "anthropic", "gemini", "claude", "llm", "machine learning", "deep learning", "modelos de linguagem", "agentes de ia"],
   Tecnologia: ["software", "hardware", "smartphone", "processador", "chip", "chips", "android", "ios", "gpu", "cpu", "nvidia", "intel", "amd", "samsung", "apple", "motorola", "xiaomi", "computador", "celular", "playstation", "xbox", "nintendo", "linux"],
-  Dev: ["programacao", "desenvolvedor", "desenvolvedores", "desenvolvimento de software", "api", "framework", "javascript", "typescript", "python", "react", "backend", "frontend", "github", "git", "open source", "open-source", "codex", "rust", "docker", "mobile", "kubernetes", "node.js", "compilador", "kernel", "linux", "distro", "open-source"],
+  Dev: ["programacao", "desenvolvedor", "desenvolvedores", "desenvolvimento de software", "api", "framework", "javascript", "typescript", "python", "react", "backend", "frontend", "github", "git", "open source", "open-source", "codex", "rust", "docker", "kubernetes", "node.js", "compilador", "kernel", "linux", "distro", "php", "java", "graphql", ".net", "next.js", "vs code", "vscode", "mcp", "oauth", "firebird", "postgresql", "devops", "sdk", "opencode", "codigo fonte", "engenharia de software"],
   Inovacao: ["patente", "descoberta cientifica", "cientistas", "cientifico", "ciencia", "nasa", "astronomia", "computacao quantica", "biotecnologia", "genetica", "vacina", "energia limpa", "robotica"],
   Business: ["empreendedorismo", "ceo", "crescimento", "faturamento", "receita", "saas", "b2b", "b2c", "gestao empresarial", "marketplace", "franquia", "varejo"],
 };
@@ -568,8 +570,13 @@ function countMatches(text: string, keywords: string[]): number {
   return count;
 }
 
-export function isEntertainmentArticle(title: string, description: string, url = ""): boolean {
-  if (countMatches(`${title} ${description}`, ENTERTAINMENT_TERMS) > 0) return true;
+export function isEntertainmentArticle(title: string, description: string, url = "", category = ""): boolean {
+  // Modelos de negócio/IA, processos de software and development teams are
+  // normal vocabulary in these feeds, not evidence of entertainment.
+  const terms = category === "Dev" || category === "Startups"
+    ? ENTERTAINMENT_TERMS.filter(term => !["modelo", "modelos", "processo", "time"].includes(term))
+    : ENTERTAINMENT_TERMS;
+  if (countMatches(`${title} ${description}`, terms) > 0) return true;
   const normalizedUrl = normalizeText(url).toLowerCase();
   return ENTERTAINMENT_URL_SECTIONS.some(section => normalizedUrl.includes(section));
 }
@@ -582,14 +589,14 @@ function hasProhibitedTerms(title: string, description: string): boolean {
   });
 }
 
-export function isArticleRejectedByPolicy(title: string, description: string, url = ""): boolean {
-  return isEntertainmentArticle(title, description, url) || hasProhibitedTerms(title, description);
+export function isArticleRejectedByPolicy(title: string, description: string, url = "", category = ""): boolean {
+  return isEntertainmentArticle(title, description, url, category) || hasProhibitedTerms(title, description);
 }
 
 export function hasCategoryEvidence(title: string, description: string, category: string, url = ""): boolean {
   const keywords = MODULE_KEYWORDS[category as keyof typeof MODULE_KEYWORDS];
   if (!keywords) return false;
-  if (isEntertainmentArticle(title, description, url)) return false;
+  if (isEntertainmentArticle(title, description, url, category)) return false;
   const text = `${title} ${description}`;
   if (category === "Dev" && countMatches(text, DEV_PROHIBITED_TERMS) > 0) return false;
   if (category === "Tecnologia") {
@@ -616,6 +623,7 @@ export function hasCategoryEvidence(title: string, description: string, category
 
   const hasStrongTitleSignal = countMatches(title, STRONG_TITLE_SIGNALS[category] || []) > 0;
   if (hasStrongTitleSignal) return true;
+  if ((category === "Dev" || category === "Startups") && countMatches(description, STRONG_TITLE_SIGNALS[category]) > 0) return true;
 
   const hasTitleKeyword = countMatches(title, keywords) > 0;
   const distinctKeywordMatches = keywords.reduce(
@@ -628,6 +636,16 @@ export function hasCategoryEvidence(title: string, description: string, category
 export function isEnglishDevSource(source: string): boolean {
   const normalizedSource = normalizeText(source).replace(/[^a-z0-9]+/g, "");
   return ["github", "stackoverflow", "infoq", "devto"].some(name => normalizedSource.includes(name));
+}
+
+// These subjects overlap IA, Tecnologia and Business. A single winning category
+// must not hide an otherwise relevant article from their feeds.
+export function matchesDevOrStartupCategory(title: string, description: string, source: string, category: string, url = ""): boolean {
+  if (category !== "Dev" && category !== "Startups") return false;
+  if (category === "Dev" && isEnglishDevSource(source)) return false;
+  return isSourceAllowed(source, category)
+    && !isArticleRejectedByPolicy(title, description, url, category)
+    && hasCategoryEvidence(title, description, category, url);
 }
 
 export function isCategorySpecificRssFeed(feedUrl: string, category: string, articleUrl = ""): boolean {
@@ -776,6 +794,7 @@ export function classifyArticle(title: string, description: string, source: stri
 
 // Verifica se a fonte do artigo é permitida para o módulo solicitado
 export function isSourceAllowed(source: string, targetCategory: string): boolean {
+  if (isSpecialistSourceAllowed(source, targetCategory)) return true;
   const normSource = normalizeText(source);
   if (normSource.includes("gnews")) return true;
   
@@ -905,12 +924,14 @@ export async function fetchNewsBackend({
   max = 6,
   offset = 0,
   retentionWindowDays,
+  preferLatest = false,
 }: {
   query?: string;
   category?: string;
   max?: number;
   offset?: number;
   retentionWindowDays?: number;
+  preferLatest?: boolean;
 }
 
 ): Promise<NewsArticle[]> {
@@ -982,7 +1003,10 @@ export async function fetchNewsBackend({
             if (targetCategory === "Startups" && sourceName.toLowerCase().includes("startupi") && (articleCategory === "Startups" || articleCategory === "Business")) {
               articleCategory = "Startups";
             }
-            if (articleCategory !== targetCategory || !hasCategoryEvidence(title, description, articleCategory)) continue;
+            if (matchesDevOrStartupCategory(title, description, sourceName, targetCategory, item.url)) {
+              articleCategory = targetCategory;
+            }
+            if (articleCategory !== targetCategory || !hasCategoryEvidence(title, description, articleCategory, item.url)) continue;
 
             seenUrls.add(item.url);
             approvedArticles.push({
@@ -1008,7 +1032,7 @@ export async function fetchNewsBackend({
   // Se não obteve artigos suficientes do GNews, recorre ao Fallback RSS
   const minimumSourceCount = Math.min(3, max + offset);
   const gnewsSourceCount = new Set(approvedArticles.map(article => article.source.trim().toLowerCase())).size;
-  if (approvedArticles.length < max + offset || gnewsSourceCount < minimumSourceCount) {
+  if (targetCategory === "Dev" || targetCategory === "Startups" || approvedArticles.length < max + offset || gnewsSourceCount < minimumSourceCount) {
     try {
       console.warn(`[FocusNews] GNews returned insufficient results. Using RSS Fallback for ${targetCategory}...`);
       
@@ -1028,6 +1052,7 @@ export async function fetchNewsBackend({
       }
 
       const allItems: any[] = [];
+      feedUrls = [...new Set([...feedUrls, ...getSpecialistFeeds(targetCategory).map(feed => feed.url)])];
       
       // Busca concorrente nos feeds configurados
       await Promise.all(feedUrls.map(async (feedUrl) => {
@@ -1057,12 +1082,21 @@ export async function fetchNewsBackend({
         }
 
         const title = repairMojibake(item.title || "");
-        const cleanDesc = repairMojibake((item.description || "").replace(/<[^>]+>/g, '')).slice(0, 150) + '...';
+        const fullDescription = repairMojibake((item.description || "").replace(/<[^>]+>/g, ''));
+        const cleanDesc = targetCategory === "Dev" || targetCategory === "Startups"
+          ? fullDescription
+          : fullDescription.slice(0, 150) + '...';
         
         // Mapeia origem correta para classificação
         let feedSource = "Tecnoblog";
         if (item.originFeedUrl.includes("startupi")) {
           feedSource = "Startupi";
+        } else if (item.originFeedUrl.includes("startups.com.br")) {
+          feedSource = "Startups.com.br";
+        } else if (item.originFeedUrl.includes("neofeed.com.br")) {
+          feedSource = "NeoFeed";
+        } else if (item.originFeedUrl.includes("tecmundo.com.br")) {
+          feedSource = "TechMundo";
         } else if (item.originFeedUrl.includes("olhardigital")) {
           feedSource = "Olhar Digital";
         } else if (item.originFeedUrl.includes("showmetech")) {
@@ -1086,6 +1120,7 @@ export async function fetchNewsBackend({
         } else if (item.originFeedUrl.includes("tabnews.com.br")) {
           feedSource = "TabNews";
         }
+        feedSource = getSpecialistFeedSource(item.originFeedUrl) || feedSource;
 
             const classification = classifyArticle(title, cleanDesc, feedSource, item.link);
 
@@ -1100,7 +1135,10 @@ export async function fetchNewsBackend({
         if (isSpecificCategoryFeed) {
           articleCategory = targetCategory;
         }
-        if (isArticleRejectedByPolicy(title, cleanDesc, item.link) || articleCategory !== targetCategory || !hasCategoryEvidence(title, cleanDesc, articleCategory, item.link)) continue;
+        if (matchesDevOrStartupCategory(title, fullDescription, feedSource, targetCategory, item.link)) {
+          articleCategory = targetCategory;
+        }
+        if (isArticleRejectedByPolicy(title, cleanDesc, item.link, targetCategory) || articleCategory !== targetCategory || !hasCategoryEvidence(title, cleanDesc, articleCategory, item.link)) continue;
 
         seenUrls.add(item.link);
         approvedArticles.push({
@@ -1131,7 +1169,7 @@ export async function fetchNewsBackend({
       }
       return isArticleWithinRetention(article.publishedAt);
     });
-  return balanceArticlesBySource(recentUniqueArticles).slice(offset, offset + max);
+  return (preferLatest ? recentUniqueArticles : balanceArticlesBySource(recentUniqueArticles)).slice(offset, offset + max);
 }
 
 

@@ -1,6 +1,7 @@
 import { Storage, StorageArticle, EngineStatus } from '../utils/storage';
-import { classifyArticle, deduplicateArticles, fetchRssFeed, hasCategoryEvidence, isArticleRejectedByPolicy, isCategorySpecificRssFeed, isEnglishDevSource, isSourceAllowed, MODULE_SOURCES, repairMojibake } from './newsService';
+import { classifyArticle, deduplicateArticles, fetchRssFeed, hasCategoryEvidence, isArticleRejectedByPolicy, isCategorySpecificRssFeed, isEnglishDevSource, isSourceAllowed, matchesDevOrStartupCategory, MODULE_SOURCES, repairMojibake } from './newsService';
 import { NEWS_API_KEY } from '../config/newsConfig';
+import { getSpecialistFeeds, getSpecialistFeedSource } from '../config/specialist-news-feeds';
 
 // Categories mapping to RSS feeds
 const FALLBACK_FEEDS: Record<string, string[]> = {
@@ -55,6 +56,8 @@ const CATEGORIES = ['Startups', 'Economia', 'IA', 'Tecnologia', 'Dev', 'Inovacao
 
 // Helper to determine the source label based on feed URL
 function getFeedSourceName(feedUrl: string): string {
+  const specialistSource = getSpecialistFeedSource(feedUrl);
+  if (specialistSource) return specialistSource;
   const url = feedUrl.toLowerCase();
   if (url.includes('startupi')) return 'Startupi';
   if (url.includes('startups.com.br')) return 'Startups.com.br';
@@ -440,7 +443,7 @@ export const RefreshEngine = {
 
     // Iterate over each category to update its specific feeds
     for (const category of CATEGORIES) {
-      const feeds = FALLBACK_FEEDS[category] || [];
+      const feeds = [...new Set([...(FALLBACK_FEEDS[category] || []), ...getSpecialistFeeds(category).map(feed => feed.url)])];
       
       for (const feedUrl of feeds) {
         const sourceName = getFeedSourceName(feedUrl);
@@ -482,7 +485,9 @@ export const RefreshEngine = {
             // Strip Forbes boilerplates
             cleanDesc = cleanDesc.replace(/Forbes, a mais conceituada revista de negócios e economia do mundo\./gi, '');
             cleanDesc = cleanDesc.replace(/O post .* apareceu primeiro em .*$/gi, '');
-            cleanDesc = cleanDesc.trim().slice(0, 150) + '...';
+            cleanDesc = category === 'Dev' || category === 'Startups'
+              ? cleanDesc.trim()
+              : cleanDesc.trim().slice(0, 150) + '...';
 
             // Run classification
             const classification = classifyArticle(title, cleanDesc, sourceName, articleUrl);
@@ -498,9 +503,12 @@ export const RefreshEngine = {
             if (isSpecificCategoryFeed) {
               articleCategory = category;
             }
+            if (matchesDevOrStartupCategory(title, cleanDesc, sourceName, category, articleUrl)) {
+              articleCategory = category;
+            }
 
             // Verify category compatibility (only reject if classified as Rejeitado)
-            if (isArticleRejectedByPolicy(title, cleanDesc, articleUrl) || articleCategory === "Rejeitado" || !hasCategoryEvidence(title, cleanDesc, articleCategory, articleUrl)) {
+            if (isArticleRejectedByPolicy(title, cleanDesc, articleUrl, category) || articleCategory === "Rejeitado" || !hasCategoryEvidence(title, cleanDesc, articleCategory, articleUrl)) {
               discardedThisRun++;
               continue;
             }

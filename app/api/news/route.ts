@@ -1,6 +1,6 @@
 import { NextResponse, after } from "next/server";
 
-import { balanceArticlesBySource, decodeHtmlEntities, deduplicateArticles, fetchNewsApiArticles, fetchNewsBackend, getFallbackNewsImage, hasCategoryEvidence, isArticleWithinRetention, isEnglishDevSource } from "../../../services/newsService";
+import { balanceArticlesBySource, decodeHtmlEntities, deduplicateArticles, fetchNewsApiArticles, fetchNewsBackend, getFallbackNewsImage, hasCategoryEvidence, isArticleWithinRetention, isEnglishDevSource, matchesDevOrStartupCategory } from "../../../services/newsService";
 import { Storage } from "../../../utils/storage";
 import { RefreshEngine } from "../../../services/refreshEngine";
 
@@ -14,12 +14,12 @@ const liveCategoryCache = new Map<string, {
   articles: Awaited<ReturnType<typeof fetchNewsBackend>>;
 }>();
 
-async function fetchLiveCategory(query: string, category: string, max: number) {
-  const key = `${category}:${query}:${max}`;
+async function fetchLiveCategory(query: string, category: string, max: number, preferLatest: boolean) {
+  const key = `${category}:${query}:${max}:${preferLatest}`;
   const cached = liveCategoryCache.get(key);
   if (cached && cached.expiresAt > Date.now()) return cached.articles;
 
-  const articles = await fetchNewsBackend({ query, category, max, offset: 0 });
+  const articles = await fetchNewsBackend({ query, category, max, offset: 0, preferLatest });
   liveCategoryCache.set(key, { articles, expiresAt: Date.now() + 5 * 60 * 1000 });
   return articles;
 }
@@ -50,6 +50,7 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const query = searchParams.get("query") || "";
   const category = searchParams.get("category") || "Geral";
+  const preferLatest = category !== "Economia";
   const max = parseInt(searchParams.get("max") || "6", 10);
   const offset = parseInt(searchParams.get("offset") || "0", 10);
   const includeArchive = searchParams.get("archive") === "true";
@@ -63,7 +64,7 @@ export async function GET(request: Request) {
     const timeSinceLastSync = Date.now() - lastSyncTime;
 
     // Trigger background sync asynchronously if cache is older than 15 minutes
-    if (timeSinceLastSync > 15 * 60 * 1000) {
+    if (!Number.isFinite(lastSyncTime) || timeSinceLastSync > 15 * 60 * 1000) {
       console.log(`[API/News] Lazy triggering sync. Stale time: ${Math.round(timeSinceLastSync / 1000)}s`);
       // after() keeps the serverless invocation alive until the sync finishes (a bare
       // fire-and-forget promise is frozen as soon as the response is sent).
@@ -114,6 +115,7 @@ export async function GET(request: Request) {
 
     let filtered = allArticles.filter(art => 
       shouldMatchQuery ||
+      matchesDevOrStartupCategory(art.title, art.description, art.source, targetCategory, art.url) ||
       art.category === targetCategory || 
       (targetCategory === "Home" && (art.category === "Startups" || art.category === "Tecnologia" || art.category === "Inovacao")) ||
       (targetCategory === "Startups" && art.source.toLowerCase().includes("exame")) ||
@@ -163,8 +165,8 @@ export async function GET(request: Request) {
     // skips retention filters, so also go live whenever the newest stored item is stale.
     const shouldRefreshStale = !shouldMatchQuery
       && Date.now() - newestStoredArticleTime > STALE_AFTER_MS;
-    if (shouldFetchSearchHistory || filtered.length < requiredCount || shouldRefreshStale) {
-      console.log(`[API/News] Insufficient articles for ${targetCategory} in Storage (${filtered.length}/${requiredCount}), fetching live...`);
+    if ((preferLatest && !shouldMatchQuery) || shouldFetchSearchHistory || filtered.length < requiredCount || shouldRefreshStale) {
+      console.log(`[API/News] Checking live updates for ${targetCategory} (${filtered.length} stored articles).`);
       const freshArticles = shouldMatchQuery
         ? (await Promise.all(
             [
@@ -177,10 +179,10 @@ export async function GET(request: Request) {
         : targetCategory === "Home"
           ? (await Promise.all(
               ["Startups", "Tecnologia", "Inovacao"].map(searchCategory =>
-                fetchLiveCategory(query, searchCategory, requiredCount)
+                fetchLiveCategory(query, searchCategory, requiredCount, preferLatest)
               )
             )).flat()
-        : await fetchLiveCategory(query, targetCategory, requiredCount);
+        : await fetchLiveCategory(query, targetCategory, requiredCount, preferLatest);
       
       const existingIds = new Set(filtered.map(a => a.id));
       for (const fa of freshArticles) {
@@ -234,8 +236,8 @@ export async function GET(request: Request) {
     // Keep ordering stable so separate hero/list requests paginate the same set.
     filtered.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
 
-    // Balance publishers before pagination
-    const balanced = balanceArticlesBySource(filtered);
+    // Category feeds prioritize publication time; Economia retains publisher balancing.
+    const balanced = preferLatest ? filtered : balanceArticlesBySource(filtered);
     const articles = balanced.slice(offset, offset + max);
 
     return NextResponse.json({

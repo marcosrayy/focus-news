@@ -49,7 +49,7 @@ function CategoryNewsFeedContent({
   const searchParams = useSearchParams();
   const topic = searchParams.get("topic") || "all";
   const config = getCategoryNewsQuery(category, topic);
-  const feed = useNews(config, categoryContent[category].category, FEATURED_COUNT + INITIAL_LIST_COUNT, 0, undefined, true);
+  const feed = useNews(config, categoryContent[category].category, FEATURED_COUNT + INITIAL_LIST_COUNT, 0, undefined, category === "economia", true);
 
   // Atribui as capas uma única vez para a lista inteira da categoria, para que
   // carrossel, grid e "mais notícias" nunca repitam a mesma imagem.

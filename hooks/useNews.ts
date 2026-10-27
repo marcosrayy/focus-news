@@ -17,14 +17,15 @@ export function useNews(
   offset: number = 0,
   retentionWindowDays?: number,
   includeArchive = false,
+  paginate = includeArchive,
 ) {
   const [archiveLimit, setArchiveLimit] = useState(maxArticles);
-  const requestedMax = includeArchive ? archiveLimit : maxArticles;
+  const requestedMax = paginate ? archiveLimit : maxArticles;
   const { data, error, isLoading, isValidating, mutate } = useSWR<NewsResponse>(
     `/api/news?query=${encodeURIComponent(query)}&category=${encodeURIComponent(category)}&max=${requestedMax}&offset=${offset}${retentionWindowDays ? `&retentionDays=${retentionWindowDays}` : ""}${includeArchive ? "&archive=true" : ""}`,
     fetcher,
     {
-      revalidateOnFocus: false,
+      revalidateOnFocus: category !== "Economia",
       revalidateOnReconnect: true,
       refreshInterval: 60000, // Check every 60 seconds for live feeling (as requested by client verification interval)
       dedupingInterval: 15000,
@@ -68,11 +69,11 @@ export function useNews(
   return {
     articles: displayedArticles,
     totalArticles: data?.totalArticles,
-    hasMore: includeArchive && data?.totalArticles !== undefined
+    hasMore: paginate && data?.totalArticles !== undefined
       ? offset + displayedArticles.length < data.totalArticles
       : false,
     loadMore: () => {
-      if (includeArchive) setArchiveLimit((current) => current + 12);
+      if (paginate) setArchiveLimit((current) => current + 12);
     },
     isFallback: displayedArticles.length === 0 && !isLoading,
     isLoading: isLoading && displayedArticles.length === 0,
