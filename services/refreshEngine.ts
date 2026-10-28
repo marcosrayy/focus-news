@@ -8,13 +8,19 @@ const FALLBACK_FEEDS: Record<string, string[]> = {
   Startups: [
     'https://startupi.com.br/feed/',
     'https://startups.com.br/feed/',
-    'https://forbes.com.br/category/colunas/forbes-tech/feed/'
+    'https://forbes.com.br/category/colunas/forbes-tech/feed/',
+    'https://neofeed.com.br/feed/',
+    'https://braziljournal.com/feed/',
+    'https://exame.com/feed/'
   ],
   Economia: [
     'https://www.infomoney.com.br/feed/',
     'https://startupi.com.br/feed/',
     'https://valor.globo.com/rss/valor/',
-    'https://g1.globo.com/rss/g1/economia/'
+    'https://g1.globo.com/rss/g1/economia/',
+    'https://www1.folha.uol.com.br/mercado/rss2.0.xml',
+    'https://www.cnnbrasil.com.br/economia/feed/',
+    'https://neofeed.com.br/feed/'
   ],
   IA: [
     'https://canaltech.com.br/rss/',
@@ -24,13 +30,19 @@ const FALLBACK_FEEDS: Record<string, string[]> = {
     'https://startupi.com.br/feed/',
     'https://rss.tecmundo.com.br/feed',
     'https://www.cnnbrasil.com.br/tudo-sobre/inteligencia-artificial/feed/',
-    'https://forbes.com.br/noticias-sobre/inteligencia-artificial/feed/'
+    'https://forbes.com.br/noticias-sobre/inteligencia-artificial/feed/',
+    'https://www.tecmundo.com.br/rss',
+    'https://exame.com/feed/',
+    'https://neofeed.com.br/feed/'
   ],
   Tecnologia: [
     'https://tecnoblog.net/feed/',
     'https://rss.tecmundo.com.br/feed',
     'https://g1.globo.com/rss/g1/tecnologia/',
-    'https://www.cnnbrasil.com.br/feed/'
+    'https://www.cnnbrasil.com.br/feed/',
+    'https://canaltech.com.br/rss/',
+    'https://olhardigital.com.br/feed/',
+    'https://www.showmetech.com.br/feed/'
   ],
   Dev: [
     'https://diolinux.com.br/feed',
@@ -38,16 +50,26 @@ const FALLBACK_FEEDS: Record<string, string[]> = {
     'https://rss.tecmundo.com.br/feed',
     'https://canaltech.com.br/rss/',
     'https://forbes.com.br/noticias-sobre/desenvolvimento-de-software/feed/',
-    'https://www.tabnews.com.br/rss'
+    'https://www.tabnews.com.br/rss',
+    'https://www.baguete.com.br/rss',
+    'https://www.mobiletime.com.br/feed/'
   ],
   Inovacao: [
     'https://g1.globo.com/rss/g1/inovacao/',
-    'https://forbes.com.br/noticias-sobre/inovacao/feed/'
+    'https://forbes.com.br/noticias-sobre/inovacao/feed/',
+    'https://neofeed.com.br/inovacao/feed',
+    'https://braziljournal.com/feed/',
+    'https://exame.com/feed/'
   ],
   Business: [
     'https://startupi.com.br/feed/',
     'https://www.infomoney.com.br/feed/',
-    'https://forbes.com.br/category/colunas/forbes-tech/feed/'
+    'https://forbes.com.br/category/colunas/forbes-tech/feed/',
+    'https://braziljournal.com/feed/',
+    'https://neofeed.com.br/feed/',
+    'https://exame.com/feed/',
+    'https://valor.globo.com/rss/valor/',
+    'https://www1.folha.uol.com.br/mercado/rss2.0.xml'
   ],
 };
 
@@ -61,6 +83,12 @@ function getFeedSourceName(feedUrl: string): string {
   const url = feedUrl.toLowerCase();
   if (url.includes('startupi')) return 'Startupi';
   if (url.includes('startups.com.br')) return 'Startups.com.br';
+  if (url.includes('braziljournal')) return 'Brazil Journal';
+  if (url.includes('neofeed')) return 'NeoFeed';
+  if (url.includes('exame')) return 'Exame';
+  if (url.includes('baguete')) return 'Baguete';
+  if (url.includes('mobiletime')) return 'Mobile Time';
+  if (url.includes('folha')) return 'Folha';
   if (url.includes('infomoney')) return 'InfoMoney';
   if (url.includes('valor.globo')) return 'Valor';
   if (url.includes('canaltech')) return 'Canaltech';

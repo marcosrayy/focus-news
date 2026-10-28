@@ -388,7 +388,7 @@ export const MODULE_SOURCES = {
   Tecnologia: ["tecnoblog", "noticias tech", "techmundo", "globo", "cnn", "forbes", "gnews"],
   Dev: ["tecnoblog", "noticias tech", "canaltech", "gnews", "diolinux", "forbes", "cnn", "exame", "tabnews"],
   Inovacao: ["globo", "forbes", "g1"],
-  Business: ["startupi", "infomoney", "valor", "forbes", "gnews", "cnn", "neofeed"]
+  Business: ["startupi", "infomoney", "valor", "forbes", "gnews", "cnn", "neofeed", "exame", "brazil journal", "folha"],
 };
 
 // 2. Palavras-chave Permitidas por Módulo (para cálculo de Score)
@@ -734,7 +734,7 @@ function classifyArticleBySourceAndKeywords(title: string, description: string, 
   }
 
   // Para fontes híbridas e gerais (Canaltech, TechMundo, Gizmodo, Globo, CNN, Forbes, GNews, etc.)
-  const isHybrid = ["canaltech", "techmundo", "noticias ia", "gizmodo", "startupi", "globo", "cnn", "forbes", "gnews", "tecnoblog", "olhar digital", "showmetech"].some(src => normSource.includes(src));
+  const isHybrid = ["canaltech", "techmundo", "noticias ia", "gizmodo", "startupi", "globo", "cnn", "forbes", "gnews", "tecnoblog", "olhar digital", "showmetech", "exame", "brazil journal", "neofeed", "folha", "baguete", "mobile time"].some(src => normSource.includes(src));
   if (isHybrid) {
     const iaMatches = countMatches(fullText, MODULE_KEYWORDS.IA);
     const tecnologiaMatches = countMatches(fullText, MODULE_KEYWORDS.Tecnologia);
@@ -1038,17 +1038,17 @@ export async function fetchNewsBackend({
       
       let feedUrls = ['https://tecnoblog.net/feed/', 'https://g1.globo.com/rss/g1/tecnologia/', 'https://canaltech.com.br/rss/', 'https://tecmundo.com.br/rss/feed', 'https://olhardigital.com.br/feed/', 'https://www.showmetech.com.br/feed/', 'https://www.cnnbrasil.com.br/tecnologia/feed/', 'https://forbes.com.br/noticias-sobre/tecnologia/feed/'];
       if (targetCategory === "Startups") {
-        feedUrls = ['https://startupi.com.br/feed/', 'https://startups.com.br/feed/', 'https://forbes.com.br/noticias-sobre/startups/feed/', 'https://neofeed.com.br/feed/'];
+        feedUrls = ['https://startupi.com.br/feed/', 'https://startups.com.br/feed/', 'https://forbes.com.br/noticias-sobre/startups/feed/', 'https://neofeed.com.br/feed/', 'https://braziljournal.com/feed/', 'https://exame.com/feed/'];
       } else if (targetCategory === "Economia") {
-        feedUrls = ['https://www.infomoney.com.br/feed/', 'https://startupi.com.br/feed/', 'https://valor.globo.com/rss/valor/', 'https://g1.globo.com/economia/rss2.0.xml', 'https://www1.folha.uol.com.br/mercado/rss2.0.xml'];
+        feedUrls = ['https://www.infomoney.com.br/feed/', 'https://startupi.com.br/feed/', 'https://valor.globo.com/rss/valor/', 'https://g1.globo.com/economia/rss2.0.xml', 'https://www1.folha.uol.com.br/mercado/rss2.0.xml', 'https://www.cnnbrasil.com.br/economia/feed/', 'https://neofeed.com.br/feed/'];
       } else if (targetCategory === "Business") {
-        feedUrls = ['https://startupi.com.br/feed/', 'https://www.infomoney.com.br/feed/', 'https://www.cnnbrasil.com.br/ia/feed/', 'https://forbes.com.br/noticias-sobre/negocios/feed/', 'https://g1.globo.com/economia/rss2.0.xml', 'https://valor.globo.com/rss/valor/', 'https://www1.folha.uol.com.br/mercado/rss2.0.xml', ''];
+        feedUrls = ['https://startupi.com.br/feed/', 'https://www.infomoney.com.br/feed/', 'https://braziljournal.com/feed/', 'https://neofeed.com.br/feed/', 'https://exame.com/feed/', 'https://www.cnnbrasil.com.br/ia/feed/', 'https://forbes.com.br/noticias-sobre/negocios/feed/', 'https://g1.globo.com/economia/rss2.0.xml', 'https://valor.globo.com/rss/valor/', 'https://www1.folha.uol.com.br/mercado/rss2.0.xml'];
       } else if (targetCategory === "IA") {
-        feedUrls = ['https://canaltech.com.br/rss/', 'https://tecnoblog.net/feed/', 'https://olhardigital.com.br/feed/', 'https://www.showmetech.com.br/feed/', 'https://startupi.com.br/feed/', 'https://www.cnnbrasil.com.br/tudo-sobre/inteligencia-artificial/feed/', 'https://forbes.com.br/noticias-sobre/inteligencia-artificial/feed/'];
+        feedUrls = ['https://canaltech.com.br/rss/', 'https://tecnoblog.net/feed/', 'https://olhardigital.com.br/feed/', 'https://www.showmetech.com.br/feed/', 'https://startupi.com.br/feed/', 'https://www.cnnbrasil.com.br/tudo-sobre/inteligencia-artificial/feed/', 'https://forbes.com.br/noticias-sobre/inteligencia-artificial/feed/', 'https://exame.com/feed/', 'https://neofeed.com.br/feed/'];
       } else if (targetCategory === "Dev") {
-        feedUrls = ['https://diolinux.com.br/feed', 'https://forbes.com.br/noticias-sobre/desenvolvimento-de-software/feed/', 'https://tecnoblog.net/feed/', 'https://rss.tecmundo.com.br/feed', 'https://canaltech.com.br/rss/', 'https://www.tabnews.com.br/rss'];
+        feedUrls = ['https://diolinux.com.br/feed', 'https://forbes.com.br/noticias-sobre/desenvolvimento-de-software/feed/', 'https://tecnoblog.net/feed/', 'https://rss.tecmundo.com.br/feed', 'https://canaltech.com.br/rss/', 'https://www.tabnews.com.br/rss', 'https://www.baguete.com.br/rss', 'https://www.mobiletime.com.br/feed/'];
       } else if (targetCategory === "Inovacao") {
-        feedUrls = ['https://g1.globo.com/rss/g1/inovacao/', 'https://forbes.com.br/noticias-sobre/inovacao/feed/', 'https://neofeed.com.br/inovacao/feed'];
+        feedUrls = ['https://g1.globo.com/rss/g1/inovacao/', 'https://forbes.com.br/noticias-sobre/inovacao/feed/', 'https://neofeed.com.br/inovacao/feed', 'https://braziljournal.com/feed/', 'https://exame.com/feed/'];
       }
 
       const allItems: any[] = [];

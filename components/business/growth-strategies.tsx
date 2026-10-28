@@ -9,6 +9,7 @@ import { LoadMoreNews } from "@/components/load-more-news";
 import { getCategoryNewsSections, useCategoryNewsFeed } from "@/components/category-news-feed";
 import { CategoryMoreNews } from "@/components/category-more-news";
 import { getDistinctCover } from "@/lib/utils";
+import { formatRelativeTime } from "@/lib/news-service";
 import type { ReactNode } from "react";
 
 interface BusinessArticle {
@@ -48,7 +49,7 @@ function GrowthStrategiesContent({ sidebar }: { sidebar?: ReactNode }) {
   
   const displayArticles = apiNews.length > 0 ? apiNews.map((n: any, i: number) => {
     const mock = articles[i % articles.length];
-    return { ...mock, id: `${n.id ?? n.url ?? mock.id}-${i}`, title: n.title, description: n.description, image: n.image, url: n.url, time: "agora" };
+    return { ...mock, id: `${n.id ?? n.url ?? mock.id}-${i}`, title: n.title, description: n.description, image: n.image, url: n.url, time: formatRelativeTime(n.publishedAt) };
   }) : [];
   const { featuredArticles, remainingArticles } = useNewsRotation(displayArticles);
 

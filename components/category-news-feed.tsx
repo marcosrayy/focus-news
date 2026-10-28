@@ -10,6 +10,9 @@ import type { ReactNode } from "react";
 
 const FEATURED_COUNT = 4;
 const INITIAL_LIST_COUNT = 12;
+// Business has a slower news cycle than the live tech feeds. Keep two weeks
+// available so the section does not look empty between market updates.
+const BUSINESS_RETENTION_DAYS = 5;
 export const CATEGORY_FEATURED_COUNT = FEATURED_COUNT;
 export const CATEGORY_INITIAL_LIST_COUNT = INITIAL_LIST_COUNT;
 
@@ -49,7 +52,16 @@ function CategoryNewsFeedContent({
   const searchParams = useSearchParams();
   const topic = searchParams.get("topic") || "all";
   const config = getCategoryNewsQuery(category, topic);
-  const feed = useNews(config, categoryContent[category].category, FEATURED_COUNT + INITIAL_LIST_COUNT, 0, undefined, category === "economia", true);
+  const retentionWindowDays = category === "business" ? BUSINESS_RETENTION_DAYS : undefined;
+  const feed = useNews(
+    config,
+    categoryContent[category].category,
+    FEATURED_COUNT + INITIAL_LIST_COUNT,
+    0,
+    retentionWindowDays,
+    category === "economia",
+    true,
+  );
 
   // Atribui as capas uma única vez para a lista inteira da categoria, para que
   // carrossel, grid e "mais notícias" nunca repitam a mesma imagem.
