@@ -231,7 +231,7 @@ function findRssImage(item: any, description: string, content: string): string {
     enclosure?.["@_url"],
     item.image?.url,
   ].filter((url): url is string => typeof url === "string" && !!url);
-  const genericImagePattern = /(?:^|[-_.\/])(?:logo|placeholder|default|no[-_]?image|avatar|favicon|amz)(?:[-_.\/?#]|$)/i;
+  const genericImagePattern = /(?:^|[/_.-])(?:logo|placeholder|default|no[-_]?image|avatar|favicon|amz)(?:[/_.?#-]|$)/i;
   return candidates.find(url => !genericImagePattern.test(url)) || candidates[0] || "";
 }
 
@@ -397,9 +397,7 @@ export const MODULE_SOURCES = {
   Tecnologia: ["tecnoblog", "noticias tech", "techmundo", "globo", "cnn", "forbes", "gnews"],
   Dev: ["tecnoblog", "noticias tech", "canaltech", "gnews", "diolinux", "forbes", "cnn", "exame", "tabnews"],
   Inovacao: ["globo", "forbes", "g1"],
-  Business: ["startupi", "infomoney", "valor", "forbes", "gnews", "cnn", "neofeed", "brazil journal", "mobile time", "exame", "ecommerce brasil", "money times", "seu dinheiro", "suno"]
-=======
-  Business: ["startupi", "infomoney", "valor", "forbes", "gnews", "cnn", "neofeed", "exame", "brazil journal", "folha"],
+  Business: ["startupi", "infomoney", "valor", "forbes", "gnews", "cnn", "neofeed", "exame", "brazil journal", "folha", "mobile time", "ecommerce brasil", "money times", "seu dinheiro", "suno"],
 };
 
 // 2. Palavras-chave Permitidas por Módulo (para cálculo de Score)
@@ -566,7 +564,7 @@ function countMatches(text: string, keywords: string[]): number {
 
   for (const kw of keywords) {
     const kwNorm = normalizeText(kw);
-    const escaped = kwNorm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    const escaped = kwNorm.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
     
     // Se o termo tem espaço, busca literal, senão busca palavra inteira com limite de borda
     const regex = kwNorm.includes(' ')
@@ -762,7 +760,6 @@ function classifyArticleBySourceAndKeywords(title: string, description: string, 
 
   // Para fontes híbridas e gerais (Canaltech, TechMundo, Gizmodo, Globo, CNN, Forbes, GNews, etc.)
   const isHybrid = ["canaltech", "techmundo", "noticias ia", "gizmodo", "startupi", "globo", "cnn", "forbes", "gnews", "tecnoblog", "olhar digital", "showmetech", "brazil journal", "mobile time", "exame", "neofeed", "ecommerce brasil", "money times", "seu dinheiro", "suno"].some(src => normSource.includes(src));
-  const isHybrid = ["canaltech", "techmundo", "noticias ia", "gizmodo", "startupi", "globo", "cnn", "forbes", "gnews", "tecnoblog", "olhar digital", "showmetech", "exame", "brazil journal", "neofeed", "folha", "baguete", "mobile time"].some(src => normSource.includes(src));
   if (isHybrid) {
     const iaMatches = countMatches(fullText, MODULE_KEYWORDS.IA);
     const tecnologiaMatches = countMatches(fullText, MODULE_KEYWORDS.Tecnologia);

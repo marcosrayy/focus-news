@@ -73,9 +73,7 @@ const FALLBACK_FEEDS: Record<string, string[]> = {
     'https://www.ecommercebrasil.com.br/feed/',
     'https://www.moneytimes.com.br/feed/',
     'https://www.seudinheiro.com/feed/',
-    'https://www.suno.com.br/feed/'
-    'https://neofeed.com.br/feed/',
-    'https://exame.com/feed/',
+    'https://www.suno.com.br/feed/',
     'https://valor.globo.com/rss/valor/',
     'https://www1.folha.uol.com.br/mercado/rss2.0.xml'
   ],

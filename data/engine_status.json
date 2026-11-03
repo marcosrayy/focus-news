@@ -1,116 +1,12 @@
 {
-  "lastSync": "2026-11-03T19:19:41.868Z",
+  "lastSync": "2026-11-03T19:29:30.442Z",
   "syncHistory": [
     {
-      "timestamp": "2026-11-03T19:19:41.868Z",
-      "durationMs": 24146,
-      "importedCount": 66,
-      "updatedCount": 69,
-      "discardedCount": 1032,
-      "modules": [
-        "Startups",
-        "Economia",
-        "IA",
-        "Tecnologia",
-        "Dev",
-        "Inovacao",
-        "Business"
-      ]
-    },
-    {
-      "timestamp": "2026-11-03T19:03:24.653Z",
-      "durationMs": 22466,
-      "importedCount": 69,
-      "updatedCount": 0,
-      "discardedCount": 972,
-  "lastSync": "2026-10-28T17:02:30.454Z",
-  "syncHistory": [
-    {
-      "timestamp": "2026-10-28T17:02:30.454Z",
-      "durationMs": 32292,
-      "importedCount": 72,
-      "updatedCount": 4,
-      "discardedCount": 866,
-      "modules": [
-        "Startups",
-        "Economia",
-        "IA",
-        "Tecnologia",
-        "Dev",
-        "Inovacao",
-        "Business"
-      ]
-    },
-    {
-      "timestamp": "2026-10-27T01:35:33.049Z",
-      "durationMs": 17110,
-      "importedCount": 0,
-      "updatedCount": 60,
-      "discardedCount": 896,
-      "modules": [
-        "Startups",
-        "Economia",
-        "IA",
-        "Tecnologia",
-        "Dev",
-        "Inovacao",
-        "Business"
-      ]
-    },
-    {
-      "timestamp": "2026-10-27T01:16:43.001Z",
-      "durationMs": 16513,
-      "importedCount": 67,
-      "updatedCount": 0,
-      "discardedCount": 896,
-      "modules": [
-        "Startups",
-        "Economia",
-        "IA",
-        "Tecnologia",
-        "Dev",
-        "Inovacao",
-        "Business"
-      ]
-    },
-    {
-      "timestamp": "2026-10-21T01:22:57.547Z",
-      "durationMs": 1359,
-      "importedCount": 0,
-      "updatedCount": 0,
-      "discardedCount": 0,
-      "modules": [
-        "Startups",
-        "Economia",
-        "IA",
-        "Tecnologia",
-        "Dev",
-        "Inovacao",
-        "Business"
-      ]
-    },
-    {
-      "timestamp": "2026-10-19T19:12:10.786Z",
-      "durationMs": 13040,
-      "importedCount": 2,
-      "updatedCount": 67,
-      "discardedCount": 887,
-      "modules": [
-        "Startups",
-        "Economia",
-        "IA",
-        "Tecnologia",
-        "Dev",
-        "Inovacao",
-        "Business"
-      ]
-    },
-    {
-      "timestamp": "2026-10-19T18:55:41.063Z",
-      "durationMs": 16970,
-      "importedCount": 95,
-      "updatedCount": 0,
-      "discardedCount": 886,
+      "timestamp": "2026-11-03T19:29:30.442Z",
+      "durationMs": 34502,
+      "importedCount": 169,
+      "updatedCount": 13,
+      "discardedCount": 1078,
       "modules": [
         "Startups",
         "Economia",
@@ -125,224 +21,143 @@
   "sourcesHealth": {
     "Startupi": {
       "status": "Online",
-      "lastResponseMs": 419,
-      "lastChecked": "2026-11-03T19:19:39.346Z"
+      "lastResponseMs": 438,
+      "lastChecked": "2026-11-03T19:29:25.935Z"
     },
     "InfoMoney": {
       "status": "Online",
-      "lastResponseMs": 216,
-      "lastChecked": "2026-11-03T19:19:39.584Z"
+      "lastResponseMs": 249,
+      "lastChecked": "2026-11-03T19:29:26.206Z"
     },
     "Valor": {
       "status": "Online",
-      "lastResponseMs": 411,
-      "lastChecked": "2026-11-03T19:19:23.988Z"
+      "lastResponseMs": 425,
+      "lastChecked": "2026-11-03T19:29:30.071Z"
     },
     "Canaltech": {
       "status": "Online",
-      "lastResponseMs": 50,
-      "lastChecked": "2026-11-03T19:19:33.280Z"
+      "lastResponseMs": 22,
+      "lastChecked": "2026-11-03T19:29:17.139Z"
     },
     "TechMundo": {
       "status": "Online",
-      "lastResponseMs": 144,
-      "lastChecked": "2026-11-03T19:19:33.230Z"
+      "lastResponseMs": 246,
+      "lastChecked": "2026-11-03T19:29:17.117Z"
     },
     "Diolinux": {
       "status": "Online",
-      "lastResponseMs": 446,
-      "lastChecked": "2026-11-03T19:19:32.613Z"
-      "lastResponseMs": 1508,
-      "lastChecked": "2026-10-28T17:02:27.978Z"
-    },
-    "InfoMoney": {
-      "status": "Online",
-      "lastResponseMs": 1657,
-      "lastChecked": "2026-10-28T17:02:29.635Z"
-    },
-    "Valor": {
-      "status": "Online",
-      "lastResponseMs": 480,
-      "lastChecked": "2026-10-28T17:02:04.622Z"
-    },
-    "Canaltech": {
-      "status": "Online",
-      "lastResponseMs": 552,
-      "lastChecked": "2026-10-28T17:02:20.834Z"
-    },
-    "TechMundo": {
-      "status": "Online",
-      "lastResponseMs": 401,
-      "lastChecked": "2026-10-28T17:02:20.282Z"
-    },
-    "Diolinux": {
-      "status": "Instável",
-      "lastResponseMs": 10011,
-      "lastChecked": "2026-10-28T17:02:19.618Z"
+      "lastResponseMs": 416,
+      "lastChecked": "2026-11-03T19:29:16.386Z"
     },
     "Gizmodo": {
       "status": "Online",
       "lastResponseMs": 190,
-      "lastChecked": "2026-10-19T18:55:21.901Z"
+      "lastChecked": "2026-11-03T19:28:51.754Z"
     },
     "GNews": {
       "status": "Online",
-      "lastResponseMs": 772,
-      "lastChecked": "2026-11-03T19:19:18.501Z"
+      "lastResponseMs": 434,
+      "lastChecked": "2026-11-03T19:28:56.480Z"
     },
     "Exame": {
       "status": "Online",
-      "lastResponseMs": 177,
-      "lastChecked": "2026-11-03T19:19:41.138Z"
+      "lastResponseMs": 69,
+      "lastChecked": "2026-11-03T19:29:27.486Z"
     },
     "Startups.com.br": {
       "status": "Online",
-      "lastResponseMs": 211,
-      "lastChecked": "2026-11-03T19:19:21.068Z"
+      "lastResponseMs": 221,
+      "lastChecked": "2026-11-03T19:28:58.717Z"
     },
     "Forbes": {
       "status": "Online",
-      "lastResponseMs": 99,
-      "lastChecked": "2026-11-03T19:19:41.275Z"
-    },
-    "Globo": {
-      "status": "Online",
-      "lastResponseMs": 338,
-      "lastChecked": "2026-11-03T19:19:38.404Z"
-    },
-    "Tecnoblog": {
-      "status": "Online",
-      "lastResponseMs": 222,
-      "lastChecked": "2026-11-03T19:19:33.086Z"
-    },
-    "Olhar Digital": {
-      "status": "Online",
-      "lastResponseMs": 207,
-      "lastChecked": "2026-11-03T19:19:38.066Z"
-    },
-    "Showmetech": {
-      "status": "Online",
-      "lastResponseMs": 348,
-      "lastChecked": "2026-11-03T19:19:27.280Z"
-    },
-    "CNN": {
-      "status": "Online",
-      "lastResponseMs": 329,
-      "lastChecked": "2026-11-03T19:19:32.127Z"
-    },
-    "TabNews": {
-      "status": "Online",
-      "lastResponseMs": 304,
-      "lastChecked": "2026-11-03T19:19:34.717Z"
-    },
-    "Baguete": {
-      "status": "Online",
-      "lastResponseMs": 479,
-      "lastChecked": "2026-11-03T19:19:37.584Z"
-    },
-    "Mobile Time": {
-      "status": "Online",
-      "lastResponseMs": 139,
-      "lastChecked": "2026-11-03T19:19:40.529Z"
-    },
-    "Brazil Journal": {
-      "status": "Online",
-      "lastResponseMs": 605,
-      "lastChecked": "2026-11-03T19:19:40.366Z"
-    },
-    "4Linux": {
-      "status": "Online",
-      "lastResponseMs": 2285,
-      "lastChecked": "2026-11-03T19:19:37.082Z"
+      "lastResponseMs": 104,
+      "lastChecked": "2026-11-03T19:29:27.626Z"
     },
     "NeoFeed": {
       "status": "Online",
-      "lastResponseMs": 361,
-      "lastChecked": "2026-11-03T19:19:40.934Z"
-    },
-    "Ecommerce Brasil": {
-      "status": "Instável",
-      "lastResponseMs": 428,
-      "lastChecked": "2026-11-03T19:19:41.815Z"
-    }
-  },
-  "stats": {
-    "imported": 299,
-    "updated": 196,
-    "discarded": 5569
-=======
-      "lastResponseMs": 213,
-      "lastChecked": "2026-10-28T17:01:58.379Z"
-    },
-    "Exame": {
-      "status": "Online",
-      "lastResponseMs": 1771,
-      "lastChecked": "2026-10-28T17:02:00.601Z"
-    },
-    "Startups.com.br": {
-      "status": "Online",
-      "lastResponseMs": 253,
-      "lastChecked": "2026-10-28T17:02:01.125Z"
-    },
-    "Forbes": {
-      "status": "Online",
-      "lastResponseMs": 656,
-      "lastChecked": "2026-10-28T17:02:30.291Z"
-    },
-    "Globo": {
-      "status": "Online",
-      "lastResponseMs": 525,
-      "lastChecked": "2026-10-28T17:02:25.708Z"
-    },
-    "Tecnoblog": {
-      "status": "Online",
-      "lastResponseMs": 263,
-      "lastChecked": "2026-10-28T17:02:19.881Z"
-    },
-    "Olhar Digital": {
-      "status": "Online",
-      "lastResponseMs": 225,
-      "lastChecked": "2026-10-28T17:02:25.183Z"
-    },
-    "Showmetech": {
-      "status": "Online",
-      "lastResponseMs": 368,
-      "lastChecked": "2026-10-28T17:02:06.811Z"
-    },
-    "CNN": {
-      "status": "Online",
-      "lastResponseMs": 370,
-      "lastChecked": "2026-10-28T17:02:09.548Z"
-    },
-    "TabNews": {
-      "status": "Online",
-      "lastResponseMs": 494,
-      "lastChecked": "2026-10-28T17:02:21.731Z"
-    },
-    "Baguete": {
-      "status": "Online",
-      "lastResponseMs": 758,
-      "lastChecked": "2026-10-28T17:02:24.606Z"
-    },
-    "Mobile Time": {
-      "status": "Online",
-      "lastResponseMs": 352,
-      "lastChecked": "2026-10-28T17:02:24.958Z"
+      "lastResponseMs": 226,
+      "lastChecked": "2026-11-03T19:29:27.393Z"
     },
     "Brazil Journal": {
       "status": "Online",
-      "lastResponseMs": 652,
-      "lastChecked": "2026-10-28T17:02:03.397Z"
+      "lastResponseMs": 473,
+      "lastChecked": "2026-11-03T19:29:26.881Z"
+    },
+    "Baguete": {
+      "status": "Online",
+      "lastResponseMs": 505,
+      "lastChecked": "2026-11-03T19:29:18.876Z"
+    },
+    "Mobile Time": {
+      "status": "Online",
+      "lastResponseMs": 222,
+      "lastChecked": "2026-11-03T19:29:27.124Z"
+    },
+    "Globo": {
+      "status": "Online",
+      "lastResponseMs": 377,
+      "lastChecked": "2026-11-03T19:29:21.736Z"
+    },
+    "Folha": {
+      "status": "Offline",
+      "lastResponseMs": 343,
+      "lastChecked": "2026-11-03T19:29:30.414Z"
+    },
+    "CNN": {
+      "status": "Online",
+      "lastResponseMs": 600,
+      "lastChecked": "2026-11-03T19:29:15.478Z"
+    },
+    "Tecnoblog": {
+      "status": "Online",
+      "lastResponseMs": 151,
+      "lastChecked": "2026-11-03T19:29:16.870Z"
+    },
+    "Olhar Digital": {
+      "status": "Online",
+      "lastResponseMs": 191,
+      "lastChecked": "2026-11-03T19:29:21.358Z"
+    },
+    "Showmetech": {
+      "status": "Online",
+      "lastResponseMs": 199,
+      "lastChecked": "2026-11-03T19:29:15.970Z"
+    },
+    "TabNews": {
+      "status": "Online",
+      "lastResponseMs": 403,
+      "lastChecked": "2026-11-03T19:29:18.271Z"
     },
     "4Linux": {
       "status": "Online",
-      "lastResponseMs": 2038,
-      "lastChecked": "2026-10-28T17:02:23.832Z"
+      "lastResponseMs": 2018,
+      "lastChecked": "2026-11-03T19:29:21.143Z"
+    },
+    "Ecommerce Brasil": {
+      "status": "Instável",
+      "lastResponseMs": 460,
+      "lastChecked": "2026-11-03T19:29:28.249Z"
+    },
+    "Money Times": {
+      "status": "Online",
+      "lastResponseMs": 36,
+      "lastChecked": "2026-11-03T19:29:28.285Z"
+    },
+    "Seu Dinheiro": {
+      "status": "Online",
+      "lastResponseMs": 46,
+      "lastChecked": "2026-11-03T19:29:28.355Z"
+    },
+    "Suno": {
+      "status": "Online",
+      "lastResponseMs": 1233,
+      "lastChecked": "2026-11-03T19:29:29.613Z"
     }
   },
   "stats": {
-    "imported": 236,
-    "updated": 131,
-    "discarded": 4431
+    "imported": 169,
+    "updated": 13,
+    "discarded": 1078
   }
 }
