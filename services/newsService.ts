@@ -236,7 +236,16 @@ function findRssImage(item: any, description: string, content: string): string {
 }
 
 export async function fetchRssFeed(feedUrl: string): Promise<RssFeedItem[]> {
-  const response = await fetch(feedUrl, {
+  const normalizedFeedUrl = typeof feedUrl === "string" ? feedUrl.trim() : "";
+  if (!normalizedFeedUrl) throw new Error("RSS feed URL is empty");
+
+  try {
+    new URL(normalizedFeedUrl);
+  } catch {
+    throw new Error(`RSS feed URL is invalid: ${normalizedFeedUrl}`);
+  }
+
+  const response = await fetch(normalizedFeedUrl, {
     cache: "no-store",
     signal: AbortSignal.timeout(10000),
     headers: { accept: "application/rss+xml, application/atom+xml, application/xml, text/xml;q=0.9" },
@@ -388,7 +397,7 @@ export const MODULE_SOURCES = {
   Tecnologia: ["tecnoblog", "noticias tech", "techmundo", "globo", "cnn", "forbes", "gnews"],
   Dev: ["tecnoblog", "noticias tech", "canaltech", "gnews", "diolinux", "forbes", "cnn", "exame", "tabnews"],
   Inovacao: ["globo", "forbes", "g1"],
-  Business: ["startupi", "infomoney", "valor", "forbes", "gnews", "cnn", "neofeed"]
+  Business: ["startupi", "infomoney", "valor", "forbes", "gnews", "cnn", "neofeed", "brazil journal", "mobile time", "exame", "ecommerce brasil", "money times", "seu dinheiro", "suno"]
 };
 
 // 2. Palavras-chave Permitidas por Módulo (para cálculo de Score)
@@ -633,6 +642,10 @@ export function hasCategoryEvidence(title: string, description: string, category
   return hasTitleKeyword && distinctKeywordMatches >= 2;
 }
 
+function hasBusinessEvidence(title: string, description: string): boolean {
+  return countMatches(`${title} ${description}`, MODULE_KEYWORDS.Business) > 0;
+}
+
 export function isEnglishDevSource(source: string): boolean {
   const normalizedSource = normalizeText(source).replace(/[^a-z0-9]+/g, "");
   return ["github", "stackoverflow", "infoq", "devto"].some(name => normalizedSource.includes(name));
@@ -650,6 +663,18 @@ export function matchesDevOrStartupCategory(title: string, description: string, 
 
 export function isCategorySpecificRssFeed(feedUrl: string, category: string, articleUrl = ""): boolean {
   const normalizedUrl = normalizeText(`${feedUrl} ${articleUrl}`).toLowerCase();
+  if (category === "Business") {
+    return normalizedUrl.includes("startupi.com.br/feed") ||
+      normalizedUrl.includes("braziljournal.com/feed") ||
+      normalizedUrl.includes("mobiletime.com.br/feed") ||
+      normalizedUrl.includes("neofeed.com.br/feed") ||
+      normalizedUrl.includes("exame.com/feed") ||
+      normalizedUrl.includes("forbes.com.br/feed") ||
+      normalizedUrl.includes("ecommercebrasil.com.br/feed") ||
+      normalizedUrl.includes("moneytimes.com.br/feed") ||
+      normalizedUrl.includes("seudinheiro.com/feed") ||
+      normalizedUrl.includes("suno.com.br/feed");
+  }
   if (category === "Startups") {
     return normalizedUrl.includes("startups.com.br/feed");
   }
@@ -734,7 +759,7 @@ function classifyArticleBySourceAndKeywords(title: string, description: string, 
   }
 
   // Para fontes híbridas e gerais (Canaltech, TechMundo, Gizmodo, Globo, CNN, Forbes, GNews, etc.)
-  const isHybrid = ["canaltech", "techmundo", "noticias ia", "gizmodo", "startupi", "globo", "cnn", "forbes", "gnews", "tecnoblog", "olhar digital", "showmetech"].some(src => normSource.includes(src));
+  const isHybrid = ["canaltech", "techmundo", "noticias ia", "gizmodo", "startupi", "globo", "cnn", "forbes", "gnews", "tecnoblog", "olhar digital", "showmetech", "brazil journal", "mobile time", "exame", "neofeed", "ecommerce brasil", "money times", "seu dinheiro", "suno"].some(src => normSource.includes(src));
   if (isHybrid) {
     const iaMatches = countMatches(fullText, MODULE_KEYWORDS.IA);
     const tecnologiaMatches = countMatches(fullText, MODULE_KEYWORDS.Tecnologia);
@@ -1006,7 +1031,12 @@ export async function fetchNewsBackend({
             if (matchesDevOrStartupCategory(title, description, sourceName, targetCategory, item.url)) {
               articleCategory = targetCategory;
             }
-            if (articleCategory !== targetCategory || !hasCategoryEvidence(title, description, articleCategory, item.url)) continue;
+            const acceptedBusinessArticle = targetCategory === "Business" &&
+              isSourceAllowed(sourceName, targetCategory) &&
+              !isArticleRejectedByPolicy(title, description, item.url, targetCategory) &&
+              hasBusinessEvidence(title, description);
+            if ((!acceptedBusinessArticle && articleCategory !== targetCategory) ||
+              (!acceptedBusinessArticle && !hasCategoryEvidence(title, description, articleCategory, item.url))) continue;
 
             seenUrls.add(item.url);
             approvedArticles.push({
@@ -1042,7 +1072,7 @@ export async function fetchNewsBackend({
       } else if (targetCategory === "Economia") {
         feedUrls = ['https://www.infomoney.com.br/feed/', 'https://startupi.com.br/feed/', 'https://valor.globo.com/rss/valor/', 'https://g1.globo.com/economia/rss2.0.xml', 'https://www1.folha.uol.com.br/mercado/rss2.0.xml'];
       } else if (targetCategory === "Business") {
-        feedUrls = ['https://startupi.com.br/feed/', 'https://www.infomoney.com.br/feed/', 'https://www.cnnbrasil.com.br/ia/feed/', 'https://forbes.com.br/noticias-sobre/negocios/feed/', 'https://g1.globo.com/economia/rss2.0.xml', 'https://valor.globo.com/rss/valor/', 'https://www1.folha.uol.com.br/mercado/rss2.0.xml', ''];
+        feedUrls = ['https://startupi.com.br/feed/', 'https://www.infomoney.com.br/feed/', 'https://braziljournal.com/feed/', 'https://www.mobiletime.com.br/feed/', 'https://neofeed.com.br/feed/', 'https://exame.com/feed/', 'https://forbes.com.br/feed/', 'https://www.ecommercebrasil.com.br/feed/', 'https://www.moneytimes.com.br/feed/', 'https://www.seudinheiro.com/feed/', 'https://www.suno.com.br/feed/', 'https://forbes.com.br/category/colunas/forbes-tech/feed/', 'https://valor.globo.com/rss/valor/'];
       } else if (targetCategory === "IA") {
         feedUrls = ['https://canaltech.com.br/rss/', 'https://tecnoblog.net/feed/', 'https://olhardigital.com.br/feed/', 'https://www.showmetech.com.br/feed/', 'https://startupi.com.br/feed/', 'https://www.cnnbrasil.com.br/tudo-sobre/inteligencia-artificial/feed/', 'https://forbes.com.br/noticias-sobre/inteligencia-artificial/feed/'];
       } else if (targetCategory === "Dev") {
@@ -1052,7 +1082,16 @@ export async function fetchNewsBackend({
       }
 
       const allItems: any[] = [];
-      feedUrls = [...new Set([...feedUrls, ...getSpecialistFeeds(targetCategory).map(feed => feed.url)])];
+      feedUrls = [...new Set([
+        ...feedUrls,
+        ...getSpecialistFeeds(targetCategory).map(feed => feed.url),
+      ])].filter((feedUrl) => {
+        try {
+          return Boolean(feedUrl?.trim()) && new URL(feedUrl).protocol.startsWith("http");
+        } catch {
+          return false;
+        }
+      });
       
       // Busca concorrente nos feeds configurados
       await Promise.all(feedUrls.map(async (feedUrl) => {
@@ -1083,7 +1122,7 @@ export async function fetchNewsBackend({
 
         const title = repairMojibake(item.title || "");
         const fullDescription = repairMojibake((item.description || "").replace(/<[^>]+>/g, ''));
-        const cleanDesc = targetCategory === "Dev" || targetCategory === "Startups"
+        const cleanDesc = targetCategory === "Dev" || targetCategory === "Startups" || targetCategory === "Business"
           ? fullDescription
           : fullDescription.slice(0, 150) + '...';
         
@@ -1117,6 +1156,20 @@ export async function fetchNewsBackend({
           feedSource = "Forbes";
         } else if (item.originFeedUrl.includes("cnnbrasil")) {
           feedSource = "CNN Brasil";
+        } else if (item.originFeedUrl.includes("braziljournal")) {
+          feedSource = "Brazil Journal";
+        } else if (item.originFeedUrl.includes("mobiletime")) {
+          feedSource = "Mobile Time";
+        } else if (item.originFeedUrl.includes("exame.com")) {
+          feedSource = "Exame";
+        } else if (item.originFeedUrl.includes("ecommercebrasil")) {
+          feedSource = "Ecommerce Brasil";
+        } else if (item.originFeedUrl.includes("moneytimes")) {
+          feedSource = "Money Times";
+        } else if (item.originFeedUrl.includes("seudinheiro")) {
+          feedSource = "Seu Dinheiro";
+        } else if (item.originFeedUrl.includes("suno.com.br")) {
+          feedSource = "Suno";
         } else if (item.originFeedUrl.includes("tabnews.com.br")) {
           feedSource = "TabNews";
         }
@@ -1138,7 +1191,13 @@ export async function fetchNewsBackend({
         if (matchesDevOrStartupCategory(title, fullDescription, feedSource, targetCategory, item.link)) {
           articleCategory = targetCategory;
         }
-        if (isArticleRejectedByPolicy(title, cleanDesc, item.link, targetCategory) || articleCategory !== targetCategory || !hasCategoryEvidence(title, cleanDesc, articleCategory, item.link)) continue;
+        const acceptedBusinessFeedArticle = targetCategory === "Business" &&
+          isSourceAllowed(feedSource, targetCategory) &&
+          !isArticleRejectedByPolicy(title, cleanDesc, item.link, targetCategory) &&
+          hasBusinessEvidence(title, fullDescription);
+        if (isArticleRejectedByPolicy(title, cleanDesc, item.link, targetCategory) ||
+          (!acceptedBusinessFeedArticle && articleCategory !== targetCategory) ||
+          (!acceptedBusinessFeedArticle && !hasCategoryEvidence(title, cleanDesc, articleCategory, item.link))) continue;
 
         seenUrls.add(item.link);
         approvedArticles.push({

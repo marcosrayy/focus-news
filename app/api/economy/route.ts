@@ -27,10 +27,15 @@ export async function GET() {
           const res = await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${t.symbol}?interval=1d&range=1d`, {
             next: { revalidate: 60 },
           });
+          if (!res.ok) throw new Error(`Yahoo Finance returned HTTP ${res.status}`);
           const data = await res.json();
-          const meta = data.chart.result[0].meta;
-          const currentPrice = meta.regularMarketPrice;
-          const previousClose = meta.chartPreviousClose;
+          const result = data?.chart?.result?.[0];
+          const meta = result?.meta;
+          const currentPrice = meta?.regularMarketPrice;
+          const previousClose = meta?.chartPreviousClose;
+          if (!Number.isFinite(currentPrice) || !Number.isFinite(previousClose) || previousClose === 0) {
+            throw new Error("Yahoo Finance returned an incomplete quote");
+          }
           const volume = meta.regularMarketVolume;
           
           const changeVal = currentPrice - previousClose;

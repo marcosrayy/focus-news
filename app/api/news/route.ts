@@ -119,7 +119,7 @@ export async function GET(request: Request) {
       art.category === targetCategory || 
       (targetCategory === "Home" && (art.category === "Startups" || art.category === "Tecnologia" || art.category === "Inovacao")) ||
       (targetCategory === "Startups" && art.source.toLowerCase().includes("exame")) ||
-      (targetCategory === "Business" && art.source.toLowerCase().includes("forbes")) ||
+      (targetCategory === "Business" && ["forbes", "startupi", "brazil journal", "mobile time", "neofeed", "exame", "ecommerce brasil", "money times", "seu dinheiro", "suno"].some(source => art.source.toLowerCase().includes(source))) ||
       (targetCategory === "Business" && art.category === "Startups" && (art.source.toLowerCase().includes("startupi") || art.source.toLowerCase().includes("exame")))
     );
 
@@ -137,6 +137,7 @@ export async function GET(request: Request) {
 
     if (!shouldMatchQuery) {
       filtered = filtered.filter(art =>
+        (targetCategory === "Business" && ["forbes", "startupi", "brazil journal", "mobile time", "neofeed", "exame", "ecommerce brasil", "money times", "seu dinheiro", "suno"].some(source => art.source.toLowerCase().includes(source))) ||
         hasCategoryEvidence(art.title, art.description, targetCategory === "Home" ? art.category : targetCategory, art.url)
       );
     }

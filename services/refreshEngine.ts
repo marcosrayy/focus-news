@@ -47,7 +47,16 @@ const FALLBACK_FEEDS: Record<string, string[]> = {
   Business: [
     'https://startupi.com.br/feed/',
     'https://www.infomoney.com.br/feed/',
-    'https://forbes.com.br/category/colunas/forbes-tech/feed/'
+    'https://forbes.com.br/category/colunas/forbes-tech/feed/',
+    'https://braziljournal.com/feed/',
+    'https://www.mobiletime.com.br/feed/',
+    'https://neofeed.com.br/feed/',
+    'https://exame.com/feed/',
+    'https://forbes.com.br/feed/',
+    'https://www.ecommercebrasil.com.br/feed/',
+    'https://www.moneytimes.com.br/feed/',
+    'https://www.seudinheiro.com/feed/',
+    'https://www.suno.com.br/feed/'
   ],
 };
 
@@ -72,6 +81,14 @@ function getFeedSourceName(feedUrl: string): string {
   if (url.includes('tecmundo')) return 'TechMundo';
   if (url.includes('globo.com')) return 'Globo';
   if (url.includes('cnnbrasil')) return 'CNN';
+  if (url.includes('braziljournal')) return 'Brazil Journal';
+  if (url.includes('mobiletime')) return 'Mobile Time';
+  if (url.includes('neofeed')) return 'NeoFeed';
+  if (url.includes('exame.com')) return 'Exame';
+  if (url.includes('ecommercebrasil')) return 'Ecommerce Brasil';
+  if (url.includes('moneytimes')) return 'Money Times';
+  if (url.includes('seudinheiro')) return 'Seu Dinheiro';
+  if (url.includes('suno.com.br')) return 'Suno';
   if (url.includes('tabnews.com.br')) return 'TabNews';
   if (url.includes('forbes')) return 'Forbes';
   return 'GNews';
@@ -485,7 +502,7 @@ export const RefreshEngine = {
             // Strip Forbes boilerplates
             cleanDesc = cleanDesc.replace(/Forbes, a mais conceituada revista de negócios e economia do mundo\./gi, '');
             cleanDesc = cleanDesc.replace(/O post .* apareceu primeiro em .*$/gi, '');
-            cleanDesc = category === 'Dev' || category === 'Startups'
+            cleanDesc = category === 'Dev' || category === 'Startups' || category === 'Business'
               ? cleanDesc.trim()
               : cleanDesc.trim().slice(0, 150) + '...';
 
@@ -508,7 +525,11 @@ export const RefreshEngine = {
             }
 
             // Verify category compatibility (only reject if classified as Rejeitado)
-            if (isArticleRejectedByPolicy(title, cleanDesc, articleUrl, category) || articleCategory === "Rejeitado" || !hasCategoryEvidence(title, cleanDesc, articleCategory, articleUrl)) {
+            const acceptedBusinessFeedArticle = category === "Business" && isSpecificCategoryFeed &&
+              !isArticleRejectedByPolicy(title, cleanDesc, articleUrl, category);
+            if (isArticleRejectedByPolicy(title, cleanDesc, articleUrl, category) ||
+              (!acceptedBusinessFeedArticle && articleCategory === "Rejeitado") ||
+              (!acceptedBusinessFeedArticle && !hasCategoryEvidence(title, cleanDesc, articleCategory, articleUrl))) {
               discardedThisRun++;
               continue;
             }

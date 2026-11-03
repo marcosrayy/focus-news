@@ -46,10 +46,15 @@ async function fetchQuote(symbol: string) {
     const res = await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?interval=1d&range=1d`, {
       next: { revalidate: 60 },
     });
+    if (!res.ok) throw new Error(`Yahoo Finance returned HTTP ${res.status}`);
     const data = await res.json();
-    const meta = data.chart.result[0].meta;
-    const price = meta.regularMarketPrice;
-    const previousClose = meta.chartPreviousClose;
+    const result = data?.chart?.result?.[0];
+    const meta = result?.meta;
+    const price = meta?.regularMarketPrice;
+    const previousClose = meta?.chartPreviousClose;
+    if (!Number.isFinite(price) || !Number.isFinite(previousClose) || previousClose === 0) {
+      throw new Error("Yahoo Finance returned an incomplete quote");
+    }
     const changePercent = ((price - previousClose) / previousClose) * 100;
     const isPositive = changePercent >= 0;
     const volume = meta.regularMarketVolume || 0;

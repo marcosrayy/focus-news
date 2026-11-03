@@ -33,7 +33,7 @@ export const categoryContent = {
   },
   business: {
     category: "Business",
-    query: "Empreendedorismo OR Negocios OR Empresas OR Startups OR Economia OR Mercado Tech",
+    query: "Empreendedorismo OR negócios OR empresas OR gestão empresarial OR CEO OR crescimento empresarial OR faturamento OR SaaS OR B2B OR varejo OR marketplace",
     label: "BUSINESS",
   },
   trade: {
