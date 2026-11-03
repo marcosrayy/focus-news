@@ -36,17 +36,21 @@ const fetcher = async (url: string): Promise<NewsResponse> => {
 // Calculate relative time in Portuguese
 export function formatRelativeTime(dateString: string): string {
   const date = new Date(dateString);
+  if (!Number.isFinite(date.getTime())) return "data indisponível";
+
   const now = new Date();
   const diffMs = now.getTime() - date.getTime();
   const diffMinutes = Math.floor(diffMs / (1000 * 60));
   const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
   const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
 
-  if (diffMinutes < 60) {
+  if (diffMinutes < 1 && diffMs >= 0) {
+    return "agora";
+  } else if (diffMinutes < 60 && diffMs >= 0) {
     return `${diffMinutes} min`;
-  } else if (diffHours < 24) {
+  } else if (diffHours < 24 && diffMs >= 0) {
     return `${diffHours}h`;
-  } else if (diffDays < 7) {
+  } else if (diffDays < 7 && diffMs >= 0) {
     return `${diffDays}d`;
   } else {
     return date.toLocaleDateString("pt-BR", {

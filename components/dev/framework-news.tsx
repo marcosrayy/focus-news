@@ -7,6 +7,7 @@ import { useNewsRotation } from "@/hooks/use-news-rotation";
 import { FeaturedNewsCarousel, NewsSectionLayout } from "@/components/news-section-layout";
 import { LoadMoreNews } from "@/components/load-more-news";
 import { getDistinctCover } from "@/lib/utils";
+import { formatRelativeTime } from "@/lib/news-service";
 import { getCategoryNewsSections, useCategoryNewsFeed } from "@/components/category-news-feed";
 import { CategoryMoreNews } from "@/components/category-more-news";
 import type { ReactNode } from "react";
@@ -49,7 +50,7 @@ function FrameworkNewsContent({ sidebar }: { sidebar?: ReactNode }) {
   
   const displayArticles = apiNews.length > 0 ? apiNews.map((n: any, i: number) => {
     const mock = articles[i % articles.length];
-    return { ...mock, id: n.url || n.id || Math.random().toString(), title: n.title, description: n.description, image: n.image, url: n.url, time: "agora" };
+    return { ...mock, id: n.url || n.id || Math.random().toString(), title: n.title, description: n.description, image: n.image, url: n.url, time: formatRelativeTime(n.publishedAt) };
   }) : [];
   const { featuredArticles, remainingArticles } = useNewsRotation(displayArticles, 3);
 
