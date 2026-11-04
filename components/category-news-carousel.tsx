@@ -69,7 +69,7 @@ const slides = useMemo(() => {
     return (
       <section
         aria-label={`Notícias em destaque: ${config.label}`}
-        className="flex aspect-[8/3] w-full items-center justify-center rounded-2xl border border-border/60 bg-card px-6 text-center shadow-card sm:aspect-[3/1]"
+        className="flex h-[calc(100svh-12rem)] min-h-[28rem] max-h-[44rem] w-full items-center justify-center rounded-2xl border border-border/60 bg-card px-6 text-center shadow-card sm:h-auto sm:aspect-[3/1]"
       >
         <p className="text-sm text-muted-foreground">
           {isLoading
@@ -100,9 +100,9 @@ const slides = useMemo(() => {
           img.src = getGeneratedCover(`${category}-${article.url || article.title}`, category);
 }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
-        <div className="absolute bottom-5 left-5 right-5 text-white sm:bottom-10 sm:left-10 sm:right-16 lg:bottom-12 lg:left-14">
-          <h2 className="line-clamp-3 font-heading text-lg font-bold leading-tight sm:text-2xl lg:text-4xl">
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/65 to-transparent" />
+        <div className="absolute bottom-6 left-5 right-5 text-white sm:bottom-10 sm:left-10 sm:right-16 lg:bottom-12 lg:left-14">
+          <h2 className="line-clamp-3 font-heading text-[1.75rem] font-extrabold leading-[1.08] tracking-tight drop-shadow-lg sm:text-2xl lg:text-4xl">
             {article.title}
           </h2>
           <p className="mt-2 hidden max-w-2xl line-clamp-2 text-sm text-white/80 sm:block lg:text-base">
@@ -132,7 +132,7 @@ const slides = useMemo(() => {
       aria-label={`Notícias em destaque: ${config.label}`}
       className="group relative overflow-hidden rounded-2xl border border-border/60 shadow-card"
     >
-      <div className="relative aspect-[8/3] w-full bg-black sm:aspect-[3/1]">
+      <div className="relative h-[calc(100svh-12rem)] min-h-[28rem] max-h-[44rem] w-full bg-black sm:h-auto sm:aspect-[3/1]">
         <div
           ref={mobileTrackRef}
           onScroll={(event) => {

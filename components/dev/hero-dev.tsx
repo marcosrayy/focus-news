@@ -33,7 +33,7 @@ function HeroDevCarousel() {
       if (!normalizedTitle || seenTitles.has(normalizedTitle)) return false;
       seenTitles.add(normalizedTitle);
       return true;
-    });
+    }).slice(0, 4);
   }, [articles]);
   const article = slides[current] ?? slides[0];
 
@@ -73,7 +73,7 @@ function HeroDevCarousel() {
 
   if (isLoading && !article) {
     return (
-      <article className="group relative aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-card sm:aspect-[3/1]">
+      <article className="group relative h-[calc(100svh-12rem)] min-h-[28rem] max-h-[44rem] overflow-hidden rounded-2xl border border-border bg-card sm:h-auto sm:aspect-[3/1]">
         <div className="relative h-full animate-pulse p-3 sm:p-6">
           <div className="mb-4 flex items-center justify-between">
             <div className="h-8 w-32 rounded bg-muted" />
@@ -90,7 +90,7 @@ function HeroDevCarousel() {
 
   if (!article) {
     return (
-      <article className="group relative flex aspect-[16/10] items-center justify-center overflow-hidden rounded-2xl border border-border bg-card p-3 sm:aspect-[3/1] sm:p-6">
+      <article className="group relative flex h-[calc(100svh-12rem)] min-h-[28rem] max-h-[44rem] items-center justify-center overflow-hidden rounded-2xl border border-border bg-card p-3 sm:h-auto sm:aspect-[3/1] sm:p-6">
         <div className="w-full rounded-xl border border-emerald-500/20 bg-background p-6 font-mono">
           <div className="mb-3 flex items-center gap-2 border-b border-border pb-3">
             <Terminal className="h-4 w-4 text-emerald-400" />
@@ -107,7 +107,7 @@ function HeroDevCarousel() {
 
   return (
     <article
-      className="group relative aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-card sm:aspect-[3/1]"
+      className="group relative h-[calc(100svh-12rem)] min-h-[28rem] max-h-[44rem] overflow-hidden rounded-2xl border border-border bg-card sm:h-auto sm:aspect-[3/1]"
       onClick={() => {
         if (article.url && article.url !== "#") window.open(article.url, "_blank", "noopener,noreferrer");
       }}
@@ -185,7 +185,7 @@ function HeroDevCarousel() {
                 <span className="mb-1 hidden text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase sm:mb-2 sm:inline-block">
                   {slide.source}
                 </span>
-                <h2 className="line-clamp-3 font-heading text-base font-bold leading-tight text-foreground sm:line-clamp-none sm:text-2xl lg:text-3xl xl:text-4xl">
+                <h2 className="line-clamp-3 font-heading text-[1.75rem] font-extrabold leading-[1.08] tracking-tight text-foreground sm:line-clamp-none sm:text-2xl lg:text-3xl xl:text-4xl">
                   <span className="text-balance">{slide.title}</span>
                 </h2>
                 <p className="mt-3 hidden max-w-3xl text-sm leading-relaxed text-muted-foreground line-clamp-2 sm:block lg:text-base">
