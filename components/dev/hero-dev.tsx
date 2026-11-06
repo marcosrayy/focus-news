@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Suspense } from "react";
-import { ChevronLeft, ChevronRight, Terminal } from "lucide-react";
+import { ChevronLeft, ChevronRight, Code2, GitBranch, Terminal } from "lucide-react";
 import { getCategoryNewsSections, useCategoryNewsFeed } from "@/components/category-news-feed";
 
 export function HeroDev() {
@@ -168,7 +168,7 @@ function HeroDevCarousel() {
             {[...slides, slides[0]].map((slide, index) => (
               <div
                 key={`${slide.id}-${index}`}
-                className="h-full shrink-0 p-3 sm:p-6"
+                className="flex h-full shrink-0 flex-col p-3 sm:p-6"
                 style={{ width: `${100 / (slides.length + 1)}%` }}
               >
                 <div className="mb-2 flex items-center gap-2 border-b border-border pb-2 sm:mb-3 sm:pb-3">
@@ -191,6 +191,21 @@ function HeroDevCarousel() {
                 <p className="mt-3 hidden max-w-3xl text-sm leading-relaxed text-muted-foreground line-clamp-2 sm:block lg:text-base">
                   {slide.description}
                 </p>
+                <p className="mt-3 text-xs leading-relaxed text-muted-foreground sm:hidden">
+                  {slide.description}
+                </p>
+                <div className="mt-auto border-t border-emerald-500/20 pt-3 sm:hidden">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-emerald-400">
+                      <Code2 className="h-4 w-4" />
+                      <span className="text-[10px] font-bold tracking-[0.18em] uppercase">Destaque dev</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <GitBranch className="h-3.5 w-3.5" />
+                      <span className="max-w-28 truncate text-[10px]">{slide.source}</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

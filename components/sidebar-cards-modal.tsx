@@ -87,7 +87,7 @@ export function SidebarCardsModal({ title, items, children, triggerVariant = "ca
         )}
       </DialogTrigger>
 
-      <DialogContent className="max-h-[90vh] overflow-y-auto border-border bg-background p-4 sm:max-w-xl sm:p-6">
+      <DialogContent className="h-[100dvh] max-h-[100dvh] w-screen max-w-none translate-x-[-50%] translate-y-[-50%] overflow-y-auto rounded-none border-0 p-4 sm:h-auto sm:max-h-[90vh] sm:max-w-xl sm:rounded-lg sm:border sm:p-6">
         <DialogHeader className="pr-8">
           <DialogTitle className="font-heading tracking-wider">{title}</DialogTitle>
           <DialogDescription>
