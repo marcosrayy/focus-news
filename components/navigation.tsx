@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-const navItems = [
+export const navItems = [
   { label: "HOME", href: "/" },
   { label: "FOCUS", href: "/focus", special: true },
   { label: "TECNOLOGIA", href: "/tecnologia" },
@@ -19,7 +19,7 @@ export function Navigation() {
 
   return (
     <nav
-      className="border-b border-border bg-background"
+      className="hidden border-b border-border bg-background sm:block"
       role="navigation"
       aria-label="Navegacao principal"
     >
