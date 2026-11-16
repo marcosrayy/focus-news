@@ -6,19 +6,18 @@ import { useState, useEffect, useCallback, useRef } from "react";
 const heroSlides = [
   {
     image: "/focus-tech-summit.jpg",
+    mobileImage: "/focus-tech-summit-mobile.png",
     title: "Siará Tech Summit 2026 com a Focus Tech",
   },
   {
     image: "/focus-blog.jpg",
+    mobileImage: "/focus-blog-mobile.png",
     title: "Focus Tech Blog: conteúdo sobre tecnologia e inovação",
   },
   {
     image: "/comunidade-focus.jpg",
+    mobileImage: "/comunidade-focus-mobile.png",
     title: "Comunidade Focus Tech",
-  },
-  {
-    image: "/news-focus.jpg",
-    title: "Novidades e conteúdos da Focus News",
   },
 ];
 
@@ -50,7 +49,7 @@ export function HeroFocus() {
 
   return (
     <section className="group relative overflow-hidden rounded-2xl border border-border/60 shadow-card">
-      <div className="relative h-[calc(100svh-12rem)] min-h-[28rem] max-h-[44rem] w-full bg-black sm:h-auto sm:aspect-[3/1]">
+      <div className="relative aspect-[4/5] w-full bg-black sm:aspect-[3/1]">
         <div
           ref={mobileTrackRef}
           onScroll={(event) => {
@@ -63,11 +62,13 @@ export function HeroFocus() {
         >
           {heroSlides.map((slide) => (
             <div key={slide.image} className="relative h-full min-w-full snap-center">
-              <img src={slide.image} alt={slide.title} className="h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-transparent" />
-              <h2 className="absolute bottom-20 left-5 right-5 line-clamp-3 font-heading text-[1.75rem] font-extrabold leading-[1.08] tracking-tight text-white drop-shadow-lg">
-                {slide.title}
-              </h2>
+              <img
+                src={slide.mobileImage}
+                alt={slide.title}
+                width={1024}
+                height={1280}
+                className="h-full w-full object-contain"
+              />
             </div>
           ))}
         </div>

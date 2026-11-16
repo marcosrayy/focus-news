@@ -1,6 +1,6 @@
 "use client";
 
-import { Menu, Search, Sun, Moon } from "lucide-react";
+import { Menu, Search, Sun, Moon, House, Focus, Cpu, Code2, Rocket, ChartNoAxesCombined, BrainCircuit, BriefcaseBusiness, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
@@ -11,9 +11,13 @@ import {
   SheetContent,
   SheetHeader,
   SheetTitle,
+  SheetDescription,
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
+
+const mobileNavIcons = [House, Focus, Cpu, Code2, Rocket, ChartNoAxesCombined, BrainCircuit, BriefcaseBusiness];
+const mobileNavLabels = ["Home", "Focus", "Tecnologia", "Dev", "Startups", "Economia", "IA", "Business"];
 
 export function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -62,35 +66,47 @@ export function Header() {
               <Menu className="h-5 w-5" />
             </button>
           </SheetTrigger>
-          <SheetContent side="left" className="p-0">
-            <SheetHeader className="border-b border-border px-6 py-5 text-left">
-              <SheetTitle className="font-heading tracking-wider">MENU</SheetTitle>
+          <SheetContent
+            side="left"
+            className="flex h-dvh w-[84vw] max-w-[340px] flex-col gap-0 border-border/60 p-0 pt-[env(safe-area-inset-top)] [&>button]:top-[calc(1rem+env(safe-area-inset-top))] [&>button]:flex [&>button]:h-9 [&>button]:w-9 [&>button]:items-center [&>button]:justify-center [&>button]:rounded-xl [&>button]:bg-secondary [&>button]:text-foreground [&>button]:opacity-100 [&>button]:focus-visible:ring-2 [&>button]:focus-visible:ring-primary"
+          >
+            <SheetHeader className="border-b border-border/60 px-5 py-6 pr-16 text-left">
+              <SheetTitle className="sr-only">Menu do Focus News</SheetTitle>
+              <img src="/focus-news-logo-light.png" alt="Focus News" className="h-auto w-40 dark:hidden" />
+              <img src="/focus-news-logo.png" alt="Focus News" className="hidden h-auto w-40 dark:block" />
+              <SheetDescription className="sr-only">Escolha uma se??o para navegar pelo Focus News.</SheetDescription>
             </SheetHeader>
-            <nav aria-label="Navegação principal" className="flex flex-col p-3">
-              {navItems.map((item) => {
-                const isActive = pathname === item.href;
-                return (
-                  <SheetClose asChild key={item.href}>
-                    <Link
-                      href={item.href}
-                      aria-current={isActive ? "page" : undefined}
-                      className={`flex items-center justify-between rounded-lg px-4 py-3.5 text-sm font-semibold tracking-wider transition-colors ${
-                        isActive
-                          ? "bg-primary/10 text-primary"
-                          : item.special
-                            ? "text-primary/80 hover:bg-secondary hover:text-primary"
-                            : "text-foreground hover:bg-secondary"
-                      }`}
-                    >
-                      {item.label}
-                      {item.special && (
-                        <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                      )}
-                    </Link>
-                  </SheetClose>
-                );
-              })}
+            <nav aria-label="Menu principal" className="min-h-0 flex-1 overflow-y-auto px-3 py-6">
+              <p className="mb-3 px-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">MENU</p>
+              <div className="flex flex-col gap-1.5">
+                {navItems.map((item, index) => {
+                  const isActive = pathname === item.href;
+                  const Icon = mobileNavIcons[index];
+                  return (
+                    <SheetClose asChild key={item.href}>
+                      <Link
+                        href={item.href}
+                        aria-current={isActive ? "page" : undefined}
+                        className={`group flex min-h-12 items-center gap-3.5 rounded-xl border px-3 py-3 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+                          isActive
+                            ? "border-primary/20 bg-primary/10 text-primary"
+                            : "border-transparent text-muted-foreground hover:bg-secondary hover:text-foreground"
+                        }`}
+                      >
+                        <Icon className="h-[19px] w-[19px] shrink-0" strokeWidth={1.6} />
+                        <span className="flex-1">{mobileNavLabels[index]}</span>
+                        {item.special && <span className="h-1.5 w-1.5 rounded-full bg-primary" />}
+                        {isActive && <ChevronRight className="h-4 w-4" />}
+                      </Link>
+                    </SheetClose>
+                  );
+                })}
+              </div>
             </nav>
+            <div className="border-t border-border/60 px-5 pb-[calc(1.25rem+env(safe-area-inset-bottom))] pt-4">
+              <p className="font-heading text-xs font-bold tracking-wider text-foreground">FOCUS NEWS</p>
+              <p className="mt-1 text-xs text-muted-foreground">Seu foco no que acontece.</p>
+            </div>
           </SheetContent>
         </Sheet>
         <form onSubmit={handleSearch} className="hidden items-center gap-2 rounded-full border border-border bg-secondary/70 px-4 py-2 transition-colors duration-300 focus-within:border-primary/50 sm:flex">
