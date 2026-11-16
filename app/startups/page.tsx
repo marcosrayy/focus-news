@@ -5,7 +5,6 @@ import { StartupNewsTicker } from "@/components/startups/startup-news-ticker";
 import { CategoryNewsFeed } from "@/components/category-news-feed";
 import { CategoryNewsCarousel } from "@/components/category-news-carousel";
 import { InvestmentRounds } from "@/components/startups/investment-rounds";
-import { StartupSidebar } from "@/components/startups/startup-sidebar";
 
 import type { Metadata } from "next";
 
@@ -46,7 +45,7 @@ export default function StartupsPage() {
                 RODADAS DE INVESTIMENTO
               </h2>
             </div>
-            <InvestmentRounds sidebar={<StartupSidebar />} />
+            <InvestmentRounds />
           </div>
         </CategoryNewsFeed>
       </main>

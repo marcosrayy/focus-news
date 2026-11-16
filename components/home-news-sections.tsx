@@ -1,7 +1,6 @@
 "use client";
 
 import { CategoryNewsCarousel } from "@/components/category-news-carousel";
-import { HomeMarketSidebar } from "@/components/home-market-sidebar";
 import { LoadMoreNews } from "@/components/load-more-news";
 import { NewsCardsGrid } from "@/components/news-cards-grid";
 import { getCategoryNewsSections, useCategoryNewsFeed } from "@/components/category-news-feed";
@@ -31,11 +30,7 @@ export function HomeNewsSections() {
             </span>
           )}
         </div>
-        <NewsCardsGrid
-          news={latestArticles}
-          variant="three"
-          sidebar={<HomeMarketSidebar />}
-        />
+        <NewsCardsGrid news={latestArticles} />
         <CategoryMoreNews articles={moreArticles} />
         <LoadMoreNews
           onLoadMore={feed.loadMore}

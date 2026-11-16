@@ -5,7 +5,6 @@ import { NewsTicker } from "@/components/news-ticker";
 import { CategoryNewsFeed } from "@/components/category-news-feed";
 import { CategoryNewsCarousel } from "@/components/category-news-carousel";
 import { InnovationCases } from "@/components/inovacao/innovation-cases";
-import { InovacaoSidebar } from "@/components/inovacao/inovacao-sidebar";
 import type { NewsArticle } from "@/types/news";
 
 import type { Metadata } from "next";
@@ -54,7 +53,7 @@ export default function InovacaoPage() {
                 Últimas Notícias
               </h2>
             </div>
-            <InnovationCases sidebar={<InovacaoSidebar />} />
+            <InnovationCases />
           </div>
         </CategoryNewsFeed>
       </main>

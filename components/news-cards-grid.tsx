@@ -54,7 +54,7 @@ export function NewsCardsGrid({
       })),
     [news]
   );
-  const { featuredArticles, remainingArticles } = useNewsRotation(articlesToRender);
+  const { featuredArticles, remainingArticles } = useNewsRotation(articlesToRender, variant === "three" ? 3 : 4);
 
   if (variant === "three") {
     return (
@@ -92,7 +92,7 @@ export function NewsCardsGrid({
     <NewsSectionLayout
       sidebar={sidebar}
       featured={
-        <FeaturedNewsCarousel>
+        <FeaturedNewsCarousel gridClassName="sm:grid-cols-2 lg:grid-cols-4">
           {featuredArticles.map((article) => (
             <FeaturedCard
               key={article.id}

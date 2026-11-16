@@ -5,7 +5,6 @@ import { NewsTicker } from "@/components/news-ticker";
 import { CategoryNewsFeed } from "@/components/category-news-feed";
 import { CategoryNewsCarousel } from "@/components/category-news-carousel";
 import { TrendingTech } from "@/components/tecnologia/trending-tech";
-import { TechSidebar } from "@/components/tecnologia/tech-sidebar";
 import type { NewsArticle } from "@/types/news";
 
 import type { Metadata } from "next";
@@ -54,7 +53,7 @@ export default function TecnologiaPage() {
                 ULTIMAS EM TECNOLOGIA
               </h2>
             </div>
-            <TrendingTech sidebar={<TechSidebar />} />
+            <TrendingTech />
           </div>
         </CategoryNewsFeed>
       </main>

@@ -81,7 +81,7 @@ function TrendingTechContent({ sidebar }: { sidebar?: ReactNode }) {
   const articlesToRender = news.length > 0 ? news : [];
 
   const { featuredArticles, remainingArticles } =
-    useNewsRotation(articlesToRender);
+    useNewsRotation(articlesToRender, 4);
 
   return (
     <>
@@ -96,7 +96,7 @@ function TrendingTechContent({ sidebar }: { sidebar?: ReactNode }) {
       <NewsSectionLayout
         sidebar={sidebar}
         featured={
-          <FeaturedNewsCarousel label="Notícias de tecnologia em destaque">
+          <FeaturedNewsCarousel gridClassName="sm:grid-cols-2 lg:grid-cols-4" label="Notícias de tecnologia em destaque">
             {featuredArticles.map((article) => (
               <FeaturedTechCard
                 key={article.id}

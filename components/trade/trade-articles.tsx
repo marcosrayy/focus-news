@@ -15,7 +15,7 @@ export function TradeArticles({ sidebar }: { sidebar?: ReactNode }) {
   const { hasMore, loadMore, isValidating, lastSyncRelative } = feed;
   
   const articlesToRender = news.length > 0 ? news : [];
-  const { featuredArticles, remainingArticles } = useNewsRotation(articlesToRender);
+  const { featuredArticles, remainingArticles } = useNewsRotation(articlesToRender, 4);
 
   return (
     <>
@@ -29,7 +29,7 @@ export function TradeArticles({ sidebar }: { sidebar?: ReactNode }) {
       <NewsSectionLayout
         sidebar={sidebar}
         featured={
-          <FeaturedNewsCarousel label="Notícias de mercado em destaque">
+          <FeaturedNewsCarousel gridClassName="sm:grid-cols-2 lg:grid-cols-4" label="Notícias de mercado em destaque">
             {featuredArticles.map((article) => (
               <FeaturedTradeCard key={article.id} article={article} onClick={() => window.open(article.url, "_blank")} />
             ))}

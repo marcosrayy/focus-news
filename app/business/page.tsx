@@ -5,7 +5,6 @@ import { NewsTicker } from "@/components/news-ticker";
 import { CategoryNewsFeed } from "@/components/category-news-feed";
 import { CategoryNewsCarousel } from "@/components/category-news-carousel";
 import { GrowthStrategies } from "@/components/business/growth-strategies";
-import { BusinessSidebar } from "@/components/business/business-sidebar";
 import type { NewsArticle } from "@/types/news";
 
 import type { Metadata } from "next";
@@ -54,7 +53,7 @@ export default function BusinessPage() {
                 ESTRATEGIAS DE CRESCIMENTO
               </h2>
             </div>
-            <GrowthStrategies sidebar={<BusinessSidebar />} />
+            <GrowthStrategies />
           </div>
         </CategoryNewsFeed>
       </main>

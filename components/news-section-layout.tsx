@@ -10,11 +10,11 @@ interface NewsSectionLayoutProps {
 
 export function NewsSectionLayout({ featured, list, sidebar }: NewsSectionLayoutProps) {
   return (
-    <div className="grid grid-cols-1 gap-x-4 gap-y-12 lg:gap-y-4 lg:grid-cols-[minmax(0,3fr)_minmax(240px,1fr)]">
+    <div className={`grid grid-cols-1 gap-x-4 gap-y-12 lg:gap-y-4 ${sidebar ? "lg:grid-cols-[minmax(0,3fr)_minmax(240px,1fr)]" : ""}`}>
       <div className="min-w-0 lg:col-start-1 lg:row-start-1">{featured}</div>
       {sidebar && <div className="hidden h-full min-w-0 lg:col-start-2 lg:row-start-1 lg:block">{sidebar}</div>}
       {list && (
-        <div className="min-w-0 lg:col-span-2">
+        <div className={`min-w-0 ${sidebar ? "lg:col-span-2" : ""}`}>
           <h2 className="mb-4 flex items-center gap-2.5 font-heading text-sm font-bold tracking-wider text-foreground">
             <span className="h-5 w-1 rounded-full bg-primary shadow-glow-sm" />
             MAIS NOTÍCIAS

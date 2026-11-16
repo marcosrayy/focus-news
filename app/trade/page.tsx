@@ -5,7 +5,6 @@ import { NewsTicker } from "@/components/news-ticker";
 import { CategoryNewsFeed } from "@/components/category-news-feed";
 import { CategoryNewsCarousel } from "@/components/category-news-carousel";
 import { TradeArticles } from "@/components/trade/trade-articles";
-import { TradeSidebar } from "@/components/trade/trade-sidebar";
 import type { NewsArticle } from "@/types/news";
 
 import type { Metadata } from "next";
@@ -54,7 +53,7 @@ export default function TradePage() {
                 ULTIMAS DO MERCADO
               </h2>
             </div>
-            <TradeArticles sidebar={<TradeSidebar />} />
+            <TradeArticles />
           </div>
         </CategoryNewsFeed>
       </main>

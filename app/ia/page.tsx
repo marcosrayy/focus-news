@@ -5,7 +5,6 @@ import { NewsTicker } from "@/components/news-ticker";
 import { CategoryNewsFeed } from "@/components/category-news-feed";
 import { CategoryNewsCarousel } from "@/components/category-news-carousel";
 import { AITools } from "@/components/ia/ai-tools";
-import { IASidebar } from "@/components/ia/ia-sidebar";
 import type { NewsArticle } from "@/types/news";
 
 import type { Metadata } from "next";
@@ -54,7 +53,7 @@ export default function IAPage() {
                 AVANCOS & FERRAMENTAS
               </h2>
             </div>
-            <AITools sidebar={<IASidebar />} />
+            <AITools />
           </div>
         </CategoryNewsFeed>
       </main>

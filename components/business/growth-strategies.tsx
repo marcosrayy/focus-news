@@ -51,7 +51,7 @@ function GrowthStrategiesContent({ sidebar }: { sidebar?: ReactNode }) {
     const mock = articles[i % articles.length];
     return { ...mock, id: `${n.id ?? n.url ?? mock.id}-${i}`, title: n.title, description: n.description, image: n.image, url: n.url, time: formatRelativeTime(n.publishedAt) };
   }) : [];
-  const { featuredArticles, remainingArticles } = useNewsRotation(displayArticles);
+  const { featuredArticles, remainingArticles } = useNewsRotation(displayArticles, 4);
 
   return (
     <>
@@ -65,7 +65,7 @@ function GrowthStrategiesContent({ sidebar }: { sidebar?: ReactNode }) {
       <NewsSectionLayout
         sidebar={sidebar}
         featured={
-          <FeaturedNewsCarousel label="Notícias de negócios em destaque">
+          <FeaturedNewsCarousel gridClassName="sm:grid-cols-2 lg:grid-cols-4" label="Notícias de negócios em destaque">
             {featuredArticles.map((article) => (
               <FeaturedBusinessCard key={article.id} article={article} onClick={() => article.url ? window.open(article.url, "_blank") : setSelected(article)} />
             ))}
