@@ -2,40 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { MapPin, Calendar, ArrowRight, Clock } from "lucide-react";
-import { getDistinctCover } from "@/lib/utils";
 
-interface EventData {
-  name: string;
-  location: string;
-  date: string;
-  targetDate: Date;
-  type: string;
-  typeColor: string;
-  image: string;
-}
+import { defaultFocusContent, type FocusCard } from "@/lib/focus-content";
 
-const events: EventData[] = [
-  {
-    name: "Web Summit Rio 2026",
-    location: "Rio de Janeiro, RJ",
-    date: "28-30 Mai 2026",
-    targetDate: new Date("2026-05-28T09:00:00"),
-    type: "Feira",
-    typeColor: "bg-primary",
-    image: getDistinctCover("event-web-summit"),
-  },
-  {
-    name: "Workshop: IA Aplicada ao Marketing",
-    location: "Focus HQ - Fortaleza, CE",
-    date: "15 Mar 2026",
-    targetDate: new Date("2026-03-15T09:00:00"),
-    type: "Workshop",
-    typeColor: "bg-emerald-600",
-    image: getDistinctCover("event-workshop-ai"),
-  },
-];
-
-function Countdown({ targetDate }: { targetDate: Date }) {
+function Countdown({ targetDate }: { targetDate: string }) {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -45,7 +15,7 @@ function Countdown({ targetDate }: { targetDate: Date }) {
 
   useEffect(() => {
     const calc = () => {
-      const diff = targetDate.getTime() - Date.now();
+      const diff = new Date(targetDate).getTime() - Date.now();
       if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
       return {
         days: Math.floor(diff / (1000 * 60 * 60 * 24)),
@@ -81,7 +51,8 @@ function Countdown({ targetDate }: { targetDate: Date }) {
   );
 }
 
-export function UpcomingEvents() {
+export function UpcomingEvents({ cards = defaultFocusContent.cards, preview = false }: { cards?: FocusCard[]; preview?: boolean }) {
+  const events = cards.filter(card => card.section === "events");
   return (
     <section>
       <div className="mb-4 flex items-center gap-2">
@@ -92,16 +63,16 @@ export function UpcomingEvents() {
         <Calendar className="ml-1 h-4 w-4 text-primary" />
       </div>
 
-      <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain scrollbar-hide sm:grid sm:grid-cols-2 sm:overflow-visible">
+      <div className={preview ? "grid grid-cols-1 gap-4" : "flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain scrollbar-hide sm:grid sm:grid-cols-2 sm:overflow-visible"}>
         {events.map((event) => (
           <article
-            key={event.name}
+            key={event.id}
             className="group min-w-full snap-center overflow-hidden rounded-xl border border-border bg-card transition-all duration-300 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 sm:min-w-0"
           >
             <div className="relative h-36 overflow-hidden">
               <img
                 src={event.image}
-                alt={event.name}
+                alt={event.title}
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
@@ -113,13 +84,14 @@ export function UpcomingEvents() {
                 </span>
               </div>
               <div className="absolute bottom-3 right-3">
-                <Countdown targetDate={event.targetDate} />
+                {event.targetDate && <Countdown targetDate={event.targetDate} />}
               </div>
             </div>
             <div className="flex flex-col gap-2 p-4">
               <h3 className="font-heading text-sm font-bold leading-snug text-foreground transition-colors group-hover:text-primary">
-                {event.name}
+                {event.title}
               </h3>
+              {event.text && <p className="text-xs leading-relaxed text-muted-foreground">{event.text}</p>}
               <div className="flex flex-col gap-1 text-muted-foreground">
                 <div className="flex items-center gap-1.5">
                   <MapPin className="h-3 w-3 text-primary/70" />
@@ -130,10 +102,10 @@ export function UpcomingEvents() {
                   <span className="text-[11px]">{event.date}</span>
                 </div>
               </div>
-              <button className="mt-1 flex w-full items-center justify-center gap-1.5 rounded-lg border border-primary/30 bg-primary/5 py-2 text-[11px] font-bold text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground">
+              {event.link && <a href={event.link} target="_blank" rel="noopener noreferrer" className="mt-1 flex w-full items-center justify-center gap-1.5 rounded-lg border border-primary/30 bg-primary/5 py-2 text-[11px] font-bold text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground">
                 Saiba Mais
                 <ArrowRight className="h-3 w-3" />
-              </button>
+              </a>}
             </div>
           </article>
         ))}

@@ -132,6 +132,14 @@ export function Footer() {
                 {label}
               </a>
             ))}
+            <Link
+              href="/admin/focus"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-semibold text-primary transition-colors duration-300 hover:text-primary/80"
+            >
+              Painel administrador
+            </Link>
           </div>
 
           {/* Contato */}

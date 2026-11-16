@@ -2,5 +2,7 @@ node_modules
 .next/
 .next-runtime/
 .env.local
+.focus-admin-access.local.txt
+data/focus-cms/
 
 .next

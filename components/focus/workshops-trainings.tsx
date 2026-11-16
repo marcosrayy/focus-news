@@ -1,7 +1,7 @@
 "use client";
 
 import { GraduationCap, Users, Calendar, ExternalLink, MapPin } from "lucide-react";
-import { getDistinctCover } from "@/lib/utils";
+import { defaultFocusContent, type FocusCard } from "@/lib/focus-content";
 
 const tagColors: Record<string, string> = {
   Marketing: "bg-pink-600/20 text-pink-400 dark:bg-pink-600/20 dark:text-pink-400",
@@ -11,40 +11,8 @@ const tagColors: Record<string, string> = {
   Growth: "bg-amber-600/20 text-amber-500 dark:text-amber-400",
 };
 
-const workshops = [
-  {
-    title: "De zero ao MVP",
-    image: "/workshop.jpg",
-    type: "Workshop",
-    date: "05 out 2026",
-    location: "Fortaleza, CE",
-    participants: 10,
-    tags: ["Desenvolvimento", "Tecnologia"],
-    status: "Realizado",
-  },
-  {
-    title: "Automacao de Processos com N8N e Zapier",
-    image: getDistinctCover("workshop-automation"),
-    type: "Treinamento Corporativo",
-    date: "05 Fev 2026",
-    location: "São Paulo, SP",
-    participants: 32,
-    tags: ["Automacao", "Growth"],
-    status: "Realizado",
-  },
-  {
-    title: "Desenvolvimento Full-Stack com Next.js 16",
-    image: getDistinctCover("workshop-full-stack"),
-    type: "Capacitacao Interna",
-    date: "12 Fev 2026",
-    location: "Fortaleza, CE",
-    participants: 24,
-    tags: ["Desenvolvimento"],
-    status: "Realizado",
-  },
-];
-
-export function WorkshopsTrainings() {
+export function WorkshopsTrainings({ cards = defaultFocusContent.cards, preview = false }: { cards?: FocusCard[]; preview?: boolean }) {
+  const workshops = cards.filter(card => card.section === "workshops");
   return (
     <section>
       <div className="mb-4 flex items-center gap-2">
@@ -55,10 +23,10 @@ export function WorkshopsTrainings() {
         <GraduationCap className="ml-1 h-4 w-4 text-primary" />
       </div>
 
-      <div className="grid items-start gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className={preview ? "grid grid-cols-1 gap-3" : "grid items-start gap-3 sm:grid-cols-2 lg:grid-cols-3"}>
         {workshops.map((ws) => (
           <article
-            key={ws.title}
+            key={ws.id}
             className="group flex cursor-pointer flex-col overflow-hidden rounded-xl border border-border bg-card transition-all duration-300 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
           >
             <div className="h-44 overflow-hidden">
@@ -90,6 +58,8 @@ export function WorkshopsTrainings() {
                 {ws.title}
               </h3>
 
+              {ws.text && <p className="text-xs leading-relaxed text-muted-foreground">{ws.text}</p>}
+              {ws.link && <a href={ws.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-bold text-primary">Saiba mais <ExternalLink className="h-3 w-3" /></a>}
               <div className="flex flex-wrap gap-1.5">
                 {ws.tags.map((tag) => (
                   <span
