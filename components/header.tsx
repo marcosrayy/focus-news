@@ -1,11 +1,12 @@
 "use client";
 
-import { Menu, Search, Sun, Moon, House, Focus, Cpu, Code2, Rocket, ChartNoAxesCombined, BrainCircuit, BriefcaseBusiness, ChevronRight } from "lucide-react";
+import { Menu, Search, Sun, Moon, House, Cpu, Code2, Rocket, ChartNoAxesCombined, BrainCircuit, BriefcaseBusiness, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { navItems } from "@/components/navigation";
+import { FocusNavIcon } from "@/components/focus-nav-icon";
 import {
   Sheet,
   SheetContent,
@@ -16,7 +17,7 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 
-const mobileNavIcons = [House, Focus, Cpu, Code2, Rocket, ChartNoAxesCombined, BrainCircuit, BriefcaseBusiness];
+const mobileNavIcons = [House, FocusNavIcon, Cpu, Code2, Rocket, ChartNoAxesCombined, BrainCircuit, BriefcaseBusiness];
 const mobileNavLabels = ["Home", "Focus", "Tecnologia", "Dev", "Startups", "Economia", "IA", "Business"];
 
 export function Header() {

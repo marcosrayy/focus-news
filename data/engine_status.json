@@ -1,6 +1,22 @@
 {
-  "lastSync": "2026-11-16T18:23:28.779Z",
+  "lastSync": "2026-11-17T16:41:30.604Z",
   "syncHistory": [
+    {
+      "timestamp": "2026-11-17T16:41:30.604Z",
+      "durationMs": 38299,
+      "importedCount": 129,
+      "updatedCount": 58,
+      "discardedCount": 1039,
+      "modules": [
+        "Startups",
+        "Economia",
+        "IA",
+        "Tecnologia",
+        "Dev",
+        "Inovacao",
+        "Business"
+      ]
+    },
     {
       "timestamp": "2026-11-16T18:23:28.779Z",
       "durationMs": 31855,
@@ -453,33 +469,33 @@
   "sourcesHealth": {
     "Startupi": {
       "status": "Online",
-      "lastResponseMs": 371,
-      "lastChecked": "2026-11-16T18:23:22.707Z"
+      "lastResponseMs": 411,
+      "lastChecked": "2026-11-17T16:41:22.815Z"
     },
     "InfoMoney": {
       "status": "Online",
-      "lastResponseMs": 274,
-      "lastChecked": "2026-11-16T18:23:22.994Z"
+      "lastResponseMs": 267,
+      "lastChecked": "2026-11-17T16:41:23.148Z"
     },
     "Valor": {
       "status": "Online",
-      "lastResponseMs": 293,
-      "lastChecked": "2026-11-16T18:23:28.316Z"
+      "lastResponseMs": 347,
+      "lastChecked": "2026-11-17T16:41:29.760Z"
     },
     "Canaltech": {
       "status": "Online",
-      "lastResponseMs": 82,
-      "lastChecked": "2026-11-16T18:23:10.713Z"
+      "lastResponseMs": 106,
+      "lastChecked": "2026-11-17T16:41:09.641Z"
     },
     "TechMundo": {
       "status": "Online",
-      "lastResponseMs": 81,
-      "lastChecked": "2026-11-16T18:23:10.631Z"
+      "lastResponseMs": 127,
+      "lastChecked": "2026-11-17T16:41:09.534Z"
     },
     "Diolinux": {
       "status": "Online",
-      "lastResponseMs": 398,
-      "lastChecked": "2026-11-16T18:23:10.380Z"
+      "lastResponseMs": 682,
+      "lastChecked": "2026-11-17T16:41:09.050Z"
     },
     "Gizmodo": {
       "status": "Online",
@@ -487,109 +503,109 @@
       "lastChecked": "2026-11-03T19:28:51.754Z"
     },
     "GNews": {
-      "status": "Online",
-      "lastResponseMs": 371,
-      "lastChecked": "2026-11-16T18:22:57.304Z"
+      "status": "Instável",
+      "lastResponseMs": 614,
+      "lastChecked": "2026-11-17T16:40:52.935Z"
     },
     "Exame": {
       "status": "Online",
-      "lastResponseMs": 105,
-      "lastChecked": "2026-11-16T18:23:24.429Z"
+      "lastResponseMs": 97,
+      "lastChecked": "2026-11-17T16:41:26.247Z"
     },
     "Startups.com.br": {
       "status": "Online",
-      "lastResponseMs": 207,
-      "lastChecked": "2026-11-16T18:22:59.761Z"
+      "lastResponseMs": 543,
+      "lastChecked": "2026-11-17T16:40:55.322Z"
     },
     "Forbes": {
       "status": "Online",
-      "lastResponseMs": 647,
-      "lastChecked": "2026-11-16T18:23:25.098Z"
+      "lastResponseMs": 428,
+      "lastChecked": "2026-11-17T16:41:26.751Z"
     },
     "NeoFeed": {
       "status": "Online",
-      "lastResponseMs": 251,
-      "lastChecked": "2026-11-16T18:23:24.311Z"
+      "lastResponseMs": 1231,
+      "lastChecked": "2026-11-17T16:41:25.947Z"
     },
     "Brazil Journal": {
       "status": "Online",
-      "lastResponseMs": 435,
-      "lastChecked": "2026-11-16T18:23:23.576Z"
+      "lastResponseMs": 740,
+      "lastChecked": "2026-11-17T16:41:24.205Z"
     },
     "Baguete": {
       "status": "Online",
-      "lastResponseMs": 608,
-      "lastChecked": "2026-11-16T18:23:11.803Z"
+      "lastResponseMs": 475,
+      "lastChecked": "2026-11-17T16:41:10.549Z"
     },
     "Mobile Time": {
       "status": "Online",
-      "lastResponseMs": 455,
-      "lastChecked": "2026-11-16T18:23:24.047Z"
+      "lastResponseMs": 286,
+      "lastChecked": "2026-11-17T16:41:24.541Z"
     },
     "Globo": {
       "status": "Online",
-      "lastResponseMs": 997,
-      "lastChecked": "2026-11-16T18:23:19.025Z"
+      "lastResponseMs": 735,
+      "lastChecked": "2026-11-17T16:41:20.289Z"
     },
     "Folha": {
       "status": "Offline",
-      "lastResponseMs": 338,
-      "lastChecked": "2026-11-16T18:23:28.655Z"
+      "lastResponseMs": 307,
+      "lastChecked": "2026-11-17T16:41:30.068Z"
     },
     "CNN": {
       "status": "Online",
-      "lastResponseMs": 336,
-      "lastChecked": "2026-11-16T18:23:09.804Z"
+      "lastResponseMs": 480,
+      "lastChecked": "2026-11-17T16:41:07.787Z"
     },
     "Tecnoblog": {
       "status": "Online",
-      "lastResponseMs": 50,
-      "lastChecked": "2026-11-16T18:23:10.550Z"
+      "lastResponseMs": 131,
+      "lastChecked": "2026-11-17T16:41:09.406Z"
     },
     "Olhar Digital": {
       "status": "Online",
-      "lastResponseMs": 132,
-      "lastChecked": "2026-11-16T18:23:18.021Z"
+      "lastResponseMs": 384,
+      "lastChecked": "2026-11-17T16:41:19.554Z"
     },
     "Showmetech": {
       "status": "Online",
-      "lastResponseMs": 27,
-      "lastChecked": "2026-11-16T18:23:09.982Z"
+      "lastResponseMs": 113,
+      "lastChecked": "2026-11-17T16:41:08.368Z"
     },
     "TabNews": {
       "status": "Online",
-      "lastResponseMs": 312,
-      "lastChecked": "2026-11-16T18:23:11.165Z"
+      "lastResponseMs": 314,
+      "lastChecked": "2026-11-17T16:41:10.014Z"
     },
     "4Linux": {
       "status": "Online",
-      "lastResponseMs": 5863,
-      "lastChecked": "2026-11-16T18:23:17.877Z"
+      "lastResponseMs": 8304,
+      "lastChecked": "2026-11-17T16:41:19.052Z"
     },
     "Ecommerce Brasil": {
-      "status": "Offline",
-      "lastResponseMs": 427,
-      "lastChecked": "2026-11-16T18:23:25.565Z"
+      "status": "Instável",
+      "lastResponseMs": 684,
+      "lastChecked": "2026-11-17T16:41:27.626Z"
     },
     "Money Times": {
       "status": "Online",
-      "lastResponseMs": 297,
-      "lastChecked": "2026-11-16T18:23:25.863Z"
+      "lastResponseMs": 265,
+      "lastChecked": "2026-11-17T16:41:27.892Z"
     },
     "Seu Dinheiro": {
       "status": "Online",
-      "lastResponseMs": 340,
-      "lastChecked": "2026-11-16T18:23:26.213Z"
+      "lastResponseMs": 249,
+      "lastChecked": "2026-11-17T16:41:28.197Z"
     },
     "Suno": {
       "status": "Online",
-      "lastResponseMs": 1751,
-      "lastChecked": "2026-11-16T18:23:27.975Z"
+      "lastResponseMs": 1093,
+      "lastChecked": "2026-11-17T16:41:29.346Z"
     }
   },
   "stats": {
-    "imported": 1054,
-    "updated": 4120,
-    "discarded": 29315
+    "imported": 1183,
+    "updated": 4178,
+    "discarded": 30354
   }
 }
