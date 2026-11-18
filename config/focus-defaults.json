@@ -1,0 +1,240 @@
+{
+  "banners": [
+    {
+      "image": "/focus-tech-summit.jpg",
+      "mobileImage": "/focus-tech-summit-mobile.png",
+      "title": "Siará Tech Summit 2026 com a Focus Tech",
+      "id": "banner-0",
+      "active": true,
+      "link": "https://beevent.com.br/cart/?event=15057a07-7970-4b24-b656-d4d2e599b950&ticket=65786a55-b195-4a5f-a284-96f374fdf9e9&embed=1"
+    },
+    {
+      "image": "/focus-blog.jpg",
+      "mobileImage": "/focus-blog-mobile.png",
+      "title": "Focus Tech Blog: conteúdo sobre tecnologia e inovação",
+      "id": "banner-1",
+      "active": true,
+      "link": ""
+    },
+    {
+      "image": "/comunidade-focus.jpg",
+      "mobileImage": "/comunidade-focus-mobile.png",
+      "title": "Comunidade Focus Tech",
+      "id": "banner-2",
+      "active": true,
+      "link": ""
+    }
+  ],
+  "cards": [
+    {
+      "id": "event-0",
+      "section": "events",
+      "title": "Web Summit Rio 2026",
+      "text": "",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200",
+      "link": "",
+      "location": "Rio de Janeiro, RJ",
+      "date": "28-30 Mai 2026",
+      "targetDate": "2026-05-28T12:00:00.000Z",
+      "type": "Feira",
+      "typeColor": "bg-primary",
+      "status": "",
+      "tags": [],
+      "participants": 0
+    },
+    {
+      "id": "event-1",
+      "section": "events",
+      "title": "Workshop: IA Aplicada ao Marketing",
+      "text": "",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200",
+      "link": "",
+      "location": "Focus HQ - Fortaleza, CE",
+      "date": "15 Mar 2026",
+      "targetDate": "2026-03-15T12:00:00.000Z",
+      "type": "Workshop",
+      "typeColor": "bg-emerald-600",
+      "status": "",
+      "tags": [],
+      "participants": 0
+    },
+    {
+      "title": "De zero ao MVP",
+      "image": "/workshop.jpg",
+      "type": "Workshop",
+      "date": "05 out 2026",
+      "location": "Fortaleza, CE",
+      "participants": 10,
+      "tags": [
+        "Desenvolvimento",
+        "Tecnologia"
+      ],
+      "status": "Realizado",
+      "id": "workshop-0",
+      "section": "workshops",
+      "text": "",
+      "link": "",
+      "targetDate": "",
+      "typeColor": "bg-primary"
+    },
+    {
+      "title": "Automacao de Processos com N8N e Zapier",
+      "image": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=1200",
+      "type": "Treinamento Corporativo",
+      "date": "05 Fev 2026",
+      "location": "São Paulo, SP",
+      "participants": 32,
+      "tags": [
+        "Automacao",
+        "Growth"
+      ],
+      "status": "Realizado",
+      "id": "workshop-1",
+      "section": "workshops",
+      "text": "",
+      "link": "",
+      "targetDate": "",
+      "typeColor": "bg-primary"
+    },
+    {
+      "title": "Desenvolvimento Full-Stack com Next.js 16",
+      "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200",
+      "type": "Capacitacao Interna",
+      "date": "12 Fev 2026",
+      "location": "Fortaleza, CE",
+      "participants": 24,
+      "tags": [
+        "Desenvolvimento"
+      ],
+      "status": "Realizado",
+      "id": "workshop-2",
+      "section": "workshops",
+      "text": "",
+      "link": "",
+      "targetDate": "",
+      "typeColor": "bg-primary"
+    }
+  ],
+  "gallery": [
+    {
+      "src": "/Adriano%20comprando%20a%20microsoft.jpg",
+      "alt": "Integrante da Focus trabalhando em frente a uma tela de projetos",
+      "label": "Projetos de tecnologia",
+      "span": "col-span-2 row-span-2",
+      "id": "photo-0",
+      "fit": "cover"
+    },
+    {
+      "src": "/Mestres%20super%20lendarios.jpg",
+      "alt": "Integrantes da Focus conversando no estande",
+      "label": "Encontro no estande Focus",
+      "span": "col-span-1 row-span-1",
+      "id": "photo-1",
+      "fit": "cover"
+    },
+    {
+      "src": "/Mestre%20supremo%20feliz.jpg",
+      "alt": "Dois integrantes da Focus posando juntos",
+      "label": "Equipe Focus",
+      "span": "col-span-1 row-span-1",
+      "id": "photo-2",
+      "fit": "cover"
+    },
+    {
+      "src": "/mestre%20lendario.jpg",
+      "alt": "Integrante da Focus em uma conversa de trabalho",
+      "label": "Bastidores da equipe",
+      "span": "col-span-1 row-span-1",
+      "id": "photo-3",
+      "fit": "cover"
+    },
+    {
+      "src": "/Davi.jpg",
+      "alt": "Integrante da Focus em uma reunião",
+      "label": "Encontro da equipe",
+      "span": "col-span-1 row-span-1",
+      "id": "photo-4",
+      "fit": "cover"
+    },
+    {
+      "src": "/gisele.jpg",
+      "alt": "Gisele no estande da empresa",
+      "label": "Equipe Focus no evento",
+      "span": "col-span-1 row-span-1",
+      "id": "photo-5",
+      "fit": "cover"
+    },
+    {
+      "src": "/equipe%20maneira.jpeg",
+      "alt": "Dois integrantes da Focus no estande da empresa",
+      "label": "Equipe Focus no estande",
+      "span": "col-span-2 row-span-1",
+      "id": "photo-6",
+      "fit": "cover"
+    },
+    {
+      "src": "/A%20FOCUS%20%C3%89%20%20A%20FOCUS.jpg",
+      "alt": "Cartões de visita da Focus",
+      "label": "Identidade Focus",
+      "span": "col-span-1 row-span-1",
+      "id": "photo-7",
+      "fit": "cover"
+    },
+    {
+      "src": "/Adriano%20negociando%20com%20a%20microsoft.jpg",
+      "alt": "Integrante da Focus trabalhando diante de um computador",
+      "label": "Bastidores de tecnologia",
+      "span": "col-span-1 row-span-1",
+      "id": "photo-8",
+      "fit": "cover"
+    },
+    {
+      "src": "/Adriano%20sendo%20ultra%20humilde.jpg",
+      "alt": "Integrante da Focus conferindo anotações durante um evento",
+      "label": "Anotações no evento",
+      "span": "col-span-1 row-span-1",
+      "id": "photo-9",
+      "fit": "cover"
+    },
+    {
+      "src": "/Chefes%20negociando.jpg",
+      "alt": "Equipe da Focus conversando com visitantes no estande",
+      "label": "Conversas no estande",
+      "span": "col-span-2 row-span-1",
+      "id": "photo-10",
+      "fit": "cover"
+    },
+    {
+      "src": "/Equipe%20maneira%202.jpg",
+      "alt": "Equipe reunida em um espaço de trabalho",
+      "label": "Equipe em reunião",
+      "span": "col-span-1 row-span-1",
+      "id": "photo-11",
+      "fit": "cover"
+    },
+    {
+      "src": "/Equipe.jpg",
+      "alt": "Integrante da Focus registrando um evento",
+      "label": "Cobertura do evento",
+      "span": "col-span-1 row-span-1",
+      "id": "photo-12",
+      "fit": "cover"
+    },
+    {
+      "src": "/chefes.jpg",
+      "alt": "Dois integrantes da Focus no espaço da empresa",
+      "label": "Time Focus",
+      "span": "col-span-2 row-span-1",
+      "id": "photo-13",
+      "fit": "cover"
+    },
+    {
+      "src": "/Rezende%20ultra%20feliz.jpg",
+      "alt": "Integrante da Focus conversando durante um evento",
+      "label": "Encontro no evento",
+      "span": "col-span-2 row-span-1",
+      "id": "photo-14",
+      "fit": "cover"
+    }
+  ]
+}

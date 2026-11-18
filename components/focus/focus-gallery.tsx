@@ -3,108 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Camera, X } from "lucide-react";
 
-interface GalleryItem {
-  src: string;
-  alt: string;
-  label: string;
-  span: string;
-  fit?: "cover" | "contain";
-}
+import { defaultFocusContent, type FocusPhoto } from "@/lib/focus-content";
 
-const galleryItems: GalleryItem[] = [
-  {
-    src: "/Adriano%20comprando%20a%20microsoft.jpg",
-    alt: "Integrante da Focus trabalhando em frente a uma tela de projetos",
-    label: "Projetos de tecnologia",
-    span: "col-span-2 row-span-2",
-  },
-  {
-    src: "/Mestres%20super%20lendarios.jpg",
-    alt: "Integrantes da Focus conversando no estande",
-    label: "Encontro no estande Focus",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    src: "/Mestre%20supremo%20feliz.jpg",
-    alt: "Dois integrantes da Focus posando juntos",
-    label: "Equipe Focus",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    src: "/mestre%20lendario.jpg",
-    alt: "Integrante da Focus em uma conversa de trabalho",
-    label: "Bastidores da equipe",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    src: "/Davi.jpg",
-    alt: "Integrante da Focus em uma reunião",
-    label: "Encontro da equipe",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    src: "/gisele.jpg",
-    alt: "Gisele no estande da empresa",
-    label: "Equipe Focus no evento",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    src: "/equipe%20maneira.jpeg",
-    alt: "Dois integrantes da Focus no estande da empresa",
-    label: "Equipe Focus no estande",
-    span: "col-span-2 row-span-1",
-  },
-  {
-    src: "/A%20FOCUS%20%C3%89%20%20A%20FOCUS.jpg",
-    alt: "Cartões de visita da Focus",
-    label: "Identidade Focus",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    src: "/Adriano%20negociando%20com%20a%20microsoft.jpg",
-    alt: "Integrante da Focus trabalhando diante de um computador",
-    label: "Bastidores de tecnologia",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    src: "/Adriano%20sendo%20ultra%20humilde.jpg",
-    alt: "Integrante da Focus conferindo anotações durante um evento",
-    label: "Anotações no evento",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    src: "/Chefes%20negociando.jpg",
-    alt: "Equipe da Focus conversando com visitantes no estande",
-    label: "Conversas no estande",
-    span: "col-span-2 row-span-1",
-  },
-  {
-    src: "/Equipe%20maneira%202.jpg",
-    alt: "Equipe reunida em um espaço de trabalho",
-    label: "Equipe em reunião",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    src: "/Equipe.jpg",
-    alt: "Integrante da Focus registrando um evento",
-    label: "Cobertura do evento",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    src: "/chefes.jpg",
-    alt: "Dois integrantes da Focus no espaço da empresa",
-    label: "Time Focus",
-    span: "col-span-2 row-span-1",
-  },
-  {
-    src: "/Rezende%20ultra%20feliz.jpg",
-    alt: "Integrante da Focus conversando durante um evento",
-    label: "Encontro no evento",
-    span: "col-span-2 row-span-1",
-  },
-];
-
-export function FocusGallery() {
+export function FocusGallery({ images = defaultFocusContent.gallery }: { images?: FocusPhoto[] }) {
+  const galleryItems = images;
   const [lightbox, setLightbox] = useState<number | null>(null);
   const lightboxTrackRef = useRef<HTMLDivElement>(null);
   const lightboxScrollTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -132,7 +34,7 @@ export function FocusGallery() {
       <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain scrollbar-hide sm:grid sm:auto-rows-[180px] sm:grid-cols-4 sm:overflow-visible">
         {galleryItems.map((item, i) => (
           <div
-            key={item.label}
+            key={item.id}
             className={`group relative h-44 min-w-[85%] snap-center cursor-pointer overflow-hidden rounded-xl sm:h-auto sm:min-w-0 ${item.span}`}
             onClick={() => setLightbox(i)}
           >
@@ -175,7 +77,7 @@ export function FocusGallery() {
             }}
           >
             {galleryItems.map((item) => (
-              <div key={item.label} className="flex h-full min-w-full snap-center items-center justify-center px-4">
+              <div key={item.id} className="flex h-full min-w-full snap-center items-center justify-center px-4">
                 <img
                   src={item.src}
                   alt={item.alt}
@@ -186,7 +88,7 @@ export function FocusGallery() {
             ))}
           </div>
           <p className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 rounded-lg bg-card/90 px-4 py-2 text-sm font-bold text-foreground backdrop-blur-sm">
-            {galleryItems[lightbox].label}
+            {galleryItems[lightbox]?.label}
           </p>
         </div>
       )}

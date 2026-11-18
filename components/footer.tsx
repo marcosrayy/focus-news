@@ -165,7 +165,16 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
           <span className="text-xs text-muted-foreground">
-            © Focus Tecnologia {new Date().getFullYear()}. Todos os direitos reservados.
+            ©{" "}
+            <Link
+              href="/admin/focus"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-default"
+            >
+              Focus
+            </Link>{" "}
+            Tecnologia {new Date().getFullYear()}. Todos os direitos reservados.
           </span>
           <div className="flex items-center gap-6">
             <Link href="#privacidade" className="text-xs text-muted-foreground transition-colors duration-300 hover:text-primary">

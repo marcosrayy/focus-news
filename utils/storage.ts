@@ -121,11 +121,11 @@ export interface EngineStatus {
 // use the committed JSON files only as the initial seed / local-dev fallback.
 const REMOTE_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || '';
 const REMOTE_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN || '';
-const REMOTE_ENABLED = !!(REMOTE_URL && REMOTE_TOKEN);
+export const REMOTE_ENABLED = !!(REMOTE_URL && REMOTE_TOKEN);
 const ARTICLES_KEY = 'focus-news:articles';
 const STATUS_KEY = 'focus-news:status';
 
-async function remoteCommand(command: unknown[]): Promise<unknown> {
+export async function remoteCommand(command: unknown[]): Promise<unknown> {
   const res = await fetch(REMOTE_URL, {
     method: 'POST',
     headers: { Authorization: `Bearer ${REMOTE_TOKEN}`, 'Content-Type': 'application/json' },

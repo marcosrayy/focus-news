@@ -3,25 +3,15 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect, useCallback, useRef } from "react";
 
-const heroSlides = [
-  {
-    image: "/focus-tech-summit.jpg",
-    mobileImage: "/focus-tech-summit-mobile.png",
-    title: "Siará Tech Summit 2026 com a Focus Tech",
-  },
-  {
-    image: "/focus-blog.jpg",
-    mobileImage: "/focus-blog-mobile.png",
-    title: "Focus Tech Blog: conteúdo sobre tecnologia e inovação",
-  },
-  {
-    image: "/comunidade-focus.jpg",
-    mobileImage: "/comunidade-focus-mobile.png",
-    title: "Comunidade Focus Tech",
-  },
-];
+import { defaultFocusContent, type FocusBanner } from "@/lib/focus-content";
 
-export function HeroFocus() {
+export function HeroFocus({ banners = defaultFocusContent.banners }: { banners?: FocusBanner[] }) {
+  const active = banners.filter(banner => banner.active);
+  if (!active.length) return null;
+  return <HeroFocusSlider key={active.map(banner => banner.id).join("-")} heroSlides={active} />;
+}
+
+function HeroFocusSlider({ heroSlides }: { heroSlides: FocusBanner[] }) {
   const [current, setCurrent] = useState(0);
   const mobileTrackRef = useRef<HTMLDivElement>(null);
 
@@ -45,7 +35,7 @@ export function HeroFocus() {
   useEffect(() => {
     const timer = setInterval(next, 6000);
     return () => clearInterval(timer);
-  }, [next, heroSlides.length]);
+  }, [next]);
 
   return (
     <section className="group relative overflow-hidden rounded-2xl border border-border/60 shadow-card">
@@ -55,15 +45,15 @@ export function HeroFocus() {
           onScroll={(event) => {
             const track = event.currentTarget;
             if (!track.clientWidth) return;
-            const index = Math.round(track.scrollLeft / track.clientWidth);
+            const index = Math.max(0, Math.min(heroSlides.length - 1, Math.round(track.scrollLeft / track.clientWidth)));
             setCurrent((previous) => previous === index ? previous : index);
           }}
           className="absolute inset-0 z-10 flex snap-x snap-mandatory overflow-x-auto overscroll-x-contain scrollbar-hide sm:hidden"
         >
           {heroSlides.map((slide) => (
-            <div key={slide.image} className="relative h-full min-w-full snap-center">
+            <div key={slide.id} className="relative h-full min-w-full snap-center">
               <img
-                src={slide.mobileImage}
+                src={slide.mobileImage || slide.image}
                 alt={slide.title}
                 width={1024}
                 height={1280}
@@ -76,7 +66,7 @@ export function HeroFocus() {
         <div className="pointer-events-none absolute inset-0 hidden sm:block">
           {heroSlides.map((slide, index) => (
             <img
-              key={slide.image}
+              key={slide.id}
               src={slide.image}
               alt={slide.title}
               className={`absolute inset-0 z-10 h-full w-full object-cover transition-all duration-700 ease-in-out ${
@@ -86,22 +76,15 @@ export function HeroFocus() {
           ))}
         </div>
 
-        {current === 0 ? (
+        {heroSlides[current]?.link && (
           <a
-            href="https://beevent.com.br/cart/?event=15057a07-7970-4b24-b656-d4d2e599b950&ticket=65786a55-b195-4a5f-a284-96f374fdf9e9&embed=1"
+            href={heroSlides[current].link}
             target="_blank"
             rel="noopener noreferrer"
             className="absolute bottom-4 left-4 z-20 hidden min-h-9 items-center justify-center rounded-md border border-foreground/20 bg-background/85 px-4 text-xs font-semibold text-foreground shadow-lg backdrop-blur-sm transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:inline-flex"
           >
             Saiba Mais
           </a>
-        ) : (
-          <button
-            type="button"
-            className="absolute bottom-4 left-4 z-20 hidden min-h-9 items-center justify-center rounded-md border border-foreground/20 bg-background/85 px-4 text-xs font-semibold text-foreground shadow-lg backdrop-blur-sm transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:inline-flex"
-          >
-            Saiba Mais
-          </button>
         )}
 
         {/* Nav Arrows */}
@@ -167,22 +150,15 @@ export function HeroFocus() {
             </button>
           ))}
         </div>
-        {current === 0 ? (
+        {heroSlides[current]?.link && (
           <a
-            href="https://beevent.com.br/cart/?event=15057a07-7970-4b24-b656-d4d2e599b950&ticket=65786a55-b195-4a5f-a284-96f374fdf9e9&embed=1"
+            href={heroSlides[current].link}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex min-h-8 shrink-0 items-center justify-center rounded-md bg-primary px-2.5 text-[11px] font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             Saiba Mais
           </a>
-        ) : (
-          <button
-            type="button"
-            className="inline-flex min-h-8 shrink-0 items-center justify-center rounded-md bg-primary px-2.5 text-[11px] font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-          >
-            Saiba Mais
-          </button>
         )}
         <button
           onClick={next}

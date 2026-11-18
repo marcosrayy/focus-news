@@ -9,6 +9,8 @@ import { WorkshopsTrainings } from "@/components/focus/workshops-trainings";
 import { FocusTimeline } from "@/components/focus/focus-timeline";
 import { FocusGallery } from "@/components/focus/focus-gallery";
 
+import { readFocusDocument } from "@/lib/focus-store";
+
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -17,7 +19,10 @@ export const metadata: Metadata = {
     "O hub oficial da Focus: noticias internas, eventos, workshops, treinamentos, lancamentos, parcerias e projetos especiais.",
 };
 
-export default function FocusPage() {
+export const dynamic = "force-dynamic";
+
+export default async function FocusPage() {
+  const { content } = await readFocusDocument();
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -42,16 +47,16 @@ export default function FocusPage() {
             Novidades da Focus
           </h2>
         </div>
-        <HeroFocus />
+        <HeroFocus banners={content.banners} />
 
         {/* Proximos Eventos */}
         <div className="mt-8">
-          <UpcomingEvents />
+          <UpcomingEvents cards={content.cards} />
         </div>
 
         {/* Workshops & Treinamentos */}
         <div className="mt-8">
-          <WorkshopsTrainings />
+          <WorkshopsTrainings cards={content.cards} />
         </div>
 
         {/* Impacto Focus - Dashboard */}
@@ -65,7 +70,7 @@ export default function FocusPage() {
             <FocusTimeline />
           </div>
           <div className="lg:w-[55%]">
-            <FocusGallery />
+            <FocusGallery images={content.gallery} />
           </div>
         </div>
       </main>
