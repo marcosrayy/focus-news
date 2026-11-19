@@ -19,17 +19,20 @@ export function useCloseExploreModal() {
 
 interface SidebarCardsModalProps {
   title: string;
-  items: string[];
+  cardTitle?: string;
+  showSectionLabel?: boolean;
+  items?: string[];
+  trigger?: React.ReactElement;
   children: React.ReactNode;
 }
 
-export function SidebarCardsModal({ title, items, children }: SidebarCardsModalProps) {
+export function SidebarCardsModal({ title, cardTitle = "EXPLORAR", showSectionLabel = true, items = [], trigger, children }: SidebarCardsModalProps) {
   const [open, setOpen] = useState(false);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <button
+        {trigger ?? <button
           type="button"
           className="flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-border bg-card text-left shadow-card transition-colors hover:border-primary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         >
@@ -39,12 +42,14 @@ export function SidebarCardsModal({ title, items, children }: SidebarCardsModalP
                 <LayoutGrid className="h-4 w-4 text-primary" />
               </div>
               <span className="font-heading text-sm font-bold tracking-wider text-foreground">
-                EXPLORAR
+                {cardTitle}
               </span>
             </div>
-            <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-              {title}
-            </span>
+            {showSectionLabel && (
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                {title}
+              </span>
+            )}
           </div>
           <div className="flex flex-1 flex-col justify-between">
             {items.map((item, index) => (
@@ -73,7 +78,7 @@ export function SidebarCardsModal({ title, items, children }: SidebarCardsModalP
               Abrir todos
             </span>
           </div>
-        </button>
+        </button>}
       </DialogTrigger>
 
       <DialogContent className="h-[100dvh] max-h-[100dvh] w-screen max-w-none translate-x-[-50%] translate-y-[-50%] overflow-y-auto rounded-none border-0 p-4 sm:h-auto sm:max-h-[90vh] sm:max-w-xl sm:rounded-lg sm:border sm:p-6">

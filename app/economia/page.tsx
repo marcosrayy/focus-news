@@ -8,7 +8,6 @@ import { StockScoreboards } from "@/components/economia/stock-scoreboards";
 import { MarketLiveCards } from "@/components/economia/market-live-cards";
 import { SectorHeatmap } from "@/components/economia/sector-heatmap";
 import { CryptoPerformance } from "@/components/economia/crypto-performance";
-import { EconomySidebar } from "@/components/economia/economy-sidebar";
 
 import type { Metadata } from "next";
 
@@ -52,12 +51,9 @@ export default function EconomiaPage() {
           <StockScoreboards />
         </div>
 
-        {/* Summary Cards + Explore */}
-        <div className="mt-4 grid items-stretch gap-4 lg:grid-cols-[minmax(0,3fr)_minmax(240px,1fr)]">
+        {/* Summary Cards */}
+        <div className="mt-4">
           <MarketSummaryCards />
-          <div className="hidden self-center lg:block">
-            <EconomySidebar />
-          </div>
         </div>
 
         {/* Main Chart */}

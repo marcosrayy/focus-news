@@ -107,7 +107,7 @@ function HeroDevCarousel() {
 
   return (
     <article
-      className="group relative h-[calc(100svh-12rem)] min-h-[28rem] max-h-[44rem] overflow-hidden rounded-2xl border border-border bg-card sm:h-auto sm:aspect-[3/1]"
+      className="group relative h-[calc(100svh-9rem+2px)] min-h-[calc(31rem+2px)] max-h-[calc(47rem+2px)] w-full overflow-hidden rounded-2xl border border-border bg-card sm:h-auto sm:aspect-[3/1] sm:min-h-[28rem] sm:max-h-[44rem]"
       onClick={() => {
         if (article.url && article.url !== "#") window.open(article.url, "_blank", "noopener,noreferrer");
       }}
@@ -185,15 +185,14 @@ function HeroDevCarousel() {
                 <span className="mb-1 hidden text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase sm:mb-2 sm:inline-block">
                   {slide.source}
                 </span>
-                <h2 className="line-clamp-3 font-heading text-[1.75rem] font-extrabold leading-[1.08] tracking-tight text-foreground sm:line-clamp-none sm:text-2xl lg:text-3xl xl:text-4xl">
-                  <span className="text-balance">{slide.title}</span>
+                <h2 title={slide.title} className="line-clamp-2 shrink-0 break-words font-heading text-xl font-extrabold leading-tight tracking-tight text-foreground sm:text-2xl lg:text-3xl">
+                  {slide.title}
                 </h2>
-                <p className="mt-3 hidden max-w-3xl text-sm leading-relaxed text-muted-foreground line-clamp-2 sm:block lg:text-base">
-                  {slide.description}
-                </p>
-                <p className="mt-3 text-xs leading-relaxed text-muted-foreground sm:hidden">
-                  {slide.description}
-                </p>
+                {slide.description && (
+                  <p className="mt-2 line-clamp-2 max-w-3xl shrink-0 break-words text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                    {slide.description}
+                  </p>
+                )}
                 <div className="mt-auto border-t border-emerald-500/20 pt-3 sm:hidden">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-emerald-400">

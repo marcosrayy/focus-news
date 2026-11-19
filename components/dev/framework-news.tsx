@@ -64,9 +64,12 @@ function FrameworkNewsContent({ sidebar }: { sidebar?: ReactNode }) {
         </div>
       )}
       <NewsSectionLayout
-        sidebar={sidebar}
         featured={
-          <FeaturedNewsCarousel label="Notícias de desenvolvimento em destaque">
+          <FeaturedNewsCarousel
+            gridClassName="sm:grid-cols-2 lg:grid-cols-4"
+            label="Notícias de desenvolvimento em destaque"
+            desktopCard={sidebar}
+          >
             {featuredArticles.map((article) => (
               <FeaturedDevCard key={article.id} article={article} onClick={() => article.url ? window.open(article.url, "_blank") : setSelected(article)} />
             ))}
@@ -89,7 +92,7 @@ function FrameworkNewsContent({ sidebar }: { sidebar?: ReactNode }) {
 
 function FeaturedDevCard({ article, onClick }: { article: DevArticle; onClick: () => void }) {
   return (
-    <article onClick={onClick} className="group cursor-pointer overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/30 hover:shadow-lg hover:shadow-emerald-400/5">
+    <article onClick={onClick} className="group flex w-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/30 hover:shadow-lg hover:shadow-emerald-400/5">
       <div className="relative aspect-[16/10] overflow-hidden">
         <img src={article.image} alt={article.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
@@ -97,8 +100,8 @@ function FeaturedDevCard({ article, onClick }: { article: DevArticle; onClick: (
           <span className={`${article.categoryColor} rounded-md px-2.5 py-1 text-[10px] font-bold tracking-wider text-white`}>{article.category}</span>
         </div>
       </div>
-      <div className="p-4 lg:p-5">
-        <h3 className="font-heading text-sm font-bold leading-snug text-foreground transition-colors duration-300 group-hover:text-emerald-400 lg:text-base">
+      <div className="flex flex-1 flex-col p-4">
+        <h3 title={article.title} className="line-clamp-2 font-heading text-sm font-bold leading-snug text-foreground transition-colors duration-300 group-hover:text-emerald-400 lg:text-base">
           <span className="text-balance">{article.title}</span>
         </h3>
         <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-muted-foreground">{article.description}</p>
@@ -107,16 +110,18 @@ function FeaturedDevCard({ article, onClick }: { article: DevArticle; onClick: (
             <span key={tag} className="rounded-md border border-emerald-500/20 bg-emerald-500/5 px-2 py-0.5 text-[10px] font-medium text-emerald-400">{tag}</span>
           ))}
         </div>
-        <div className="mt-3 flex items-center justify-between border-t border-border pt-3">
-          <span className="text-xs text-muted-foreground">{article.author}</span>
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1 text-muted-foreground">
-              <Clock className="h-3 w-3" />
-              <span className="text-[10px]">{article.time}</span>
-            </div>
-            <div className="flex items-center gap-1 text-muted-foreground">
-              <MessageSquare className="h-3 w-3" />
-              <span className="text-[10px]">{article.comments}</span>
+        <div className="mt-auto pt-3">
+          <div className="flex items-center justify-between border-t border-border pt-3">
+            <span className="text-xs text-muted-foreground">{article.author}</span>
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-1 text-muted-foreground">
+                <Clock className="h-3 w-3" />
+                <span className="text-[10px]">{article.time}</span>
+              </div>
+              <div className="flex items-center gap-1 text-muted-foreground">
+                <MessageSquare className="h-3 w-3" />
+                <span className="text-[10px]">{article.comments}</span>
+              </div>
             </div>
           </div>
         </div>

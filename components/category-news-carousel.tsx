@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { getGeneratedCover } from "@/lib/utils";
 import { categoryContent, type CategoryKey } from "@/config/category-news";
-import { getCategoryNewsSections, useCategoryNewsFeed } from "@/components/category-news-feed";
+import { getCategoryNewsSections, isAbadefArticle, useCategoryNewsFeed } from "@/components/category-news-feed";
 import type { NewsArticle } from "@/types/news";
 
 interface CategoryNewsCarouselProps {
@@ -102,12 +102,14 @@ const slides = useMemo(() => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/65 to-transparent" />
         <div className="absolute bottom-6 left-5 right-5 text-white sm:bottom-10 sm:left-10 sm:right-16 lg:bottom-12 lg:left-14">
-          <h2 className="line-clamp-3 font-heading text-[1.75rem] font-extrabold leading-[1.08] tracking-tight drop-shadow-lg sm:text-2xl lg:text-4xl">
+          <h2 title={article.title} className="line-clamp-3 break-words font-heading text-xl font-extrabold leading-tight tracking-tight drop-shadow-lg sm:line-clamp-2 sm:text-2xl lg:text-3xl">
             {article.title}
           </h2>
-          <p className="mt-2 hidden max-w-2xl line-clamp-2 text-sm text-white/80 sm:block lg:text-base">
-            {article.description}
-          </p>
+          {article.description && isAbadefArticle(article) && (
+            <p className="mt-2 hidden max-w-2xl line-clamp-2 text-sm text-white/80 sm:block lg:text-base">
+              {article.description}
+            </p>
+          )}
         </div>
       </>
     );

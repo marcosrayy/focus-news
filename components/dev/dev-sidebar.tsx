@@ -1,6 +1,6 @@
 "use client";
 
-import { Code2, BookOpen, Tag, Terminal } from "lucide-react";
+import { ArrowRight, Code2, BookOpen, Tag, Terminal } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 import useSWR from "swr";
@@ -227,7 +227,40 @@ export function DevSidebar() {
 
 function DevSidebarInner() {
   return (
-    <SidebarCardsModal title="DESENVOLVIMENTO" items={["Código da semana", "Tags populares", "Tutoriais"]}>
+    <SidebarCardsModal
+      title="DESENVOLVIMENTO"
+      trigger={
+        <button
+          type="button"
+          className="group flex h-full w-full cursor-pointer flex-col rounded-2xl border border-emerald-500/20 bg-slate-950 p-4 text-left font-mono text-slate-100 shadow-card transition-colors hover:border-emerald-500/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+        >
+          <span className="flex w-full items-center gap-2 border-b border-emerald-500/20 pb-3">
+            <Terminal aria-hidden="true" className="h-4 w-4 shrink-0 text-emerald-400" />
+            <span className="text-sm font-bold text-emerald-400">Terminal Dev</span>
+          </span>
+          <span className="flex w-full flex-1 flex-col justify-between">
+            {["Código da semana", "Tags populares", "Tutoriais"].map((item, index) => (
+              <span key={item} className="flex flex-1 items-center justify-between gap-2 border-b border-emerald-500/20 py-2 last:border-b-0">
+                <span className="flex min-w-0 items-center gap-3">
+                  <span aria-hidden="true" className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10 text-xs font-bold text-emerald-400">
+                    {index + 1}
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block truncate text-xs font-bold">{item}</span>
+                    <span className="mt-0.5 block text-[10px] text-slate-400">Saiba mais</span>
+                  </span>
+                </span>
+                <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+              </span>
+            ))}
+          </span>
+          <span className="flex w-full items-center justify-between gap-2 border-t border-emerald-500/20 pt-3 text-xs font-bold text-emerald-400">
+            Abrir todos
+            <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 shrink-0 motion-safe:transition-transform motion-safe:group-hover:translate-x-0.5" />
+          </span>
+        </button>
+      }
+    >
       <DevSidebarContent />
     </SidebarCardsModal>
   );

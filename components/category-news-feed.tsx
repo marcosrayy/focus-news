@@ -16,6 +16,10 @@ const BUSINESS_RETENTION_DAYS = 5;
 export const CATEGORY_FEATURED_COUNT = FEATURED_COUNT;
 export const CATEGORY_INITIAL_LIST_COUNT = INITIAL_LIST_COUNT;
 
+export function isAbadefArticle({ title, description, source, url }: NewsArticle) {
+  return [title, description, source, url].some((value) => /\babadef\b/i.test(value));
+}
+
 interface CategoryNewsFeedValue {
   articles: NewsArticle[];
   isLoading: boolean;

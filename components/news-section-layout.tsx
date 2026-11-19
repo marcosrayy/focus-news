@@ -31,6 +31,7 @@ interface FeaturedNewsCarouselProps {
   label?: string;
   gridClassName?: string;
   slideClassName?: (index: number) => string;
+  desktopCard?: ReactNode;
 }
 
 export function FeaturedNewsCarousel({
@@ -38,6 +39,7 @@ export function FeaturedNewsCarousel({
   label = "Notícias em destaque",
   gridClassName = "sm:grid-cols-3",
   slideClassName,
+  desktopCard,
 }: FeaturedNewsCarouselProps) {
   const slideCount = Children.count(children);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -79,6 +81,7 @@ export function FeaturedNewsCarousel({
             {child}
           </div>
         ))}
+        {desktopCard && <div className="hidden min-w-0 lg:flex">{desktopCard}</div>}
       </div>
       <div className="flex justify-center gap-2 pt-3 sm:hidden" aria-label="Indicadores das notícias em destaque">
         {Array.from({ length: slideCount }, (_, index) => (
