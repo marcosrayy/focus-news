@@ -32,6 +32,7 @@ interface FeaturedNewsCarouselProps {
   gridClassName?: string;
   slideClassName?: (index: number) => string;
   desktopCard?: ReactNode;
+  desktopCardSlideLabel?: string;
 }
 
 export function FeaturedNewsCarousel({
@@ -40,8 +41,10 @@ export function FeaturedNewsCarousel({
   gridClassName = "sm:grid-cols-3",
   slideClassName,
   desktopCard,
+  desktopCardSlideLabel,
 }: FeaturedNewsCarouselProps) {
-  const slideCount = Children.count(children);
+  const newsCount = Children.count(children);
+  const slideCount = newsCount + (desktopCard && desktopCardSlideLabel ? 1 : 0);
   const trackRef = useRef<HTMLDivElement>(null);
   const [current, setCurrent] = useState(0);
 
@@ -74,21 +77,25 @@ export function FeaturedNewsCarousel({
         {Children.map(children, (child, index) => (
           <div
             key={isValidElement(child) && child.key !== null ? child.key : index}
-            aria-label={`Notícia ${index + 1} de ${slideCount}`}
+            aria-label={`Notícia ${index + 1} de ${newsCount}`}
             className={`min-w-full snap-center sm:min-w-0 sm:flex ${slideClassName?.(index) ?? ""}`}
             role="group"
           >
             {child}
           </div>
         ))}
-        {desktopCard && <div className="hidden min-w-0 lg:flex">{desktopCard}</div>}
+        {desktopCard && (
+          <div className={desktopCardSlideLabel ? "min-w-full snap-center sm:flex sm:min-w-0" : "hidden min-w-0 lg:flex"}>
+            {desktopCard}
+          </div>
+        )}
       </div>
       <div className="flex justify-center gap-2 pt-3 sm:hidden" aria-label="Indicadores das notícias em destaque">
         {Array.from({ length: slideCount }, (_, index) => (
           <button
             key={index}
             type="button"
-            aria-label={`Ir para notícia ${index + 1}`}
+            aria-label={index < newsCount ? `Ir para notícia ${index + 1}` : desktopCardSlideLabel}
             onClick={() => goTo(index)}
             className="flex h-7 w-6 shrink-0 items-center justify-center"
           >

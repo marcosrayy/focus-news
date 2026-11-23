@@ -1,5 +1,5 @@
 import { Storage, StorageArticle, EngineStatus } from '../utils/storage';
-import { classifyArticle, deduplicateArticles, fetchRssFeed, hasCategoryEvidence, isArticleRejectedByPolicy, isCategorySpecificRssFeed, isEnglishDevSource, isSourceAllowed, matchesDevOrStartupCategory, MODULE_SOURCES, repairMojibake } from './newsService';
+import { classifyArticle, deduplicateArticles, fetchRssFeed, getRssArticleExcerpt, hasCategoryEvidence, isArticleRejectedByPolicy, isCategorySpecificRssFeed, isEnglishDevSource, isSourceAllowed, matchesDevOrStartupCategory, MODULE_SOURCES, repairMojibake } from './newsService';
 import { NEWS_API_KEY } from '../config/newsConfig';
 import { getSpecialistFeeds, getSpecialistFeedSource } from '../config/specialist-news-feeds';
 
@@ -569,10 +569,12 @@ export const RefreshEngine = {
             }
 
             // Create article entry
+            const excerpt = articleCategory === "Dev" && item.content ? getRssArticleExcerpt(item.content) : "";
             const articleEntry: StorageArticle & { expiresAt: string } = {
               id: articleUrl,
               title,
               description: cleanDesc,
+              ...(excerpt ? { content: excerpt } : {}),
               url: articleUrl,
               image: imageUrl,
               publishedAt,
@@ -598,6 +600,7 @@ export const RefreshEngine = {
                   publishedAt: articleEntry.publishedAt,
                   expiresAt: articleEntry.expiresAt,
                 } : {}),
+                ...(excerpt ? { content: excerpt } : {}),
                 score: articleEntry.score,
                 importanceScore: articleEntry.importanceScore,
                 // keep the original import date

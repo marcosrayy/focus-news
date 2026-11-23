@@ -69,6 +69,7 @@ function FrameworkNewsContent({ sidebar }: { sidebar?: ReactNode }) {
             gridClassName="sm:grid-cols-2 lg:grid-cols-4"
             label="Notícias de desenvolvimento em destaque"
             desktopCard={sidebar}
+            desktopCardSlideLabel="Ir para Terminal Dev"
           >
             {featuredArticles.map((article) => (
               <FeaturedDevCard key={article.id} article={article} onClick={() => article.url ? window.open(article.url, "_blank") : setSelected(article)} />

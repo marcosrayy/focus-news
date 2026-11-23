@@ -4,6 +4,14 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Suspense } from "react";
 import { ChevronLeft, ChevronRight, Code2, GitBranch, Terminal } from "lucide-react";
 import { getCategoryNewsSections, useCategoryNewsFeed } from "@/components/category-news-feed";
+import type { NewsArticle } from "@/types/news";
+
+function getMobileExcerpt(article: NewsArticle) {
+  const description = article.description?.trim() || "";
+  const content = article.content?.trim() || "";
+  return (content.length > description.length ? content : description)
+    || "Toque no banner para ler a matéria completa na fonte original.";
+}
 
 export function HeroDev() {
   return (
@@ -188,8 +196,11 @@ function HeroDevCarousel() {
                 <h2 title={slide.title} className="line-clamp-2 shrink-0 break-words font-heading text-xl font-extrabold leading-tight tracking-tight text-foreground sm:text-2xl lg:text-3xl">
                   {slide.title}
                 </h2>
-                {slide.description && (
-                  <p className="mt-2 line-clamp-2 max-w-3xl shrink-0 break-words text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                <p className="mt-3 line-clamp-[8] shrink-0 break-words text-sm leading-relaxed text-muted-foreground sm:hidden">
+                  {getMobileExcerpt(slide)}
+                </p>
+                {slide.description?.trim() && (
+                  <p className="mt-2 hidden max-w-3xl shrink-0 break-words text-sm leading-relaxed text-muted-foreground sm:line-clamp-2">
                     {slide.description}
                   </p>
                 )}

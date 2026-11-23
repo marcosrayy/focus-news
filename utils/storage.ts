@@ -75,6 +75,7 @@ class FileLockQueue {
 const writeQueue = new FileLockQueue();
 
 export interface StorageArticle {
+  content?: string;
   id: string;
   title: string;
   description: string;
