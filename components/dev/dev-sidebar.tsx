@@ -19,7 +19,7 @@ interface TutorialVideosResponse {
   videos: TutorialVideo[];
 }
 
-const TUTORIAL_REFRESH_INTERVAL = 7 * 24 * 60 * 60 * 1000;
+const TUTORIAL_REFRESH_INTERVAL = 60 * 1000;
 
 async function fetchTutorialVideos(url: string): Promise<TutorialVideosResponse> {
   const response = await fetch(url);
@@ -99,9 +99,7 @@ export function DevSidebarContent() {
     error: tutorialError,
     isLoading: tutorialsLoading,
   } = useSWR<TutorialVideosResponse>("/api/dev-tutorials", fetchTutorialVideos, {
-    revalidateOnFocus: false,
     refreshInterval: TUTORIAL_REFRESH_INTERVAL,
-    dedupingInterval: TUTORIAL_REFRESH_INTERVAL,
   });
 
   const searchTag = (tag: (typeof tags)[number]) => {
