@@ -1,4 +1,5 @@
 {
+<<<<<<< Updated upstream
   "lastSync": "2026-11-23T17:32:42.637Z",
   "syncHistory": [
     {
@@ -151,6 +152,16 @@
       "importedCount": 4,
       "updatedCount": 171,
       "discardedCount": 1047,
+=======
+  "lastSync": "2026-11-25T19:02:38.016Z",
+  "syncHistory": [
+    {
+      "timestamp": "2026-11-25T19:02:38.016Z",
+      "durationMs": 35759,
+      "importedCount": 5,
+      "updatedCount": 171,
+      "discardedCount": 1058,
+>>>>>>> Stashed changes
       "modules": [
         "Startups",
         "Economia",
@@ -162,6 +173,7 @@
       ]
     },
     {
+<<<<<<< Updated upstream
       "timestamp": "2026-11-19T17:52:14.471Z",
       "durationMs": 45458,
       "importedCount": 12,
@@ -199,6 +211,13 @@
       "importedCount": 6,
       "updatedCount": 171,
       "discardedCount": 1040,
+=======
+      "timestamp": "2026-11-25T18:46:05.825Z",
+      "durationMs": 31613,
+      "importedCount": 6,
+      "updatedCount": 169,
+      "discardedCount": 1058,
+>>>>>>> Stashed changes
       "modules": [
         "Startups",
         "Economia",
@@ -210,6 +229,7 @@
       ]
     },
     {
+<<<<<<< Updated upstream
       "timestamp": "2026-11-19T16:37:41.456Z",
       "durationMs": 58998,
       "importedCount": 4,
@@ -263,6 +283,13 @@
       "importedCount": 8,
       "updatedCount": 177,
       "discardedCount": 1041,
+=======
+      "timestamp": "2026-11-25T18:29:49.854Z",
+      "durationMs": 33004,
+      "importedCount": 8,
+      "updatedCount": 168,
+      "discardedCount": 1058,
+>>>>>>> Stashed changes
       "modules": [
         "Startups",
         "Economia",
@@ -274,11 +301,19 @@
       ]
     },
     {
+<<<<<<< Updated upstream
       "timestamp": "2026-11-19T15:32:10.081Z",
       "durationMs": 49750,
       "importedCount": 44,
       "updatedCount": 139,
       "discardedCount": 1044,
+=======
+      "timestamp": "2026-11-25T18:14:10.957Z",
+      "durationMs": 31969,
+      "importedCount": 8,
+      "updatedCount": 165,
+      "discardedCount": 1058,
+>>>>>>> Stashed changes
       "modules": [
         "Startups",
         "Economia",
@@ -290,11 +325,19 @@
       ]
     },
     {
+<<<<<<< Updated upstream
       "timestamp": "2026-11-19T13:31:09.428Z",
       "durationMs": 60938,
       "importedCount": 21,
       "updatedCount": 171,
       "discardedCount": 1040,
+=======
+      "timestamp": "2026-11-25T17:56:53.759Z",
+      "durationMs": 32493,
+      "importedCount": 171,
+      "updatedCount": 12,
+      "discardedCount": 1063,
+>>>>>>> Stashed changes
       "modules": [
         "Startups",
         "Economia",
@@ -306,6 +349,7 @@
       ]
     },
     {
+<<<<<<< Updated upstream
       "timestamp": "2026-11-19T12:52:03.567Z",
       "durationMs": 50198,
       "importedCount": 1,
@@ -359,6 +403,13 @@
       "importedCount": 129,
       "updatedCount": 58,
       "discardedCount": 1039,
+=======
+      "timestamp": "2026-11-16T19:47:09.660Z",
+      "durationMs": 43794,
+      "importedCount": 29,
+      "updatedCount": 153,
+      "discardedCount": 1027,
+>>>>>>> Stashed changes
       "modules": [
         "Startups",
         "Economia",
@@ -805,6 +856,7 @@
   "sourcesHealth": {
     "Startupi": {
       "status": "Online",
+<<<<<<< Updated upstream
       "lastResponseMs": 2117,
       "lastChecked": "2026-11-23T17:32:35.864Z"
     },
@@ -822,16 +874,44 @@
       "status": "Online",
       "lastResponseMs": 173,
       "lastChecked": "2026-11-23T17:32:21.694Z"
+=======
+      "lastResponseMs": 420,
+      "lastChecked": "2026-11-25T19:02:32.396Z"
+    },
+    "InfoMoney": {
+      "status": "Online",
+      "lastResponseMs": 261,
+      "lastChecked": "2026-11-25T19:02:32.673Z"
+    },
+    "Valor": {
+      "status": "Online",
+      "lastResponseMs": 356,
+      "lastChecked": "2026-11-25T19:02:37.284Z"
+    },
+    "Canaltech": {
+      "status": "Online",
+      "lastResponseMs": 158,
+      "lastChecked": "2026-11-25T19:02:23.505Z"
+>>>>>>> Stashed changes
     },
     "TechMundo": {
       "status": "Online",
       "lastResponseMs": 123,
+<<<<<<< Updated upstream
       "lastChecked": "2026-11-23T17:32:21.521Z"
     },
     "Diolinux": {
       "status": "Online",
       "lastResponseMs": 343,
       "lastChecked": "2026-11-23T17:32:21.210Z"
+=======
+      "lastChecked": "2026-11-25T19:02:23.347Z"
+    },
+    "Diolinux": {
+      "status": "Online",
+      "lastResponseMs": 322,
+      "lastChecked": "2026-11-25T19:02:22.945Z"
+>>>>>>> Stashed changes
     },
     "Gizmodo": {
       "status": "Online",
@@ -840,6 +920,7 @@
     },
     "GNews": {
       "status": "Online",
+<<<<<<< Updated upstream
       "lastResponseMs": 463,
       "lastChecked": "2026-11-23T17:32:06.172Z"
     },
@@ -943,5 +1024,110 @@
     "imported": 1832,
     "updated": 7416,
     "discarded": 53387
+=======
+      "lastResponseMs": 657,
+      "lastChecked": "2026-11-25T19:02:02.924Z"
+    },
+    "Exame": {
+      "status": "Online",
+      "lastResponseMs": 65,
+      "lastChecked": "2026-11-25T19:02:33.913Z"
+    },
+    "Startups.com.br": {
+      "status": "Online",
+      "lastResponseMs": 189,
+      "lastChecked": "2026-11-25T19:02:06.470Z"
+    },
+    "Forbes": {
+      "status": "Online",
+      "lastResponseMs": 95,
+      "lastChecked": "2026-11-25T19:02:34.029Z"
+    },
+    "NeoFeed": {
+      "status": "Online",
+      "lastResponseMs": 208,
+      "lastChecked": "2026-11-25T19:02:33.829Z"
+    },
+    "Brazil Journal": {
+      "status": "Online",
+      "lastResponseMs": 439,
+      "lastChecked": "2026-11-25T19:02:33.396Z"
+    },
+    "Baguete": {
+      "status": "Online",
+      "lastResponseMs": 1280,
+      "lastChecked": "2026-11-25T19:02:25.431Z"
+    },
+    "Mobile Time": {
+      "status": "Online",
+      "lastResponseMs": 184,
+      "lastChecked": "2026-11-25T19:02:33.598Z"
+    },
+    "Globo": {
+      "status": "Online",
+      "lastResponseMs": 371,
+      "lastChecked": "2026-11-25T19:02:28.702Z"
+    },
+    "Folha": {
+      "status": "Offline",
+      "lastResponseMs": 481,
+      "lastChecked": "2026-11-25T19:02:37.766Z"
+    },
+    "CNN": {
+      "status": "Online",
+      "lastResponseMs": 426,
+      "lastChecked": "2026-11-25T19:02:21.136Z"
+    },
+    "Tecnoblog": {
+      "status": "Online",
+      "lastResponseMs": 150,
+      "lastChecked": "2026-11-25T19:02:23.224Z"
+    },
+    "Olhar Digital": {
+      "status": "Online",
+      "lastResponseMs": 200,
+      "lastChecked": "2026-11-25T19:02:28.331Z"
+    },
+    "Showmetech": {
+      "status": "Online",
+      "lastResponseMs": 179,
+      "lastChecked": "2026-11-25T19:02:22.623Z"
+    },
+    "TabNews": {
+      "status": "Online",
+      "lastResponseMs": 411,
+      "lastChecked": "2026-11-25T19:02:24.107Z"
+    },
+    "4Linux": {
+      "status": "Online",
+      "lastResponseMs": 2480,
+      "lastChecked": "2026-11-25T19:02:28.115Z"
+    },
+    "Ecommerce Brasil": {
+      "status": "Offline",
+      "lastResponseMs": 425,
+      "lastChecked": "2026-11-25T19:02:34.518Z"
+    },
+    "Money Times": {
+      "status": "Online",
+      "lastResponseMs": 256,
+      "lastChecked": "2026-11-25T19:02:34.774Z"
+    },
+    "Seu Dinheiro": {
+      "status": "Online",
+      "lastResponseMs": 275,
+      "lastChecked": "2026-11-25T19:02:35.061Z"
+    },
+    "Suno": {
+      "status": "Online",
+      "lastResponseMs": 1826,
+      "lastChecked": "2026-11-25T19:02:36.909Z"
+    }
+  },
+  "stats": {
+    "imported": 1281,
+    "updated": 4958,
+    "discarded": 35637
+>>>>>>> Stashed changes
   }
 }

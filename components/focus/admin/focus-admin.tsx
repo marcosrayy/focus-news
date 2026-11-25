@@ -2,7 +2,7 @@
 import { useEffect, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Image as ImageIcon, PanelsTopLeft, Camera, Plus, ArrowUp, ArrowDown, Trash2, Upload, Save, ExternalLink, LogOut, ShieldCheck, CheckCircle2, Loader2 } from "lucide-react";
+import { Image as ImageIcon, PanelsTopLeft, Camera, Plus, ArrowUp, ArrowDown, Trash2, Upload, Save, ExternalLink, LogOut, ShieldCheck, CheckCircle2, Loader2, MonitorPlay } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -109,7 +109,7 @@ export function FocusAdmin({ initial }: { initial: FocusDocument }) {
     <main className="min-w-0">
       <header className="sticky top-0 z-20 flex flex-wrap items-center justify-between gap-3 border-b border-border bg-background/95 px-4 py-4 backdrop-blur-md sm:px-7">
         <div><p className="text-[10px] font-semibold uppercase tracking-widest text-primary">Painel editorial</p><h1 className="font-heading text-xl font-bold">Aba Focus</h1></div>
-        <div className="flex flex-wrap gap-2"><Button asChild variant="outline" size="sm"><Link href="/focus" target="_blank">Ver aba Focus<ExternalLink /></Link></Button><Button size="sm" onClick={publish} disabled={busy || !dirty}>{saving ? <Loader2 className="animate-spin" /> : <Save />} {saving ? "Publicando…" : "Salvar e publicar"}</Button><Button variant="ghost" size="icon" onClick={logout} disabled={busy} className="lg:hidden" aria-label="Sair do painel"><LogOut /></Button></div>
+        <div className="flex flex-wrap gap-2"><Button asChild variant="outline" size="sm"><Link href="/admin/focus/tv" target="_blank" rel="noopener"><MonitorPlay />Ativar modo televisão</Link></Button><Button asChild variant="outline" size="sm"><Link href="/focus" target="_blank">Ver aba Focus<ExternalLink /></Link></Button><Button size="sm" onClick={publish} disabled={busy || !dirty}>{saving ? <Loader2 className="animate-spin" /> : <Save />} {saving ? "Publicando…" : "Salvar e publicar"}</Button><Button variant="ghost" size="icon" onClick={logout} disabled={busy} className="lg:hidden" aria-label="Sair do painel"><LogOut /></Button></div>
       </header>
       <div className="space-y-6 p-4 sm:p-7">
         {message && <div role={message.error ? "alert" : "status"} className={`rounded-xl border px-4 py-3 text-sm ${message.error ? "border-destructive/40 bg-destructive/10 text-destructive" : "border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"}`}>{message.text}</div>}
